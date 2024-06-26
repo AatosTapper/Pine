@@ -1,0 +1,29 @@
+<Scene name="Test-Scene">
+    <Ent>
+        <Cmp type="Transform" x="0.0" y="0.0" />
+        <Cmp type="Physics" vel_x="0.0" vel_y="0.0" />
+        <Cmp type="Sprite" src="../res/img/Sprite1.png" />
+        <Cmp type="Script" src="../scripts/SomeScript.lua" />
+    </Ent>
+    <Ent>
+        <Cmp type="Transform" x="0.0" y="0.0" />
+        <Cmp type="Physics" vel_x="0.0" vel_y="0.0" />
+        <Cmp type="Sprite" src="../res/img/Sprite1.png" />
+        <Cmp type="PlayerController" />
+        <Ent>
+            <Cmp type="Transform" x="0.0" y="0.0" />
+            <Cmp type="Sprite" src="../res/img/Sprite1.png" />
+            <Cmp type="Script" src="../scripts/SomeScript.lua" />
+            <Ent>
+                <Cmp type="Script" src="../scripts/SomeScript.lua" />
+            </Ent>
+        </Ent>
+        <Ent>
+            <Cmp type="Transform" x="0.0" y="0.0" />
+            <Cmp type="Script" src="../scripts/SomeScript.lua" />
+        </Ent>
+    </Ent>
+    <Sys type="Rendering" />
+    <Sys type="Script" />
+    <Sys type="Custom" src="../scripts/SomeScript.lua" />
+</Scene>
