@@ -1,8 +1,9 @@
 #include "SceneParser.h"
 
+#include <fstream>
+#include <sstream>
+
 #include <tinyxml2/tinyxml2.h>
-#include <cassert>
-#include <iostream>
 
 using namespace tinyxml2;
 

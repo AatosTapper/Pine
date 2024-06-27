@@ -1,8 +1,10 @@
-#include "SceneParser.h"
+#include "Application.h"
+
+#include "events/Event.h"
 
 int main() {
-    auto scene = read_scene("../app/scenes/scene.xml");
-    scene->print_tree();
+    Application app;
+    app.entry();
 
     return 0;
 }

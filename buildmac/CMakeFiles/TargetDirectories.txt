@@ -1,0 +1,4 @@
+/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir
+/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/glad.dir
+/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/edit_cache.dir
+/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/rebuild_cache.dir

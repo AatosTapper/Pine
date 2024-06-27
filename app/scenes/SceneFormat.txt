@@ -1,0 +1,47 @@
+A definition of how a scene file should be written
+
+Scenes are defined as XML files where each object has a corresponding XML tag.
+
+Pine Engine has 4 primitive object types:
+    - <Scene>   -> Scene
+    - <Ent>     -> Entity
+    - <Cmp>     -> Component
+    - <Sys>     -> System
+
+
+Some of these objects can have children:
+    Scene consist of:
+    - Entities
+    - Systems
+
+    Entities consist of:
+    - Components
+    - Child Entities
+
+    Components and Systems can't have children.
+
+
+The XML structure is:
+    <Object variable1="val" variable2="val" ...>
+
+        <ChildObject variable1="val" ...>
+            ...                                 children here
+        </ChildObject>
+
+        <ChildObject variable1="val" ... />     use this if object has no children
+    </Object>
+
+Required variables for every object:
+    <Scene>
+    - name: string
+
+    <Ent>
+    None
+
+    <Cmp>
+    - type: string
+    + optional type specific variables
+
+    <Sys>
+    - type: string
+    + optional type specific variables
