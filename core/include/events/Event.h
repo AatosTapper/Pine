@@ -26,7 +26,6 @@ enum EventCategory : uint32_t {
 #define CREATE_TYPE_INDEX(T) virtual std::type_index get_typeid() const override { return typeid(T); }
 
 class Event {
-    friend class EventBus;
 public:
     virtual ~Event() {}
 
@@ -39,24 +38,27 @@ public:
     }
 
     virtual std::type_index get_typeid() const = 0;
+};
 
-private:
-    bool m_handled = false;
+enum class HandlerPersistence {
+    None = 0,
+    Single,
+    Continuous
 };
 
 template<class T>
-using EventCallback = std::function<void (T*)>;
+using EventCallback = std::function<HandlerPersistence (T*)>;
 
 class FunctionHandlerBase {
 public:
     virtual ~FunctionHandlerBase() {}
 
-    void execute(Event *event) {
-        m_call(event);
+    HandlerPersistence execute(Event *event) {
+        return m_call(event);
     }
 
 protected:
-    virtual void m_call(Event *event) = 0;
+    virtual HandlerPersistence m_call(Event *event) = 0;
 };
 
 template<class T>
@@ -64,8 +66,8 @@ class FunctionHandler : public FunctionHandlerBase {
 public:
     FunctionHandler(EventCallback<T> member_function) : m_member_function(member_function) {}
 
-    virtual void m_call(Event *event) override {
-        m_member_function(static_cast<T*>(event));
+    virtual HandlerPersistence m_call(Event *event) override {
+        return m_member_function(static_cast<T*>(event));
     }
 
 private:
@@ -81,9 +83,20 @@ public:
     
         for (auto &handler : *handlers) {
             if (handler != nullptr) {
-                handler->execute(event);
+                HandlerPersistence remove = handler->execute(event);
+                if (remove == HandlerPersistence::Single) {
+                    handler = nullptr;
+                }
             }
         }
+        handlers->erase(
+            std::remove_if(
+                handlers->begin(),
+                handlers->end(),
+                [](const auto &handler) { return handler == nullptr; }
+            ), 
+            handlers->end()
+        );
     }
 
     template<typename T>

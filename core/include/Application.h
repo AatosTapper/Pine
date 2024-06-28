@@ -19,6 +19,8 @@ public:
 private:
     void m_run();
     void m_set_lua_functions();
+    void m_update_logic();
+    void m_render();
 
     EventBus m_bus;
     sol::state m_lua;
