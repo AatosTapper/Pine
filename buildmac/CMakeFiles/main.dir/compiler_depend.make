@@ -1773,6 +1773,7 @@ CMakeFiles/main.dir/core/src/Application.cpp.o: CMakeFiles/main.dir/cmake_pch_ar
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Window.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/Event.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/MouseEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/WindowEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h \

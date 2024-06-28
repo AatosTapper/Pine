@@ -22,6 +22,8 @@ private:
     void m_update_logic();
     void m_render();
 
+    void m_set_lua_event_handlers();
+
     EventBus m_bus;
     sol::state m_lua;
     std::unique_ptr<Window> m_window = nullptr;

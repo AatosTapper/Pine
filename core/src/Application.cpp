@@ -4,6 +4,7 @@
 
 #include "events/WindowEvent.h"
 #include "events/MouseEvent.h"
+#include "events/KeyEvent.h"
 
 #include "FrameData.h"
 
@@ -36,7 +37,7 @@ Application::~Application() {
 void Application::on_event(Event *e) {
     m_bus.publish(e);
 
-    std::cout << e->get_name() << std::endl;
+    //std::cout << e->get_name() << std::endl;
 }
 
 void Application::on_window_close() { 
@@ -70,6 +71,40 @@ void Application::m_run() {
 
 void Application::m_set_lua_functions() {
     m_lua.set_function("pine_run", &Application::m_run, this);
+    m_set_lua_event_handlers();    
+}
+
+void Application::m_set_lua_event_handlers() {
+    m_lua.set_function("pine_set_event_handler_KeyPressed", [this](std::function<bool(int)> callback) {
+        m_bus.subscribe<KeyPressedEvent>([callback](KeyPressedEvent *event) -> HandlerPersistence {
+            return callback(event->key) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+        });
+    });
+    m_lua.set_function("pine_set_event_handler_KeyRepeat", [this](std::function<bool(int)> callback) {
+        m_bus.subscribe<KeyRepeatEvent>([callback](KeyRepeatEvent *event) -> HandlerPersistence {
+            return callback(event->key) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+        });
+    });
+    m_lua.set_function("pine_set_event_handler_KeyReleased", [this](std::function<bool(int)> callback) {
+        m_bus.subscribe<KeyReleasedEvent>([callback](KeyReleasedEvent *event) -> HandlerPersistence {
+            return callback(event->key) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+        });
+    });
+    m_lua.set_function("pine_set_event_handler_MouseButtonPressed", [this](std::function<bool(int)> callback) {
+        m_bus.subscribe<MouseButtonPressedEvent>([callback](MouseButtonPressedEvent *event) -> HandlerPersistence {
+            return callback(event->button) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+        });
+    });
+    m_lua.set_function("pine_set_event_handler_MouseButtonReleased", [this](std::function<bool(int)> callback) {
+        m_bus.subscribe<MouseButtonReleasedEvent>([callback](MouseButtonReleasedEvent *event) -> HandlerPersistence {
+            return callback(event->button) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+        });
+    });
+    m_lua.set_function("pine_set_event_handler_MouseMoved", [this](std::function<bool(double, double)> callback) {
+        m_bus.subscribe<MouseMovedEvent>([callback](MouseMovedEvent *event) -> HandlerPersistence {
+            return callback(event->x_pos, event->y_pos) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+        });
+    });
 }
 
 void Application::m_update_logic() {

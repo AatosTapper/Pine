@@ -7,8 +7,12 @@ sol::state ScriptEngine::create_lua_state() {
         sol::lib::math, 
         sol::lib::coroutine, 
         sol::lib::string,
-        sol::lib::table
+        sol::lib::table,
+        sol::lib::package
     );
+    state.script(R"(
+        package.path = package.path .. ";../?.lua"
+    )");
     return state;
 }
 
