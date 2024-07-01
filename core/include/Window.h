@@ -7,6 +7,12 @@
 
 class Window {
 public:
+    struct Data {
+        int width = 0;
+        int heigth = 0;
+        EventCallback<Event> callback;
+    };
+
     Window(int width, int height, const char *name);
     ~Window();
 
@@ -14,7 +20,7 @@ public:
     bool is_open() const { return !glfwWindowShouldClose(m_window); }
     void update();
 
-    glm::vec2 get_dimensions() const;
+    glm::i32vec2 get_dimensions() const;
     int get_width() const { return m_data.width; }
     int get_height() const { return m_data.heigth; }
     float get_aspect_ratio() const { return (float)m_data.width / (float)m_data.heigth; }
@@ -23,10 +29,5 @@ public:
 
 private:
     GLFWwindow *m_window = nullptr;
-
-    struct Data {
-        int width = 0;
-        int heigth = 0;
-        EventCallback<Event> callback;
-    } m_data;
+    Data m_data;
 };

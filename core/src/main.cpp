@@ -1,9 +1,9 @@
 #include "Application.h"
-
-#include "events/Event.h"
+#include "ScriptEngine.h"
 
 int main() {
-    Application app;
+    sol::state lua = ScriptEngine::create_lua_state();
+    Application app(lua);
     app.entry();
 
     return 0;

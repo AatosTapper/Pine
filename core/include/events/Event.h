@@ -77,8 +77,13 @@ private:
 using HandlerVec = std::vector<std::unique_ptr<FunctionHandlerBase>>;
 class EventBus {
 public:
+    ~EventBus() {
+        clean();
+    }
+
     void publish(Event *event) {
-        auto handlers = m_subscribers[event->get_typeid()];
+        assert(event);
+        auto handlers = m_subscribers[event->get_typeid()].get();
         if (handlers == nullptr) return;
     
         for (auto &handler : *handlers) {
@@ -101,15 +106,20 @@ public:
 
     template<typename T>
     void subscribe(EventCallback<T> callback) {
-        auto handlers = m_subscribers[typeid(T)];
+        auto handlers = m_subscribers[typeid(T)].get();
 
         if (handlers == nullptr || handlers->size() == 0) {
-            handlers = std::make_shared<HandlerVec>();
-            m_subscribers[typeid(T)] = handlers;
+            m_subscribers[typeid(T)] = std::make_unique<HandlerVec>();
+            handlers = m_subscribers[typeid(T)].get();
         }
         handlers->push_back(std::make_unique<FunctionHandler<T>>(callback));
     }
 
+    void clean() {
+        // segfault here
+
+    }
+
 private:
-    std::unordered_map<std::type_index, std::shared_ptr<HandlerVec>> m_subscribers;
+    std::unordered_map<std::type_index, std::unique_ptr<HandlerVec>> m_subscribers;
 };

@@ -1141,4 +1141,11 @@ CMakeFiles/main.dir/core/src/main.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x3.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/type_ptr.inl \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/Event.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/typeindex
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/typeindex \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Renderer.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Shader.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/QuadMesh.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexArray.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/IndexBuffer.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h

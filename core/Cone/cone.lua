@@ -17,10 +17,10 @@ end
 --[[    switch
 
 Cone.switch(name)
-  .case("Kate", function() print("This player's name rhymes with Fate")end)
-  .case("Tod", function() print("This player's name rhymes with Cod") end)
-  .default(function() print("This player's name is not Kate or Tod") end)
-  .process()
+.case("Kate", function() print("This player's name rhymes with Fate")end)
+.case("Tod", function() print("This player's name rhymes with Cod") end)
+.default(function() print("This player's name is not Kate or Tod") end)
+.process()
 ]]
 Cone.switch = function(element)
     local Table = {

@@ -277,6 +277,198 @@ core/src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/main.cpp.s
 .PHONY : core/src/main.cpp.s
 
+core/src/rendering/Camera.o: core/src/rendering/Camera.cpp.o
+.PHONY : core/src/rendering/Camera.o
+
+# target to build an object file
+core/src/rendering/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o
+.PHONY : core/src/rendering/Camera.cpp.o
+
+core/src/rendering/Camera.i: core/src/rendering/Camera.cpp.i
+.PHONY : core/src/rendering/Camera.i
+
+# target to preprocess a source file
+core/src/rendering/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Camera.cpp.i
+.PHONY : core/src/rendering/Camera.cpp.i
+
+core/src/rendering/Camera.s: core/src/rendering/Camera.cpp.s
+.PHONY : core/src/rendering/Camera.s
+
+# target to generate assembly for a file
+core/src/rendering/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Camera.cpp.s
+.PHONY : core/src/rendering/Camera.cpp.s
+
+core/src/rendering/IndexBuffer.o: core/src/rendering/IndexBuffer.cpp.o
+.PHONY : core/src/rendering/IndexBuffer.o
+
+# target to build an object file
+core/src/rendering/IndexBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o
+.PHONY : core/src/rendering/IndexBuffer.cpp.o
+
+core/src/rendering/IndexBuffer.i: core/src/rendering/IndexBuffer.cpp.i
+.PHONY : core/src/rendering/IndexBuffer.i
+
+# target to preprocess a source file
+core/src/rendering/IndexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.i
+.PHONY : core/src/rendering/IndexBuffer.cpp.i
+
+core/src/rendering/IndexBuffer.s: core/src/rendering/IndexBuffer.cpp.s
+.PHONY : core/src/rendering/IndexBuffer.s
+
+# target to generate assembly for a file
+core/src/rendering/IndexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.s
+.PHONY : core/src/rendering/IndexBuffer.cpp.s
+
+core/src/rendering/QuadMesh.o: core/src/rendering/QuadMesh.cpp.o
+.PHONY : core/src/rendering/QuadMesh.o
+
+# target to build an object file
+core/src/rendering/QuadMesh.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o
+.PHONY : core/src/rendering/QuadMesh.cpp.o
+
+core/src/rendering/QuadMesh.i: core/src/rendering/QuadMesh.cpp.i
+.PHONY : core/src/rendering/QuadMesh.i
+
+# target to preprocess a source file
+core/src/rendering/QuadMesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.i
+.PHONY : core/src/rendering/QuadMesh.cpp.i
+
+core/src/rendering/QuadMesh.s: core/src/rendering/QuadMesh.cpp.s
+.PHONY : core/src/rendering/QuadMesh.s
+
+# target to generate assembly for a file
+core/src/rendering/QuadMesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.s
+.PHONY : core/src/rendering/QuadMesh.cpp.s
+
+core/src/rendering/Renderer.o: core/src/rendering/Renderer.cpp.o
+.PHONY : core/src/rendering/Renderer.o
+
+# target to build an object file
+core/src/rendering/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o
+.PHONY : core/src/rendering/Renderer.cpp.o
+
+core/src/rendering/Renderer.i: core/src/rendering/Renderer.cpp.i
+.PHONY : core/src/rendering/Renderer.i
+
+# target to preprocess a source file
+core/src/rendering/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.i
+.PHONY : core/src/rendering/Renderer.cpp.i
+
+core/src/rendering/Renderer.s: core/src/rendering/Renderer.cpp.s
+.PHONY : core/src/rendering/Renderer.s
+
+# target to generate assembly for a file
+core/src/rendering/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.s
+.PHONY : core/src/rendering/Renderer.cpp.s
+
+core/src/rendering/Shader.o: core/src/rendering/Shader.cpp.o
+.PHONY : core/src/rendering/Shader.o
+
+# target to build an object file
+core/src/rendering/Shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o
+.PHONY : core/src/rendering/Shader.cpp.o
+
+core/src/rendering/Shader.i: core/src/rendering/Shader.cpp.i
+.PHONY : core/src/rendering/Shader.i
+
+# target to preprocess a source file
+core/src/rendering/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Shader.cpp.i
+.PHONY : core/src/rendering/Shader.cpp.i
+
+core/src/rendering/Shader.s: core/src/rendering/Shader.cpp.s
+.PHONY : core/src/rendering/Shader.s
+
+# target to generate assembly for a file
+core/src/rendering/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Shader.cpp.s
+.PHONY : core/src/rendering/Shader.cpp.s
+
+core/src/rendering/Texture.o: core/src/rendering/Texture.cpp.o
+.PHONY : core/src/rendering/Texture.o
+
+# target to build an object file
+core/src/rendering/Texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o
+.PHONY : core/src/rendering/Texture.cpp.o
+
+core/src/rendering/Texture.i: core/src/rendering/Texture.cpp.i
+.PHONY : core/src/rendering/Texture.i
+
+# target to preprocess a source file
+core/src/rendering/Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Texture.cpp.i
+.PHONY : core/src/rendering/Texture.cpp.i
+
+core/src/rendering/Texture.s: core/src/rendering/Texture.cpp.s
+.PHONY : core/src/rendering/Texture.s
+
+# target to generate assembly for a file
+core/src/rendering/Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Texture.cpp.s
+.PHONY : core/src/rendering/Texture.cpp.s
+
+core/src/rendering/VertexArray.o: core/src/rendering/VertexArray.cpp.o
+.PHONY : core/src/rendering/VertexArray.o
+
+# target to build an object file
+core/src/rendering/VertexArray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o
+.PHONY : core/src/rendering/VertexArray.cpp.o
+
+core/src/rendering/VertexArray.i: core/src/rendering/VertexArray.cpp.i
+.PHONY : core/src/rendering/VertexArray.i
+
+# target to preprocess a source file
+core/src/rendering/VertexArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.i
+.PHONY : core/src/rendering/VertexArray.cpp.i
+
+core/src/rendering/VertexArray.s: core/src/rendering/VertexArray.cpp.s
+.PHONY : core/src/rendering/VertexArray.s
+
+# target to generate assembly for a file
+core/src/rendering/VertexArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.s
+.PHONY : core/src/rendering/VertexArray.cpp.s
+
+core/src/rendering/VertexBuffer.o: core/src/rendering/VertexBuffer.cpp.o
+.PHONY : core/src/rendering/VertexBuffer.o
+
+# target to build an object file
+core/src/rendering/VertexBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o
+.PHONY : core/src/rendering/VertexBuffer.cpp.o
+
+core/src/rendering/VertexBuffer.i: core/src/rendering/VertexBuffer.cpp.i
+.PHONY : core/src/rendering/VertexBuffer.i
+
+# target to preprocess a source file
+core/src/rendering/VertexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.i
+.PHONY : core/src/rendering/VertexBuffer.cpp.i
+
+core/src/rendering/VertexBuffer.s: core/src/rendering/VertexBuffer.cpp.s
+.PHONY : core/src/rendering/VertexBuffer.s
+
+# target to generate assembly for a file
+core/src/rendering/VertexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s
+.PHONY : core/src/rendering/VertexBuffer.cpp.s
+
 dep/glad/glad.o: dep/glad/glad.c.o
 .PHONY : dep/glad/glad.o
 
@@ -353,6 +545,30 @@ help:
 	@echo "... core/src/main.o"
 	@echo "... core/src/main.i"
 	@echo "... core/src/main.s"
+	@echo "... core/src/rendering/Camera.o"
+	@echo "... core/src/rendering/Camera.i"
+	@echo "... core/src/rendering/Camera.s"
+	@echo "... core/src/rendering/IndexBuffer.o"
+	@echo "... core/src/rendering/IndexBuffer.i"
+	@echo "... core/src/rendering/IndexBuffer.s"
+	@echo "... core/src/rendering/QuadMesh.o"
+	@echo "... core/src/rendering/QuadMesh.i"
+	@echo "... core/src/rendering/QuadMesh.s"
+	@echo "... core/src/rendering/Renderer.o"
+	@echo "... core/src/rendering/Renderer.i"
+	@echo "... core/src/rendering/Renderer.s"
+	@echo "... core/src/rendering/Shader.o"
+	@echo "... core/src/rendering/Shader.i"
+	@echo "... core/src/rendering/Shader.s"
+	@echo "... core/src/rendering/Texture.o"
+	@echo "... core/src/rendering/Texture.i"
+	@echo "... core/src/rendering/Texture.s"
+	@echo "... core/src/rendering/VertexArray.o"
+	@echo "... core/src/rendering/VertexArray.i"
+	@echo "... core/src/rendering/VertexArray.s"
+	@echo "... core/src/rendering/VertexBuffer.o"
+	@echo "... core/src/rendering/VertexBuffer.i"
+	@echo "... core/src/rendering/VertexBuffer.s"
 	@echo "... dep/glad/glad.o"
 	@echo "... dep/glad/glad.i"
 	@echo "... dep/glad/glad.s"

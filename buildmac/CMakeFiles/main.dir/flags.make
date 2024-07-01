@@ -4,7 +4,7 @@
 # compile CXX with clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks
+CXX_INCLUDES = -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks
 
 CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -O3 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion
 
@@ -21,6 +21,22 @@ CXX_FLAGS = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineToo
 # PCH options: CMakeFiles/main.dir/core/src/Window.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/main.dir/core/src/main.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 

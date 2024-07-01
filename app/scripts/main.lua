@@ -5,19 +5,18 @@ Cone = require("core.Cone.cone")
 function setup()
     print("Game starting")
 
-    local mouse_callback = function(key)
+    mouse_callback = function(key)
         print("Lua Mouse click: ", key)
         return false
     end
     Cone.event_listener("MouseButtonPressed", mouse_callback)
 
-    local esc_callback = function(key)
-        if key == 256 then 
-            print("Lua Escape click")
-        end
+    key_callback = function(key)
+        print("Lua cey clicked")
         return false
     end
-    Cone.event_listener("KeyPressed", esc_callback)
+    Cone.event_listener("KeyPressed", key_callback)
+
 end
 
 function cleanup()

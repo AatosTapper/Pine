@@ -51,7 +51,7 @@ endif()
 
 target_precompile_headers(main PRIVATE core/include/pch.h)
 
-target_include_directories(main PUBLIC core/include dep)
+target_include_directories(main PUBLIC core/include core/include/rendering dep)
 target_link_directories(main PUBLIC ${GLFW_LIBRARY_DIR})
 
 find_package(OpenGL REQUIRED)

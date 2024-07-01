@@ -8,11 +8,10 @@
 
 #include "FrameData.h"
 
-Application::Application() :
-    m_lua(ScriptEngine::create_lua_state())
+Application::Application(sol::state &lua) :
+    m_lua(lua)
 {
     m_set_lua_functions();
-
     ScriptEngine::run_script(m_lua, SCRIPT("config.lua"));
 
     m_window = std::make_unique<Window>(
@@ -24,9 +23,27 @@ Application::Application() :
         this->on_event(e);
         return HandlerPersistence::Continuous;
     });
+    m_renderer = std::make_unique<Renderer>();
+    m_renderer->set_window_dimensions(m_window->get_dimensions());
+    m_renderer->init();
+
+    m_bus.subscribe<WindowResizeEvent>([this](WindowResizeEvent *event) -> HandlerPersistence {
+        this->m_renderer->set_window_dimensions(glm::i32vec2(event->new_width, event->new_height));
+        this->m_renderer->regenerate_framebuffer();
+        return HandlerPersistence::Continuous;
+    });
     m_bus.subscribe<WindowCloseEvent>([this](WindowCloseEvent *event) -> HandlerPersistence {
         this->on_window_close();
         return HandlerPersistence::Single;
+    });
+    m_bus.subscribe<KeyPressedEvent>([this](KeyPressedEvent *event) -> HandlerPersistence {
+        switch (event->key)
+        {
+        case GLFW_KEY_ESCAPE:
+            this->on_window_close();
+            break;
+        }
+        return HandlerPersistence::Continuous;
     });
 }
 
@@ -36,8 +53,6 @@ Application::~Application() {
 
 void Application::on_event(Event *e) {
     m_bus.publish(e);
-
-    //std::cout << e->get_name() << std::endl;
 }
 
 void Application::on_window_close() { 
@@ -71,38 +86,50 @@ void Application::m_run() {
 
 void Application::m_set_lua_functions() {
     m_lua.set_function("pine_run", &Application::m_run, this);
-    m_set_lua_event_handlers();    
+    m_set_lua_event_handlers();
 }
 
 void Application::m_set_lua_event_handlers() {
-    m_lua.set_function("pine_set_event_handler_KeyPressed", [this](std::function<bool(int)> callback) {
-        m_bus.subscribe<KeyPressedEvent>([callback](KeyPressedEvent *event) -> HandlerPersistence {
-            return callback(event->key) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+    m_lua.set_function("pine_set_event_handler_KeyPressed", [this](sol::function callback) {
+        auto stored_callback = std::make_shared<sol::function>(callback);
+        m_bus.subscribe<KeyPressedEvent>([stored_callback](KeyPressedEvent *event) -> HandlerPersistence {
+            bool result = (*stored_callback)(event->key);
+            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });
-    m_lua.set_function("pine_set_event_handler_KeyRepeat", [this](std::function<bool(int)> callback) {
-        m_bus.subscribe<KeyRepeatEvent>([callback](KeyRepeatEvent *event) -> HandlerPersistence {
-            return callback(event->key) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+    m_lua.set_function("pine_set_event_handler_KeyRepeat", [this](sol::function callback) {
+        auto stored_callback = std::make_shared<sol::function>(callback);
+        m_bus.subscribe<KeyRepeatEvent>([stored_callback](KeyRepeatEvent *event) -> HandlerPersistence {
+            bool result = (*stored_callback)(event->key);
+            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });
-    m_lua.set_function("pine_set_event_handler_KeyReleased", [this](std::function<bool(int)> callback) {
-        m_bus.subscribe<KeyReleasedEvent>([callback](KeyReleasedEvent *event) -> HandlerPersistence {
-            return callback(event->key) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+    m_lua.set_function("pine_set_event_handler_KeyReleased", [this](sol::function callback) {
+        auto stored_callback = std::make_shared<sol::function>(callback);
+        m_bus.subscribe<KeyReleasedEvent>([stored_callback](KeyReleasedEvent *event) -> HandlerPersistence {
+            bool result = (*stored_callback)(event->key);
+            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });
-    m_lua.set_function("pine_set_event_handler_MouseButtonPressed", [this](std::function<bool(int)> callback) {
-        m_bus.subscribe<MouseButtonPressedEvent>([callback](MouseButtonPressedEvent *event) -> HandlerPersistence {
-            return callback(event->button) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+    m_lua.set_function("pine_set_event_handler_MouseButtonPressed", [this](sol::function callback) {
+        auto stored_callback = std::make_shared<sol::function>(callback);
+        m_bus.subscribe<MouseButtonPressedEvent>([stored_callback](MouseButtonPressedEvent *event) -> HandlerPersistence {
+            bool result = (*stored_callback)(event->button);
+            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });
-    m_lua.set_function("pine_set_event_handler_MouseButtonReleased", [this](std::function<bool(int)> callback) {
-        m_bus.subscribe<MouseButtonReleasedEvent>([callback](MouseButtonReleasedEvent *event) -> HandlerPersistence {
-            return callback(event->button) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+    m_lua.set_function("pine_set_event_handler_MouseButtonReleased", [this](sol::function callback) {
+        auto stored_callback = std::make_shared<sol::function>(callback);
+        m_bus.subscribe<MouseButtonReleasedEvent>([stored_callback](MouseButtonReleasedEvent *event) -> HandlerPersistence {
+            bool result = (*stored_callback)(event->button);
+            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });
-    m_lua.set_function("pine_set_event_handler_MouseMoved", [this](std::function<bool(double, double)> callback) {
-        m_bus.subscribe<MouseMovedEvent>([callback](MouseMovedEvent *event) -> HandlerPersistence {
-            return callback(event->x_pos, event->y_pos) ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+    m_lua.set_function("pine_set_event_handler_MouseMoved", [this](sol::function callback) {
+        auto stored_callback = std::make_shared<sol::function>(callback);
+        m_bus.subscribe<MouseMovedEvent>([stored_callback](MouseMovedEvent *event) -> HandlerPersistence {
+            bool result = (*stored_callback)(event->x_pos, event->y_pos);
+            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });
 }
@@ -112,7 +139,7 @@ void Application::m_update_logic() {
 }
 
 void Application::m_render() {
-    glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    //m_renderer->start_frame();
+    //m_renderer->draw_frame();
     m_window->update();
 }

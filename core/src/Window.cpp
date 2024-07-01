@@ -104,12 +104,6 @@ Window::Window(int width, int height, const char *name) {
     });
 
     glfwSetErrorCallback(glfw_error_callback);
-    /*
-    int fb_width = 0, fb_height = 0;
-    glfwGetFramebufferSize(m_window, &fb_width, &fb_height);
-    glViewport(0, 0, fb_width, fb_height);
-
-    */
 }
 
 Window::~Window() {
@@ -121,6 +115,6 @@ void Window::update() {
     glfwPollEvents();
 }
 
-glm::vec2 Window::get_dimensions() const {
-    return glm::vec2(m_data.width, m_data.heigth);
+glm::i32vec2 Window::get_dimensions() const {
+    return glm::i32vec2(m_data.width, m_data.heigth);
 }
