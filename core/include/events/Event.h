@@ -7,14 +7,16 @@ enum class EventType {
     None = 0,
     WindowResize, WindowClose,
     KeyPressed, KeyReleased, KeyRepeat,
-    MouseButtonPressed, MouseButtonReleased, MouseMoved
+    MouseButtonPressed, MouseButtonReleased, MouseMoved,
+    CustomLua
 };
 
 enum EventCategory : uint32_t {
     NONE        = 0,
     WINDOW      = 1 << 1,
     KEYBOARD    = 1 << 2,
-    MOUSE       = 1 << 3
+    MOUSE       = 1 << 3,
+    CUSTOM      = 1 << 4
 };
 
 #define EVENT_CLASS_TYPE(type) static EventType get_static_type() { return EventType::type; }; \
@@ -77,10 +79,6 @@ private:
 using HandlerVec = std::vector<std::unique_ptr<FunctionHandlerBase>>;
 class EventBus {
 public:
-    ~EventBus() {
-        clean();
-    }
-
     void publish(Event *event) {
         assert(event);
         auto handlers = m_subscribers[event->get_typeid()].get();
@@ -113,11 +111,6 @@ public:
             handlers = m_subscribers[typeid(T)].get();
         }
         handlers->push_back(std::make_unique<FunctionHandler<T>>(callback));
-    }
-
-    void clean() {
-        // segfault here
-
     }
 
 private:

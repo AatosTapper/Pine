@@ -2,25 +2,25 @@
 
 Cone = require("core.Cone.cone")
 
-function setup()
-    print("Game starting")
-
-    mouse_callback = function(key)
-        print("Lua Mouse click: ", key)
-        return false
-    end
-    Cone.event_listener("MouseButtonPressed", mouse_callback)
-
-    key_callback = function(key)
-        print("Lua cey clicked")
-        return false
-    end
-    Cone.event_listener("KeyPressed", key_callback)
-
+local mouse_button_callback = function(key, x, y)
+    print("Mouse at " .. 
+        Cone.Math.round_to_decimal(x, 1) .. ", " .. 
+        Cone.Math.round_to_decimal(y, 1))
 end
 
-function cleanup()
-    print("Game closing")
+local custom_event_callback = function(data)
+    data.update_func()
+end
+
+local function setup()
+    Cone.Event.listener("MouseButtonPressed", mouse_button_callback)
+    Cone.Event.listener("SomeGameplayEvent", custom_event_callback)
+
+    Cone.Event.create("SomeGameplayEvent", {
+        update_func = function()
+            print("update function called")
+        end
+    })
 end
 
 function main()

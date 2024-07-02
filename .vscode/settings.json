@@ -69,6 +69,7 @@
         "utility": "cpp",
         "format": "cpp",
         "typeindex": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "any": "cpp"
     }
 }

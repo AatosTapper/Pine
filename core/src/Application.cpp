@@ -5,6 +5,7 @@
 #include "events/WindowEvent.h"
 #include "events/MouseEvent.h"
 #include "events/KeyEvent.h"
+#include "events/CustomEvent.h"
 
 #include "FrameData.h"
 
@@ -33,14 +34,15 @@ Application::Application(sol::state &lua) :
         return HandlerPersistence::Continuous;
     });
     m_bus.subscribe<WindowCloseEvent>([this](WindowCloseEvent *event) -> HandlerPersistence {
-        this->on_window_close();
+        (void)event;
+        this->m_on_window_close();
         return HandlerPersistence::Single;
     });
     m_bus.subscribe<KeyPressedEvent>([this](KeyPressedEvent *event) -> HandlerPersistence {
         switch (event->key)
         {
         case GLFW_KEY_ESCAPE:
-            this->on_window_close();
+            this->m_on_window_close();
             break;
         }
         return HandlerPersistence::Continuous;
@@ -55,7 +57,7 @@ void Application::on_event(Event *e) {
     m_bus.publish(e);
 }
 
-void Application::on_window_close() { 
+void Application::m_on_window_close() { 
     m_running = false;
 }
 
@@ -72,8 +74,7 @@ void Application::m_run() {
     while (m_running) {
         frame_data.update_frame_data();
 
-        while (frame_data.frametime_accumulator >= frame_data.update_time)
-        {
+        while (frame_data.frametime_accumulator >= frame_data.update_time){
             m_update_logic();
             frame_data.update_counter++;
             frame_data.frametime_accumulator -= frame_data.update_time;
@@ -87,6 +88,12 @@ void Application::m_run() {
 void Application::m_set_lua_functions() {
     m_lua.set_function("pine_run", &Application::m_run, this);
     m_set_lua_event_handlers();
+
+    m_lua.set_function("pine_create_event_Custom", [this](const char *title, sol::object data) {
+        auto data_ptr = std::make_shared<sol::object>(data);
+        CustomLuaEvent event(title, data_ptr);
+        this->m_bus.publish(&event);
+    });
 }
 
 void Application::m_set_lua_event_handlers() {
@@ -114,7 +121,7 @@ void Application::m_set_lua_event_handlers() {
     m_lua.set_function("pine_set_event_handler_MouseButtonPressed", [this](sol::function callback) {
         auto stored_callback = std::make_shared<sol::function>(callback);
         m_bus.subscribe<MouseButtonPressedEvent>([stored_callback](MouseButtonPressedEvent *event) -> HandlerPersistence {
-            bool result = (*stored_callback)(event->button);
+            bool result = (*stored_callback)(event->button, event->x_pos, event->y_pos);
             return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });
@@ -132,6 +139,16 @@ void Application::m_set_lua_event_handlers() {
             return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });
+    m_lua.set_function("pine_set_event_handler_Custom", [this](const char *title, sol::function callback) {
+        auto stored_callback = std::make_shared<sol::function>(callback);
+        m_bus.subscribe<CustomLuaEvent>([title, stored_callback](CustomLuaEvent *event) -> HandlerPersistence {
+            if (strcmp(event->title.c_str(), title) == 0) {
+                bool result = (*stored_callback)(*event->data);
+                return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+            }
+            return HandlerPersistence::Continuous;
+        });
+    });
 }
 
 void Application::m_update_logic() {
@@ -139,7 +156,7 @@ void Application::m_update_logic() {
 }
 
 void Application::m_render() {
-    //m_renderer->start_frame();
-    //m_renderer->draw_frame();
+    m_renderer->start_frame();
+    m_renderer->draw_frame();
     m_window->update();
 }

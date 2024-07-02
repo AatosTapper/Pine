@@ -37,8 +37,8 @@ Window::Window(int width, int height, const char *name) {
         std::cout << "Failed to initialize GLAD\n";
         assert(false);
     }
-
     glfwSetWindowUserPointer(m_window, &m_data);
+
     auto resize_callback = [](GLFWwindow *window, int _width, int _height) {
         Data *data = static_cast<Data*>(glfwGetWindowUserPointer(window));
         data->width = _width;
@@ -47,6 +47,7 @@ Window::Window(int width, int height, const char *name) {
         WindowResizeEvent event(_width, _height);
         data->callback(&event);
     };
+    m_resize_callback = resize_callback;
 
     glfwSetWindowSizeCallback(m_window, resize_callback);
     glfwSetFramebufferSizeCallback(m_window, resize_callback);
@@ -59,6 +60,9 @@ Window::Window(int width, int height, const char *name) {
 
     glfwSetKeyCallback(m_window, [](GLFWwindow *window, int key, int scancode, int action, int mods) {
         Data *data = static_cast<Data*>(glfwGetWindowUserPointer(window));
+
+        (void)scancode; 
+        (void)mods;
 
         switch (action) {
             case GLFW_PRESS: {
@@ -82,9 +86,15 @@ Window::Window(int width, int height, const char *name) {
     glfwSetMouseButtonCallback(m_window, [](GLFWwindow *window, int button, int action, int mods) {
         Data *data = static_cast<Data*>(glfwGetWindowUserPointer(window));
 
+        (void)mods;
+
         switch (action) {
             case GLFW_PRESS: {
-                MouseButtonPressedEvent event(button);
+                double x, y;
+                glfwGetCursorPos(window, &x, &y);
+
+                MouseButtonPressedEvent event(button, x, y);
+                
                 data->callback(&event);
                 break;
             }

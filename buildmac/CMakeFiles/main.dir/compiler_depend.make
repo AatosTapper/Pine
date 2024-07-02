@@ -1772,6 +1772,7 @@ CMakeFiles/main.dir/core/src/Application.cpp.o: CMakeFiles/main.dir/cmake_pch_ar
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Window.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/CustomEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/Event.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/MouseEvent.h \
@@ -17195,6 +17196,8 @@ CMakeFiles/main.dir/cmake_pch_arm64.hxx:
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_generate.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_fill_n.h:
+
+/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/CustomEvent.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/common_iterator.h:
 

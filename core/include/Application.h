@@ -13,12 +13,11 @@ public:
     ~Application();
 
     void entry();
-
     void on_event(Event *e);
-    void on_window_close();
- 
+
 private:
     void m_run();
+    void m_on_window_close();
     void m_set_lua_functions();
     void m_update_logic();
     void m_render();

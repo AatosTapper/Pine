@@ -1774,6 +1774,7 @@ CMakeFiles/main.dir/core/src/Application.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Window.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/CustomEvent.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/Event.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/MouseEvent.h

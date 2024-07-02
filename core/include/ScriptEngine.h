@@ -13,8 +13,6 @@
 
 #define SCRIPT(name) "../app/scripts/" name
 
-using lua_callback = sol::function;
-
 class ScriptEngine {
 public:
     IMPL_NO_COPY(ScriptEngine)

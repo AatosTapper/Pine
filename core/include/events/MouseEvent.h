@@ -4,12 +4,14 @@
 
 class MouseButtonPressedEvent : public Event {
 public:
-    MouseButtonPressedEvent(int _button) : button(_button) {}
+    MouseButtonPressedEvent(int _button, double x, double y) : x_pos(x), y_pos(y), button(_button) {}
 
     EVENT_CLASS_TYPE(MouseButtonPressed)
     EVENT_CLASS_CATEGORY(MOUSE)
     CREATE_TYPE_INDEX(MouseButtonPressedEvent)
 
+    double x_pos = 0.0;
+    double y_pos = 0.0;
     int button = 0;
 };
 
@@ -32,6 +34,6 @@ public:
     EVENT_CLASS_CATEGORY(MOUSE)
     CREATE_TYPE_INDEX(MouseMovedEvent)
 
-    double x_pos;
-    double y_pos;
+    double x_pos = 0.0;
+    double y_pos = 0.0;
 };
