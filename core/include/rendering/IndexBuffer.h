@@ -1,7 +1,6 @@
 #pragma once
 
-class IndexBuffer
-{
+class IndexBuffer {
 public:
     IndexBuffer();
     ~IndexBuffer();

@@ -20,8 +20,7 @@ private:
 
 public:
     Texture(const Texture&) = delete;
-    Texture(Texture&& other) 
-    {
+    Texture(Texture&& other) {
         other.m_id = m_id;
         other.m_freed = m_freed;
     }

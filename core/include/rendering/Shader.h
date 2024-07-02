@@ -3,8 +3,7 @@
 #include "config.h"
 #include "pch.h"
 
-class Shader
-{
+class Shader {
 public:
     Shader(const std::string &vertex_path, const std::string &fragment_path);
     ~Shader();
