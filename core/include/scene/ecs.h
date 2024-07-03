@@ -63,7 +63,6 @@ public:
     entity_id add_entity() {
         static entity_id curr_index = 0;
         entity_id new_entity = ++curr_index;
-        m_entities.push_back(new_entity);
         return new_entity;
     }
 
@@ -75,12 +74,12 @@ public:
         assert(!has_component<T>(ent) && "Cannot have two components of the same type");
 #endif
         component_array->data.push_back(BaseComponent<T>{T{std::forward<Args>(args)...}, ent});
-        m_component_lists[ent].push_back(std::type_index(typeid(T)));
+        m_entities[ent].push_back(std::type_index(typeid(T)));
     }
 
     template<typename T>
     bool has_component(entity_id ent) {
-        for (auto it : m_component_lists[ent]) {
+        for (auto it : m_entities[ent]) {
             if (it == std::type_index(typeid(T))) return true;
         }
         return false;
@@ -113,25 +112,20 @@ public:
         ), component_array->data.end());
         m_storage[std::type_index(typeid(T))] = std::make_unique<ComponentArray<T>>(*component_array);
 
-        m_component_lists[ent].erase(std::remove_if(m_component_lists[ent].begin(), m_component_lists[ent].end(),
+        m_entities[ent].erase(std::remove_if(m_entities[ent].begin(), m_entities[ent].end(),
             [](const auto pos) {
                 return std::type_index(typeid(T)) == pos;
             }
-        ), m_component_lists[ent].end());
+        ), m_entities[ent].end());
     }
 
     void remove_entity(entity_id ent) {
-        std::vector<std::type_index> component_vec = m_component_lists[ent];
+        std::vector<std::type_index> component_vec = m_entities[ent];
         for (auto comp : component_vec) {
             std::cout << "Removed component for entity " << ent << std::endl;
             m_storage.at(comp)->removal_function(ent);
         }
-        m_component_lists.erase(ent);
-        m_entities.erase(std::remove_if(m_entities.begin(), m_entities.end(),
-            [ent](const entity_id pos) {
-                return ent == pos;
-            }
-        ), m_entities.end());
+        m_entities.erase(ent);
     }
 
     template<typename T>
@@ -159,8 +153,7 @@ public:
 
 private:
     std::unordered_map<std::type_index, std::unique_ptr<BaseComponentArray>> m_storage;
-    std::unordered_map<entity_id, std::vector<std::type_index>> m_component_lists;
-    std::vector<entity_id> m_entities;
+    std::unordered_map<entity_id, std::vector<std::type_index>> m_entities;
 
     template<typename T>
     auto m_cast(BaseComponentArray *arr) const {

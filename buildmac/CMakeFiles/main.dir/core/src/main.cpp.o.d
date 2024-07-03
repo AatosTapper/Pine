@@ -1152,4 +1152,5 @@ CMakeFiles/main.dir/core/src/main.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/ecs.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Scene.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h

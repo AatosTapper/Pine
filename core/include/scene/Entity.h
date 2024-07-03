@@ -6,6 +6,8 @@
 class Entity {
     friend class Scene;
 public:
+    Entity(ecs::entity_id ent, Scene *scene) : m_handle(ent), m_scene(scene) {}
+
     template<typename T, typename ...Args>
     void add_component(Args&&... args) {
         m_storage().add_component<T>(m_handle, std::forward<Args>(args)...);

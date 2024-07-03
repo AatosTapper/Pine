@@ -39,9 +39,9 @@ static std::string type_to_name(NodeType name) {
 
 void Node::print_node(uint32_t indentation) {
     std::string indent(indentation * 2, ' ');
-    std::cout << indent << type_to_name(type) << std::endl;
+    std::cout << indent << type_to_name(data.type) << std::endl;
     std::cout << indent << "variables [" << std::endl;
-    for (const auto &var : variables) {
+    for (const auto &var : data.variables) {
         std::cout << indent << "  " << var.name << "=" << var.value << std::endl;
     }
     std::cout << indent << "]" << std::endl;
@@ -61,9 +61,9 @@ static std::unique_ptr<Node> parse_xml(const XMLElement* element, Node *parent, 
     if (element == nullptr) return nullptr;
 
     auto node = std::make_unique<Node>();
-    node->type = name_to_type(element->Name());
+    node->data.type = name_to_type(element->Name());
 
-    if (node->type == NodeType::Undefined) {
+    if (node->data.type == NodeType::Undefined) {
         if (parent == nullptr) {
             std::cout << "Error: undefined type for root node." << std::endl;
         } else {
@@ -75,7 +75,7 @@ static std::unique_ptr<Node> parse_xml(const XMLElement* element, Node *parent, 
     }
 
     for (const XMLAttribute* attribute = element->FirstAttribute(); attribute != nullptr; attribute = attribute->Next()) {
-        node->variables.push_back({ attribute->Name(), attribute->Value() });
+        node->data.variables.push_back({ attribute->Name(), attribute->Value() });
     }
 
     for (const XMLElement* child = element->FirstChildElement(); child != nullptr; child = child->NextSiblingElement()) {

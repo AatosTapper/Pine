@@ -18,7 +18,7 @@ local function setup()
 
     Cone.Event.create("SomeGameplayEvent", {
         update_func = function()
-            print("update function called")
+            print("The event listener calls this function in the callback!")
         end
     })
 end

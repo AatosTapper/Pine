@@ -16,53 +16,24 @@ struct Component2 {
 };
 
 int main() {
-    ecs::ComponentStorage comp_storage;
-
-    auto ent1 = comp_storage.add_entity();
-    auto ent2 = comp_storage.add_entity();
-
-    comp_storage.add_component<Component1>(ent1);
-    comp_storage.add_component<Component2>(ent1, -21);
-    comp_storage.add_component<Component2>(ent2, 10);
-
-    // get component
-    if (auto data = comp_storage.get_component<Component2>(ent1)) {
-        auto &comp = data->get();
-        //std::cout << comp.bro << std::endl;
-    }
-
-    // iterate single components
-    for (auto data : comp_storage.components<Component2>()) {
-        auto &comp = *data;
-        //std::cout << comp.bro << std::endl;
-    }
-
-    // iterate multiple components
-    // this only goes though the entities with the iterator type component
-    // i think adding some sort of tag component for this is ideal
-    for (auto it = comp_storage.begin<Component2>(); it != comp_storage.end<Component2>(); it++) {
-        auto [c2, c1, f] = comp_storage.get_multiple_components<Component2, Component1, float>(it);
-        if (auto val = c2) {
-            auto &comp = val->get();
-            std::cout << comp.bro << std::endl;
-        }
-        if (auto val = c1) {
-            auto &comp = val->get();
-            std::cout << comp.bro << std::endl;
-        }
-    }
-
     Scene scene;
     auto entity1 = scene.add_entity("testi");
-    auto entity2 = scene.add_entity();
-
-    entity1.add_component<Component2>(1000);
+    auto entity2 = scene.add_entity("3");
+    auto entity3 = scene.add_entity("asad");
     entity1.add_component<Component1>();
-    entity1.add_component<float>();
-    entity1.remove();
-    entity1 = scene.add_entity("kakkeli");
-    if (auto bruh = entity1.get_component<component::Tag>()) {
-        std::cout << bruh->get().name << std::endl;
+    entity2.add_component<Component1>();
+    entity1.add_component<Component2>(69);
+    entity2.add_component<Component2>(420);
+
+    for (auto it = scene.begin<component::Tag>(); it != scene.end<component::Tag>(); it++) {
+        auto result = scene.get_multiple_components<Component1, Component2>(it);
+        std::cout << it->component.name << " loop\n";
+        auto &[a, b] = result;
+        if (auto val = b) {
+            std::cout << val->get().bro << std::endl;
+        } else {
+            std::cout << "no component" << std::endl;
+        }
     }
 
     sol::state lua = ScriptEngine::create_lua_state();

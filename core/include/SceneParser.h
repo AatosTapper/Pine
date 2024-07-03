@@ -2,6 +2,14 @@
 
 #include "pch.h"
 
+struct NodeData;
+struct Serializable {
+    virtual ~Serializable() = default;
+
+    virtual void deserialize(NodeData &data) = 0;   // from file
+    virtual NodeData serialize() = 0;               // to file
+};
+
 struct NodeVariable {
     std::string name;
     std::string value;
@@ -15,11 +23,16 @@ enum class NodeType {
     System
 };
 
-struct Node {
+struct NodeData {
     NodeType type = NodeType::Undefined;
+    std::vector<NodeVariable> variables;
+};
+
+struct Node {
+    NodeData data;
     Node *parent = nullptr;
     std::vector<std::unique_ptr<Node>> children;
-    std::vector<NodeVariable> variables;
+    
 
     void print_node(uint32_t indentation = 0);
     void print_tree(uint32_t depth = 0);
