@@ -71,6 +71,11 @@
         "typeindex": "cpp",
         "fstream": "cpp",
         "any": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "filesystem": "cpp",
+        "span": "cpp",
+        "version": "cpp",
+        "thread": "cpp",
+        "numbers": "cpp"
     }
 }

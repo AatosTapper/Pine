@@ -1,6 +1,9 @@
 #include "Application.h"
 #include "ScriptEngine.h"
 #include "scene/ecs.h"
+#include "scene/Scene.h"
+#include "scene/Entity.h"
+#include "scene/Components.h"
 
 struct Component1 {
     int bro = 0;
@@ -47,6 +50,19 @@ int main() {
             auto &comp = val->get();
             std::cout << comp.bro << std::endl;
         }
+    }
+
+    Scene scene;
+    auto entity1 = scene.add_entity("testi");
+    auto entity2 = scene.add_entity();
+
+    entity1.add_component<Component2>(1000);
+    entity1.add_component<Component1>();
+    entity1.add_component<float>();
+    entity1.remove();
+    entity1 = scene.add_entity("kakkeli");
+    if (auto bruh = entity1.get_component<component::Tag>()) {
+        std::cout << bruh->get().name << std::endl;
     }
 
     sol::state lua = ScriptEngine::create_lua_state();

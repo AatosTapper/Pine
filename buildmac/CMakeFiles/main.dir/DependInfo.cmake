@@ -36,6 +36,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx" "CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o.d"
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp" "CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o.d"
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx" "CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o.d"
+  "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp" "CMakeFiles/main.dir/core/src/scene/Scene.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/scene/Scene.cpp.o.d"
+  "/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx" "CMakeFiles/main.dir/core/src/scene/Scene.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/scene/Scene.cpp.o.d"
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp" "CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o" "gcc" "CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o.d"
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx" "CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o" "gcc" "CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o.d"
   )

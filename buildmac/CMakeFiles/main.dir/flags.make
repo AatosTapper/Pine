@@ -38,5 +38,7 @@ CXX_FLAGS = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineToo
 
 # PCH options: CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
+# PCH options: CMakeFiles/main.dir/core/src/scene/Scene.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
 # PCH options: CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 

@@ -469,6 +469,30 @@ core/src/rendering/VertexBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s
 .PHONY : core/src/rendering/VertexBuffer.cpp.s
 
+core/src/scene/Scene.o: core/src/scene/Scene.cpp.o
+.PHONY : core/src/scene/Scene.o
+
+# target to build an object file
+core/src/scene/Scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/Scene.cpp.o
+.PHONY : core/src/scene/Scene.cpp.o
+
+core/src/scene/Scene.i: core/src/scene/Scene.cpp.i
+.PHONY : core/src/scene/Scene.i
+
+# target to preprocess a source file
+core/src/scene/Scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/Scene.cpp.i
+.PHONY : core/src/scene/Scene.cpp.i
+
+core/src/scene/Scene.s: core/src/scene/Scene.cpp.s
+.PHONY : core/src/scene/Scene.s
+
+# target to generate assembly for a file
+core/src/scene/Scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/Scene.cpp.s
+.PHONY : core/src/scene/Scene.cpp.s
+
 dep/glad/glad.o: dep/glad/glad.c.o
 .PHONY : dep/glad/glad.o
 
@@ -569,6 +593,9 @@ help:
 	@echo "... core/src/rendering/VertexBuffer.o"
 	@echo "... core/src/rendering/VertexBuffer.i"
 	@echo "... core/src/rendering/VertexBuffer.s"
+	@echo "... core/src/scene/Scene.o"
+	@echo "... core/src/scene/Scene.i"
+	@echo "... core/src/scene/Scene.s"
 	@echo "... dep/glad/glad.o"
 	@echo "... dep/glad/glad.i"
 	@echo "... dep/glad/glad.s"

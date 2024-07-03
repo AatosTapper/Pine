@@ -9,13 +9,13 @@
 
 namespace ecs {
 
-using Entity = uint32_t;
+using entity_id = uint32_t;
 
 template<typename T>
 class BaseComponent {
     friend class ComponentStorage;
 public:
-    BaseComponent(T _component, Entity ent) : component(_component), m_parent_ent(ent) {}
+    BaseComponent(T _component, entity_id ent) : component(_component), m_parent_ent(ent) {}
     T component;
     
     T& operator*() {
@@ -24,33 +24,35 @@ public:
     T* operator->() {
         return &component;
     }
-
-    Entity get_entity() const {
+    entity_id get_entity() const {
         return m_parent_ent;
     }
 
 private:
-    Entity m_parent_ent;
+    entity_id m_parent_ent;
 };
 
 class BaseComponentArray {
 public:
     virtual ~BaseComponentArray() = default;
+
+    std::function<void(entity_id)> removal_function;
 };
 
 template<typename T>
 class ComponentArray : public BaseComponentArray {
 public:
+    ComponentArray(std::function<void(entity_id)> _removal_func) {
+        removal_function = _removal_func;
+    }
     std::vector<BaseComponent<T>> data;
 
     operator std::vector<BaseComponent<T>>() {
         return data;
     }
-
     typename std::vector<BaseComponent<T>>::iterator begin() {
         return data.begin();
     }
-
     typename std::vector<BaseComponent<T>>::iterator end() {
         return data.end();
     }
@@ -58,39 +60,34 @@ public:
 
 class ComponentStorage {
 public:
-    Entity add_entity() {
-        static Entity curr_index = 0;
-        Entity new_entity = ++curr_index;
+    entity_id add_entity() {
+        static entity_id curr_index = 0;
+        entity_id new_entity = ++curr_index;
         m_entities.push_back(new_entity);
         return new_entity;
     }
 
     template<typename T, typename... Args>
-    void add_component(Entity ent, Args&&... args) {
+    void add_component(entity_id ent, Args&&... args) {
         auto component_array = m_get_or_create_component_array<T>();
 
 #ifdef  ECS_SAFETY_CHECKS
         assert(!has_component<T>(ent) && "Cannot have two components of the same type");
 #endif
         component_array->data.push_back(BaseComponent<T>{T{std::forward<Args>(args)...}, ent});
-        std::cout << component_array->data.size() << std::endl;
+        m_component_lists[ent].push_back(std::type_index(typeid(T)));
     }
 
     template<typename T>
-    bool has_component(Entity ent) const {
-        auto component_array = m_storage.at(std::type_index(typeid(T))).get();
-        if (component_array == nullptr) return false;
-        
-        for (const BaseComponent<T> &it : m_cast<T>(component_array)->data) {
-            if (it.m_parent_ent == ent) {
-                return true;
-            }
+    bool has_component(entity_id ent) {
+        for (auto it : m_component_lists[ent]) {
+            if (it == std::type_index(typeid(T))) return true;
         }
         return false;
     }
 
     template<typename T>
-    std::optional<std::reference_wrapper<T>> get_component(Entity ent) {
+    std::optional<std::reference_wrapper<T>> get_component(entity_id ent) {
         auto component_array = m_storage[std::type_index(typeid(T))].get();
         if (component_array == nullptr) return std::nullopt;
 
@@ -100,6 +97,41 @@ public:
             }
         }
         return std::nullopt;
+    }
+
+    template<typename T>
+    void remove_component(entity_id ent) {
+        auto component_array = m_cast<T>(m_storage.at(std::type_index(typeid(T))).get());
+        if (component_array == nullptr) return;
+#ifdef  ECS_SAFETY_CHECKS
+        assert(has_component<T>(ent) && "Cannot remove a component that doesn't exist");
+#endif
+        component_array->data.erase(std::remove_if(component_array->data.begin(), component_array->data.end(),
+            [ent](const BaseComponent<T> &comp) {
+                return comp.m_parent_ent == ent;
+            }
+        ), component_array->data.end());
+        m_storage[std::type_index(typeid(T))] = std::make_unique<ComponentArray<T>>(*component_array);
+
+        m_component_lists[ent].erase(std::remove_if(m_component_lists[ent].begin(), m_component_lists[ent].end(),
+            [](const auto pos) {
+                return std::type_index(typeid(T)) == pos;
+            }
+        ), m_component_lists[ent].end());
+    }
+
+    void remove_entity(entity_id ent) {
+        std::vector<std::type_index> component_vec = m_component_lists[ent];
+        for (auto comp : component_vec) {
+            std::cout << "Removed component for entity " << ent << std::endl;
+            m_storage.at(comp)->removal_function(ent);
+        }
+        m_component_lists.erase(ent);
+        m_entities.erase(std::remove_if(m_entities.begin(), m_entities.end(),
+            [ent](const entity_id pos) {
+                return ent == pos;
+            }
+        ), m_entities.end());
     }
 
     template<typename T>
@@ -114,20 +146,21 @@ public:
         return component_array->data.end();
     }
 
-    template<typename... Types, typename Iterator>
-    std::tuple<std::optional<std::reference_wrapper<Types>>...> get_multiple_components(Iterator it) {
-        return std::make_tuple(get_component<Types>(it->get_entity())...);
-    }
-
     template<typename T>
     ComponentArray<T> &components() {
         auto component_array = m_get_or_create_component_array<T>();
         return *m_cast<T>(component_array);
     }
 
+    template<typename... Types, typename Iterator>
+    std::tuple<std::optional<std::reference_wrapper<Types>>...> get_multiple_components(Iterator it) {
+        return std::make_tuple(get_component<Types>(it->m_parent_ent)...);
+    }
+
 private:
     std::unordered_map<std::type_index, std::unique_ptr<BaseComponentArray>> m_storage;
-    std::vector<Entity> m_entities;
+    std::unordered_map<entity_id, std::vector<std::type_index>> m_component_lists;
+    std::vector<entity_id> m_entities;
 
     template<typename T>
     auto m_cast(BaseComponentArray *arr) const {
@@ -138,7 +171,9 @@ private:
     auto m_get_or_create_component_array() {
         auto component_array = m_storage[std::type_index(typeid(T))].get();
         if (component_array == nullptr) {
-            m_storage[std::type_index(typeid(T))] = std::make_unique<ComponentArray<T>>();
+            m_storage[std::type_index(typeid(T))] = std::make_unique<ComponentArray<T>>([this](entity_id ent) {
+                this->remove_component<T>(ent);
+            });
             component_array = m_storage[std::type_index(typeid(T))].get();
         }
         return m_cast<T>(component_array);
