@@ -6,6 +6,7 @@
 #include "events/MouseEvent.h"
 #include "events/KeyEvent.h"
 #include "events/CustomEvent.h"
+#include "scene/LuaScene.h"
 
 #include "FrameData.h"
 
@@ -68,19 +69,17 @@ void Application::entry() {
 }
 
 void Application::m_run() {
-    const double updates_per_sec = ScriptEngine::get_config_var_double(m_lua, "updates_per_sec");
-    FrameData frame_data(updates_per_sec);
+    assert(m_scene_manager.get_scene() && "Cannot start gameloop without a scene selected");
 
+    FrameData frame_data(ScriptEngine::get_config_var_double(m_lua, "updates_per_sec"));
     while (m_running) {
         frame_data.update_frame_data();
-
         while (frame_data.frametime_accumulator >= frame_data.update_time){
             m_update_logic();
             frame_data.update_counter++;
             frame_data.frametime_accumulator -= frame_data.update_time;
         }
         m_render();
-
         frame_data.log_frame();
     }
 }
@@ -94,6 +93,10 @@ void Application::m_set_lua_functions() {
         CustomLuaEvent event(title, data_ptr);
         this->m_bus.publish(&event);
     });
+
+    set_lua_entity(m_lua);
+    set_lua_components(m_lua);
+    set_lua_scene(m_lua, m_scene_manager);
 }
 
 void Application::m_set_lua_event_handlers() {

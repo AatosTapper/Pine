@@ -76,6 +76,9 @@
         "span": "cpp",
         "version": "cpp",
         "thread": "cpp",
-        "numbers": "cpp"
+        "numbers": "cpp",
+        "stack": "cpp",
+        "queue": "cpp",
+        "stop_token": "cpp"
     }
 }

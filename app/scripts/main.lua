@@ -21,6 +21,17 @@ local function setup()
             print("The event listener calls this function in the callback!")
         end
     })
+
+    scene = pine_Scene.new()
+    entity1 = scene:add_entity("entity created in lua")
+    tag_comp = entity1:get_component_Tag()
+
+    entity1:add_component_Script()
+    comp = entity1:get_component_Script()
+    comp.src = "afsadfaklsalfjsd"
+    print(comp.src)
+
+    pine_set_scene(scene)
 end
 
 function main()

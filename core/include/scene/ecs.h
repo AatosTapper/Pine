@@ -69,7 +69,6 @@ public:
     template<typename T, typename... Args>
     void add_component(entity_id ent, Args&&... args) {
         auto component_array = m_get_or_create_component_array<T>();
-
 #ifdef  ECS_SAFETY_CHECKS
         assert(!has_component<T>(ent) && "Cannot have two components of the same type");
 #endif
@@ -81,6 +80,13 @@ public:
     bool has_component(entity_id ent) {
         for (auto it : m_entities[ent]) {
             if (it == std::type_index(typeid(T))) return true;
+        }
+        return false;
+    }
+
+    bool _rt_has_component(entity_id ent, std::type_index type) {
+        for (auto it : m_entities[ent]) {
+            if (it == type) return true;
         }
         return false;
     }

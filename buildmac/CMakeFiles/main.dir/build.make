@@ -292,12 +292,28 @@ CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp -o CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s
 
+CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp
+CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx
+CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
+CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o -MF CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o.d -o CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp
+
+CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp > CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.i
+
+CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp -o CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.s
+
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/core/src/scene/Scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/core/src/scene/Scene.cpp.o"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/scene/Scene.cpp.o -MF CMakeFiles/main.dir/core/src/scene/Scene.cpp.o.d -o CMakeFiles/main.dir/core/src/scene/Scene.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp
 
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.i: cmake_force
@@ -313,7 +329,7 @@ CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: /Users/aatostapper/Documents/De
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o -MF CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o.d -o CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp
 
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.i: cmake_force
@@ -339,6 +355,7 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o" \
 "CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o" \
 "CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o" \
+"CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o" \
 "CMakeFiles/main.dir/core/src/scene/Scene.cpp.o" \
 "CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o"
 
@@ -359,6 +376,7 @@ main: CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o
 main: CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o
 main: CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o
 main: CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o
+main: CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o
 main: CMakeFiles/main.dir/core/src/scene/Scene.cpp.o
 main: CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o
 main: CMakeFiles/main.dir/build.make
@@ -367,7 +385,7 @@ main: /opt/homebrew/lib/liblua5.4.dylib
 main: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework
 main: libglad.a
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

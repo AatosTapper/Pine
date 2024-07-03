@@ -1149,8 +1149,11 @@ CMakeFiles/main.dir/core/src/main.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/IndexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/ecs.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneManager.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stack \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/deque \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Scene.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/ecs.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h

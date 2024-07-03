@@ -4,6 +4,8 @@
 #include "config.h"
 #include "SceneParser.h"
 
+// REMEMBER TO REGISTER THE COMPONENT IN LuaScene.cpp
+
 namespace component {
 
 struct Tag {
@@ -11,7 +13,18 @@ struct Tag {
 };
 
 struct Transform {
-    glm::mat4 transform{};
+    double x = 0.0;
+    double y = 0.0;
+    double sx = 1.0;
+    double sy = 1.0;
+};
+
+struct Script {
+    std::string src;
+};
+
+struct VarInt {
+    int var;
 };
 
 // Example on implementing serialization

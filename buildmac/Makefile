@@ -469,6 +469,30 @@ core/src/rendering/VertexBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s
 .PHONY : core/src/rendering/VertexBuffer.cpp.s
 
+core/src/scene/LuaScene.o: core/src/scene/LuaScene.cpp.o
+.PHONY : core/src/scene/LuaScene.o
+
+# target to build an object file
+core/src/scene/LuaScene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o
+.PHONY : core/src/scene/LuaScene.cpp.o
+
+core/src/scene/LuaScene.i: core/src/scene/LuaScene.cpp.i
+.PHONY : core/src/scene/LuaScene.i
+
+# target to preprocess a source file
+core/src/scene/LuaScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.i
+.PHONY : core/src/scene/LuaScene.cpp.i
+
+core/src/scene/LuaScene.s: core/src/scene/LuaScene.cpp.s
+.PHONY : core/src/scene/LuaScene.s
+
+# target to generate assembly for a file
+core/src/scene/LuaScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.s
+.PHONY : core/src/scene/LuaScene.cpp.s
+
 core/src/scene/Scene.o: core/src/scene/Scene.cpp.o
 .PHONY : core/src/scene/Scene.o
 
@@ -593,6 +617,9 @@ help:
 	@echo "... core/src/rendering/VertexBuffer.o"
 	@echo "... core/src/rendering/VertexBuffer.i"
 	@echo "... core/src/rendering/VertexBuffer.s"
+	@echo "... core/src/scene/LuaScene.o"
+	@echo "... core/src/scene/LuaScene.i"
+	@echo "... core/src/scene/LuaScene.s"
 	@echo "... core/src/scene/Scene.o"
 	@echo "... core/src/scene/Scene.i"
 	@echo "... core/src/scene/Scene.s"

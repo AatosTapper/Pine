@@ -27,6 +27,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o.d"
   "CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o"
   "CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o.d"
+  "CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o"
+  "CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o.d"
   "CMakeFiles/main.dir/core/src/scene/Scene.cpp.o"
   "CMakeFiles/main.dir/core/src/scene/Scene.cpp.o.d"
   "CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o"

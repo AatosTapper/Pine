@@ -7,6 +7,8 @@ class Entity {
     friend class Scene;
 public:
     Entity(ecs::entity_id ent, Scene *scene) : m_handle(ent), m_scene(scene) {}
+    Entity() = default;
+    Entity(Scene *scene) { *this = scene->add_entity(); }
 
     template<typename T, typename ...Args>
     void add_component(Args&&... args) {
@@ -40,6 +42,6 @@ private:
 
     ecs::ComponentStorage &m_storage() {
         assert(m_scene && "cannot use a removed entity");
-        return m_scene->m_storage;
+        return *m_scene->m_storage.get();
     }
 };

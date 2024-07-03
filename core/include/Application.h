@@ -6,6 +6,7 @@
 #include "Window.h"
 #include "events/Event.h"
 #include "rendering/Renderer.h"
+#include "scene/SceneManager.h"
 
 class Application {
 public:
@@ -23,9 +24,9 @@ private:
     void m_render();
 
     void m_set_lua_event_handlers();
-
     
     EventBus m_bus;
+    SceneManager m_scene_manager;
     sol::state &m_lua;
     std::unique_ptr<Window> m_window = nullptr;
     std::unique_ptr<Renderer> m_renderer = nullptr;
