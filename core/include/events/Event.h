@@ -106,7 +106,7 @@ public:
     void subscribe(EventCallback<T> callback) {
         auto handlers = m_subscribers[typeid(T)].get();
 
-        if (handlers == nullptr || handlers->size() == 0) {
+        if (handlers == nullptr) [[unlikely]] {
             m_subscribers[typeid(T)] = std::make_unique<HandlerVec>();
             handlers = m_subscribers[typeid(T)].get();
         }

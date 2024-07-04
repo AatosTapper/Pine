@@ -74,7 +74,7 @@ void Application::m_run() {
     FrameData frame_data(ScriptEngine::get_config_var_double(m_lua, "updates_per_sec"));
     while (m_running) {
         frame_data.update_frame_data();
-        while (frame_data.frametime_accumulator >= frame_data.update_time){
+        while (frame_data.frametime_accumulator >= frame_data.update_time) {
             m_update_logic();
             frame_data.update_counter++;
             frame_data.frametime_accumulator -= frame_data.update_time;

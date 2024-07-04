@@ -94,10 +94,10 @@ public:
     template<typename T>
     std::optional<std::reference_wrapper<T>> get_component(entity_id ent) {
         auto component_array = m_storage[std::type_index(typeid(T))].get();
-        if (component_array == nullptr) return std::nullopt;
+        if (component_array == nullptr) [[unlikely]] return std::nullopt;
 
         for (BaseComponent<T> &it : m_cast<T>(component_array)->data) {
-            if (it.m_parent_ent == ent) {
+            if (it.m_parent_ent == ent) [[unlikely]] {
                 return std::optional<std::reference_wrapper<T>>(it.component);
             }
         }
@@ -107,7 +107,7 @@ public:
     template<typename T>
     void remove_component(entity_id ent) {
         auto component_array = m_cast<T>(m_storage.at(std::type_index(typeid(T))).get());
-        if (component_array == nullptr) return;
+        if (component_array == nullptr) [[unlikely]] return;
 #ifdef  ECS_SAFETY_CHECKS
         assert(has_component<T>(ent) && "Cannot remove a component that doesn't exist");
 #endif
@@ -169,7 +169,7 @@ private:
     template<typename T>
     auto m_get_or_create_component_array() {
         auto component_array = m_storage[std::type_index(typeid(T))].get();
-        if (component_array == nullptr) {
+        if (component_array == nullptr) [[unlikely]] {
             m_storage[std::type_index(typeid(T))] = std::make_unique<ComponentArray<T>>([this](entity_id ent) {
                 this->remove_component<T>(ent);
             });

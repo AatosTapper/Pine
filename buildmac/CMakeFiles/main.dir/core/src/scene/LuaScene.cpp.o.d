@@ -878,13 +878,9 @@ CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/bitset \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/LuaScene.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp \
-  /opt/homebrew/include/lua/lua.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp \
@@ -900,8 +896,9 @@ CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp \
-  /opt/homebrew/include/lua/lua.h /opt/homebrew/include/lua/luaconf.h \
-  /opt/homebrew/include/lua/lualib.h /opt/homebrew/include/lua/lauxlib.h \
+  /opt/homebrew/include/lua/lua.hpp /opt/homebrew/include/lua/lua.h \
+  /opt/homebrew/include/lua/luaconf.h /opt/homebrew/include/lua/lualib.h \
+  /opt/homebrew/include/lua/lauxlib.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h \
@@ -998,7 +995,8 @@ CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/LuaScene.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Scene.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/ecs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/typeindex \
@@ -1145,6 +1143,8 @@ CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x3.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/type_ptr.inl \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneManager.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stack \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/deque

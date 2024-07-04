@@ -8,3 +8,11 @@
 #include <cassert>
 #include <iostream>
 #include <optional>
+
+#ifndef _SOL_INCLUDED
+#define _SOL_INCLUDED
+    #define SOL_SAFE_USERTYPE 1
+    #define SOL_ALL_SAFETIES_ON 1
+    #define SOL_EXCEPTIONS_ALWAYS_UNSAFE 1
+    #include <sol/sol.hpp>
+#endif

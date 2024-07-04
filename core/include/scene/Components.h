@@ -3,12 +3,15 @@
 #include "pch.h"
 #include "config.h"
 #include "SceneParser.h"
+#include "ScriptEngine.h"
 
 // REMEMBER TO REGISTER THE COMPONENT IN LuaScene.cpp
 
 namespace component {
 
 struct Tag {
+    Tag() = default;
+    Tag(std::string _name) : name(_name) {}
     std::string name;
 };
 
@@ -20,11 +23,19 @@ struct Transform {
 };
 
 struct Script {
+    Script() {
+        std::cout << "Script constructor called without arguments. " << std::endl;
+    }
+    Script(std::string _src) : src(_src) {
+        std::cout << "Script constructor called with arguments: " << src << std::endl;
+    }
     std::string src;
 };
 
-struct VarInt {
-    int var;
+struct Table {
+    Table() = default;
+    Table(sol::table _data) : data(_data) {}
+    sol::table data{};
 };
 
 // Example on implementing serialization

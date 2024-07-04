@@ -11,7 +11,7 @@ public:
     void pop() { m_scene_stack.pop(); }
 
     Scene *get_scene() const { 
-        if (m_scene_stack.empty()) return nullptr;
+        if (m_scene_stack.empty()) [[unlikely]] return nullptr;
         return m_scene_stack.top().get(); 
     }
     

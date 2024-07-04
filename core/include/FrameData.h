@@ -39,8 +39,7 @@ struct FrameData {
     }
 
     void log_frame() {
-        if (update_counter == updates_per_sec)
-        {
+        if (update_counter == updates_per_sec) [[unlikely]] {
             fps_log_accumulator /= static_cast<double>(frame_counter);
             log_frametime();
             fps_log_accumulator = 0.0;

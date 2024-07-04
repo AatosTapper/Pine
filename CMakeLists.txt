@@ -25,14 +25,14 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
     find_package(Lua REQUIRED)
     include_directories(${LUA_INCLUDE_DIR})
 
-    set(CMAKE_CXX_COMPILER clang++)
+    set(CMAKE_CXX_COMPILER g++)
 
     target_compile_options(main PRIVATE 
-        -O3
+        -Ofast
+        -flto
         -Wall
         -Wextra
         -Wpedantic
-        -Wconversion -Wsign-conversion
     )
 else () # windows
     set(GLFW_LIBRARY_DIR "C:/Program Files/glfw-3.4/glfw-3.4.bin.WIN64")
@@ -45,7 +45,7 @@ else () # windows
     set(CMAKE_CXX_COMPILER "cl")
 
     target_compile_options(main PRIVATE 
-        "/W3" "/O3" "/DNDEBUG" "/Zi" "/Gy"
+        "/W3" "/O3" "/GL" "/DNDEBUG" "/Zi" "/Gy"
     )
 endif()
 
@@ -57,3 +57,5 @@ target_link_directories(main PUBLIC ${GLFW_LIBRARY_DIR})
 find_package(OpenGL REQUIRED)
 
 target_link_libraries(main ${GLFW_LIB} ${LUA_LIBRARIES} OpenGL::GL glad)
+
+#set_target_properties(main PROPERTIES UNITY_BUILD ON UNITY_BUILD_MODE BATCH UNITY_BUILD_BATCH_SIZE 16)

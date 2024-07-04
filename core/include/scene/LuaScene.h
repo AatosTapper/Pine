@@ -1,6 +1,7 @@
 #pragma once
 
-#include "ScriptEngine.h"
+#include "pch.h"
+
 class SceneManager;
 
 void set_lua_entity(sol::state &lua);

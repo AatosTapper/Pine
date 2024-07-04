@@ -1,7 +1,16 @@
 #include "ScriptEngine.h"
 
+static void lua_panic(sol::optional<std::string> maybe_msg) {
+    std::cerr << "Lua error, application will abort" << std::endl;
+    if (maybe_msg) {
+        const std::string& msg = maybe_msg.value();
+        std::cerr << "\terror message: " << msg << std::endl;
+    }
+    std::abort();
+}
+
 sol::state ScriptEngine::create_lua_state() {
-    sol::state state;
+    sol::state state(sol::c_call<decltype(&lua_panic), &lua_panic>);
     state.open_libraries( // not ideal for safety
         sol::lib::base, 
         sol::lib::math, 
@@ -18,11 +27,19 @@ sol::state ScriptEngine::create_lua_state() {
 
 void ScriptEngine::run_script(sol::state &lua, const std::string &file_path) {
     try {
-        lua.script_file(file_path);
+        lua.safe_script_file(file_path);
     }
     catch (const sol::error &e) {
-        std::cerr << e.what() << "\n\nClosing application with assert" << std::endl;
-        assert(false);
+        std::cerr << "Sol2 caught error: " << e.what() << "\n\nClosing application with assert" << std::endl;
+        std::abort();
+    }
+    catch (const std::exception &e) {
+        std::cerr << "Standard exception: " << e.what() << std::endl;
+        std::abort();
+    }
+    catch (...) {
+        std::cerr << "Unknown error occurred." << std::endl;
+        std::abort();
     }
 }
 

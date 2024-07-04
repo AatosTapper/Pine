@@ -710,6 +710,7 @@ CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/errno.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -728,6 +729,7 @@ CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -882,6 +884,123 @@ CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/Application.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -2775,6 +2894,7 @@ CMakeFiles/main.dir/core/src/SceneParser.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/filesystem
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/fstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
@@ -2951,7 +3071,124 @@ CMakeFiles/main.dir/core/src/SceneParser.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.h
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -4667,6 +4904,7 @@ CMakeFiles/main.dir/core/src/Window.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -4685,6 +4923,7 @@ CMakeFiles/main.dir/core/src/Window.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -4983,6 +5222,123 @@ CMakeFiles/main.dir/core/src/Window.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/main.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -6857,6 +7213,7 @@ CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -6875,6 +7232,7 @@ CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -7168,6 +7526,123 @@ CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -7880,6 +8355,7 @@ CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -7898,6 +8374,7 @@ CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -8191,6 +8668,123 @@ CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -8903,6 +9497,7 @@ CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -8921,6 +9516,7 @@ CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -9219,6 +9815,123 @@ CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -9931,6 +10644,7 @@ CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -9949,6 +10663,7 @@ CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -10252,6 +10967,123 @@ CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -10982,6 +11814,7 @@ CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/filesystem
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/fstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
@@ -11002,6 +11835,7 @@ CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -11295,6 +12129,123 @@ CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -12007,6 +12958,7 @@ CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -12025,6 +12977,7 @@ CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -12319,6 +13272,123 @@ CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -13031,6 +14101,7 @@ CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -13049,6 +14120,7 @@ CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -13344,6 +14416,123 @@ CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -14056,6 +15245,7 @@ CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -14074,6 +15264,7 @@ CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -14367,6 +15558,123 @@ CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -16232,6 +17540,7 @@ CMakeFiles/main.dir/core/src/scene/Scene.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -16250,6 +17559,7 @@ CMakeFiles/main.dir/core/src/scene/Scene.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -16406,12 +17716,14 @@ CMakeFiles/main.dir/core/src/scene/Scene.cpp.o
  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Scene.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/ecs.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/GLFW/glfw3.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/KHR/khrplatform.h
@@ -16548,6 +17860,123 @@ CMakeFiles/main.dir/core/src/scene/Scene.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -17258,6 +18687,7 @@ CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/errno.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/execution
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios
@@ -17276,6 +18706,7 @@ CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/optional
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ratio
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdexcept
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdint.h
@@ -17429,6 +18860,123 @@ CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o
  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/abort.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/assert.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/base_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bind_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/call.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/coroutine.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/debug.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/demangle.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/deprecate.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/dump_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/ebco.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/environment.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/error_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/forward_detail.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_overloaded.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateful.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_stateless.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/function_types_templated.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/in_place.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/inheritance.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/load_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/lua_value.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/make_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/metatable.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/object_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/optional_implementation.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/overload.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pairs_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/pointer_like.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/policies.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/property.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protect.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/protected_handler.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/raii.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/resolve.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack/detail/pairs.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_check_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_field.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_qualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_get_unqualified.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_guard.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_pop.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_probe.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_proxy_base.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_push.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/stack_reference.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_handling.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/state_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/string_view.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_iterator.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/table_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/thread.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tie.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/trampoline.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/tuple.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/types.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unicode.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unique_usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/unsafe_function_result.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/userdata.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_container_launch.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_core.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_proxy.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_storage.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/usertype_traits.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/wrapper.hpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.h
+ /opt/homebrew/include/lua/lauxlib.h
+ /opt/homebrew/include/lua/lua.h
+ /opt/homebrew/include/lua/lua.hpp
+ /opt/homebrew/include/lua/luaconf.h
+ /opt/homebrew/include/lua/lualib.h
 
