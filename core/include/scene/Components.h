@@ -18,18 +18,39 @@ struct Tag {
 struct Transform {
     double x = 0.0;
     double y = 0.0;
-    double sx = 1.0;
-    double sy = 1.0;
+    float sx = 1.0;
+    float sy = 1.0;
+
+    void set_pos(double _x, double _y) { x = _x; y = _y; }
+    void set_size(float _x, float _y) { sx = _x; sy = _y; }
 };
 
+/// Define a general script file that is ran when called
 struct Script {
-    Script() {
-        std::cout << "Script constructor called without arguments. " << std::endl;
-    }
-    Script(std::string _src) : src(_src) {
-        std::cout << "Script constructor called with arguments: " << src << std::endl;
-    }
-    std::string src;
+    Script() = default;
+    Script(std::string str) : m_src(str) {}
+
+    void set_src(std::string str) { m_src = str; }
+    void run(sol::state &lua) { ScriptEngine::run_script(lua, SCRIPT() + m_src); }
+
+private:
+    std::string m_src;
+};
+
+/// Define custom functions for different object lifetime events
+struct CustomBehaviour {
+    void set_on_attach(sol::function func) { m_on_attach = func; }
+    void set_on_update(sol::function func) { m_on_update = func; }
+    void set_on_remove(sol::function func) { m_on_remove = func; }
+
+    void call_on_attach() { m_on_attach(); }
+    void call_on_update() { m_on_update(); }
+    void call_on_remove() { m_on_remove(); }
+
+private:
+    sol::function m_on_attach;
+    sol::function m_on_update;
+    sol::function m_on_remove;
 };
 
 struct Table {

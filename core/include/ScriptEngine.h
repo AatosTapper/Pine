@@ -6,6 +6,9 @@
 
 #define SCRIPT(name) "../app/" name
 
+#define LUA_VEC(TYPE, lua) \
+    lua.set_function("pine_"#TYPE"_vec", []() -> std::vector<TYPE> { return {}; })
+
 class ScriptEngine {
 public:
     IMPL_NO_COPY(ScriptEngine)

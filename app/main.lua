@@ -22,16 +22,22 @@ local function setup()
         end
     })
 
-    scene = pine_Scene.new()
-    entity1 = scene:add_entity("player")
-    tag_comp = entity1:get_component_Tag()
+    scene = pine_set_scene(pine_Scene:new())
 
-    entity1:add_component_Script()
-    print(entity1:get_component_Script().src)
-    entity1:get_component_Script().src = "kakkeli"
-    print(entity1:get_component_Script().src)
+    spawner_ent = scene:add_entity("spawner")
+    spawner_ent:add_component_Script();
+
+    script_comp = spawner:get_component_Script()
+    script_comp:set_src("scripts/spawn_script.lua")
     
-    pine_set_scene(scene)
+    script_comp:run()
+    script_comp:run()
+    script_comp:run()
+    script_comp:run()
+
+    for i, v in ipairs(scene:get_entities()) do
+        print(v:get_component_Tag().name)
+    end
 end
 
 function main()

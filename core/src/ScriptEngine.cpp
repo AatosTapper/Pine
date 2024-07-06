@@ -30,16 +30,13 @@ void ScriptEngine::run_script(sol::state &lua, const std::string &file_path) {
         lua.safe_script_file(file_path);
     }
     catch (const sol::error &e) {
-        std::cerr << "Sol2 caught error: " << e.what() << "\n\nClosing application with assert" << std::endl;
-        std::abort();
+        std::cerr << "Sol2 caught error: " << e.what() << std::endl;
     }
     catch (const std::exception &e) {
         std::cerr << "Standard exception: " << e.what() << std::endl;
-        std::abort();
     }
     catch (...) {
         std::cerr << "Unknown error occurred." << std::endl;
-        std::abort();
     }
 }
 

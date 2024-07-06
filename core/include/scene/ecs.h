@@ -134,6 +134,10 @@ public:
         m_entities.erase(ent);
     }
 
+    const auto &entities() const {
+        return m_entities;
+    }
+
     template<typename T>
     std::vector<BaseComponent<T>>::iterator begin() {
         auto component_array = m_get_or_create_component_array<T>();

@@ -17,8 +17,9 @@ public:
         return *this;
     }
 
-
     Entity add_entity(std::string name = "");
+
+    std::vector<Entity> get_entities();
 
     template<typename T>
     auto &components() {

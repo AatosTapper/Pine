@@ -8,7 +8,11 @@
 class SceneManager {
 public:
     void push(std::unique_ptr<Scene> scene) { m_scene_stack.push(std::move(scene)); }
-    void pop() { m_scene_stack.pop(); }
+    void pop() {
+        if (m_scene_stack.empty()) [[unlikely]] return;
+        m_scene_stack.pop(); 
+    }
+    uint32_t num_scenes() { return m_scene_stack.size(); }
 
     Scene *get_scene() const { 
         if (m_scene_stack.empty()) [[unlikely]] return nullptr;

@@ -60,6 +60,8 @@ end
 
 -- print any lua table
 Cone.print_table = function(node)
+    if node ~= table then print("ERROR: can't Cone.print_table a node that is not a table") return end
+
     local cache, stack, output = {},{},{}
     local depth = 1
     local output_str = "{\n"

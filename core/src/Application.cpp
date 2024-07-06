@@ -10,6 +10,7 @@
 
 #include "FrameData.h"
 
+// @Lua API
 Application::Application(sol::state &lua) :
     m_lua(lua)
 {
@@ -84,6 +85,7 @@ void Application::m_run() {
     }
 }
 
+// @Lua API
 void Application::m_set_lua_functions() {
     m_lua.set_function("pine_run", &Application::m_run, this);
     m_set_lua_event_handlers();
@@ -97,8 +99,11 @@ void Application::m_set_lua_functions() {
     set_lua_entity(m_lua);
     set_lua_components(m_lua);
     set_lua_scene(m_lua, m_scene_manager);
+
+    LUA_VEC(int, m_lua);
 }
 
+// @Lua API
 void Application::m_set_lua_event_handlers() {
     m_lua.set_function("pine_set_event_handler_KeyPressed", [this](sol::function callback) {
         auto stored_callback = std::make_shared<sol::function>(callback);
