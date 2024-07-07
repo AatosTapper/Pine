@@ -2,7 +2,7 @@
 
 static void lua_panic(sol::optional<std::string> maybe_msg) {
     std::cerr << "Lua error, application will abort" << std::endl;
-    if (maybe_msg) {
+    if (maybe_msg) [[likely]] {
         const std::string& msg = maybe_msg.value();
         std::cerr << "\terror message: " << msg << std::endl;
     }
@@ -17,7 +17,8 @@ sol::state ScriptEngine::create_lua_state() {
         sol::lib::coroutine, 
         sol::lib::string,
         sol::lib::table,
-        sol::lib::package
+        sol::lib::package,
+        sol::lib::os
     );
     state.script(R"(
         package.path = package.path .. ";../?.lua"

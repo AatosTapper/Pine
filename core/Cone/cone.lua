@@ -2,11 +2,13 @@
 -- It consists of:
 
 --     Cone -> language utils like enum
+--     Cone.Key   -> keyboard keys
 --     Cone.Math    -> math utils
 --     Cone.Event   -> interfaces for using core events
 Cone = {}
 Cone.Math = require("core.Cone.math")
 Cone.Event = require("core.Cone.event")
+Cone.Key = require("core.Cone.keys")
 
 --[[    enum
 
@@ -138,6 +140,14 @@ Cone.print_table = function(node)
     output_str = table.concat(output)
 
     print(output_str)
+end
+
+-- Returns microseconds
+Cone.profiler = function(func)
+    local startTime = os.clock()
+    func()
+    local endTime = os.clock()
+    return (endTime - startTime) * 10^6
 end
 
 return Cone

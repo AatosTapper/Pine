@@ -79,6 +79,12 @@
         "numbers": "cpp",
         "stack": "cpp",
         "queue": "cpp",
-        "stop_token": "cpp"
+        "stop_token": "cpp",
+        "__tree": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp",
+        "ranges": "cpp"
     }
 }

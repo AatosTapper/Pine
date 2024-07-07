@@ -1,4 +1,4 @@
-CMakeFiles/main.dir/Unity/unity_0_cxx.cxx.o: \
+CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h \
@@ -878,14 +878,9 @@ CMakeFiles/main.dir/Unity/unity_0_cxx.cxx.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/bitset \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/Unity/unity_0_cxx.cxx \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Application.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Application.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/sol.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/version.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/config.hpp \
-  /opt/homebrew/include/lua/lua.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/prologue.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/epilogue.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/detail/build_version.hpp \
@@ -901,8 +896,9 @@ CMakeFiles/main.dir/Unity/unity_0_cxx.cxx.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/bytecode.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/lua_version.hpp \
-  /opt/homebrew/include/lua/lua.h /opt/homebrew/include/lua/luaconf.h \
-  /opt/homebrew/include/lua/lualib.h /opt/homebrew/include/lua/lauxlib.h \
+  /opt/homebrew/include/lua/lua.hpp /opt/homebrew/include/lua/lua.h \
+  /opt/homebrew/include/lua/luaconf.h /opt/homebrew/include/lua/lualib.h \
+  /opt/homebrew/include/lua/lauxlib.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.3.c.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/compatibility/compat-5.4.h \
@@ -999,207 +995,13 @@ CMakeFiles/main.dir/Unity/unity_0_cxx.cxx.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_args.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/LuaEvents.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Window.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glad/glad.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/KHR/khrplatform.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/GLFW/glfw3.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/glm.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/_fixes.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cfloat \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/float.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/float.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/float.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/fwd.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_int.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/setup.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../simd/platform.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_float.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_vec.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/precision.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_vec2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_vec2.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_vec3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_vec3.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vec4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_vec4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_vec4.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_vec4_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/mat2x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat2x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../fwd.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat2x2.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_matrix.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../detail/precision.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../detail/setup.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../detail/type_mat.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../vec2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../vec3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../vec4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../mat2x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../mat2x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat2x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat2x3.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../mat2x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat2x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat2x4.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../mat3x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat3x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat3x2.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../mat3x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat3x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat3x3.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../mat3x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat3x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat3x4.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../mat4x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat4x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat4x2.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../mat4x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat4x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat4x3.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../mat4x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat4x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat4x4.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_mat4x4_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_matrix.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../geometric.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_geometric.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_geometric.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_exponential.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_vec1.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_vec1.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_exponential.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_vector_relational.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_vector_relational.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_vector_relational_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/_vectorize.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_exponential_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../simd/exponential.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_common.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_common.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_common_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_geometric_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../simd/geometric.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../simd/common.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_matrix_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/mat2x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/mat2x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/mat3x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/mat3x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/mat3x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/mat4x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/mat4x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/mat4x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/trigonometric.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_trigonometric.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_trigonometric.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_trigonometric_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/exponential.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/common.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/packing.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_packing.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_packing.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_half.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/type_half.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_packing_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/geometric.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/matrix.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/vector_relational.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/integer.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_integer.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_integer.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/func_integer_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/detail/../simd/integer.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/matrix_transform.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../vec2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../vec3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../vec4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../gtc/constants.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../detail/setup.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/constants.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/matrix_transform.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../geometric.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../trigonometric.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../matrix.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/type_ptr.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../gtc/quaternion.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat3x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/quaternion.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../exponential.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/quaternion_simd.inl \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat2x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat2x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat2x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat3x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat3x4.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x2.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x3.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/type_ptr.inl \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/Event.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/typeindex \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Renderer.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Shader.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/QuadMesh.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexArray.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/IndexBuffer.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneManager.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stack \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/deque \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Scene.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/ecs.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/WindowEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/MouseEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/CustomEvent.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/LuaScene.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/FrameData.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/fstream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/filesystem \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/file_status.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/file_type.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/perms.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/file_clock.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/path.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iomanip \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/operations.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/space_info.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/u8path.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/main.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Camera.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Camera.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/IndexBuffer.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/QuadMesh.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBufferLayout.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Renderer.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Shader.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/STB/stb_image.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexArray.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/CustomEvent.h

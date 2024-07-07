@@ -6,39 +6,30 @@
 #include "scene/Components.h"
 #include "scene/SceneManager.h"
 
-template<typename T>
-sol::optional<sol::object> opt_to_sol(std::optional<std::reference_wrapper<T>> opt, sol::state &lua) {
-    if (opt) {
-        return sol::make_object(lua, &opt->get());
-    } else {
-        return sol::nullopt;
-    }
-}
-
 #define _REG_ADD(FUNC, TYPE, ARG) \
     entity_type[#FUNC"_component_"#TYPE] = [&](Entity &self, sol::variadic_args va) { \
         if (va.size() == 0) { \
-            return self.FUNC##_component<component::TYPE>(); \
+            return sol::make_object(lua, &self.FUNC##_component<component::TYPE>()); \
         } \
-        return self.FUNC##_component<component::TYPE>(va.get<ARG>()); \
+        return sol::make_object(lua, &self.FUNC##_component<component::TYPE>(va.get<ARG>())); \
     };
 #define _REG(FUNC, TYPE) \
     entity_type[#FUNC"_component_"#TYPE] = [&](Entity &self) { \
         return self.FUNC##_component<component::TYPE>(); \
     };
-#define _REG_OPT(FUNC, TYPE) \
+#define _REG_OBJ(FUNC, TYPE) \
     entity_type[#FUNC"_component_"#TYPE] = [&](Entity &self) { \
-        return opt_to_sol(self.FUNC##_component<component::TYPE>(), lua); \
+        return sol::make_object(lua, &self.FUNC##_component<component::TYPE>()); \
     };
 
 #define FUNC_REGISTER(TYPE, CONSTRUCT_ARG) \
     _REG_ADD(add, TYPE, CONSTRUCT_ARG) \
-    _REG_OPT(get, TYPE) \
+    _REG_OBJ(get, TYPE) \
     _REG(remove, TYPE) \
     _REG(has, TYPE)
 #define FUNC_REGISTER_NA(TYPE) \
     _REG(add, TYPE) \
-    _REG_OPT(get, TYPE) \
+    _REG_OBJ(get, TYPE) \
     _REG(remove, TYPE) \
     _REG(has, TYPE)
 
@@ -63,6 +54,8 @@ void set_lua_entity(sol::state &lua) {
     FUNC_REGISTER_NA(Transform)
     FUNC_REGISTER(Script, std::string)
     FUNC_REGISTER(Table, sol::table)
+    FUNC_REGISTER_NA(CustomBehaviour)
+    FUNC_REGISTER(Sprite, std::string)
 }
 
 // @Lua API
@@ -89,6 +82,11 @@ void set_lua_components(sol::state &lua) {
     COMP_MEM_REGISTER(CustomBehaviour, set_on_attach)
     COMP_MEM_REGISTER(CustomBehaviour, set_on_update)
     COMP_MEM_REGISTER(CustomBehaviour, set_on_remove)
+
+    COMP_REGISTER_ARGS(Sprite, std::string)
+    Sprite_type["set_tex"] = [](component::Sprite &self, std::string path) { 
+        self = component::Sprite(path);
+    };
 }
 
 // @Lua API

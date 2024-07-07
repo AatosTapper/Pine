@@ -1,6 +1,5 @@
 #include "Application.h"
 #include "ScriptEngine.h"
-#include "scene/ecs.h"
 #include "scene/Scene.h"
 #include "scene/Entity.h"
 #include "scene/Components.h"

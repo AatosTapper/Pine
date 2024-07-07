@@ -253,6 +253,30 @@ core/src/Window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/Window.cpp.s
 .PHONY : core/src/Window.cpp.s
 
+core/src/events/LuaEvents.o: core/src/events/LuaEvents.cpp.o
+.PHONY : core/src/events/LuaEvents.o
+
+# target to build an object file
+core/src/events/LuaEvents.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o
+.PHONY : core/src/events/LuaEvents.cpp.o
+
+core/src/events/LuaEvents.i: core/src/events/LuaEvents.cpp.i
+.PHONY : core/src/events/LuaEvents.i
+
+# target to preprocess a source file
+core/src/events/LuaEvents.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.i
+.PHONY : core/src/events/LuaEvents.cpp.i
+
+core/src/events/LuaEvents.s: core/src/events/LuaEvents.cpp.s
+.PHONY : core/src/events/LuaEvents.s
+
+# target to generate assembly for a file
+core/src/events/LuaEvents.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.s
+.PHONY : core/src/events/LuaEvents.cpp.s
+
 core/src/main.o: core/src/main.cpp.o
 .PHONY : core/src/main.o
 
@@ -421,6 +445,30 @@ core/src/rendering/Texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Texture.cpp.s
 .PHONY : core/src/rendering/Texture.cpp.s
 
+core/src/rendering/TextureStorage.o: core/src/rendering/TextureStorage.cpp.o
+.PHONY : core/src/rendering/TextureStorage.o
+
+# target to build an object file
+core/src/rendering/TextureStorage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/TextureStorage.cpp.o
+.PHONY : core/src/rendering/TextureStorage.cpp.o
+
+core/src/rendering/TextureStorage.i: core/src/rendering/TextureStorage.cpp.i
+.PHONY : core/src/rendering/TextureStorage.i
+
+# target to preprocess a source file
+core/src/rendering/TextureStorage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/TextureStorage.cpp.i
+.PHONY : core/src/rendering/TextureStorage.cpp.i
+
+core/src/rendering/TextureStorage.s: core/src/rendering/TextureStorage.cpp.s
+.PHONY : core/src/rendering/TextureStorage.s
+
+# target to generate assembly for a file
+core/src/rendering/TextureStorage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/TextureStorage.cpp.s
+.PHONY : core/src/rendering/TextureStorage.cpp.s
+
 core/src/rendering/VertexArray.o: core/src/rendering/VertexArray.cpp.o
 .PHONY : core/src/rendering/VertexArray.o
 
@@ -468,6 +516,30 @@ core/src/rendering/VertexBuffer.s: core/src/rendering/VertexBuffer.cpp.s
 core/src/rendering/VertexBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s
 .PHONY : core/src/rendering/VertexBuffer.cpp.s
+
+core/src/scene/Components.o: core/src/scene/Components.cpp.o
+.PHONY : core/src/scene/Components.o
+
+# target to build an object file
+core/src/scene/Components.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/Components.cpp.o
+.PHONY : core/src/scene/Components.cpp.o
+
+core/src/scene/Components.i: core/src/scene/Components.cpp.i
+.PHONY : core/src/scene/Components.i
+
+# target to preprocess a source file
+core/src/scene/Components.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/Components.cpp.i
+.PHONY : core/src/scene/Components.cpp.i
+
+core/src/scene/Components.s: core/src/scene/Components.cpp.s
+.PHONY : core/src/scene/Components.s
+
+# target to generate assembly for a file
+core/src/scene/Components.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/Components.cpp.s
+.PHONY : core/src/scene/Components.cpp.s
 
 core/src/scene/LuaScene.o: core/src/scene/LuaScene.cpp.o
 .PHONY : core/src/scene/LuaScene.o
@@ -590,6 +662,9 @@ help:
 	@echo "... core/src/Window.o"
 	@echo "... core/src/Window.i"
 	@echo "... core/src/Window.s"
+	@echo "... core/src/events/LuaEvents.o"
+	@echo "... core/src/events/LuaEvents.i"
+	@echo "... core/src/events/LuaEvents.s"
 	@echo "... core/src/main.o"
 	@echo "... core/src/main.i"
 	@echo "... core/src/main.s"
@@ -611,12 +686,18 @@ help:
 	@echo "... core/src/rendering/Texture.o"
 	@echo "... core/src/rendering/Texture.i"
 	@echo "... core/src/rendering/Texture.s"
+	@echo "... core/src/rendering/TextureStorage.o"
+	@echo "... core/src/rendering/TextureStorage.i"
+	@echo "... core/src/rendering/TextureStorage.s"
 	@echo "... core/src/rendering/VertexArray.o"
 	@echo "... core/src/rendering/VertexArray.i"
 	@echo "... core/src/rendering/VertexArray.s"
 	@echo "... core/src/rendering/VertexBuffer.o"
 	@echo "... core/src/rendering/VertexBuffer.i"
 	@echo "... core/src/rendering/VertexBuffer.s"
+	@echo "... core/src/scene/Components.o"
+	@echo "... core/src/scene/Components.i"
+	@echo "... core/src/scene/Components.s"
 	@echo "... core/src/scene/LuaScene.o"
 	@echo "... core/src/scene/LuaScene.i"
 	@echo "... core/src/scene/LuaScene.s"

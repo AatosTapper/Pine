@@ -4,6 +4,9 @@
 #include "VertexArray.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
+#include "scene/Entity.h"
+
+#include "scene/Components.h"
 
 #include <stdexcept>
 
@@ -12,7 +15,6 @@ Renderer::Renderer()
     m_post_process_shader(Shader("../res/shaders/post_process.vert", "../res/shaders/post_process.frag")),
     m_selected_shader(nullptr)
 {
-
 }
 
 Renderer::~Renderer() {
@@ -33,36 +35,36 @@ void Renderer::start_frame() {
     glEnable(GL_DEPTH_TEST);
 }
 
-void Renderer::draw_frame() {
-    m_draw_sprites();
-
+void Renderer::draw_frame(Scene *scene) {
+    m_draw_sprites(scene);
     m_render_framebuffer();
 }
 
-void Renderer::m_draw_sprites() {
+void Renderer::m_draw_sprites(Scene *scene) {
     if (m_selected_shader == nullptr) {
         m_selected_shader = &m_sprite_shader;
     }
-    /*
-    for (auto sprite_pair : m_sprite_queue) {
-        auto sprite = std::get<0>(sprite_pair);
-        auto transform = std::get<1>(sprite_pair);
+
+    for (auto &ent : scene->view<component::Sprite>()) {
+        auto [sprite, transform] = Entity(ent, scene).get_components<component::Sprite, component::Transform>();
+
+        if (sprite.img == nullptr) continue;
 
         m_selected_shader->use();
 
         glActiveTexture(GL_TEXTURE0);
-        sprite.get().get_texture()->bind();
+        //scene->m_textures->get(sprite.texture).bind();
+        sprite.img->bind();
 
         m_selected_shader->set_mat4f("u_view_proj", m_selected_vpm);
         m_selected_shader->set_mat4f("u_transform", transform);
 
-        sprite.get().get_vao()->bind();
-        sprite.get().get_ebo()->bind();
-        glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(sprite.get().get_ebo()->get_elements()), GL_UNSIGNED_INT, 0);
-        sprite.get().get_vao()->unbind();
-        sprite.get().get_ebo()->unbind();
+        sprite.mesh.get_vao()->bind();
+        sprite.mesh.get_ebo()->bind();
+        glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(sprite.mesh.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0);
+        sprite.mesh.get_vao()->unbind();
+        sprite.mesh.get_ebo()->unbind();
     }
-    */
 }
 
 void Renderer::m_render_framebuffer() {
@@ -135,24 +137,21 @@ void Renderer::m_create_framebuffers() {
 
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_STENCIL_ATTACHMENT, GL_RENDERBUFFER, m_rbo);
     
-    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
-    {
+    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
         std::runtime_error("ERROR::FRAMEBUFFER:: Framebuffer is not complete");
     }
 
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void Renderer::m_delete_framebuffers()
-{
+void Renderer::m_delete_framebuffers() {
     glDeleteRenderbuffers(1, &m_rbo);
     glDeleteTextures(1, &m_texture_depth_buffer);
     glDeleteTextures(1, &m_texture_color_buffer);
     glDeleteFramebuffers(1, &m_framebuffer);
 }
 
-void Renderer::regenerate_framebuffer()
-{
+void Renderer::regenerate_framebuffer() {
     m_delete_framebuffers();
     m_create_framebuffers();
 }

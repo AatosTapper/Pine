@@ -7,6 +7,8 @@
 #include "events/KeyEvent.h"
 #include "events/CustomEvent.h"
 #include "scene/LuaScene.h"
+#include "events/LuaEvents.h"
+#include "scene/System.h"
 
 #include "FrameData.h"
 
@@ -18,7 +20,7 @@ Application::Application(sol::state &lua) :
     ScriptEngine::run_script(m_lua, SCRIPT("config.lua"));
 
     m_window = std::make_unique<Window>(
-        ScriptEngine::get_config_var_int(m_lua, "window_width"), 
+        ScriptEngine::get_config_var_int(m_lua, "window_width"),
         ScriptEngine::get_config_var_int(m_lua, "window_height"),
         ScriptEngine::get_config_var_string(m_lua, "window_name").c_str()
     );
@@ -26,13 +28,22 @@ Application::Application(sol::state &lua) :
         this->on_event(e);
         return HandlerPersistence::Continuous;
     });
+
     m_renderer = std::make_unique<Renderer>();
     m_renderer->set_window_dimensions(m_window->get_dimensions());
     m_renderer->init();
 
+    m_camera = std::make_unique<Camera>(
+        m_window->get_aspect_ratio(),
+        ScriptEngine::get_config_var_double(m_lua, "cam_fov"),
+        static_cast<bool>(ScriptEngine::get_config_var_int(m_lua, "cam_projection"))
+    );
+    m_camera->back(1.0f);
+
     m_bus.subscribe<WindowResizeEvent>([this](WindowResizeEvent *event) -> HandlerPersistence {
         this->m_renderer->set_window_dimensions(glm::i32vec2(event->new_width, event->new_height));
         this->m_renderer->regenerate_framebuffer();
+        this->m_camera->set_aspect_ratio(static_cast<float>(event->new_width) / static_cast<float>(event->new_height));
         return HandlerPersistence::Continuous;
     });
     m_bus.subscribe<WindowCloseEvent>([this](WindowCloseEvent *event) -> HandlerPersistence {
@@ -65,7 +76,6 @@ void Application::m_on_window_close() {
 
 void Application::entry() {
     ScriptEngine::run_script(m_lua, SCRIPT("main.lua"));
-
     m_lua["main"]();
 }
 
@@ -73,6 +83,8 @@ void Application::m_run() {
     assert(m_scene_manager.get_scene() && "Cannot start gameloop without a scene selected");
 
     FrameData frame_data(ScriptEngine::get_config_var_double(m_lua, "updates_per_sec"));
+
+    m_update_logic();
     while (m_running) {
         frame_data.update_frame_data();
         while (frame_data.frametime_accumulator >= frame_data.update_time) {
@@ -88,7 +100,7 @@ void Application::m_run() {
 // @Lua API
 void Application::m_set_lua_functions() {
     m_lua.set_function("pine_run", &Application::m_run, this);
-    m_set_lua_event_handlers();
+    set_lua_event_handlers(m_lua, m_bus);
 
     m_lua.set_function("pine_create_event_Custom", [this](const char *title, sol::object data) {
         auto data_ptr = std::make_shared<sol::object>(data);
@@ -103,68 +115,14 @@ void Application::m_set_lua_functions() {
     LUA_VEC(int, m_lua);
 }
 
-// @Lua API
-void Application::m_set_lua_event_handlers() {
-    m_lua.set_function("pine_set_event_handler_KeyPressed", [this](sol::function callback) {
-        auto stored_callback = std::make_shared<sol::function>(callback);
-        m_bus.subscribe<KeyPressedEvent>([stored_callback](KeyPressedEvent *event) -> HandlerPersistence {
-            bool result = (*stored_callback)(event->key);
-            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
-        });
-    });
-    m_lua.set_function("pine_set_event_handler_KeyRepeat", [this](sol::function callback) {
-        auto stored_callback = std::make_shared<sol::function>(callback);
-        m_bus.subscribe<KeyRepeatEvent>([stored_callback](KeyRepeatEvent *event) -> HandlerPersistence {
-            bool result = (*stored_callback)(event->key);
-            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
-        });
-    });
-    m_lua.set_function("pine_set_event_handler_KeyReleased", [this](sol::function callback) {
-        auto stored_callback = std::make_shared<sol::function>(callback);
-        m_bus.subscribe<KeyReleasedEvent>([stored_callback](KeyReleasedEvent *event) -> HandlerPersistence {
-            bool result = (*stored_callback)(event->key);
-            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
-        });
-    });
-    m_lua.set_function("pine_set_event_handler_MouseButtonPressed", [this](sol::function callback) {
-        auto stored_callback = std::make_shared<sol::function>(callback);
-        m_bus.subscribe<MouseButtonPressedEvent>([stored_callback](MouseButtonPressedEvent *event) -> HandlerPersistence {
-            bool result = (*stored_callback)(event->button, event->x_pos, event->y_pos);
-            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
-        });
-    });
-    m_lua.set_function("pine_set_event_handler_MouseButtonReleased", [this](sol::function callback) {
-        auto stored_callback = std::make_shared<sol::function>(callback);
-        m_bus.subscribe<MouseButtonReleasedEvent>([stored_callback](MouseButtonReleasedEvent *event) -> HandlerPersistence {
-            bool result = (*stored_callback)(event->button);
-            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
-        });
-    });
-    m_lua.set_function("pine_set_event_handler_MouseMoved", [this](sol::function callback) {
-        auto stored_callback = std::make_shared<sol::function>(callback);
-        m_bus.subscribe<MouseMovedEvent>([stored_callback](MouseMovedEvent *event) -> HandlerPersistence {
-            bool result = (*stored_callback)(event->x_pos, event->y_pos);
-            return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
-        });
-    });
-    m_lua.set_function("pine_set_event_handler_Custom", [this](const char *title, sol::function callback) {
-        auto stored_callback = std::make_shared<sol::function>(callback);
-        m_bus.subscribe<CustomLuaEvent>([title, stored_callback](CustomLuaEvent *event) -> HandlerPersistence {
-            if (strcmp(event->title.c_str(), title) == 0) {
-                bool result = (*stored_callback)(*event->data);
-                return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
-            }
-            return HandlerPersistence::Continuous;
-        });
-    });
-}
-
 void Application::m_update_logic() {
-
+    m_camera->update();
+    m_renderer->set_view_proj_matrix(m_camera->get_vp_matrix());
+    ec_system::TextureSetter::instance().update(m_scene_manager.get_scene());
 }
 
 void Application::m_render() {
     m_renderer->start_frame();
-    m_renderer->draw_frame();
+    m_renderer->draw_frame(m_scene_manager.get_scene());
     m_window->update();
 }

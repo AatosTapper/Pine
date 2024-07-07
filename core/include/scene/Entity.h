@@ -1,47 +1,56 @@
 #pragma once
 
-#include "ecs.h"
 #include "Scene.h"
+#include "profiling.h"
 
 class Entity {
     friend class Scene;
 public:
-    Entity(ecs::entity_id ent, Scene *scene) : m_handle(ent), m_scene(scene) {}
+    Entity(entt::entity ent, Scene *scene) : m_handle(ent), m_scene(scene) {}
     Entity() = default;
     Entity(Scene *scene) { *this = scene->add_entity(); }
 
     template<typename T, typename ...Args>
-    void add_component(Args&&... args) {
-        m_storage().add_component<T>(m_handle, std::forward<Args>(args)...);
+    T& add_component(Args&&... args) {
+        if (m_registry().all_of<T>(m_handle)) {
+            return m_registry().replace<T>(m_handle, std::forward<Args>(args)...);
+        } else {
+            return m_registry().emplace<T>(m_handle, std::forward<Args>(args)...);
+        }
     }
 
     template<typename T>
-    std::optional<std::reference_wrapper<T>> get_component() {
-        return m_storage().get_component<T>(m_handle);
+    T &get_component() {
+        return m_registry().get<T>(m_handle);
     }
 
-    template<typename T>
+    template<typename... T>
+    auto get_components() {
+        return m_registry().get<T...>(m_handle);
+    }
+
+    template<typename... T>
     bool has_component() {
-        return m_storage().has_component<T>(m_handle);
+        return m_registry().all_of<T...>(m_handle);
     }
 
     template<typename T>
     void remove_component() {
-        m_storage().remove_component<T>(m_handle);
+        m_registry().remove<T>(m_handle);
     }
 
     void remove() {
-        m_storage().remove_entity(m_handle);
-        m_handle = 0;
+        m_registry().destroy(m_handle);
+        m_handle = entt::null;
         m_scene = nullptr;
     }
 
 private:
-    ecs::entity_id m_handle = 0;
+    entt::entity m_handle{};
     Scene *m_scene = nullptr;
 
-    ecs::ComponentStorage &m_storage() {
+    entt::registry &m_registry() {
         assert(m_scene && "cannot use a removed entity");
-        return *m_scene->m_storage.get();
+        return m_scene->m_registry;
     }
 };

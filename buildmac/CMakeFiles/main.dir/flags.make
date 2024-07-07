@@ -20,6 +20,8 @@ CXX_FLAGS = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineToo
 
 # PCH options: CMakeFiles/main.dir/core/src/Window.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
+# PCH options: CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
 # PCH options: CMakeFiles/main.dir/core/src/main.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -34,9 +36,13 @@ CXX_FLAGS = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineToo
 
 # PCH options: CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
+# PCH options: CMakeFiles/main.dir/core/src/rendering/TextureStorage.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
 # PCH options: CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/scene/Components.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 

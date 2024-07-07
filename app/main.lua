@@ -22,22 +22,18 @@ local function setup()
         end
     })
 
-    scene = pine_set_scene(pine_Scene:new())
-
-    spawner_ent = scene:add_entity("spawner")
-    spawner_ent:add_component_Script();
-
-    script_comp = spawner:get_component_Script()
-    script_comp:set_src("scripts/spawn_script.lua")
-    
-    script_comp:run()
-    script_comp:run()
-    script_comp:run()
-    script_comp:run()
-
-    for i, v in ipairs(scene:get_entities()) do
-        print(v:get_component_Tag().name)
+    local scene = pine_set_scene(pine_Scene:new())
+    local spawner_ent = scene:add_entity("spawner")
+    local script = spawner_ent:add_component_Script("scripts/spawn_script.lua")
+    for i = 1, 1000 do
+        script:run()
     end
+
+    -- for i, v in ipairs(scene:get_entities()) do
+    --     local n = v:get_component_Tag()
+    --     local t = v:get_component_Transform()
+    --     print("Ent " .. n.name .. " transform: " .. t.x .. ", " .. t.y)
+    -- end
 end
 
 function main()

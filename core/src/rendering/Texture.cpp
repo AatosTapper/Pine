@@ -10,7 +10,7 @@
 
 static bool is_png(const std::string &path);
 
-Texture::Texture(const std::string &file) : m_freed(false) {
+Texture::Texture(const std::string &file) {
     glGenTextures(1, &m_id);
     glBindTexture(GL_TEXTURE_2D, m_id);
 
@@ -25,7 +25,7 @@ Texture::Texture(const std::string &file) : m_freed(false) {
 
     GLint gl_channels = png ? GL_RGBA : GL_RGB;
 
-    if (image) {
+    if (image) [[likely]] {
         glTexImage2D(GL_TEXTURE_2D, 0, gl_channels, img_width, img_height, 0, (GLenum)gl_channels, GL_UNSIGNED_BYTE, image);
         glGenerateMipmap(GL_TEXTURE_2D);
     } else {
@@ -37,9 +37,7 @@ Texture::Texture(const std::string &file) : m_freed(false) {
 }
 
 Texture::~Texture() {
-    if (!m_freed) {
-        glDeleteTextures(1, &m_id);
-    }
+    glDeleteTextures(1, &m_id);
 }
 
 void Texture::bind() const {
@@ -48,13 +46,6 @@ void Texture::bind() const {
 
 void Texture::unbind() const {
     glBindTexture(GL_TEXTURE_2D, 0);
-}
-
-void Texture::free() {
-    if (!m_freed) {
-        glDeleteTextures(1, &m_id);
-        m_freed = true;
-    }
 }
 
 void Texture::filter_nearest() {

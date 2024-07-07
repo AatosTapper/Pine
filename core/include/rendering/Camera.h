@@ -14,7 +14,9 @@ public:
     float yaw;
     float fov;
 
-    void update(const float aspect_ratio);
+    void update();
+    
+    void set_aspect_ratio(const float aspect_ratio) { m_aspect_ratio = aspect_ratio; }
     glm::mat4 get_vp_matrix() const { return *m_vp_mat; }
     const glm::vec3 &get_position() const { return m_position; }
     void set_position(const glm::vec3 &new_pos) { m_position = new_pos; }
@@ -37,6 +39,7 @@ private:
     glm::vec3 m_up;
     glm::vec3 m_delta_pos;
     std::unique_ptr<glm::mat4> m_vp_mat;
+    float m_aspect_ratio = 1.0f;
 
     const bool m_ortho;
 

@@ -49,5 +49,5 @@ vec4 combine_output()
 
 void main()
 {
-    frag_color = aces(combine_output());
+    frag_color = aces(texture(tex_col, tex_coord));
 }

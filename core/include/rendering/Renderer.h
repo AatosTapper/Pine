@@ -5,6 +5,7 @@
 #include "singleton.h"
 #include "QuadMesh.h"
 #include "Window.h"
+#include "scene/Scene.h"
 
 #include "pch.h"
 
@@ -19,7 +20,7 @@ public:
 
     void init();
     void start_frame();
-    void draw_frame();
+    void draw_frame(Scene *scene);
     void regenerate_framebuffer();
 
     void set_shader(Shader *shader) { assert(shader); m_selected_shader = shader; }
@@ -40,8 +41,9 @@ private:
     uint32_t m_rbo = 0;
     QuadMesh m_screen_quad;
     
+    void m_draw_sprites(Scene *scene);
+
     void m_create_framebuffers();
     void m_delete_framebuffers();
-    void m_draw_sprites();
     void m_render_framebuffer();
 };
