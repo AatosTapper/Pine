@@ -29,14 +29,32 @@ local function setup()
         script:run()
     end
 
-    -- for i, v in ipairs(scene:get_entities()) do
-    --     local n = v:get_component_Tag()
-    --     local t = v:get_component_Transform()
-    --     print("Ent " .. n.name .. " transform: " .. t.x .. ", " .. t.y)
-    -- end
+    local camera = scene:get_camera()
+    local behaviour = spawner_ent:add_component_CustomBehaviour()
+
+    behaviour:set_on_update(function()
+        -- simple controller using pine_get_input(keycode)
+        if pine_get_input(Cone.Key._W) then
+            camera:down(0.2)
+        end
+        if pine_get_input(Cone.Key._S) then
+            camera:up(0.2)
+        end
+        if pine_get_input(Cone.Key._A) then
+            camera:right(0.2)
+        end
+        if pine_get_input(Cone.Key._D) then
+            camera:left(0.2)
+        end
+    end)
+
+    behaviour:set_on_remove(function()
+        print("Custom Behaviour deleted")
+    end)
 end
 
 function main()
     setup()
     pine_run() -- this blocks the execution until the game loop has finished
+    -- calling call_on_update in C++ doesn't work
 end

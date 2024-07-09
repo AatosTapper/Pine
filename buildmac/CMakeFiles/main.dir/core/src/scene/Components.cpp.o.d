@@ -1144,5 +1144,4 @@ CMakeFiles/main.dir/core/src/scene/Components.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexArray.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/IndexBuffer.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/TextureStorage.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h

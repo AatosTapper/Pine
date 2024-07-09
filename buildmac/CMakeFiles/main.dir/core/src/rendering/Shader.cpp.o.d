@@ -1137,6 +1137,7 @@ CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x2.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x3.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/type_ptr.inl \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/copy_options.h \

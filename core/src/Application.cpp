@@ -14,6 +14,7 @@
 
 // @Lua API
 Application::Application(sol::state &lua) :
+    m_input_bus(m_event_bus),
     m_lua(lua)
 {
     m_set_lua_functions();
@@ -40,18 +41,20 @@ Application::Application(sol::state &lua) :
     );
     m_camera->back(1.0f);
 
-    m_bus.subscribe<WindowResizeEvent>([this](WindowResizeEvent *event) -> HandlerPersistence {
+    m_scene_manager.set_camera(m_camera.get());
+
+    m_event_bus.subscribe<WindowResizeEvent>([this](WindowResizeEvent *event) -> HandlerPersistence {
         this->m_renderer->set_window_dimensions(glm::i32vec2(event->new_width, event->new_height));
         this->m_renderer->regenerate_framebuffer();
         this->m_camera->set_aspect_ratio(static_cast<float>(event->new_width) / static_cast<float>(event->new_height));
         return HandlerPersistence::Continuous;
     });
-    m_bus.subscribe<WindowCloseEvent>([this](WindowCloseEvent *event) -> HandlerPersistence {
+    m_event_bus.subscribe<WindowCloseEvent>([this](WindowCloseEvent *event) -> HandlerPersistence {
         (void)event;
         this->m_on_window_close();
         return HandlerPersistence::Single;
     });
-    m_bus.subscribe<KeyPressedEvent>([this](KeyPressedEvent *event) -> HandlerPersistence {
+    m_event_bus.subscribe<KeyPressedEvent>([this](KeyPressedEvent *event) -> HandlerPersistence {
         switch (event->key)
         {
         case GLFW_KEY_ESCAPE:
@@ -60,6 +63,8 @@ Application::Application(sol::state &lua) :
         }
         return HandlerPersistence::Continuous;
     });
+
+    std::cout << "Scene size: " << sizeof(Scene) << "\n";
 }
 
 Application::~Application() {
@@ -67,7 +72,7 @@ Application::~Application() {
 }
 
 void Application::on_event(Event *e) {
-    m_bus.publish(e);
+    m_event_bus.publish(e);
 }
 
 void Application::m_on_window_close() { 
@@ -100,12 +105,12 @@ void Application::m_run() {
 // @Lua API
 void Application::m_set_lua_functions() {
     m_lua.set_function("pine_run", &Application::m_run, this);
-    set_lua_event_handlers(m_lua, m_bus);
+    set_lua_event_handlers(m_lua, m_event_bus, m_input_bus);
 
     m_lua.set_function("pine_create_event_Custom", [this](const char *title, sol::object data) {
         auto data_ptr = std::make_shared<sol::object>(data);
         CustomLuaEvent event(title, data_ptr);
-        this->m_bus.publish(&event);
+        this->m_event_bus.publish(&event);
     });
 
     set_lua_entity(m_lua);
@@ -116,9 +121,13 @@ void Application::m_set_lua_functions() {
 }
 
 void Application::m_update_logic() {
+    Scene *curr_scene = m_scene_manager.get_scene();
+
+    m_input_bus.update();
     m_camera->update();
     m_renderer->set_view_proj_matrix(m_camera->get_vp_matrix());
-    ec_system::TextureSetter::instance().update(m_scene_manager.get_scene());
+
+    CustomBehaviourSystem::instance().update(curr_scene);
 }
 
 void Application::m_render() {

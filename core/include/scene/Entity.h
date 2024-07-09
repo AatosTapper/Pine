@@ -12,20 +12,21 @@ public:
 
     template<typename T, typename ...Args>
     T& add_component(Args&&... args) {
-        if (m_registry().all_of<T>(m_handle)) {
+        if (m_registry().all_of<T>(m_handle)) [[unlikely]] {
             return m_registry().replace<T>(m_handle, std::forward<Args>(args)...);
         } else {
             return m_registry().emplace<T>(m_handle, std::forward<Args>(args)...);
         }
     }
-
+    
     template<typename T>
     T &get_component() {
         return m_registry().get<T>(m_handle);
     }
 
+    /// @brief Get any number of components, only used on C++ side
     template<typename... T>
-    auto get_components() {
+    auto get() {
         return m_registry().get<T...>(m_handle);
     }
 
@@ -51,6 +52,6 @@ private:
 
     entt::registry &m_registry() {
         assert(m_scene && "cannot use a removed entity");
-        return m_scene->m_registry;
+        return *m_scene->m_registry;
     }
 };

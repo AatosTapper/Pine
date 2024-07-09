@@ -5,18 +5,23 @@
 #include "SceneParser.h"
 #include "ScriptEngine.h"
 #include "rendering/QuadMesh.h"
-#include "rendering/TextureStorage.h"
+#include "rendering/Texture.h"
 
-// REMEMBER TO REGISTER THE COMPONENT IN LuaScene.cpp
-
+class Renderer;
 namespace component {
 
+///
+/// @brief User defineable handle for an entity, name doesn't need to be unique
+///
 struct Tag {
     Tag() = default;
     Tag(std::string _name) : name(_name) {}
     std::string name;
 };
 
+///
+/// @brief Entity transforms in world space
+///
 struct Transform {
     double x = 0.0;
     double y = 0.0;
@@ -24,59 +29,69 @@ struct Transform {
     float sy = 1.0;
 
     void set_pos(double _x, double _y) { x = _x; y = _y; }
-    void set_size(float _x, float _y) { sx = _x; sy = _y; }
+    void set_scale(float _x, float _y) { sx = _x; sy = _y; }
 
     glm::mat4 get_matrix() const;
     operator glm::mat4() const { return get_matrix(); };
 };
 
-/// @brief Define a general script file that is ran when called
+///
+/// @brief Define any number of general script files that can be run anytime
+///
 struct Script {
+    using id_t = uint32_t;
     Script() = default;
-    Script(std::string str) : m_src(str) {}
+    Script(std::string str);
 
-    void set_src(std::string str) { m_src = str; }
-    void run(sol::state &lua) { assert(!m_src.empty()); ScriptEngine::run_script(lua, SCRIPT() + m_src); }
+    id_t push_script(std::string str);
+    void run(sol::state &lua, id_t id = 0);
 
 private:
-    std::string m_src;
+    std::vector<std::string> m_scripts;
 };
 
+///
 /// @brief Define custom functions for different object lifetime events
+///
 struct CustomBehaviour {
-    void set_on_attach(sol::function func) { m_on_attach = func; }
-    void set_on_update(sol::function func) { m_on_update = func; }
-    void set_on_remove(sol::function func) { m_on_remove = func; }
+    CustomBehaviour() = default;
+    CustomBehaviour(sol::function f);
+    ~CustomBehaviour();
 
-    void call_on_attach() { m_on_attach(); }
-    void call_on_update() { m_on_update(); }
-    void call_on_remove() { m_on_remove(); }
+    void set_on_update(sol::function func);
+    void set_on_remove(sol::function func);
+
+    void call_on_update() const;
 
 private:
-    sol::function m_on_attach;
     sol::function m_on_update;
     sol::function m_on_remove;
 };
 
+///
+/// @brief General image component for drawing
+///
 struct Sprite {
-    Sprite() {}
-    Sprite(std::string path) : img(std::make_shared<Texture>(path)), temp_path(path) {
-        img->filter_nearest();
-    }
+    friend class ::Renderer;
+    Sprite() = default;
+    Sprite(std::string path);
+    void set_texture(std::string path);
 
-    std::shared_ptr<Texture> img = nullptr;
-    QuadMesh mesh;
-    TextureStorage::tex_id texture = 0;
-    // used before knowing the texture storage
-    std::string temp_path;
+private:
+    QuadMesh m_mesh;
+    std::shared_ptr<Texture> m_img = nullptr;
 };
 
-/// @brief Store any data via a lua table with an entity
+///
+/// @brief Store any data within a lua table
+///
 struct Table {
     Table() = default;
     Table(sol::table _data) : data(_data) {}
     sol::table data{};
 };
+
+
 
 // Example on implementing serialization
 struct TestSerdeComp : public Serializable {

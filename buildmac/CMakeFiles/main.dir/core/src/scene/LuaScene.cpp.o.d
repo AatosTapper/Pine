@@ -1177,9 +1177,7 @@ CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/entity/../signal/../core/utility.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/signal/emitter.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/signal/sigh.hpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Camera.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glad/glad.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/KHR/khrplatform.h \
@@ -1320,6 +1318,9 @@ CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x2.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x3.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/type_ptr.inl \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
@@ -1327,7 +1328,6 @@ CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexArray.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/IndexBuffer.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/TextureStorage.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneManager.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stack

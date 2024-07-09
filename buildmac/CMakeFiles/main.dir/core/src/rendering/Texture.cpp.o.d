@@ -997,6 +997,7 @@ CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glad/glad.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/KHR/khrplatform.h \

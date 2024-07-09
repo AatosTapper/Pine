@@ -1326,10 +1326,10 @@ CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/entity/../signal/../core/utility.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/signal/emitter.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/signal/sigh.hpp \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Camera.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/TextureStorage.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h

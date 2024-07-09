@@ -15,14 +15,14 @@ static constexpr float vertices[] = {
 };
 
 static constexpr uint32_t indices[] = {
-    0, 1, 3,   // first triangle
-    1, 2, 3    // second triangle
+    0, 1, 3,
+    1, 2, 3
 };
 
 QuadMesh::QuadMesh(float width, float height) {
     transform = glm::scale(transform, glm::vec3(width, height, 1.0));
 
-    if (!mesh_created) {
+    if (!mesh_created) [[unlikely]] {
         mesh_created = true;
 
         vao_memory = std::make_unique<VertexArray>();
@@ -37,8 +37,12 @@ QuadMesh::QuadMesh(float width, float height) {
         ebo_memory->set_data(indices, 6);
         vao_memory->add_buffer(*vbo_memory, layout);
     }
+}
 
-    m_vao = vao_memory.get();
-    m_vbo = vbo_memory.get();
-    m_ebo = ebo_memory.get();
+VertexArray *QuadMesh::get_vao() const {
+    return vao_memory.get();
+}
+
+IndexBuffer *QuadMesh::get_ebo() const {
+    return ebo_memory.get();
 }

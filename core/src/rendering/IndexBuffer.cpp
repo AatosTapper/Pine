@@ -2,13 +2,12 @@
 
 #include "config.h"
 
-IndexBuffer::IndexBuffer() : m_elements(0), m_freed(false) {
+IndexBuffer::IndexBuffer() : m_elements(0) {
      
 }
 
 IndexBuffer::~IndexBuffer() {
-    if (!m_freed)
-        glDeleteBuffers(1, &m_id);
+    glDeleteBuffers(1, &m_id);
 }
 
 void IndexBuffer::set_data(const unsigned int *data, unsigned int count) {
@@ -24,11 +23,4 @@ void IndexBuffer::bind() const {
 
 void IndexBuffer::unbind() const {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-}
-
-void IndexBuffer::free() {
-    if (!m_freed) {
-        glDeleteBuffers(1, &m_id);
-        m_freed = true;
-    }
 }

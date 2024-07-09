@@ -6,7 +6,7 @@
 #include "events/CustomEvent.h"
 
 // @Lua API
-void set_lua_event_handlers(sol::state &lua, EventBus &bus) {
+void set_lua_event_handlers(sol::state &lua, EventBus &bus, InputBus &input) {
     lua.set_function("pine_set_event_handler_KeyPressed", [&](sol::function callback) {
         auto stored_callback = std::make_shared<sol::function>(callback);
         bus.subscribe<KeyPressedEvent>([stored_callback](KeyPressedEvent *event) -> HandlerPersistence {
@@ -58,5 +58,9 @@ void set_lua_event_handlers(sol::state &lua, EventBus &bus) {
             }
             return HandlerPersistence::Continuous;
         });
+    });
+
+    lua.set_function("pine_get_input", [&](int key) {
+        return input.is_pressed(key);
     });
 }

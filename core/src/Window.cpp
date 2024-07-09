@@ -37,6 +37,7 @@ Window::Window(int width, int height, const char *name) {
         std::cout << "Failed to initialize GLAD\n";
         assert(false);
     }
+    
     glfwSetWindowUserPointer(m_window, &m_data);
 
     auto resize_callback = [](GLFWwindow *window, int _width, int _height) {
@@ -47,10 +48,13 @@ Window::Window(int width, int height, const char *name) {
         WindowResizeEvent event(_width, _height);
         data->callback(&event);
     };
+    glfwSetWindowSizeCallback(m_window, resize_callback);
     m_resize_callback = resize_callback;
 
-    glfwSetWindowSizeCallback(m_window, resize_callback);
-    glfwSetFramebufferSizeCallback(m_window, resize_callback);
+    auto framebuffer_size_callback = [](GLFWwindow *window, int fb_width, int fb_height) {
+        glViewport(0, 0, fb_width, fb_height);
+    };
+    glfwSetFramebufferSizeCallback(m_window, framebuffer_size_callback);
 
     glfwSetWindowCloseCallback(m_window, [](GLFWwindow *window) {
         Data *data = static_cast<Data*>(glfwGetWindowUserPointer(window));
@@ -114,6 +118,10 @@ Window::Window(int width, int height, const char *name) {
     });
 
     glfwSetErrorCallback(glfw_error_callback);
+
+    int fb_width = 0, fb_height = 0;
+    glfwGetFramebufferSize(m_window, &fb_width, &fb_height);
+    glViewport(0, 0, fb_width, fb_height);
 }
 
 Window::~Window() {

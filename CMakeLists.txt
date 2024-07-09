@@ -27,9 +27,11 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
 
     set(CMAKE_CXX_COMPILER g++)
 
+    set(DEV_OPTIMIZE "-O")
+    set(MAX_OPTIMIZE "-Ofast -flto")
+
     target_compile_options(main PRIVATE 
-        -Ofast
-        -flto
+        ${DEV_OPTIMIZE}
         -Wall
         -Wextra
         -Wpedantic

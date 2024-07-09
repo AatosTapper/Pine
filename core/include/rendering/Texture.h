@@ -1,24 +1,23 @@
 #pragma once
 
 #include "pch.h"
+#include "singleton.h"
 
+class Renderer;
 class Texture {
+    friend class Renderer;
 public:
-    Texture(const std::string &file); // flip parameter is for certain file formats
+    explicit Texture(const std::string &file);
     ~Texture();
-    Texture(const Texture& other) {
-        m_id = other.m_id;
-    }
-    Texture(Texture&& other) {
-        m_id = other.m_id;
-    }
+    IMPL_NO_COPY(Texture)
 
-    void bind() const;
-    void unbind() const;
-
-    void filter_nearest(); // pixelated look
-    void filter_linear();  // normal filtering
+    void filter_nearest();
+    void filter_linear();
 
 private:
     unsigned int m_id = 0;
+
+    // only renderer can call these
+    void bind() const;
+    void unbind() const;
 };

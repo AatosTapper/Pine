@@ -14,4 +14,4 @@
 
 #define IMPL_NO_COPY(CLASS) \
     CLASS(CLASS const&) = delete; \
-    void operator=(CLASS const&) = delete;
+    CLASS &operator=(CLASS const&) = delete;

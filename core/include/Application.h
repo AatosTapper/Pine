@@ -8,6 +8,7 @@
 #include "rendering/Renderer.h"
 #include "rendering/Camera.h"
 #include "scene/SceneManager.h"
+#include "Input.h"
 
 class Application {
 public:
@@ -24,7 +25,8 @@ private:
     void m_update_logic();
     void m_render();
     
-    EventBus m_bus;
+    EventBus m_event_bus;
+    InputBus m_input_bus;
     SceneManager m_scene_manager;
     sol::state &m_lua;
     std::unique_ptr<Window> m_window = nullptr;

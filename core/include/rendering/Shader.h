@@ -2,11 +2,13 @@
 
 #include "config.h"
 #include "pch.h"
+#include "singleton.h"
 
 class Shader {
 public:
     Shader(const std::string &vertex_path, const std::string &fragment_path);
     ~Shader();
+    IMPL_NO_COPY(Shader)
 
     void use() const;
     unsigned int get_id() const { return m_id; }

@@ -54,7 +54,7 @@ void set_lua_entity(sol::state &lua) {
     FUNC_REGISTER_NA(Transform)
     FUNC_REGISTER(Script, std::string)
     FUNC_REGISTER(Table, sol::table)
-    FUNC_REGISTER_NA(CustomBehaviour)
+    FUNC_REGISTER(CustomBehaviour, sol::function)
     FUNC_REGISTER(Sprite, std::string)
 }
 
@@ -69,24 +69,27 @@ void set_lua_components(sol::state &lua) {
     COMP_MEM_REGISTER(Transform, sx)
     COMP_MEM_REGISTER(Transform, sy)
     COMP_MEM_REGISTER(Transform, set_pos)
-    COMP_MEM_REGISTER(Transform, set_size)
+    COMP_MEM_REGISTER(Transform, set_scale)
 
     COMP_REGISTER_ARGS(Script, std::string)
-    COMP_MEM_REGISTER(Script, set_src)
-    Script_type["run"] = [&lua](component::Script &self) { self.run(lua); };
+    COMP_MEM_REGISTER(Script, push_script)
+    Script_type["run"] = [&lua](component::Script &self, sol::variadic_args va) {
+        component::Script::id_t id = 0;
+        if (va.size() > 0) {
+            id = va.get<component::Script::id_t>();
+        }
+        self.run(lua, id);
+    };
 
     COMP_REGISTER_ARGS(Table, sol::table)
     COMP_MEM_REGISTER(Table, data)
 
-    COMP_REGISTER(CustomBehaviour)
-    COMP_MEM_REGISTER(CustomBehaviour, set_on_attach)
+    COMP_REGISTER_ARGS(CustomBehaviour, sol::function)
     COMP_MEM_REGISTER(CustomBehaviour, set_on_update)
     COMP_MEM_REGISTER(CustomBehaviour, set_on_remove)
 
     COMP_REGISTER_ARGS(Sprite, std::string)
-    Sprite_type["set_tex"] = [](component::Sprite &self, std::string path) { 
-        self = component::Sprite(path);
-    };
+    COMP_MEM_REGISTER(Sprite, set_texture)
 }
 
 // @Lua API
@@ -94,17 +97,35 @@ void set_lua_scene(sol::state &lua, SceneManager &manager) {
     sol::usertype<Scene> scene_type = lua.new_usertype<Scene>("pine_Scene",
         sol::constructors<Scene()>());
 
+    sol::usertype<Camera> camera_type = lua.new_usertype<Camera>("pine_Camera");
+
     scene_type["add_entity"] = [&](Scene &self, sol::variadic_args name) { 
         return sol::make_object(lua, self.add_entity(name.size() == 0 ? "" : name.get<std::string>()));
     };
     scene_type["get_entities"] = [&](Scene &self) {
         return self.get_entities();
     };
+    scene_type["get_camera"] = [&](Scene &self) {
+        return sol::make_object(lua, self.get_camera());
+    };
+
+
+    //const glm::vec3 &get_position()
+    //void set_position(const glm::vec3 &new_pos)
+
+    // move
+    camera_type["forward"] = &Camera::forward;
+    camera_type["back"] = &Camera::back;
+    camera_type["left"] = &Camera::left;
+    camera_type["right"] = &Camera::right;
+    camera_type["up"] = &Camera::up;
+    camera_type["down"] = &Camera::down;
 
     // manager related
     lua.set_function("pine_get_scene", [&]() {
         return sol::make_object(lua, manager.get_scene());
     });
+    /// @warning this also removes the current one from memory
     lua.set_function("pine_set_scene", [&](Scene *scene) {
         manager.pop();
         manager.push(std::make_unique<Scene>(*scene));

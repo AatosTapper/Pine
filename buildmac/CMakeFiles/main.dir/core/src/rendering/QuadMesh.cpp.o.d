@@ -1138,6 +1138,7 @@ CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x3.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/type_ptr.inl \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexArray.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/IndexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBufferLayout.h

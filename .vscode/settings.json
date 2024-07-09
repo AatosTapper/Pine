@@ -85,6 +85,9 @@
         "map": "cpp",
         "set": "cpp",
         "unordered_set": "cpp",
-        "ranges": "cpp"
+        "ranges": "cpp",
+        "codecvt": "cpp",
+        "condition_variable": "cpp",
+        "semaphore": "cpp"
     }
 }

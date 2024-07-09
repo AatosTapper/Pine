@@ -2,19 +2,12 @@
 
 #include "config.h"
 
-VertexBuffer::VertexBuffer() : m_freed(false) {
+VertexBuffer::VertexBuffer() {
     
 }
 
-VertexBuffer::VertexBuffer(const VertexBuffer &old) {
-    m_id = old.m_id;
-    m_freed = old.m_freed;
-}
-
 VertexBuffer::~VertexBuffer() {
-    if (!m_freed) {
-        glDeleteBuffers(1, &m_id);
-    }
+    glDeleteBuffers(1, &m_id);
 }
 
 void VertexBuffer::set_data(const void *data, unsigned int size) {
@@ -29,11 +22,4 @@ void VertexBuffer::bind() const {
 
 void VertexBuffer::unbind() const {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-}
-
-void VertexBuffer::free() {
-    if (!m_freed) {
-        glDeleteBuffers(1, &m_id);
-        m_freed = true;
-    }
 }

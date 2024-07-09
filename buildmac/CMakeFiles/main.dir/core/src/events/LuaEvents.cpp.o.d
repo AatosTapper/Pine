@@ -1001,7 +1001,8 @@ CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/Event.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/typeindex \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Input.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/WindowEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/MouseEvent.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/CustomEvent.h

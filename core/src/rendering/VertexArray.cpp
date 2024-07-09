@@ -4,20 +4,13 @@
 #include "VertexBuffer.h"
 #include "VertexBufferLayout.h"
 
-VertexArray::VertexArray() : m_freed(false) {
+VertexArray::VertexArray() {
     glGenVertexArrays(1, &m_id);
     glBindVertexArray(m_id);
 }
 
-VertexArray::VertexArray(const VertexArray &old) {
-    m_id = old.m_id;
-    m_freed = old.m_freed;
-}
-
 VertexArray::~VertexArray() {
-    if (!m_freed) {
-        glDeleteVertexArrays(1, &m_id);
-    }
+    glDeleteVertexArrays(1, &m_id);
 }
 
 void VertexArray::add_buffer(const VertexBuffer &vb, const VertexBufferLayout &layout) {
@@ -44,11 +37,4 @@ void VertexArray::bind() const {
 
 void VertexArray::unbind() const {
     glBindVertexArray(0);
-}
-
-void VertexArray::free() {
-    if (!m_freed) {
-        glDeleteVertexArrays(1, &m_id);
-        m_freed = true;
-    }
 }

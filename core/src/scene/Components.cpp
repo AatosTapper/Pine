@@ -11,4 +11,53 @@ glm::mat4 Transform::get_matrix() const
     return output;
 }
 
+Script::Script(std::string str) {
+    m_scripts.push_back(str);
+}
+
+Script::id_t Script::push_script(std::string str) { 
+    m_scripts.push_back(str);
+    return m_scripts.size() - 1;
+}
+void Script::run(sol::state &lua, Script::id_t id) { 
+    auto &script = m_scripts.at(id);
+    assert(!script.empty()); 
+    ScriptEngine::run_script(lua, SCRIPT() + script); 
+}
+
+CustomBehaviour::CustomBehaviour(sol::function f) : m_on_update(f) {}
+
+CustomBehaviour::~CustomBehaviour() { 
+    if (m_on_remove) m_on_remove.call(); 
+}
+
+void CustomBehaviour::set_on_update(sol::function func) {
+    assert(func && "not a valid callback");
+    m_on_update = std::move(func);
+}
+
+void CustomBehaviour::set_on_remove(sol::function func) {
+    assert(func && "not a valid callback");
+    m_on_remove = std::move(func);
+}
+
+void CustomBehaviour::call_on_update() const { 
+    if (m_on_update) {
+        try {
+            m_on_update.call();
+        } catch (const sol::error& e) {
+            std::cerr << "Error in CustomBehaviour::on_update lua function: " << e.what() << std::endl;
+        }
+    }
+}
+
+Sprite::Sprite(std::string path) : m_img(std::make_shared<Texture>(path)) {
+    m_img->filter_nearest();
+}
+
+void Sprite::set_texture(std::string path) { 
+    m_img = std::make_shared<Texture>(path);
+    m_img->filter_nearest();
+}
+
 }

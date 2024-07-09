@@ -1331,15 +1331,17 @@ CMakeFiles/main.dir/core/src/Application.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Camera.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneManager.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stack \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Input.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/WindowEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/MouseEvent.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/CustomEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/LuaScene.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/LuaEvents.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/System.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/TextureStorage.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/FrameData.h

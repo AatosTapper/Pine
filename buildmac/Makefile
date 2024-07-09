@@ -181,6 +181,30 @@ core/src/Application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/Application.cpp.s
 .PHONY : core/src/Application.cpp.s
 
+core/src/Input.o: core/src/Input.cpp.o
+.PHONY : core/src/Input.o
+
+# target to build an object file
+core/src/Input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/Input.cpp.o
+.PHONY : core/src/Input.cpp.o
+
+core/src/Input.i: core/src/Input.cpp.i
+.PHONY : core/src/Input.i
+
+# target to preprocess a source file
+core/src/Input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/Input.cpp.i
+.PHONY : core/src/Input.cpp.i
+
+core/src/Input.s: core/src/Input.cpp.s
+.PHONY : core/src/Input.s
+
+# target to generate assembly for a file
+core/src/Input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/Input.cpp.s
+.PHONY : core/src/Input.cpp.s
+
 core/src/SceneParser.o: core/src/SceneParser.cpp.o
 .PHONY : core/src/SceneParser.o
 
@@ -445,30 +469,6 @@ core/src/rendering/Texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Texture.cpp.s
 .PHONY : core/src/rendering/Texture.cpp.s
 
-core/src/rendering/TextureStorage.o: core/src/rendering/TextureStorage.cpp.o
-.PHONY : core/src/rendering/TextureStorage.o
-
-# target to build an object file
-core/src/rendering/TextureStorage.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/TextureStorage.cpp.o
-.PHONY : core/src/rendering/TextureStorage.cpp.o
-
-core/src/rendering/TextureStorage.i: core/src/rendering/TextureStorage.cpp.i
-.PHONY : core/src/rendering/TextureStorage.i
-
-# target to preprocess a source file
-core/src/rendering/TextureStorage.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/TextureStorage.cpp.i
-.PHONY : core/src/rendering/TextureStorage.cpp.i
-
-core/src/rendering/TextureStorage.s: core/src/rendering/TextureStorage.cpp.s
-.PHONY : core/src/rendering/TextureStorage.s
-
-# target to generate assembly for a file
-core/src/rendering/TextureStorage.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/TextureStorage.cpp.s
-.PHONY : core/src/rendering/TextureStorage.cpp.s
-
 core/src/rendering/VertexArray.o: core/src/rendering/VertexArray.cpp.o
 .PHONY : core/src/rendering/VertexArray.o
 
@@ -589,6 +589,30 @@ core/src/scene/Scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/Scene.cpp.s
 .PHONY : core/src/scene/Scene.cpp.s
 
+core/src/scene/SceneManager.o: core/src/scene/SceneManager.cpp.o
+.PHONY : core/src/scene/SceneManager.o
+
+# target to build an object file
+core/src/scene/SceneManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o
+.PHONY : core/src/scene/SceneManager.cpp.o
+
+core/src/scene/SceneManager.i: core/src/scene/SceneManager.cpp.i
+.PHONY : core/src/scene/SceneManager.i
+
+# target to preprocess a source file
+core/src/scene/SceneManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.i
+.PHONY : core/src/scene/SceneManager.cpp.i
+
+core/src/scene/SceneManager.s: core/src/scene/SceneManager.cpp.s
+.PHONY : core/src/scene/SceneManager.s
+
+# target to generate assembly for a file
+core/src/scene/SceneManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.s
+.PHONY : core/src/scene/SceneManager.cpp.s
+
 dep/glad/glad.o: dep/glad/glad.c.o
 .PHONY : dep/glad/glad.o
 
@@ -653,6 +677,9 @@ help:
 	@echo "... core/src/Application.o"
 	@echo "... core/src/Application.i"
 	@echo "... core/src/Application.s"
+	@echo "... core/src/Input.o"
+	@echo "... core/src/Input.i"
+	@echo "... core/src/Input.s"
 	@echo "... core/src/SceneParser.o"
 	@echo "... core/src/SceneParser.i"
 	@echo "... core/src/SceneParser.s"
@@ -686,9 +713,6 @@ help:
 	@echo "... core/src/rendering/Texture.o"
 	@echo "... core/src/rendering/Texture.i"
 	@echo "... core/src/rendering/Texture.s"
-	@echo "... core/src/rendering/TextureStorage.o"
-	@echo "... core/src/rendering/TextureStorage.i"
-	@echo "... core/src/rendering/TextureStorage.s"
 	@echo "... core/src/rendering/VertexArray.o"
 	@echo "... core/src/rendering/VertexArray.i"
 	@echo "... core/src/rendering/VertexArray.s"
@@ -704,6 +728,9 @@ help:
 	@echo "... core/src/scene/Scene.o"
 	@echo "... core/src/scene/Scene.i"
 	@echo "... core/src/scene/Scene.s"
+	@echo "... core/src/scene/SceneManager.o"
+	@echo "... core/src/scene/SceneManager.i"
+	@echo "... core/src/scene/SceneManager.s"
 	@echo "... dep/glad/glad.o"
 	@echo "... dep/glad/glad.i"
 	@echo "... dep/glad/glad.s"

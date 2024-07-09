@@ -46,24 +46,24 @@ void Renderer::m_draw_sprites(Scene *scene) {
     }
 
     for (auto &ent : scene->view<component::Sprite>()) {
-        auto [sprite, transform] = Entity(ent, scene).get_components<component::Sprite, component::Transform>();
+        auto [sprite, transform] = Entity(ent, scene).get<component::Sprite, component::Transform>();
 
-        if (sprite.img == nullptr) continue;
+        if (sprite.m_img == nullptr) continue;
 
         m_selected_shader->use();
 
         glActiveTexture(GL_TEXTURE0);
         //scene->m_textures->get(sprite.texture).bind();
-        sprite.img->bind();
+        sprite.m_img->bind();
 
         m_selected_shader->set_mat4f("u_view_proj", m_selected_vpm);
         m_selected_shader->set_mat4f("u_transform", transform);
 
-        sprite.mesh.get_vao()->bind();
-        sprite.mesh.get_ebo()->bind();
-        glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(sprite.mesh.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0);
-        sprite.mesh.get_vao()->unbind();
-        sprite.mesh.get_ebo()->unbind();
+        sprite.m_mesh.get_vao()->bind();
+        sprite.m_mesh.get_ebo()->bind();
+        glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(sprite.m_mesh.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0);
+        sprite.m_mesh.get_vao()->unbind();
+        sprite.m_mesh.get_ebo()->unbind();
     }
 }
 

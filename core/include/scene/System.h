@@ -3,31 +3,26 @@
 #include "pch.h"
 #include "Scene.h"
 #include "Components.h"
+#include "Entity.h"
 #include "singleton.h"
 
-namespace ec_system {
-
-class TextureSetter {
+using SystemFunction = std::function<void(Scene *)>;
+class System {
 public:
-    TextureSetter() {}
-    IMPL_SINGLETON_DISPATCHER(TextureSetter)
-    IMPL_NO_COPY(TextureSetter)
+    virtual ~System() {};
 
-    void update(Scene *scene) {
-        return;
-        /*
-        for (auto &sprite : scene->components<component::Sprite>()) {
-            auto &comp = sprite.component;
-            if (comp.texture > 0) continue;
-            //if (comp.temp_path == nullptr) [[likely]] continue;
-            if (!comp.temp_path.empty()) [[likely]] {
-                comp.texture = scene->get_textures()->push(comp.temp_path);
-                comp.temp_path = nullptr;
-                std::cout << "Texture assigned to a sprite\n"; 
-            }        
-        }
-        */
-    }
+    virtual void update(Scene *scene) = 0;
 };
 
-}
+class CustomBehaviourSystem : public System {
+public:
+    IMPL_VIRTUAL_SINGLETON_DISPATCHER(CustomBehaviourSystem, System)
+    virtual ~CustomBehaviourSystem() override {}
+    virtual void update(Scene *scene) override {
+        for (auto ent : scene->view<component::CustomBehaviour>()) {
+            Entity entity{ent, scene};
+            auto &customBehaviour = entity.get_component<component::CustomBehaviour>();
+            customBehaviour.call_on_update();
+        }
+    };
+};

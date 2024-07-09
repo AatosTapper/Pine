@@ -38,7 +38,7 @@ private:
     void m_fix_startup_framebuffer() {
         int fb_width, fb_height;
         glfwGetFramebufferSize(m_window, &fb_width, &fb_height);
-        glViewport(0, 0, fb_width, fb_height);
+        //glViewport(0, 0, fb_width, fb_height);
 
         m_resize_callback(m_window, fb_width, fb_height);
     }
