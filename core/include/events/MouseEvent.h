@@ -4,7 +4,7 @@
 
 class MouseButtonPressedEvent : public Event {
 public:
-    MouseButtonPressedEvent(int _button, double x, double y) : x_pos(x), y_pos(y), button(_button) {}
+    constexpr MouseButtonPressedEvent(int _button, double x, double y) : x_pos(x), y_pos(y), button(_button) {}
 
     EVENT_CLASS_TYPE(MouseButtonPressed)
     EVENT_CLASS_CATEGORY(MOUSE)
@@ -17,7 +17,7 @@ public:
 
 class MouseButtonReleasedEvent : public Event {
 public:
-    MouseButtonReleasedEvent(int _button) : button(_button) {}
+    constexpr MouseButtonReleasedEvent(int _button) : button(_button) {}
 
     EVENT_CLASS_TYPE(MouseButtonReleased)
     EVENT_CLASS_CATEGORY(MOUSE)
@@ -28,7 +28,7 @@ public:
 
 class MouseMovedEvent : public Event {
 public:
-    MouseMovedEvent(double x, double y) : x_pos(x), y_pos(y) {}
+    constexpr MouseMovedEvent(double x, double y) : x_pos(x), y_pos(y) {}
 
     EVENT_CLASS_TYPE(MouseMoved)
     EVENT_CLASS_CATEGORY(MOUSE)

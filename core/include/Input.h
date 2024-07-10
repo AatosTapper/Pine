@@ -8,8 +8,8 @@ struct Input {
     int key = 0;
     bool active = true;
 
-    operator int() { return key; }
-    bool operator == (const int &oth) const { return key == oth; }
+    constexpr operator int() { return key; }
+    constexpr bool operator == (const int &oth) const { return key == oth; }
 };
 
 /// @brief Listens to the event bus and converts keyboard events into a list of currently pressed keys
@@ -24,6 +24,6 @@ private:
     std::vector<Input> m_inputs;
     EventBus &m_event_bus;
 
-    void m_callback_pressed(KeyPressedEvent *event);
-    void m_callback_released(KeyReleasedEvent *event);
+    constexpr void m_callback_pressed(KeyPressedEvent *event);
+    constexpr void m_callback_released(KeyReleasedEvent *event);
 };

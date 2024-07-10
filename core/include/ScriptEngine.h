@@ -4,10 +4,9 @@
 
 #include "singleton.h"
 
-#define SCRIPT(name) "../app/" name
-
-#define LUA_VEC(TYPE, lua) \
-    lua.set_function("pine_"#TYPE"_vec", []() -> std::vector<TYPE> { return {}; })
+inline constexpr char application_path[] = "../app/";
+inline constexpr std::string app_relative_path(const char *path) { return std::string(application_path) + std::string(path); }
+inline constexpr std::string app_relative_path(const std::string &path) { return std::string(application_path) + path; }
 
 class ScriptEngine {
 public:
@@ -23,3 +22,6 @@ public:
 private:
     ScriptEngine() = delete;
 };
+
+#define LUA_VEC(TYPE, lua) \
+    lua.set_function("pine_"#TYPE"_vec", []() -> std::vector<TYPE> { return {}; })

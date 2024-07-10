@@ -8,7 +8,7 @@ local val = tostring(math.random(0, 100))
 local ent = scene:add_entity(val)
 
 local sprite = ent:add_component_Sprite()
-sprite:set_texture("../app/res/textures/apple.png")
+sprite:set_texture("res/textures/apple.png")
 
 local transform = ent:get_component_Transform()
 transform:set_pos(math.random() * 64 - 32, math.random() * 32 - 16)

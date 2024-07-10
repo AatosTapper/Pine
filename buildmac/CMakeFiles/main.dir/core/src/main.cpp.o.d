@@ -1329,9 +1329,4 @@ CMakeFiles/main.dir/core/src/main.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneManager.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stack \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Input.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h

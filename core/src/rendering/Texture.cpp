@@ -8,7 +8,7 @@
     #include <STB/stb_image.h>
 #endif
 
-static bool is_png(const std::string &path);
+static constexpr bool is_png(const std::string &path);
 
 Texture::Texture(const std::string &file) {
     glGenTextures(1, &m_id);
@@ -60,7 +60,7 @@ void Texture::filter_linear() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 }
 
-bool is_png(const std::string &path) {
+constexpr bool is_png(const std::string &path) {
     size_t dot_pos = path.find_last_of('.');
     if (dot_pos != std::string::npos) {
         std::string extension = path.substr(dot_pos + 1);

@@ -4,7 +4,7 @@
 
 class WindowResizeEvent : public Event {
 public:
-    WindowResizeEvent(int width, int heigth) : new_width(width), new_height(heigth) {}
+    constexpr WindowResizeEvent(int width, int heigth) : new_width(width), new_height(heigth) {}
 
     EVENT_CLASS_TYPE(WindowResize)
     EVENT_CLASS_CATEGORY(WINDOW)

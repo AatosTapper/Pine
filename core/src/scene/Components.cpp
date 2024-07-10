@@ -13,17 +13,17 @@ glm::mat4 Transform::get_matrix() const
 }
 
 Script::Script(std::string str) {
-    m_scripts.push_back(str);
+    m_scripts.push_back(app_relative_path(str));
 }
 
 Script::id_t Script::push_script(std::string str) { 
-    m_scripts.push_back(str);
+    m_scripts.push_back(app_relative_path(str));
     return m_scripts.size() - 1;
 }
 void Script::run(sol::state &lua, Script::id_t id) { 
     auto &script = m_scripts.at(id);
     assert(!script.empty()); 
-    ScriptEngine::run_script(lua, SCRIPT() + script); 
+    ScriptEngine::run_script(lua, script); 
 }
 
 CustomBehaviour::CustomBehaviour(sol::function f) : m_on_update(f) {}
@@ -52,12 +52,12 @@ void CustomBehaviour::call_on_update() const {
     }
 }
 
-Sprite::Sprite(std::string path) : m_img(TexturePool::instance().push(path)) {
+Sprite::Sprite(std::string path) : m_img(TexturePool::instance().push(app_relative_path(path))) {
     m_img->filter_nearest();
 }
 
 void Sprite::set_texture(std::string path) { 
-    m_img = TexturePool::instance().push(path);
+    m_img = TexturePool::instance().push(app_relative_path(path));
     m_img->filter_nearest();
 }
 

@@ -19,11 +19,11 @@ enum EventCategory : uint32_t {
     CUSTOM      = 1 << 4
 };
 
-#define EVENT_CLASS_TYPE(type) static EventType get_static_type() { return EventType::type; }; \
-                                virtual EventType get_event_type() const override { return get_static_type(); }; \
-                                virtual const char* get_name() const override { return #type; }; \
+#define EVENT_CLASS_TYPE(type) static constexpr EventType get_static_type() { return EventType::type; }; \
+                                virtual constexpr EventType get_event_type() const override { return get_static_type(); }; \
+                                virtual constexpr const char* get_name() const override { return #type; }; \
 
-#define EVENT_CLASS_CATEGORY(category) virtual uint32_t get_category_flags() const override { return category; }
+#define EVENT_CLASS_CATEGORY(category) virtual constexpr uint32_t get_category_flags() const override { return category; }
 
 #define CREATE_TYPE_INDEX(T) virtual std::type_index get_typeid() const override { return typeid(T); }
 
@@ -31,11 +31,11 @@ class Event {
 public:
     virtual ~Event() {}
 
-    virtual EventType get_event_type() const = 0;
-    virtual const char* get_name() const = 0;
-    virtual uint32_t get_category_flags() const = 0;
+    virtual constexpr EventType get_event_type() const = 0;
+    virtual constexpr const char* get_name() const = 0;
+    virtual constexpr uint32_t get_category_flags() const = 0;
 
-    inline bool is_in_category(EventCategory category) {
+    inline constexpr bool is_in_category(EventCategory category) {
         return get_category_flags() & category;
     }
 
@@ -55,12 +55,12 @@ class FunctionHandlerBase {
 public:
     virtual ~FunctionHandlerBase() {}
 
-    HandlerPersistence execute(Event *event) {
+    constexpr HandlerPersistence execute(Event *event) {
         return m_call(event);
     }
 
 protected:
-    virtual HandlerPersistence m_call(Event *event) = 0;
+    virtual constexpr HandlerPersistence m_call(Event *event) = 0;
 };
 
 template<class T>
@@ -68,7 +68,7 @@ class FunctionHandler : public FunctionHandlerBase {
 public:
     FunctionHandler(EventCallback<T> member_function) : m_member_function(member_function) {}
 
-    virtual HandlerPersistence m_call(Event *event) override {
+    virtual constexpr HandlerPersistence m_call(Event *event) override {
         return m_member_function(static_cast<T*>(event));
     }
 

@@ -56,8 +56,8 @@ void Camera::down(const float amount) {
 }
 
 void Camera::m_update_direction() {
-    m_direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    m_direction.y = sin(glm::radians(pitch));
-    m_direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+    m_direction.x = std::cos(glm::radians(yaw)) * std::cos(glm::radians(pitch));
+    m_direction.y = std::sin(glm::radians(pitch));
+    m_direction.z = std::sin(glm::radians(yaw)) * std::cos(glm::radians(pitch));
     m_direction = glm::normalize(m_direction);
 }

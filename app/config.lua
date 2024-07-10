@@ -9,7 +9,4 @@ config = {
     cam_fov = 10,
     cam_projection = 1,     -- 0 = 3D, 1 = 2D (ortho)
     cam_start_z = 1,       -- how far back the camera starts
-
-    --misc
-    default_texture = "app/res/textures/default.png"
 }

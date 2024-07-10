@@ -9603,21 +9603,16 @@ CMakeFiles/main.dir/core/src/main.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx
   CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Application.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Input.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Window.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/Event.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Camera.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/QuadMesh.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Renderer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Shader.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Scene.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneManager.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
