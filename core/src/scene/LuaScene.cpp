@@ -109,11 +109,14 @@ void set_lua_scene(sol::state &lua, SceneManager &manager) {
         return sol::make_object(lua, self.get_camera());
     };
 
-
-    //const glm::vec3 &get_position()
-    //void set_position(const glm::vec3 &new_pos)
-
     // move
+    camera_type["get_pos"] = &Camera::get_position; // -> glm::vec3
+    camera_type["set_pos"] = [&](Camera &self, const glm::vec2 &pos) {
+        const auto &curr_pos = self.get_position();
+        self.set_position({ pos.x, pos.y, curr_pos.z });
+    };
+    camera_type["set_pos_3d"] = &Camera::set_position;
+
     camera_type["forward"] = &Camera::forward;
     camera_type["back"] = &Camera::back;
     camera_type["left"] = &Camera::left;

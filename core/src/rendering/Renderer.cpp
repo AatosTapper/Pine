@@ -46,6 +46,7 @@ void Renderer::m_draw_sprites(Scene *scene) {
     }
 
     auto &mesh = QuadMesh::instance();
+    float z_offset = 0.0f; // remove z_fighting
 
     for (auto &ent : scene->view<component::Sprite>()) {
         auto [sprite, transform] = Entity(ent, scene).get<component::Sprite, component::Transform>();
@@ -59,12 +60,15 @@ void Renderer::m_draw_sprites(Scene *scene) {
 
         m_selected_shader->set_mat4f("u_view_proj", m_selected_vpm);
         m_selected_shader->set_mat4f("u_transform", transform);
+        m_selected_shader->set_float("u_z_fight_factor", z_offset);
 
         mesh.get_vao()->bind();
         mesh.get_ebo()->bind();
         glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(mesh.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0);
         mesh.get_vao()->unbind();
         mesh.get_ebo()->unbind();
+
+        z_offset += 0.0001f;
     }
 }
 

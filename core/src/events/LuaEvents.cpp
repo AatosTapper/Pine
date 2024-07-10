@@ -60,6 +60,12 @@ void set_lua_event_handlers(sol::state &lua, EventBus &bus, InputBus &input) {
         });
     });
 
+    lua.set_function("pine_create_event_Custom", [&](const char *title, sol::object data) {
+        auto data_ptr = std::make_shared<sol::object>(data);
+        CustomLuaEvent event(title, data_ptr);
+        bus.publish(&event);
+    });
+
     lua.set_function("pine_get_input", [&](int key) {
         return input.is_pressed(key);
     });

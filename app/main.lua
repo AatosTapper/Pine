@@ -35,17 +35,19 @@ local function setup()
     behaviour:set_on_update(function()
         -- simple controller using pine_get_input(keycode)
         if pine_get_input(Cone.Key._W) then
-            camera:down(0.2)
-        end
-        if pine_get_input(Cone.Key._S) then
             camera:up(0.2)
         end
-        if pine_get_input(Cone.Key._A) then
-            camera:right(0.2)
+        if pine_get_input(Cone.Key._S) then
+            camera:down(0.2)
         end
-        if pine_get_input(Cone.Key._D) then
+        if pine_get_input(Cone.Key._A) then
             camera:left(0.2)
         end
+        if pine_get_input(Cone.Key._D) then
+            camera:right(0.2)
+        end
+        -- local pos = vec2.from(camera:get_pos())
+        -- camera:set_pos(vec2.from(pos.x + ((math.random() - 0.5) * 0.2), pos.y + ((math.random() - 0.5) * 0.2)))
     end)
 
     behaviour:set_on_remove(function()

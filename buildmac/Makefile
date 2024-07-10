@@ -205,6 +205,30 @@ core/src/Input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/Input.cpp.s
 .PHONY : core/src/Input.cpp.s
 
+core/src/LuaUtils.o: core/src/LuaUtils.cpp.o
+.PHONY : core/src/LuaUtils.o
+
+# target to build an object file
+core/src/LuaUtils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/LuaUtils.cpp.o
+.PHONY : core/src/LuaUtils.cpp.o
+
+core/src/LuaUtils.i: core/src/LuaUtils.cpp.i
+.PHONY : core/src/LuaUtils.i
+
+# target to preprocess a source file
+core/src/LuaUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/LuaUtils.cpp.i
+.PHONY : core/src/LuaUtils.cpp.i
+
+core/src/LuaUtils.s: core/src/LuaUtils.cpp.s
+.PHONY : core/src/LuaUtils.s
+
+# target to generate assembly for a file
+core/src/LuaUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/LuaUtils.cpp.s
+.PHONY : core/src/LuaUtils.cpp.s
+
 core/src/SceneParser.o: core/src/SceneParser.cpp.o
 .PHONY : core/src/SceneParser.o
 
@@ -704,6 +728,9 @@ help:
 	@echo "... core/src/Input.o"
 	@echo "... core/src/Input.i"
 	@echo "... core/src/Input.s"
+	@echo "... core/src/LuaUtils.o"
+	@echo "... core/src/LuaUtils.i"
+	@echo "... core/src/LuaUtils.s"
 	@echo "... core/src/SceneParser.o"
 	@echo "... core/src/SceneParser.i"
 	@echo "... core/src/SceneParser.s"

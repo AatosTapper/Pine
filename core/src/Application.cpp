@@ -9,7 +9,7 @@
 #include "scene/LuaScene.h"
 #include "events/LuaEvents.h"
 #include "scene/System.h"
-
+#include "LuaUtils.h"
 #include "FrameData.h"
 
 // @Lua API
@@ -39,7 +39,7 @@ Application::Application(sol::state &lua) :
         ScriptEngine::get_config_var_double(m_lua, "cam_fov"),
         static_cast<bool>(ScriptEngine::get_config_var_int(m_lua, "cam_projection"))
     );
-    m_camera->back(1.0f);
+    m_camera->back(ScriptEngine::get_config_var_double(m_lua, "cam_start_z"));
 
     m_scene_manager.set_camera(m_camera.get());
 
@@ -105,14 +105,9 @@ void Application::m_run() {
 // @Lua API
 void Application::m_set_lua_functions() {
     m_lua.set_function("pine_run", &Application::m_run, this);
+
+    set_lua_utils(m_lua);
     set_lua_event_handlers(m_lua, m_event_bus, m_input_bus);
-
-    m_lua.set_function("pine_create_event_Custom", [this](const char *title, sol::object data) {
-        auto data_ptr = std::make_shared<sol::object>(data);
-        CustomLuaEvent event(title, data_ptr);
-        this->m_event_bus.publish(&event);
-    });
-
     set_lua_entity(m_lua);
     set_lua_components(m_lua);
     set_lua_scene(m_lua, m_scene_manager);

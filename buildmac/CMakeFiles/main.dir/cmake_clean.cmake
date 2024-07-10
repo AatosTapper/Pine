@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/core/src/Application.cpp.o.d"
   "CMakeFiles/main.dir/core/src/Input.cpp.o"
   "CMakeFiles/main.dir/core/src/Input.cpp.o.d"
+  "CMakeFiles/main.dir/core/src/LuaUtils.cpp.o"
+  "CMakeFiles/main.dir/core/src/LuaUtils.cpp.o.d"
   "CMakeFiles/main.dir/core/src/SceneParser.cpp.o"
   "CMakeFiles/main.dir/core/src/SceneParser.cpp.o.d"
   "CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o"
