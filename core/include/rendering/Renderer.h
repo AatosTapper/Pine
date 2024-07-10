@@ -39,7 +39,6 @@ private:
     uint32_t m_texture_color_buffer = 0;
     uint32_t m_texture_depth_buffer = 0;
     uint32_t m_rbo = 0;
-    QuadMesh m_screen_quad;
     
     void m_draw_sprites(Scene *scene);
 

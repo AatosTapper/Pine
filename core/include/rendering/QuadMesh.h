@@ -2,19 +2,17 @@
 
 #include "pch.h"
 #include "config.h"
+#include "singleton.h"
 
-#include "VertexArray.h"
-#include "VertexBuffer.h"
-#include "IndexBuffer.h"
-
+class VertexArray;
+class IndexBuffer;
 class QuadMesh {
 public:
-    QuadMesh(float width, float height);
-    QuadMesh(float size) : QuadMesh(size, size) {}
-    QuadMesh() : QuadMesh(1.0f, 1.0f) {}
+    QuadMesh();
+
+    IMPL_SINGLETON_DISPATCHER(QuadMesh)
+    IMPL_NO_COPY(QuadMesh)
 
     VertexArray *get_vao() const;
     IndexBuffer *get_ebo() const;
-    
-    glm::mat4 transform;
 };

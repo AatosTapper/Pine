@@ -11,7 +11,7 @@ class Renderer;
 namespace component {
 
 ///
-/// @brief User defineable handle for an entity, name doesn't need to be unique
+/// @brief User definable handle for an entity, name doesn't need to be unique
 ///
 struct Tag {
     Tag() = default;
@@ -36,7 +36,7 @@ struct Transform {
 };
 
 ///
-/// @brief Define any number of general script files that can be run anytime
+/// @brief Define any number of general script files that can be run whenever
 ///
 struct Script {
     using id_t = uint32_t;
@@ -51,7 +51,7 @@ private:
 };
 
 ///
-/// @brief Define custom functions for different object lifetime events
+/// @brief Define custom update and destroy functions
 ///
 struct CustomBehaviour {
     CustomBehaviour() = default;
@@ -78,8 +78,7 @@ struct Sprite {
     void set_texture(std::string path);
 
 private:
-    QuadMesh m_mesh;
-    std::shared_ptr<Texture> m_img = nullptr;
+    Texture *m_img = nullptr;
 };
 
 ///

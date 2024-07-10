@@ -1325,9 +1325,6 @@ CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/QuadMesh.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexArray.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/IndexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneManager.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stack

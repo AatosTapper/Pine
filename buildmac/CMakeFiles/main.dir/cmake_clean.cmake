@@ -27,6 +27,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o.d"
   "CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o"
   "CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o.d"
+  "CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o"
+  "CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o.d"
   "CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o"
   "CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o.d"
   "CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o"

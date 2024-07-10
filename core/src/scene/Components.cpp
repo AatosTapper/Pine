@@ -1,4 +1,5 @@
 #include "scene/Components.h"
+#include "TexturePool.h"
 
 namespace component {
 
@@ -51,12 +52,12 @@ void CustomBehaviour::call_on_update() const {
     }
 }
 
-Sprite::Sprite(std::string path) : m_img(std::make_shared<Texture>(path)) {
+Sprite::Sprite(std::string path) : m_img(TexturePool::instance().push(path)) {
     m_img->filter_nearest();
 }
 
 void Sprite::set_texture(std::string path) { 
-    m_img = std::make_shared<Texture>(path);
+    m_img = TexturePool::instance().push(path);
     m_img->filter_nearest();
 }
 

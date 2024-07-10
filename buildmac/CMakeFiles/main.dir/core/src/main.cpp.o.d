@@ -1145,9 +1145,6 @@ CMakeFiles/main.dir/core/src/main.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Renderer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Shader.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/QuadMesh.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexArray.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/IndexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Scene.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/entt.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/config/config.h \

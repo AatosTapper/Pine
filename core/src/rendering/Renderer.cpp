@@ -45,35 +45,38 @@ void Renderer::m_draw_sprites(Scene *scene) {
         m_selected_shader = &m_sprite_shader;
     }
 
+    auto &mesh = QuadMesh::instance();
+
     for (auto &ent : scene->view<component::Sprite>()) {
         auto [sprite, transform] = Entity(ent, scene).get<component::Sprite, component::Transform>();
-
+        
         if (sprite.m_img == nullptr) continue;
 
         m_selected_shader->use();
 
         glActiveTexture(GL_TEXTURE0);
-        //scene->m_textures->get(sprite.texture).bind();
         sprite.m_img->bind();
 
         m_selected_shader->set_mat4f("u_view_proj", m_selected_vpm);
         m_selected_shader->set_mat4f("u_transform", transform);
 
-        sprite.m_mesh.get_vao()->bind();
-        sprite.m_mesh.get_ebo()->bind();
-        glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(sprite.m_mesh.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0);
-        sprite.m_mesh.get_vao()->unbind();
-        sprite.m_mesh.get_ebo()->unbind();
+        mesh.get_vao()->bind();
+        mesh.get_ebo()->bind();
+        glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(mesh.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0);
+        mesh.get_vao()->unbind();
+        mesh.get_ebo()->unbind();
     }
 }
 
 void Renderer::m_render_framebuffer() {
+    auto &mesh = QuadMesh::instance();
+
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     m_post_process_shader.use();
-    m_screen_quad.get_vao()->bind();
+    mesh.get_vao()->bind();
     glDisable(GL_DEPTH_TEST);
 
     glActiveTexture(GL_TEXTURE0);
@@ -84,11 +87,11 @@ void Renderer::m_render_framebuffer() {
     glBindTexture(GL_TEXTURE_2D, m_texture_depth_buffer);
     glUniform1i(glGetUniformLocation(m_post_process_shader.get_id(), "tex_dep"), 1);
 
-    m_screen_quad.get_vao()->bind();
-    m_screen_quad.get_ebo()->bind();
-    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(m_screen_quad.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0);
-    m_screen_quad.get_vao()->unbind();
-    m_screen_quad.get_ebo()->unbind();
+    mesh.get_vao()->bind();
+    mesh.get_ebo()->bind();
+    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(mesh.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0);
+    mesh.get_vao()->unbind();
+    mesh.get_ebo()->unbind();
 }
 
 void Renderer::m_create_framebuffers() {

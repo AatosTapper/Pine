@@ -1,6 +1,9 @@
 #include "QuadMesh.h"
 
 #include "VertexBufferLayout.h"
+#include "VertexArray.h"
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
 
 static bool mesh_created = false;
 static std::unique_ptr<VertexArray> vao_memory = nullptr;
@@ -19,9 +22,7 @@ static constexpr uint32_t indices[] = {
     1, 2, 3
 };
 
-QuadMesh::QuadMesh(float width, float height) {
-    transform = glm::scale(transform, glm::vec3(width, height, 1.0));
-
+QuadMesh::QuadMesh() {
     if (!mesh_created) [[unlikely]] {
         mesh_created = true;
 

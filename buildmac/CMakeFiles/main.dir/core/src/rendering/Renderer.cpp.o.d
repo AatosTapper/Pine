@@ -1140,9 +1140,6 @@ CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Shader.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/QuadMesh.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexArray.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/IndexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Window.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/Event.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/typeindex \
@@ -1327,6 +1324,9 @@ CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/signal/emitter.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/signal/sigh.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Camera.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexArray.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/IndexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \

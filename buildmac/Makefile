@@ -469,6 +469,30 @@ core/src/rendering/Texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/Texture.cpp.s
 .PHONY : core/src/rendering/Texture.cpp.s
 
+core/src/rendering/TexturePool.o: core/src/rendering/TexturePool.cpp.o
+.PHONY : core/src/rendering/TexturePool.o
+
+# target to build an object file
+core/src/rendering/TexturePool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o
+.PHONY : core/src/rendering/TexturePool.cpp.o
+
+core/src/rendering/TexturePool.i: core/src/rendering/TexturePool.cpp.i
+.PHONY : core/src/rendering/TexturePool.i
+
+# target to preprocess a source file
+core/src/rendering/TexturePool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.i
+.PHONY : core/src/rendering/TexturePool.cpp.i
+
+core/src/rendering/TexturePool.s: core/src/rendering/TexturePool.cpp.s
+.PHONY : core/src/rendering/TexturePool.s
+
+# target to generate assembly for a file
+core/src/rendering/TexturePool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.s
+.PHONY : core/src/rendering/TexturePool.cpp.s
+
 core/src/rendering/VertexArray.o: core/src/rendering/VertexArray.cpp.o
 .PHONY : core/src/rendering/VertexArray.o
 
@@ -713,6 +737,9 @@ help:
 	@echo "... core/src/rendering/Texture.o"
 	@echo "... core/src/rendering/Texture.i"
 	@echo "... core/src/rendering/Texture.s"
+	@echo "... core/src/rendering/TexturePool.o"
+	@echo "... core/src/rendering/TexturePool.i"
+	@echo "... core/src/rendering/TexturePool.s"
 	@echo "... core/src/rendering/VertexArray.o"
 	@echo "... core/src/rendering/VertexArray.i"
 	@echo "... core/src/rendering/VertexArray.s"
