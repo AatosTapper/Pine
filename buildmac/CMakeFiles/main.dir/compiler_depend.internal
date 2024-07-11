@@ -1935,6 +1935,7 @@ CMakeFiles/main.dir/core/src/Application.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/LuaUtils.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Serialize.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Window.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/CustomEvent.h
@@ -14599,6 +14600,7 @@ CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Serialize.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Window.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/Event.h
@@ -21495,8 +21497,10 @@ CMakeFiles/main.dir/core/src/scene/Components.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Serialize.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/QuadMesh.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/TexturePool.h
@@ -22684,6 +22688,7 @@ CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Serialize.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h
@@ -24016,6 +24021,7 @@ CMakeFiles/main.dir/core/src/scene/Scene.cpp.o
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h
+ /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Serialize.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h
  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h

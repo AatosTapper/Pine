@@ -68,6 +68,7 @@ void set_lua_components(sol::state &lua) {
     COMP_MEM_REGISTER(Transform, y)
     COMP_MEM_REGISTER(Transform, sx)
     COMP_MEM_REGISTER(Transform, sy)
+    COMP_MEM_REGISTER(Transform, rr)
     COMP_MEM_REGISTER(Transform, set_pos)
     COMP_MEM_REGISTER(Transform, set_scale)
 
@@ -80,6 +81,7 @@ void set_lua_components(sol::state &lua) {
         }
         self.run(lua, id);
     };
+    Script_type["run_all"] = [&lua](component::Script &self) { self.run_all(lua); };
 
     COMP_REGISTER_ARGS(Table, sol::table)
     COMP_MEM_REGISTER(Table, data)

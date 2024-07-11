@@ -88,6 +88,7 @@
         "ranges": "cpp",
         "codecvt": "cpp",
         "condition_variable": "cpp",
-        "semaphore": "cpp"
+        "semaphore": "cpp",
+        "__memory": "cpp"
     }
 }

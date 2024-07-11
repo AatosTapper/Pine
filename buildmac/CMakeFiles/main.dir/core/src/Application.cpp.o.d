@@ -1337,9 +1337,10 @@ CMakeFiles/main.dir/core/src/Application.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/LuaEvents.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/System.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Serialize.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/LuaUtils.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/FrameData.h

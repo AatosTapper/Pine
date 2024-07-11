@@ -13,3 +13,4 @@ sprite:set_texture("res/textures/apple.png")
 local transform = ent:get_component_Transform()
 transform:set_pos(math.random() * 64 - 32, math.random() * 32 - 16)
 transform:set_scale((math.random() + 0.25) * 2, (math.random() + 0.25) * 2)
+transform.rr = math.random() * 8

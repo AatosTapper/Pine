@@ -32,6 +32,7 @@ local function setup()
     local camera = scene:get_camera()
     local behaviour = spawner_ent:add_component_CustomBehaviour()
 
+
     behaviour:set_on_update(function()
         -- simple controller using pine_get_input(keycode)
         if pine_get_input(Cone.Key._W) then
