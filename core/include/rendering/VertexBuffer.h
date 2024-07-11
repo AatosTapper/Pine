@@ -4,7 +4,7 @@
 
 class VertexBuffer {
 public:
-    VertexBuffer();
+    VertexBuffer() noexcept;
     ~VertexBuffer();
     IMPL_NO_COPY(VertexBuffer)
 

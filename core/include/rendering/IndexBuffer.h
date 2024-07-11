@@ -4,7 +4,7 @@
 
 class IndexBuffer {
 public:
-    IndexBuffer();
+    IndexBuffer() noexcept;
     ~IndexBuffer();
     IMPL_NO_COPY(IndexBuffer)
 

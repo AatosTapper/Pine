@@ -23,7 +23,7 @@ struct VertexBufferElement  {
 
 class VertexBufferLayout {
 public:
-    VertexBufferLayout() : m_stride(0u) {}
+    VertexBufferLayout() noexcept : m_stride(0u) {}
 
     const std::vector<VertexBufferElement>& get_elements() const { return m_elements; }
     unsigned int get_stride() const { return m_stride; }

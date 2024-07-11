@@ -6,9 +6,9 @@
 class Entity {
     friend class Scene;
 public:
-    Entity(entt::entity ent, Scene *scene) : m_handle(ent), m_scene(scene) {}
-    Entity() = default;
-    Entity(Scene *scene) { *this = scene->add_entity(); }
+    Entity(entt::entity ent, Scene *scene) noexcept : m_handle(ent), m_scene(scene) {}
+    Entity() noexcept = default;
+    Entity(Scene *scene) noexcept { *this = scene->add_entity(); }
 
     template<typename T, typename ...Args>
     T& add_component(Args&&... args) {

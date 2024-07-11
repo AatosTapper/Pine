@@ -4,7 +4,7 @@
 
 class KeyPressedEvent : public Event {
 public:
-    constexpr KeyPressedEvent(int _key) : key(_key) {}
+    constexpr KeyPressedEvent(int _key) noexcept : key(_key) {}
 
     EVENT_CLASS_TYPE(KeyPressed)
     EVENT_CLASS_CATEGORY(KEYBOARD)
@@ -15,7 +15,7 @@ public:
 
 class KeyReleasedEvent : public Event {
 public:
-    constexpr KeyReleasedEvent(int _key) : key(_key) {}
+    constexpr KeyReleasedEvent(int _key) noexcept : key(_key) {}
 
     EVENT_CLASS_TYPE(KeyReleased)
     EVENT_CLASS_CATEGORY(KEYBOARD)
@@ -26,7 +26,7 @@ public:
 
 class KeyRepeatEvent : public Event {
 public:
-    constexpr KeyRepeatEvent(int _key) : key(_key) {}
+    constexpr KeyRepeatEvent(int _key) noexcept : key(_key) {}
 
     EVENT_CLASS_TYPE(KeyRepeat)
     EVENT_CLASS_CATEGORY(KEYBOARD)

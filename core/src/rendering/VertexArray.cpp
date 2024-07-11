@@ -4,7 +4,7 @@
 #include "VertexBuffer.h"
 #include "VertexBufferLayout.h"
 
-VertexArray::VertexArray() {
+VertexArray::VertexArray() noexcept {
     glGenVertexArrays(1, &m_id);
     glBindVertexArray(m_id);
 }

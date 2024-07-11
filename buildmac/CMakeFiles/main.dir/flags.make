@@ -6,9 +6,9 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks
 
-CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -O -Wall -Wextra -Wpedantic
+CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk "-Ofast -flto" -Wall -Wextra -Wpedantic
 
-CXX_FLAGS = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -O -Wall -Wextra -Wpedantic
+CXX_FLAGS = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk "-Ofast -flto" -Wall -Wextra -Wpedantic
 
 # PCH options: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch_OPTIONS = -Winvalid-pch;-Xclang;-emit-pch;-Xclang;-include;-Xclang;/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx;-x;c++-header
 

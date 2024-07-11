@@ -9,7 +9,7 @@ static void glfw_error_callback(int error, const char *description) {
     std::cout << "GLFW Error: [" << error << "]: " << description << std::endl;
 }
 
-Window::Window(int width, int height, const char *name) {
+Window::Window(int width, int height, const char *name) noexcept {
     if (!glfwInit()) {
         std::cout << "Failed to init GLFW\n";
         assert(false);
@@ -24,6 +24,8 @@ Window::Window(int width, int height, const char *name) {
 #ifdef __APPLE__
     std::cout << "Apple compatability on\n";
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    
+    //glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 #endif
 
     m_window = glfwCreateWindow(width, height, name, NULL, NULL);
@@ -52,6 +54,7 @@ Window::Window(int width, int height, const char *name) {
     m_resize_callback = resize_callback;
 
     auto framebuffer_size_callback = [](GLFWwindow *window, int fb_width, int fb_height) {
+        (void)window;
         glViewport(0, 0, fb_width, fb_height);
     };
     glfwSetFramebufferSizeCallback(m_window, framebuffer_size_callback);

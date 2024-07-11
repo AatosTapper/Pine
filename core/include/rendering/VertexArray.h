@@ -6,7 +6,7 @@ class VertexBuffer;
 class VertexBufferLayout;
 class VertexArray {
 public:
-    VertexArray();
+    VertexArray() noexcept;
     ~VertexArray();
     IMPL_NO_COPY(VertexArray)
 

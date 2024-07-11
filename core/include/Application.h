@@ -12,7 +12,7 @@
 
 class Application {
 public:
-    Application(sol::state &lua);
+    Application(sol::state &lua) noexcept;
     ~Application();
 
     void entry();
@@ -23,7 +23,8 @@ private:
     void m_on_window_close();
     void m_set_lua_functions();
     void m_update_logic();
-    void m_render();
+    void m_update_render();
+    void m_update_systems();
     
     EventBus m_event_bus;
     InputBus m_input_bus;

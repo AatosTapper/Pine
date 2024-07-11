@@ -66,7 +66,7 @@ protected:
 template<class T>
 class FunctionHandler : public FunctionHandlerBase {
 public:
-    FunctionHandler(EventCallback<T> member_function) : m_member_function(member_function) {}
+    FunctionHandler(EventCallback<T> member_function) noexcept : m_member_function(member_function) {}
 
     virtual constexpr HandlerPersistence m_call(Event *event) override {
         return m_member_function(static_cast<T*>(event));

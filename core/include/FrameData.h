@@ -4,7 +4,7 @@
 #include "pch.h"
 
 struct FrameData {
-    FrameData(double _updates_per_sec) {
+    FrameData(double _updates_per_sec) noexcept {
         frame_counter = 0;
         update_counter = 0;
         frametime_accumulator = 0.0;

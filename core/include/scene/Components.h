@@ -14,8 +14,8 @@ namespace component {
 /// @brief User definable handle for an entity, name doesn't need to be unique
 ///
 struct Tag {
-    Tag() = default;
-    Tag(std::string _name) : name(_name) {}
+    Tag() noexcept = default;
+    Tag(std::string _name) noexcept : name(_name) {}
     std::string name;
 };
 
@@ -40,8 +40,8 @@ struct Transform {
 ///
 struct Script {
     using id_t = uint32_t;
-    Script() = default;
-    Script(std::string str);
+    Script() noexcept = default;
+    Script(std::string str) noexcept;
 
     id_t push_script(std::string str);
     void run(sol::state &lua, id_t id = 0);
@@ -54,8 +54,8 @@ private:
 /// @brief Define custom update and destroy functions
 ///
 struct CustomBehaviour {
-    CustomBehaviour() = default;
-    CustomBehaviour(sol::function f);
+    CustomBehaviour() noexcept = default;
+    CustomBehaviour(sol::function f) noexcept;
     ~CustomBehaviour();
 
     void set_on_update(sol::function func);
@@ -73,8 +73,8 @@ private:
 ///
 struct Sprite {
     friend class ::Renderer;
-    Sprite() = default;
-    Sprite(std::string path);
+    Sprite() noexcept = default;
+    Sprite(std::string path) noexcept;
     void set_texture(std::string path);
 
 private:
@@ -85,8 +85,8 @@ private:
 /// @brief Store any data within a lua table
 ///
 struct Table {
-    Table() = default;
-    Table(sol::table _data) : data(_data) {}
+    Table() noexcept = default;
+    Table(sol::table _data) noexcept : data(_data) {}
     sol::table data{};
 };
 

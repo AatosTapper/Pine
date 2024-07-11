@@ -1,5 +1,9 @@
 Key = {}
 
+-- Mouse buttons are last
+
+-- KEYCODES COPIED FROM GLFW
+
 -- Printable keys
 Key._SPACE         = 32
 Key._APOSTROPHE    = 39  -- '
@@ -123,5 +127,19 @@ Key._RIGHT_CONTROL = 345
 Key._RIGHT_ALT     = 346
 Key._RIGHT_SUPER   = 347
 Key._MENU          = 348
+
+local mouse_offset = 350
+Key._MOUSE_BUTTON_1      = 0 + mouse_offset
+Key._MOUSE_BUTTON_2      = 1 + mouse_offset
+Key._MOUSE_BUTTON_3      = 2 + mouse_offset
+Key._MOUSE_BUTTON_4      = 3 + mouse_offset
+Key._MOUSE_BUTTON_5      = 4 + mouse_offset
+Key._MOUSE_BUTTON_6      = 5 + mouse_offset
+Key._MOUSE_BUTTON_7      = 6 + mouse_offset
+Key._MOUSE_BUTTON_8      = 7 + mouse_offset
+Key._MOUSE_BUTTON_LAST   = Key._MOUSE_BUTTON_8
+Key._MOUSE_BUTTON_LEFT   = Key._MOUSE_BUTTON_1
+Key._MOUSE_BUTTON_RIGHT  = Key._MOUSE_BUTTON_2
+Key._MOUSE_BUTTON_MIDDLE = Key._MOUSE_BUTTON_3
 
 return Key;

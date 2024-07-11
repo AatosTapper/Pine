@@ -6,7 +6,7 @@
 
 class Shader {
 public:
-    Shader(const std::string &vertex_path, const std::string &fragment_path);
+    Shader(const std::string &vertex_path, const std::string &fragment_path) noexcept;
     ~Shader();
     IMPL_NO_COPY(Shader)
 

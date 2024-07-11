@@ -22,7 +22,7 @@ static constexpr uint32_t indices[] = {
     1, 2, 3
 };
 
-QuadMesh::QuadMesh() {
+QuadMesh::QuadMesh() noexcept {
     if (!mesh_created) [[unlikely]] {
         mesh_created = true;
 

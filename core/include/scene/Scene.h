@@ -10,8 +10,8 @@ class Scene {
     friend class Entity;
     friend class SceneManager;
 public:
-    Scene() : m_registry(std::make_shared<entt::registry>()) {}
-    Scene(const Scene &oth) { m_registry = oth.m_registry; }
+    Scene() noexcept;
+    Scene(const Scene &oth) noexcept;
     
     Entity add_entity(std::string name = "");
 

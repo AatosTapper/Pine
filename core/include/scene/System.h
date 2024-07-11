@@ -24,5 +24,5 @@ public:
             auto &customBehaviour = entity.get_component<component::CustomBehaviour>();
             customBehaviour.call_on_update();
         }
-    };
+    }
 };

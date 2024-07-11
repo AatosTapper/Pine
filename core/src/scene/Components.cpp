@@ -12,7 +12,7 @@ glm::mat4 Transform::get_matrix() const
     return output;
 }
 
-Script::Script(std::string str) {
+Script::Script(std::string str) noexcept {
     m_scripts.push_back(app_relative_path(str));
 }
 
@@ -26,7 +26,7 @@ void Script::run(sol::state &lua, Script::id_t id) {
     ScriptEngine::run_script(lua, script); 
 }
 
-CustomBehaviour::CustomBehaviour(sol::function f) : m_on_update(f) {}
+CustomBehaviour::CustomBehaviour(sol::function f) noexcept : m_on_update(f) {}
 
 CustomBehaviour::~CustomBehaviour() { 
     if (m_on_remove) m_on_remove.call(); 
@@ -52,7 +52,7 @@ void CustomBehaviour::call_on_update() const {
     }
 }
 
-Sprite::Sprite(std::string path) : m_img(TexturePool::instance().push(app_relative_path(path))) {
+Sprite::Sprite(std::string path) noexcept : m_img(TexturePool::instance().push(app_relative_path(path))) {
     m_img->filter_nearest();
 }
 

@@ -31,7 +31,7 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
     set(MAX_OPTIMIZE "-Ofast -flto")
 
     target_compile_options(main PRIVATE 
-        ${DEV_OPTIMIZE}
+        ${MAX_OPTIMIZE}
         -Wall
         -Wextra
         -Wpedantic

@@ -7,7 +7,7 @@ class Renderer;
 class Texture {
     friend class Renderer;
 public:
-    explicit Texture(const std::string &file);
+    explicit Texture(const std::string &file) noexcept;
     ~Texture();
     IMPL_NO_COPY(Texture)
 

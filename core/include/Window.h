@@ -13,7 +13,7 @@ public:
         EventCallback<Event> callback;
     };
 
-    Window(int width, int height, const char *name);
+    Window(int width, int height, const char *name) noexcept;
     ~Window();
 
     GLFWwindow *get_glfw_window() const { return m_window; }

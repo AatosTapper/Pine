@@ -46,6 +46,12 @@ local function setup()
         if pine_get_input(Cone.Key._D) then
             camera:right(0.2)
         end
+        if pine_get_input(Cone.Key._MOUSE_BUTTON_LEFT) then
+            camera:left(0.2)
+        end
+        if pine_get_input(Cone.Key._MOUSE_BUTTON_RIGHT) then
+            camera:right(0.2)
+        end
         -- local pos = vec2.from(camera:get_pos())
         -- camera:set_pos(vec2.from(pos.x + ((math.random() - 0.5) * 0.2), pos.y + ((math.random() - 0.5) * 0.2)))
     end)

@@ -13,7 +13,7 @@
 #include "FrameData.h"
 
 // @Lua API
-Application::Application(sol::state &lua) :
+Application::Application(sol::state &lua) noexcept :
     m_input_bus(m_event_bus),
     m_lua(lua)
 {
@@ -97,7 +97,7 @@ void Application::m_run() {
             frame_data.update_counter++;
             frame_data.frametime_accumulator -= frame_data.update_time;
         }
-        m_render();
+        m_update_render();
         frame_data.log_frame();
     }
 }
@@ -111,22 +111,23 @@ void Application::m_set_lua_functions() {
     set_lua_entity(m_lua);
     set_lua_components(m_lua);
     set_lua_scene(m_lua, m_scene_manager);
-
-    LUA_VEC(int, m_lua);
 }
 
 void Application::m_update_logic() {
-    Scene *curr_scene = m_scene_manager.get_scene();
-
     m_input_bus.update();
+
+    m_update_systems();
+
     m_camera->update();
     m_renderer->set_view_proj_matrix(m_camera->get_vp_matrix());
-
-    CustomBehaviourSystem::instance().update(curr_scene);
 }
 
-void Application::m_render() {
+void Application::m_update_render() {
     m_renderer->start_frame();
     m_renderer->draw_frame(m_scene_manager.get_scene());
     m_window->update();
+}
+
+void Application::m_update_systems() {
+    CustomBehaviourSystem::instance().update(m_scene_manager.get_scene());
 }

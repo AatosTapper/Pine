@@ -2,7 +2,7 @@
 
 #include <fstream>
 
-Shader::Shader(const std::string &vertex_path, const std::string &fragment_path) : m_freed(false) {
+Shader::Shader(const std::string &vertex_path, const std::string &fragment_path) noexcept : m_freed(false) {
     unsigned int vertex_shader = m_compile_shader(m_read_shader(vertex_path), GL_VERTEX_SHADER);
     unsigned int fragment_shader = m_compile_shader(m_read_shader(fragment_path), GL_FRAGMENT_SHADER);
     m_create_shader_program(vertex_shader, fragment_shader);

@@ -13,7 +13,7 @@ class Shader;
 
 class Renderer {
 public:
-    Renderer();
+    Renderer() noexcept;
     ~Renderer();
 
     IMPL_NO_COPY(Renderer)

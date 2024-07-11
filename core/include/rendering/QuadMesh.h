@@ -8,7 +8,7 @@ class VertexArray;
 class IndexBuffer;
 class QuadMesh {
 public:
-    QuadMesh();
+    QuadMesh() noexcept;
 
     IMPL_SINGLETON_DISPATCHER(QuadMesh)
     IMPL_NO_COPY(QuadMesh)

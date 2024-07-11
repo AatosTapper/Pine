@@ -10,7 +10,7 @@
 
 #include <stdexcept>
 
-Renderer::Renderer()
+Renderer::Renderer() noexcept
   : m_sprite_shader(Shader("../res/shaders/sprite.vert", "../res/shaders/sprite.frag")), 
     m_post_process_shader(Shader("../res/shaders/post_process.vert", "../res/shaders/post_process.frag")),
     m_selected_shader(nullptr)

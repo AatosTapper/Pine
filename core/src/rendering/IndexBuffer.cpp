@@ -2,7 +2,7 @@
 
 #include "config.h"
 
-IndexBuffer::IndexBuffer() : m_elements(0) {
+IndexBuffer::IndexBuffer() noexcept : m_elements(0) {
      
 }
 

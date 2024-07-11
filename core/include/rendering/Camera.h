@@ -8,7 +8,7 @@
 
 class Camera {
 public:
-    Camera(const float aspect_ratio, const float field_of_view, bool ortho);
+    Camera(const float aspect_ratio, const float field_of_view, bool ortho) noexcept;
 
     float pitch;
     float yaw;

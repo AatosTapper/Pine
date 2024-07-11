@@ -2,7 +2,7 @@
 
 #include "config.h"
 
-VertexBuffer::VertexBuffer() {
+VertexBuffer::VertexBuffer() noexcept {
     
 }
 
