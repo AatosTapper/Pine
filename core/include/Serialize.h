@@ -7,8 +7,7 @@
 #include "profiling.h"
 
 /// @todo OPTIMIZE:
-///         Stringstream objects are created for each variable when read and written to.
-///         Surely something more can be done too.
+///         Stringstream objects are created every time a variable is read from or written to.
 
 namespace serialize_internals {
     template <typename T> inline std::string to_string(const T& var);
@@ -85,25 +84,24 @@ inline T from_string(const std::string &str) {
 }
 
 template <typename T>
-inline void var_from_node(T *var, const char *name, NodeData &data) {
+inline auto find_var(const char *name, NodeData &data) {
     auto it = std::find_if(data.variables.begin(), data.variables.end(), [&name](NodeVariable &variable) {
         return variable.name == name;
     });
     if (it == data.variables.end()) {
         std::cerr << "Deserialize error: variable \"" << name << "\" is not defined in the scene file.\n";
     }
-    *var = from_string<T>(it->value);
+    return it;
+}
+
+template <typename T>
+inline void var_from_node(T *var, const char *name, NodeData &data) {
+    *var = from_string<T>(find_var<T>(name, data)->value);
 }
 
 template <typename T>
 inline void var_from_node(std::vector<T> *var, const char *name, NodeData &data) {
-    auto it = std::find_if(data.variables.begin(), data.variables.end(), [&name](NodeVariable &variable) {
-        return variable.name == name;
-    });
-    if (it == data.variables.end()) {
-        std::cerr << "Deserialize error: variable \"" << name << "\" is not defined in the scene file.\n";
-    }
-    *var = vec_from_string<T>(it->value);
+    *var = vec_from_string<T>(find_var<T>(name, data)->value);
 }
 
 }

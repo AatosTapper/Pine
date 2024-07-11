@@ -10,7 +10,6 @@
 #include "events/LuaEvents.h"
 #include "scene/System.h"
 #include "LuaUtils.h"
-#include "FrameData.h"
 
 // @Lua API
 Application::Application(sol::state &lua) noexcept :
@@ -87,24 +86,40 @@ void Application::entry() {
 void Application::m_run() {
     assert(m_scene_manager.get_scene() && "Cannot start gameloop without a scene selected");
 
-    FrameData frame_data(ScriptEngine::get_config_var_double(m_lua, "updates_per_sec"));
+    const double update_rate = ScriptEngine::get_config_var_double(m_lua, "fixed_update_rate");
+    const double time_step = 1.0 / update_rate;
+    
+    m_fixed_update_dt = time_step;
 
-    m_update_logic();
+    double accumulator = 0.0;
+    double frame_start = glfwGetTime();
     while (m_running) {
-        frame_data.update_frame_data();
-        while (frame_data.frametime_accumulator >= frame_data.update_time) {
-            m_update_logic();
-            frame_data.update_counter++;
-            frame_data.frametime_accumulator -= frame_data.update_time;
+        const double now = glfwGetTime();
+        const double dt = now - frame_start;
+        frame_start = now;
+        m_per_frame_dt = dt;
+
+        accumulator += dt;
+
+        while (accumulator >= time_step) {
+            m_fixed_update();
+            accumulator -= time_step;
+            m_frame_index++;
         }
+
+        const float alpha = accumulator / time_step;
+
+        m_fluid_update(alpha);
         m_update_render();
-        frame_data.log_frame();
     }
 }
 
 // @Lua API
 void Application::m_set_lua_functions() {
     m_lua.set_function("pine_run", &Application::m_run, this);
+    m_lua.set_function("pine_frame_time", [this] { return this->m_per_frame_dt; });
+    m_lua.set_function("pine_fixed_update_dt", [this] { return this->m_fixed_update_dt; });
+    m_lua.set_function("pine_frame_index", [this] { return this->m_frame_index; });
 
     set_lua_utils(m_lua);
     set_lua_event_handlers(m_lua, m_event_bus, m_input_bus);
@@ -113,14 +128,19 @@ void Application::m_set_lua_functions() {
     set_lua_scene(m_lua, m_scene_manager);
 }
 
-void Application::m_update_logic() {
-    m_input_bus.update();
+void Application::m_fixed_update() {
+    m_camera->update_last_pos();
 
     m_update_systems();
+}
 
-    m_camera->update();
+void Application::m_fluid_update(float alpha) {
+    m_input_bus.update();
+
+    m_camera->update(alpha);
     m_renderer->set_view_proj_matrix(m_camera->get_vp_matrix());
 }
+
 
 void Application::m_update_render() {
     m_renderer->start_frame();

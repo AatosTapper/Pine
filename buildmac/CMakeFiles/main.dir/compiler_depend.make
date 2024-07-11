@@ -1928,7 +1928,6 @@ CMakeFiles/main.dir/core/src/Application.cpp.o: CMakeFiles/main.dir/cmake_pch_ar
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h \
   CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Application.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/FrameData.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Input.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/LuaUtils.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
@@ -26986,8 +26985,6 @@ CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: CMakeFiles/main.dir/cmake_pch_a
 /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/LuaUtils.h:
 
 /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Input.h:
-
-/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/FrameData.h:
 
 /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Application.h:
 

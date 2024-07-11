@@ -14,3 +14,8 @@ local transform = ent:get_component_Transform()
 transform:set_pos(math.random() * 64 - 32, math.random() * 32 - 16)
 transform:set_scale((math.random() + 0.25) * 2, (math.random() + 0.25) * 2)
 transform.rr = math.random() * 8
+
+local initial_y = transform.y
+ent:add_component_CustomBehaviour(function()
+    transform.y = initial_y + ((math.sin(pine_fixed_update_dt() * pine_frame_index() * 6)) * 5)
+end)

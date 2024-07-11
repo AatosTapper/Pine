@@ -35,23 +35,26 @@ local function setup()
 
     behaviour:set_on_update(function()
         -- simple controller using pine_get_input(keycode)
+        local dt = pine_fixed_update_dt()
+        local speed = 8 * dt
+        --print(dt)
         if pine_get_input(Cone.Key._W) then
-            camera:up(0.2)
+            camera:up(speed)
         end
         if pine_get_input(Cone.Key._S) then
-            camera:down(0.2)
+            camera:down(speed)
         end
         if pine_get_input(Cone.Key._A) then
-            camera:left(0.2)
+            camera:left(speed)
         end
         if pine_get_input(Cone.Key._D) then
-            camera:right(0.2)
+            camera:right(speed)
         end
         if pine_get_input(Cone.Key._MOUSE_BUTTON_LEFT) then
-            camera:left(0.2)
+            camera:left(speed)
         end
         if pine_get_input(Cone.Key._MOUSE_BUTTON_RIGHT) then
-            camera:right(0.2)
+            camera:right(speed)
         end
         -- local pos = vec2.from(camera:get_pos())
         -- camera:set_pos(vec2.from(pos.x + ((math.random() - 0.5) * 0.2), pos.y + ((math.random() - 0.5) * 0.2)))

@@ -14,7 +14,8 @@ public:
     float yaw;
     float fov;
 
-    void update();
+    void update_last_pos();
+    void update(float interp_factor = 0.0f);
     
     void set_aspect_ratio(const float aspect_ratio) { m_aspect_ratio = aspect_ratio; }
     glm::mat4 get_vp_matrix() const { return *m_vp_mat; }
@@ -32,12 +33,12 @@ public:
 private:
     glm::mat4 m_view;
     glm::vec3 m_position;
+    glm::vec3 m_last_position; // used for smooth frame interpolation
     glm::vec3 m_direction; // points in the reverse direction
 
     glm::vec3 m_front;
     glm::vec3 m_right;
     glm::vec3 m_up;
-    glm::vec3 m_delta_pos;
     std::unique_ptr<glm::mat4> m_vp_mat;
     float m_aspect_ratio = 1.0f;
 
