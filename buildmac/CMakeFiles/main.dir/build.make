@@ -74,15 +74,15 @@ CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch: CMakeFiles/main.dir/cmake_pch_arm64
 CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch: CMakeFiles/main.dir/cmake_pch_arm64.hxx
 CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGSarm64) -Winvalid-pch -Xclang -emit-pch -Xclang -include -Xclang /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -x c++-header -MD -MT CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch -MF CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch.d -o CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGSarm64) -Winvalid-pch -Xclang -emit-pch -Xclang -include -Xclang /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -x c++-header -MD -MT CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch -MF CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch.d -o CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx
 
 CMakeFiles/main.dir/cmake_pch_arm64.hxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/cmake_pch_arm64.hxx.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGSarm64) -Winvalid-pch -Xclang -emit-pch -Xclang -include -Xclang /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -x c++-header -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx > CMakeFiles/main.dir/cmake_pch_arm64.hxx.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGSarm64) -Winvalid-pch -Xclang -emit-pch -Xclang -include -Xclang /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -x c++-header -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx > CMakeFiles/main.dir/cmake_pch_arm64.hxx.i
 
 CMakeFiles/main.dir/cmake_pch_arm64.hxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/cmake_pch_arm64.hxx.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGSarm64) -Winvalid-pch -Xclang -emit-pch -Xclang -include -Xclang /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -x c++-header -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx -o CMakeFiles/main.dir/cmake_pch_arm64.hxx.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGSarm64) -Winvalid-pch -Xclang -emit-pch -Xclang -include -Xclang /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -x c++-header -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx -o CMakeFiles/main.dir/cmake_pch_arm64.hxx.s
 
 CMakeFiles/main.dir/core/src/Application.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/Application.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Application.cpp
@@ -90,15 +90,15 @@ CMakeFiles/main.dir/core/src/Application.cpp.o: CMakeFiles/main.dir/cmake_pch_ar
 CMakeFiles/main.dir/core/src/Application.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/Application.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/core/src/Application.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/Application.cpp.o -MF CMakeFiles/main.dir/core/src/Application.cpp.o.d -o CMakeFiles/main.dir/core/src/Application.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Application.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/Application.cpp.o -MF CMakeFiles/main.dir/core/src/Application.cpp.o.d -o CMakeFiles/main.dir/core/src/Application.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Application.cpp
 
 CMakeFiles/main.dir/core/src/Application.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/Application.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Application.cpp > CMakeFiles/main.dir/core/src/Application.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Application.cpp > CMakeFiles/main.dir/core/src/Application.cpp.i
 
 CMakeFiles/main.dir/core/src/Application.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/Application.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Application.cpp -o CMakeFiles/main.dir/core/src/Application.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Application.cpp -o CMakeFiles/main.dir/core/src/Application.cpp.s
 
 CMakeFiles/main.dir/core/src/Input.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/Input.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Input.cpp
@@ -106,15 +106,15 @@ CMakeFiles/main.dir/core/src/Input.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hx
 CMakeFiles/main.dir/core/src/Input.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/Input.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/core/src/Input.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/Input.cpp.o -MF CMakeFiles/main.dir/core/src/Input.cpp.o.d -o CMakeFiles/main.dir/core/src/Input.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Input.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/Input.cpp.o -MF CMakeFiles/main.dir/core/src/Input.cpp.o.d -o CMakeFiles/main.dir/core/src/Input.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Input.cpp
 
 CMakeFiles/main.dir/core/src/Input.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/Input.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Input.cpp > CMakeFiles/main.dir/core/src/Input.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Input.cpp > CMakeFiles/main.dir/core/src/Input.cpp.i
 
 CMakeFiles/main.dir/core/src/Input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/Input.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Input.cpp -o CMakeFiles/main.dir/core/src/Input.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Input.cpp -o CMakeFiles/main.dir/core/src/Input.cpp.s
 
 CMakeFiles/main.dir/core/src/LuaUtils.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/LuaUtils.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/LuaUtils.cpp
@@ -122,15 +122,15 @@ CMakeFiles/main.dir/core/src/LuaUtils.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64
 CMakeFiles/main.dir/core/src/LuaUtils.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/LuaUtils.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/core/src/LuaUtils.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/LuaUtils.cpp.o -MF CMakeFiles/main.dir/core/src/LuaUtils.cpp.o.d -o CMakeFiles/main.dir/core/src/LuaUtils.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/LuaUtils.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/LuaUtils.cpp.o -MF CMakeFiles/main.dir/core/src/LuaUtils.cpp.o.d -o CMakeFiles/main.dir/core/src/LuaUtils.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/LuaUtils.cpp
 
 CMakeFiles/main.dir/core/src/LuaUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/LuaUtils.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/LuaUtils.cpp > CMakeFiles/main.dir/core/src/LuaUtils.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/LuaUtils.cpp > CMakeFiles/main.dir/core/src/LuaUtils.cpp.i
 
 CMakeFiles/main.dir/core/src/LuaUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/LuaUtils.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/LuaUtils.cpp -o CMakeFiles/main.dir/core/src/LuaUtils.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/LuaUtils.cpp -o CMakeFiles/main.dir/core/src/LuaUtils.cpp.s
 
 CMakeFiles/main.dir/core/src/SceneParser.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/SceneParser.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp
@@ -138,15 +138,15 @@ CMakeFiles/main.dir/core/src/SceneParser.cpp.o: CMakeFiles/main.dir/cmake_pch_ar
 CMakeFiles/main.dir/core/src/SceneParser.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/SceneParser.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/core/src/SceneParser.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/SceneParser.cpp.o -MF CMakeFiles/main.dir/core/src/SceneParser.cpp.o.d -o CMakeFiles/main.dir/core/src/SceneParser.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/SceneParser.cpp.o -MF CMakeFiles/main.dir/core/src/SceneParser.cpp.o.d -o CMakeFiles/main.dir/core/src/SceneParser.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp
 
 CMakeFiles/main.dir/core/src/SceneParser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/SceneParser.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp > CMakeFiles/main.dir/core/src/SceneParser.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp > CMakeFiles/main.dir/core/src/SceneParser.cpp.i
 
 CMakeFiles/main.dir/core/src/SceneParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/SceneParser.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp -o CMakeFiles/main.dir/core/src/SceneParser.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp -o CMakeFiles/main.dir/core/src/SceneParser.cpp.s
 
 CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp
@@ -154,15 +154,15 @@ CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o: CMakeFiles/main.dir/cmake_pch_a
 CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o -MF CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o.d -o CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o -MF CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o.d -o CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp
 
 CMakeFiles/main.dir/core/src/ScriptEngine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/ScriptEngine.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp > CMakeFiles/main.dir/core/src/ScriptEngine.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp > CMakeFiles/main.dir/core/src/ScriptEngine.cpp.i
 
 CMakeFiles/main.dir/core/src/ScriptEngine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/ScriptEngine.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp -o CMakeFiles/main.dir/core/src/ScriptEngine.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp -o CMakeFiles/main.dir/core/src/ScriptEngine.cpp.s
 
 CMakeFiles/main.dir/core/src/Window.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/Window.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp
@@ -170,15 +170,15 @@ CMakeFiles/main.dir/core/src/Window.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.h
 CMakeFiles/main.dir/core/src/Window.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/Window.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/core/src/Window.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/Window.cpp.o -MF CMakeFiles/main.dir/core/src/Window.cpp.o.d -o CMakeFiles/main.dir/core/src/Window.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/Window.cpp.o -MF CMakeFiles/main.dir/core/src/Window.cpp.o.d -o CMakeFiles/main.dir/core/src/Window.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp
 
 CMakeFiles/main.dir/core/src/Window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/Window.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp > CMakeFiles/main.dir/core/src/Window.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp > CMakeFiles/main.dir/core/src/Window.cpp.i
 
 CMakeFiles/main.dir/core/src/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/Window.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp -o CMakeFiles/main.dir/core/src/Window.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp -o CMakeFiles/main.dir/core/src/Window.cpp.s
 
 CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp
@@ -186,15 +186,15 @@ CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o: CMakeFiles/main.dir/cmake_p
 CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o -MF CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o.d -o CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o -MF CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o.d -o CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp
 
 CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp > CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp > CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.i
 
 CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp -o CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp -o CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.s
 
 CMakeFiles/main.dir/core/src/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/main.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/main.cpp
@@ -202,15 +202,15 @@ CMakeFiles/main.dir/core/src/main.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx
 CMakeFiles/main.dir/core/src/main.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/core/src/main.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/main.cpp.o -MF CMakeFiles/main.dir/core/src/main.cpp.o.d -o CMakeFiles/main.dir/core/src/main.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/main.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/main.cpp.o -MF CMakeFiles/main.dir/core/src/main.cpp.o.d -o CMakeFiles/main.dir/core/src/main.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/main.cpp
 
 CMakeFiles/main.dir/core/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/main.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/main.cpp > CMakeFiles/main.dir/core/src/main.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/main.cpp > CMakeFiles/main.dir/core/src/main.cpp.i
 
 CMakeFiles/main.dir/core/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/main.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/main.cpp -o CMakeFiles/main.dir/core/src/main.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/main.cpp -o CMakeFiles/main.dir/core/src/main.cpp.s
 
 CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Camera.cpp
@@ -218,15 +218,15 @@ CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o: CMakeFiles/main.dir/cmake_p
 CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Camera.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Camera.cpp
 
 CMakeFiles/main.dir/core/src/rendering/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/rendering/Camera.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Camera.cpp > CMakeFiles/main.dir/core/src/rendering/Camera.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Camera.cpp > CMakeFiles/main.dir/core/src/rendering/Camera.cpp.i
 
 CMakeFiles/main.dir/core/src/rendering/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/rendering/Camera.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Camera.cpp -o CMakeFiles/main.dir/core/src/rendering/Camera.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Camera.cpp -o CMakeFiles/main.dir/core/src/rendering/Camera.cpp.s
 
 CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/IndexBuffer.cpp
@@ -234,15 +234,15 @@ CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o: CMakeFiles/main.dir/cm
 CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/IndexBuffer.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/IndexBuffer.cpp
 
 CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/IndexBuffer.cpp > CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/IndexBuffer.cpp > CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.i
 
 CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/IndexBuffer.cpp -o CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/IndexBuffer.cpp -o CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.s
 
 CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/QuadMesh.cpp
@@ -250,15 +250,15 @@ CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o: CMakeFiles/main.dir/cmake
 CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/QuadMesh.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/QuadMesh.cpp
 
 CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/QuadMesh.cpp > CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/QuadMesh.cpp > CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.i
 
 CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/QuadMesh.cpp -o CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/QuadMesh.cpp -o CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.s
 
 CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Renderer.cpp
@@ -266,15 +266,15 @@ CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o: CMakeFiles/main.dir/cmake
 CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Renderer.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Renderer.cpp
 
 CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Renderer.cpp > CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Renderer.cpp > CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.i
 
 CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Renderer.cpp -o CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Renderer.cpp -o CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.s
 
 CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Shader.cpp
@@ -282,15 +282,15 @@ CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o: CMakeFiles/main.dir/cmake_p
 CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Shader.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Shader.cpp
 
 CMakeFiles/main.dir/core/src/rendering/Shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/rendering/Shader.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Shader.cpp > CMakeFiles/main.dir/core/src/rendering/Shader.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Shader.cpp > CMakeFiles/main.dir/core/src/rendering/Shader.cpp.i
 
 CMakeFiles/main.dir/core/src/rendering/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/rendering/Shader.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Shader.cpp -o CMakeFiles/main.dir/core/src/rendering/Shader.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Shader.cpp -o CMakeFiles/main.dir/core/src/rendering/Shader.cpp.s
 
 CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp
@@ -298,15 +298,15 @@ CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o: CMakeFiles/main.dir/cmake_
 CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp
 
 CMakeFiles/main.dir/core/src/rendering/Texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/rendering/Texture.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp > CMakeFiles/main.dir/core/src/rendering/Texture.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp > CMakeFiles/main.dir/core/src/rendering/Texture.cpp.i
 
 CMakeFiles/main.dir/core/src/rendering/Texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/rendering/Texture.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp -o CMakeFiles/main.dir/core/src/rendering/Texture.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp -o CMakeFiles/main.dir/core/src/rendering/Texture.cpp.s
 
 CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/TexturePool.cpp
@@ -314,15 +314,15 @@ CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o: CMakeFiles/main.dir/cm
 CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/TexturePool.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/TexturePool.cpp
 
 CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/TexturePool.cpp > CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/TexturePool.cpp > CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.i
 
 CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/TexturePool.cpp -o CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/TexturePool.cpp -o CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.s
 
 CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexArray.cpp
@@ -330,15 +330,15 @@ CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o: CMakeFiles/main.dir/cm
 CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexArray.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexArray.cpp
 
 CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexArray.cpp > CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexArray.cpp > CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.i
 
 CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexArray.cpp -o CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexArray.cpp -o CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.s
 
 CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp
@@ -346,15 +346,15 @@ CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o: CMakeFiles/main.dir/c
 CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o -MF CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o.d -o CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp
 
 CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp > CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp > CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.i
 
 CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp -o CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp -o CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.s
 
 CMakeFiles/main.dir/core/src/scene/Components.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/scene/Components.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Components.cpp
@@ -362,15 +362,15 @@ CMakeFiles/main.dir/core/src/scene/Components.cpp.o: CMakeFiles/main.dir/cmake_p
 CMakeFiles/main.dir/core/src/scene/Components.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/scene/Components.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/main.dir/core/src/scene/Components.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/scene/Components.cpp.o -MF CMakeFiles/main.dir/core/src/scene/Components.cpp.o.d -o CMakeFiles/main.dir/core/src/scene/Components.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Components.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/scene/Components.cpp.o -MF CMakeFiles/main.dir/core/src/scene/Components.cpp.o.d -o CMakeFiles/main.dir/core/src/scene/Components.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Components.cpp
 
 CMakeFiles/main.dir/core/src/scene/Components.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/scene/Components.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Components.cpp > CMakeFiles/main.dir/core/src/scene/Components.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Components.cpp > CMakeFiles/main.dir/core/src/scene/Components.cpp.i
 
 CMakeFiles/main.dir/core/src/scene/Components.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/scene/Components.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Components.cpp -o CMakeFiles/main.dir/core/src/scene/Components.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Components.cpp -o CMakeFiles/main.dir/core/src/scene/Components.cpp.s
 
 CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp
@@ -378,15 +378,15 @@ CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: CMakeFiles/main.dir/cmake_pch
 CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o -MF CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o.d -o CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o -MF CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o.d -o CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp
 
 CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp > CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp > CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.i
 
 CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp -o CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp -o CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.s
 
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp
@@ -394,15 +394,15 @@ CMakeFiles/main.dir/core/src/scene/Scene.cpp.o: CMakeFiles/main.dir/cmake_pch_ar
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/main.dir/core/src/scene/Scene.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/scene/Scene.cpp.o -MF CMakeFiles/main.dir/core/src/scene/Scene.cpp.o.d -o CMakeFiles/main.dir/core/src/scene/Scene.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/scene/Scene.cpp.o -MF CMakeFiles/main.dir/core/src/scene/Scene.cpp.o.d -o CMakeFiles/main.dir/core/src/scene/Scene.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp
 
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/scene/Scene.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp > CMakeFiles/main.dir/core/src/scene/Scene.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp > CMakeFiles/main.dir/core/src/scene/Scene.cpp.i
 
 CMakeFiles/main.dir/core/src/scene/Scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/scene/Scene.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp -o CMakeFiles/main.dir/core/src/scene/Scene.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp -o CMakeFiles/main.dir/core/src/scene/Scene.cpp.s
 
 CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneManager.cpp
@@ -410,15 +410,15 @@ CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o: CMakeFiles/main.dir/cmake
 CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o -MF CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o.d -o CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneManager.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o -MF CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o.d -o CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneManager.cpp
 
 CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneManager.cpp > CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneManager.cpp > CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.i
 
 CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneManager.cpp -o CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneManager.cpp -o CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.s
 
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp
@@ -426,15 +426,15 @@ CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: CMakeFiles/main.dir/cmake_pch_a
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o -MF CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o.d -o CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -MD -MT CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o -MF CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o.d -o CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp
 
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp > CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.i
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -E /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp > CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.i
 
 CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp -o CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.s
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx -S /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp -o CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.s
 
 # Object files for target main
 main_OBJECTS = \

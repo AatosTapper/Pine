@@ -26,17 +26,22 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
     find_package(Lua REQUIRED)
     include_directories(${LUA_INCLUDE_DIR})
 
-    set(CMAKE_CXX_COMPILER g++)
-
-    set(DEV_OPTIMIZE "-O")
-    set(MAX_OPTIMIZE "-Ofast -flto")
+    set(CMAKE_CXX_COMPILER clang++)
 
     target_compile_options(main PRIVATE 
-        ${MAX_OPTIMIZE}
-        -Wall
-        -Wextra
-        -Wpedantic
+        -Ofast               # Aggressive optimizations
+        -flto                # Link Time Optimization
+        -Wall                # Enable common warnings
+        -Wextra              # Enable extra warnings
+        -Wpedantic           # Enable pedantic warnings
+        -march=native        # Optimize for native architecture
+        -mtune=native        # Tune for native architecture
+        -funroll-loops       # Unroll loops
+        -ffast-math          # Fast math optimizations
+        -fomit-frame-pointer # Omit frame pointer
     )
+    target_precompile_headers(main PRIVATE core/include/pch.h)
+
 else () # windows
     set(GLFW_LIBRARY_DIR "C:/Program Files/glfw-3.4/lib-vc2022")  # Adjust the path as necessary
 
@@ -46,14 +51,24 @@ else () # windows
     set(CMAKE_CXX_COMPILER "cl")
 
     target_compile_options(main PRIVATE 
-        "/W3" "/O2" "/GL" "/DNDEBUG" "/Zi" "/Gy"
+        "/W3"
+        "/O2"
+        "/GL"
+        "/DNDEBUG"
+        "/Zi"
+        "/arch:AVX2"
+        "/fp:fast"
+    )
+
+    target_link_options(main PRIVATE
+        "/LTCG"
+        "/OPT:REF"
+        "/OPT:ICF"
     )
 endif()
 
 set_target_properties(main PROPERTIES LINK_SEARCH_START_STATIC 1)
 set_target_properties(main PROPERTIES LINK_SEARCH_END_STATIC 1)
-
-#target_precompile_headers(main PRIVATE core/include/pch.h)
 
 target_include_directories(main PUBLIC core/include core/include/rendering dep)
 target_link_directories(main PUBLIC ${GLFW_LIBRARY_DIR})

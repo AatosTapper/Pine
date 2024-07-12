@@ -100,6 +100,7 @@ void Application::m_run() {
         const double dt = now - frame_start;
         frame_start = now;
         m_per_frame_dt = dt;
+        std::cout << "FPS: " << 1.0 / dt << "\n";
 
         accumulator += dt;
 

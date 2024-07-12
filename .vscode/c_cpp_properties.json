@@ -1,22 +1,20 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${vcpkgRoot}/x64-windows/include",
-                "C:/Program Files/lua/lib/include"
+                "/opt/homebrew/Cellar/lua/5.4.6/include/lua"
             ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
             ],
-            "windowsSdkVersion": "10.0.19041.0",
-            "compilerPath": "cl.exe",
+            "compilerPath": "/usr/bin/clang",
             "cStandard": "c17",
-            "intelliSenseMode": "windows-msvc-x64",
-            "cppStandard": "c++20"
+            "cppStandard": "c++20",
+            "intelliSenseMode": "macos-clang-arm64",
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4

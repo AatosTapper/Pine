@@ -39,11 +39,10 @@ local function setup()
     local behaviour = spawner_ent:add_component_CustomBehaviour()
 
     behaviour:set_on_update(function()
-        
         -- simple controller using pine_get_input(keycode)
         local dt = pine_fixed_update_dt()
         local speed = 18 * dt
-        print("FPS: " .. Cone.Math.round_to_decimal(1.0 / pine_frame_time(), 2))
+        --print(dt)
         if pine_get_input(Cone.Key._W) then
             camera:up(speed)
         end

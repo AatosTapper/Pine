@@ -1,7 +1,7 @@
 config = {
     -- window
-    window_width = 1280 * 0.8,
-    window_height = 720 * 0.8,
+    window_width = 1280,
+    window_height = 720,
     window_name = "Pine Engine",
 
     -- camera
