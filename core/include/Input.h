@@ -34,6 +34,6 @@ private:
     EventBus &m_event_bus;
     glm::vec2 m_mouse_pos{};
 
-    constexpr void m_callback_pressed(int key);
-    constexpr void m_callback_released(int key);
+    void m_callback_pressed(int key);
+    void m_callback_released(int key);
 };

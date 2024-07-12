@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\core",
+    "\\core\\include",
+    "\\core\\src",
+    "\\out\\build",
+    "\\out\\build\\x64-Debug"
+  ],
+  "SelectedNode": "\\CMakeLists.txt",
+  "PreviewInSolutionExplorer": false
+}

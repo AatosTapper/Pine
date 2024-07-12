@@ -53,7 +53,7 @@ std::string ScriptEngine::get_config_var_string(sol::state &lua, const std::stri
         std::cout << "\n\nError: must define [" << name << "] in config.lua file\n\n" << std::endl;
         assert(false);
     }
-    return static_cast<std::string>(var);
+    return var.get<std::string>();
 }
 
 double ScriptEngine::get_config_var_double(sol::state &lua, const std::string &name) {
@@ -62,7 +62,7 @@ double ScriptEngine::get_config_var_double(sol::state &lua, const std::string &n
         std::cout << "\n\nError: must define [" << name << "] in config.lua file\n\n" << std::endl;
         assert(false);
     }
-    return static_cast<double>(var);
+    return var.get<double>();
 }
 
 int ScriptEngine::get_config_var_int(sol::state &lua, const std::string &name) {

@@ -1,0 +1,4 @@
+C:/Users/gr277128/Documents/GitHub/Pine/buildwin/CMakeFiles/main.dir
+C:/Users/gr277128/Documents/GitHub/Pine/buildwin/CMakeFiles/glad.dir
+C:/Users/gr277128/Documents/GitHub/Pine/buildwin/CMakeFiles/ALL_BUILD.dir
+C:/Users/gr277128/Documents/GitHub/Pine/buildwin/CMakeFiles/ZERO_CHECK.dir

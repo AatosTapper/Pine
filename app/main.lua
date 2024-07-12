@@ -39,10 +39,11 @@ local function setup()
     local behaviour = spawner_ent:add_component_CustomBehaviour()
 
     behaviour:set_on_update(function()
+        
         -- simple controller using pine_get_input(keycode)
         local dt = pine_fixed_update_dt()
         local speed = 18 * dt
-        --print(dt)
+        print("FPS: " .. Cone.Math.round_to_decimal(1.0 / pine_frame_time(), 2))
         if pine_get_input(Cone.Key._W) then
             camera:up(speed)
         end
@@ -60,6 +61,13 @@ local function setup()
         end
         if pine_get_input(Cone.Key._MOUSE_BUTTON_RIGHT) then
             camera:right(speed)
+        end
+
+        local entitites = scene:get_entities()
+        for k, v in ipairs(entitites) do
+            local transform = v:get_component_Transform()
+            local t = v:get_component_Table()
+            transform.rr = transform.rr + t.table.rotation_coeff
         end
 
         --local mouse_pos = pine_get_mouse_pos();

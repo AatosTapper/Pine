@@ -8,6 +8,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 file(GLOB_RECURSE src_files
     "core/src/*.cpp"
@@ -37,21 +38,22 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
         -Wpedantic
     )
 else () # windows
-    set(GLFW_LIBRARY_DIR "C:/Program Files/glfw-3.4/glfw-3.4.bin.WIN64")
+    set(GLFW_LIBRARY_DIR "C:/Program Files/glfw-3.4/lib-vc2022")  # Adjust the path as necessary
 
-    # TODO: fucking windows bullshit
-
-    #find_package(glfw3 REQUIRED)
-    set(GLFW_LIB glfw3dll)
+    find_package(Lua REQUIRED)
+    include_directories("C:/Program Files/lua/lib/include")
 
     set(CMAKE_CXX_COMPILER "cl")
 
     target_compile_options(main PRIVATE 
-        "/W3" "/O3" "/GL" "/DNDEBUG" "/Zi" "/Gy"
+        "/W3" "/O2" "/GL" "/DNDEBUG" "/Zi" "/Gy"
     )
 endif()
 
-target_precompile_headers(main PRIVATE core/include/pch.h)
+set_target_properties(main PROPERTIES LINK_SEARCH_START_STATIC 1)
+set_target_properties(main PROPERTIES LINK_SEARCH_END_STATIC 1)
+
+#target_precompile_headers(main PRIVATE core/include/pch.h)
 
 target_include_directories(main PUBLIC core/include core/include/rendering dep)
 target_link_directories(main PUBLIC ${GLFW_LIBRARY_DIR})
@@ -59,5 +61,3 @@ target_link_directories(main PUBLIC ${GLFW_LIBRARY_DIR})
 find_package(OpenGL REQUIRED)
 
 target_link_libraries(main ${GLFW_LIB} ${LUA_LIBRARIES} OpenGL::GL glad)
-
-#set_target_properties(main PROPERTIES UNITY_BUILD ON UNITY_BUILD_MODE BATCH UNITY_BUILD_BATCH_SIZE 16)

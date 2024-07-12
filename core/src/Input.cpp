@@ -39,7 +39,7 @@ void InputBus::update() {
     m_inputs.end());
 }
 
-constexpr void InputBus::m_callback_pressed(int key) {
+void InputBus::m_callback_pressed(int key) {
     if (is_pressed(key)) return;
     m_inputs.push_back(Input {
         .key = key,
@@ -47,7 +47,7 @@ constexpr void InputBus::m_callback_pressed(int key) {
     });
 }
 
-constexpr void InputBus::m_callback_released(int key) {
+void InputBus::m_callback_released(int key) {
     auto it = std::find(m_inputs.begin(), m_inputs.end(), key);
     if (it == m_inputs.end()) [[unlikely]] return;
     it->active = false;

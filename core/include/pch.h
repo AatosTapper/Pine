@@ -8,6 +8,7 @@
 #include <cassert>
 #include <iostream>
 #include <optional>
+#include <chrono>
 
 #ifndef _SOL_INCLUDED
 #define _SOL_INCLUDED

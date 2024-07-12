@@ -1,0 +1,2 @@
+C:\Users\gr277128\Documents\GitHub\Pine\buildwin\Release\glfw3.dll
+C:\Users\gr277128\Documents\GitHub\Pine\buildwin\main.dir\Release\main.vcxproj.CopyComplete
