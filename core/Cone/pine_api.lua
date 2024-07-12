@@ -1,6 +1,6 @@
---- This file contains the definitions for callable engine functions
+--- This file contains the definitions for engine functions and types
 
---- Engine types and functions follow the naming convention:
+--- These follow the naming convention:
 --- pine_"name_here"
 --- type members DO NOT have "pine_" in front of them
 
