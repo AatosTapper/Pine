@@ -17,7 +17,9 @@ Application::Application(sol::state &lua) noexcept :
     m_lua(lua)
 {
     m_set_lua_functions();
-    ScriptEngine::run_script(m_lua, app_relative_path("config.lua"));
+    sol::protected_function_result result = ScriptEngine::run_script(m_lua, app_relative_path("config.lua"));
+
+    LuaStateDispatcher::instance().m_lua = &m_lua;
 
     m_window = std::make_unique<Window>(
         ScriptEngine::get_config_var_int(m_lua, "window_width"),
@@ -79,7 +81,7 @@ void Application::m_on_window_close() {
 }
 
 void Application::entry() {
-    ScriptEngine::run_script(m_lua, app_relative_path("main.lua"));
+    sol::protected_function_result res = ScriptEngine::run_script(m_lua, app_relative_path("main.lua"));
     m_lua["main"]();
 }
 

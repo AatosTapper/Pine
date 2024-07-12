@@ -115,11 +115,69 @@ void CustomBehaviour::call_on_update() const {
 
 Sprite::Sprite(std::string path) noexcept : m_img(TexturePool::instance().push(app_relative_path(path))) {
     m_img->filter_nearest();
+    m_save_string = std::make_shared<std::string>(path);
 }
 
 void Sprite::set_texture(std::string path) { 
     m_img = TexturePool::instance().push(app_relative_path(path));
     m_img->filter_nearest();
+    m_save_string = std::make_shared<std::string>(path);
+}
+
+void Sprite::deserialize(NodeData &data) {
+    CHECK_SERDE(data.variables.size() == 1);
+    std::string path;
+    VAR_FROM_NODE(path, data);
+    *this = Sprite(path);
+}
+
+NodeData Sprite::serialize() const {
+    assert(m_save_string && 
+    R"(Can't save a sprite that doesn't have a texture. 
+    Make sure all sprites are holding a texture.)");
+    auto &path = *m_save_string;
+    return NodeData { 
+        .type=NodeType::Component,
+        .variables = { 
+            VAR_TO_NODE(path)
+        }
+    };
+}
+
+Table::Table(sol::table _data) noexcept : table(_data) {}
+
+void Table::deserialize(NodeData &data) {
+    CHECK_SERDE(data.variables.size() == 1);
+    std::string table_string = data.variables[0].value;
+
+    auto &lua = LuaStateDispatcher::instance().get_lua();
+    lua.set_function("_pine_internals_get_table_string", [&] { return table_string; });
+
+    auto result = lua.script(R"(
+        Cone = require("core.Cone.cone")
+        return Cone.string_to_table(_pine_internals_get_table_string())
+    )");
+    assert(result.valid());
+    table = result.get<sol::table>();
+}
+
+NodeData Table::serialize() const {
+    auto &lua = LuaStateDispatcher::instance().get_lua();
+    lua.set_function("_pine_internals_get_table", [this] { return this->table; });
+
+    auto result = lua.script(R"(
+        Cone = require("core.Cone.cone")
+        return Cone.to_string(_pine_internals_get_table())
+    )");
+    assert(result.valid());
+    std::string table_string = result.get<std::string>();
+
+    return NodeData { 
+        .type=NodeType::Component,
+        .variables = {
+            VAR_TO_NODE(table_string)
+        }
+    };
 }
 
 }

@@ -18,17 +18,22 @@ sol::state ScriptEngine::create_lua_state() {
         sol::lib::string,
         sol::lib::table,
         sol::lib::package,
-        sol::lib::os
+        sol::lib::os,
+        sol::lib::ffi, 
+        sol::lib::jit
     );
     state.script(R"(
         package.path = package.path .. ";../?.lua"
     )");
+
+    state.script_file("../core/Cone/pine_api.lua");
+
     return state;
 }
 
-void ScriptEngine::run_script(sol::state &lua, const std::string &file_path) {
+sol::protected_function_result ScriptEngine::run_script(sol::state &lua, const std::string &file_path) {
     try {
-        lua.safe_script_file(file_path);
+        return lua.safe_script_file(file_path);
     }
     catch (const sol::error &e) {
         std::cerr << "Sol2 caught error: " << e.what() << std::endl;
@@ -39,6 +44,7 @@ void ScriptEngine::run_script(sol::state &lua, const std::string &file_path) {
     catch (...) {
         std::cerr << "Unknown error occurred." << std::endl;
     }
+    assert(false && "wtf how tf did you get here dawg??");
 }
 
 std::string ScriptEngine::get_config_var_string(sol::state &lua, const std::string &name) {

@@ -69,4 +69,8 @@ void set_lua_event_handlers(sol::state &lua, EventBus &bus, InputBus &input) {
     lua.set_function("pine_get_input", [&](int key) {
         return input.is_pressed(key);
     });
+
+    lua.set_function("pine_get_mouse_pos", [&] {
+        return input.get_mouse_pos();
+    });
 }

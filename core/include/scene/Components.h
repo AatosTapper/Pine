@@ -86,23 +86,33 @@ private:
 ///
 /// @brief General image component for drawing
 /// @serializable
-struct Sprite {
+struct Sprite : public Serializable {
     friend class ::Renderer;
     Sprite() noexcept = default;
     Sprite(std::string path) noexcept;
+    virtual ~Sprite() = default;
+
     void set_texture(std::string path);
 
+    virtual void deserialize(NodeData &data) override;
+    virtual NodeData serialize() const override;
 private:
     Texture *m_img = nullptr;
+    std::shared_ptr<std::string> m_save_string;
 };
 
 ///
 /// @brief Store any data within a lua table
-/// @todo serialize
-struct Table {
+/// serializable (but noticably slow, >50 microseconds)
+struct Table : public Serializable {
     Table() noexcept = default;
-    Table(sol::table _data) noexcept : data(_data) {}
-    sol::table data{};
+    Table(sol::table _data) noexcept;
+    virtual ~Table() override = default;
+
+    sol::table table{};
+    
+    virtual void deserialize(NodeData &data) override;
+    virtual NodeData serialize() const override;
 };
 
 // Example on implementing serialization

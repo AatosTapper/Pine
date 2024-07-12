@@ -6,8 +6,7 @@
 #include "SceneParser.h"
 #include "profiling.h"
 
-/// @todo OPTIMIZE:
-///         Stringstream objects are created every time a variable is read from or written to.
+/// @todo OPTIMIZE!
 
 namespace serialize_internals {
     template <typename T> inline std::string to_string(const T& var);
@@ -29,7 +28,7 @@ struct Serializable {
     virtual NodeData serialize() const = 0;         // to file
 
     void test_serde() { 
-        Profiler("Test serialization");
+        Profiler p("Test serialization");
         NodeData data = serialize(); 
         deserialize(data);
     }

@@ -10,6 +10,21 @@ Cone.Math = require("core.Cone.math")
 Cone.Event = require("core.Cone.event")
 Cone.Key = require("core.Cone.keys")
 
+--- Universal "to string", use instead of the lua one (tostring())
+--- @param val any
+--- @return string
+Cone.to_string = function(val)
+    if "nil" == type(val) then
+        return tostring(nil)
+    elseif  "table" == type(val) then
+        return table_print(val)
+    elseif  "string" == type(val) then
+        return val
+    else
+        return tostring(val)
+    end
+end
+
 --[[    enum
 
 MyEnum = Cone.enum { "Key1", "Key2", ... }
@@ -23,14 +38,7 @@ Cone.enum = function(keys)
     return Enum
 end
 
---[[    switch
-
-Cone.switch(name)
-.case("Kate", function() print("This player's name rhymes with Fate")end)
-.case("Tod", function() print("This player's name rhymes with Cod") end)
-.default(function() print("This player's name is not Kate or Tod") end)
-.process()
-]]
+-- DON'T USE TOO EASY TO BREAK
 Cone.switch = function(element)
     local Table = {
         ["Value"] = element,
@@ -60,89 +68,56 @@ Cone.switch = function(element)
     return Table
 end
 
--- print any lua table
-Cone.print_table = function(node)
-    if node ~= table then print("ERROR: can't Cone.print_table a node that is not a table") return end
-
-    local cache, stack, output = {},{},{}
-    local depth = 1
-    local output_str = "{\n"
-
-    while true do
-        local size = 0
-        for k,v in pairs(node) do
-            size = size + 1
-        end
-
-        local cur_index = 1
-        for k,v in pairs(node) do
-            if (cache[node] == nil) or (cur_index >= cache[node]) then
-
-                if (string.find(output_str,"}",output_str:len())) then
-                    output_str = output_str .. ",\n"
-                elseif not (string.find(output_str,"\n",output_str:len())) then
-                    output_str = output_str .. "\n"
-                end
-
-                -- This is necessary for working with HUGE tables otherwise we run out of memory using concat on huge strings
-                table.insert(output,output_str)
-                output_str = ""
-
-                local key
-                if (type(k) == "number" or type(k) == "boolean") then
-                    key = "["..tostring(k).."]"
-                else
-                    key = "['"..tostring(k).."']"
-                end
-
-                if (type(v) == "number" or type(v) == "boolean") then
-                    output_str = output_str .. string.rep('  ',depth) .. key .. " = "..tostring(v)
-                elseif (type(v) == "table") then
-                    output_str = output_str .. string.rep('  ',depth) .. key .. " = {\n"
-                    table.insert(stack,node)
-                    table.insert(stack,v)
-                    cache[node] = cur_index+1
-                    break
-                else
-                    output_str = output_str .. string.rep('  ',depth) .. key .. " = '"..tostring(v).."'"
-                end
-
-                if (cur_index == size) then
-                    output_str = output_str .. "\n" .. string.rep('  ',depth-1) .. "}"
-                else
-                    output_str = output_str .. ","
-                end
-            else
-                -- close the table
-                if (cur_index == size) then
-                    output_str = output_str .. "\n" .. string.rep('  ',depth-1) .. "}"
-                end
-            end
-
-            cur_index = cur_index + 1
-        end
-
-        if (size == 0) then
-            output_str = output_str .. "\n" .. string.rep('  ',depth-1) .. "}"
-        end
-
-        if (#stack > 0) then
-            node = stack[#stack]
-            stack[#stack] = nil
-            depth = cache[node] == nil and depth + 1 or depth - 1
-        else
-            break
-        end
-    end
-
-    -- This is necessary for working with HUGE tables otherwise we run out of memory using concat on huge strings
-    table.insert(output,output_str)
-    output_str = table.concat(output)
-
-    print(output_str)
+function table_print(tt, indent, done, is_first)
+    return table_serialize(tt, index, done, is_first):sub(1, -2)
 end
 
--- Returns microseconds
+--- slow as fuck
+function table_serialize(tt, indent, done, is_first)
+    is_first = is_first or true
+    done = done or {}
+    indent = indent or 0
+    if type(tt) == "table" then
+        local sb = {}
+        table.insert(sb, "{\n");
+        for key, value in pairs(tt) do
+        table.insert(sb, string.rep(" ", indent)) -- indent it
+        if type(value) == "table" and not done[value] then
+            done[value] = true
+            table.insert(sb, key .. " = ");
+            table.insert(sb, table_serialize(value, indent + 2, done))
+            table.insert(sb, string.rep(" ", indent)) -- indent it
+            table.insert(sb, "\n");
+        elseif "number" == type(key) then
+            table.insert(sb, string.format("\"%s\",\n", tostring(value)))
+        else
+            table.insert(sb, string.format(
+                "%s = \"%s\",\n", tostring(key), tostring(value)))
+            end
+        end
+        table.insert(sb, string.format("%s%s", string.rep(" ", indent - 2), "},"));
+        return table.concat(sb)
+    else
+        return tt .. "\n"
+    end
+end
+
+--- String to table
+---@param str string
+---@return table
+Cone.string_to_table = function(str)
+    local func, err = load("return " .. str)
+    if not func then
+        return nil, err
+    end
+    local success, result = pcall(func)
+    if not success then
+        return nil, result
+    end
+    return result
+end
+
+--- Profile function in microseconds
 Cone.profiler = function(func)
     local startTime = os.clock()
     func()

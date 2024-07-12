@@ -84,7 +84,7 @@ void set_lua_components(sol::state &lua) {
     Script_type["run_all"] = [&lua](component::Script &self) { self.run_all(lua); };
 
     COMP_REGISTER_ARGS(Table, sol::table)
-    COMP_MEM_REGISTER(Table, data)
+    COMP_MEM_REGISTER(Table, table)
 
     COMP_REGISTER_ARGS(CustomBehaviour, sol::function)
     COMP_MEM_REGISTER(CustomBehaviour, set_on_update)
@@ -111,7 +111,7 @@ void set_lua_scene(sol::state &lua, SceneManager &manager) {
         return sol::make_object(lua, self.get_camera());
     };
 
-    // move
+    // Camera
     camera_type["get_pos"] = &Camera::get_position; // -> glm::vec3
     camera_type["set_pos"] = [&](Camera &self, const glm::vec2 &pos) {
         const auto &curr_pos = self.get_position();

@@ -81,6 +81,7 @@ static void set_glm(sol::state &lua) {
     );
 }
 
+// @Lua API
 void set_lua_utils(sol::state &lua) {
     set_glm(lua);
 }

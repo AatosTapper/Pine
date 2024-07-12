@@ -25,18 +25,23 @@ local function setup()
     local scene = pine_set_scene(pine_Scene:new())
     local spawner_ent = scene:add_entity("spawner")
     local script = spawner_ent:add_component_Script("scripts/spawn_script.lua")
-    for i = 1, 1000 do
+    for i = 1, 100 do
         script:run()
     end
+    local table_comp = spawner_ent:add_component_Table({
+        health = 10,
+        xp = 100,
+        name = "Kakkeli",
+        abilities = { "jou", "fdsla", "saö", "asdasö" }
+    })
 
     local camera = scene:get_camera()
     local behaviour = spawner_ent:add_component_CustomBehaviour()
 
-
     behaviour:set_on_update(function()
         -- simple controller using pine_get_input(keycode)
         local dt = pine_fixed_update_dt()
-        local speed = 8 * dt
+        local speed = 18 * dt
         --print(dt)
         if pine_get_input(Cone.Key._W) then
             camera:up(speed)
@@ -56,8 +61,10 @@ local function setup()
         if pine_get_input(Cone.Key._MOUSE_BUTTON_RIGHT) then
             camera:right(speed)
         end
-        -- local pos = vec2.from(camera:get_pos())
-        -- camera:set_pos(vec2.from(pos.x + ((math.random() - 0.5) * 0.2), pos.y + ((math.random() - 0.5) * 0.2)))
+
+        --local mouse_pos = pine_get_mouse_pos();
+        --local pos = vec2.from(camera:get_pos())
+        --camera:set_pos(vec2.from(pos.x + ((math.random() - 0.5) * 0.2), pos.y + ((math.random() - 0.5) * 0.2)))
     end)
 
     behaviour:set_on_remove(function()

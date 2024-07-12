@@ -8,12 +8,26 @@ inline constexpr char application_path[] = "../app/";
 inline constexpr std::string app_relative_path(const char *path) { return std::string(application_path) + std::string(path); }
 inline constexpr std::string app_relative_path(const std::string &path) { return std::string(application_path) + path; }
 
+
+class LuaStateDispatcher {
+    friend class Application;
+public:
+    IMPL_NO_COPY(LuaStateDispatcher)
+    IMPL_SINGLETON_DISPATCHER(LuaStateDispatcher)
+
+    sol::state &get_lua()  { assert(m_lua); return *m_lua; }
+
+private:
+    LuaStateDispatcher() = default;
+    sol::state *m_lua = nullptr;
+};
+
 class ScriptEngine {
 public:
     IMPL_NO_COPY(ScriptEngine)
 
     static sol::state create_lua_state();
-    static void run_script(sol::state &lua, const std::string &file_path);
+    static sol::protected_function_result run_script(sol::state &lua, const std::string &file_path);
 
     static std::string get_config_var_string(sol::state &lua, const std::string &name);
     static double get_config_var_double(sol::state &lua, const std::string &name);

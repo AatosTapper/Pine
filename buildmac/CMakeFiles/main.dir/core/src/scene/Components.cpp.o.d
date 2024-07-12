@@ -1140,6 +1140,7 @@ CMakeFiles/main.dir/core/src/scene/Components.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Serialize.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iomanip \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/QuadMesh.h \
