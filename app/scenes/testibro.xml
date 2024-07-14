@@ -1,0 +1,258 @@
+<Scene>
+    <Ent>
+        <Cmp name="53"/>
+        <Cmp x="-10.8544" y="11.1373" sx="0.846766" sy="1.88186" rr="5.85959"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="57"/>
+        <Cmp x="-30.3634" y="2.60508" sx="0.968617" sy="1.75506" rr="3.0092"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="14"/>
+        <Cmp x="18.8822" y="-13.6328" sx="2.03025" sy="1.27943" rr="3.42571"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="2"/>
+        <Cmp x="20.0103" y="9.0788" sx="1.34118" sy="1.79225" rr="3.97402"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="14"/>
+        <Cmp x="11.9288" y="0.0337834" sx="1.38011" sy="1.10733" rr="1.39577"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="92"/>
+        <Cmp x="23.2351" y="-14.2765" sx="2.38019" sy="2.23312" rr="2.74345"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="90"/>
+        <Cmp x="-27.0084" y="4.44078" sx="1.54246" sy="1.00497" rr="5.18703"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="91"/>
+        <Cmp x="4.57667" y="7.2589" sx="0.757674" sy="2.25841" rr="2.98558"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="15"/>
+        <Cmp x="10.5076" y="-3.82692" sx="1.5421" sy="1.90191" rr="5.22354"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="17"/>
+        <Cmp x="-2.58714" y="-8.18439" sx="1.48317" sy="1.2842" rr="1.28526"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="37"/>
+        <Cmp x="-18.1815" y="-4.51409" sx="0.777261" sy="1.05979" rr="5.94976"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="42"/>
+        <Cmp x="6.62353" y="1.6418" sx="1.32935" sy="1.451" rr="3.19401"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="17"/>
+        <Cmp x="-11.3971" y="1.73409" sx="1.50305" sy="0.747125" rr="5.82617"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="94"/>
+        <Cmp x="7.90658" y="6.12395" sx="1.53151" sy="1.07059" rr="2.11366"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="39"/>
+        <Cmp x="2.03217" y="12.2654" sx="1.7693" sy="1.68818" rr="3.13364"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="55"/>
+        <Cmp x="-12.7452" y="-10.1953" sx="1.04886" sy="1.66939" rr="2.84614"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="46"/>
+        <Cmp x="-15.5778" y="4.72142" sx="0.93645" sy="1.25927" rr="7.68226"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="18"/>
+        <Cmp x="-8.62991" y="-1.64239" sx="2.37001" sy="1.36219" rr="4.43164"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="10"/>
+        <Cmp x="3.11995" y="12.21" sx="1.01983" sy="2.18295" rr="2.57947"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="42"/>
+        <Cmp x="-7.58224" y="-14.9589" sx="1.68558" sy="1.31511" rr="5.58508"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="42"/>
+        <Cmp x="-15.6393" y="3.54446" sx="1.31929" sy="1.64528" rr="6.74519"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="0"/>
+        <Cmp x="-10.7563" y="-0.843493" sx="0.817043" sy="2.30492" rr="5.0583"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="32"/>
+        <Cmp x="-6.39138" y="-6.27861" sx="1.43929" sy="2.06395" rr="-0.535418"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="7"/>
+        <Cmp x="-0.827172" y="-14.0805" sx="0.531076" sy="1.74022" rr="0.817304"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="45"/>
+        <Cmp x="-17.6392" y="-15.02" sx="1.1257" sy="1.99958" rr="3.51868"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="23"/>
+        <Cmp x="18.3091" y="-10.6741" sx="2.37211" sy="0.640223" rr="4.64541"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="62"/>
+        <Cmp x="-6.76738" y="-15.8645" sx="1.08286" sy="1.83194" rr="6.97587"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="54"/>
+        <Cmp x="4.7113" y="-0.387784" sx="1.40659" sy="1.27726" rr="1.74139"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="97"/>
+        <Cmp x="-15.0149" y="-3.68713" sx="0.626132" sy="2.09095" rr="1.41453"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="69"/>
+        <Cmp x="9.13106" y="-4.11153" sx="1.46316" sy="2.14818" rr="1.32454"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="61"/>
+        <Cmp x="26.7688" y="15.02" sx="1.21965" sy="2.38287" rr="5.26208"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="55"/>
+        <Cmp x="12.5679" y="-14.128" sx="1.58977" sy="1.09123" rr="6.65683"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="36"/>
+        <Cmp x="-21.9851" y="-13.7769" sx="0.818407" sy="2.1049" rr="6.71096"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="28"/>
+        <Cmp x="28.4813" y="10.3016" sx="1.33196" sy="1.81408" rr="4.72781"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="95"/>
+        <Cmp x="5.39021" y="-6.99402" sx="1.06761" sy="2.32201" rr="7.66567"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="98"/>
+        <Cmp x="23.7667" y="-1.50547" sx="1.16942" sy="1.41645" rr="6.88738"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="11"/>
+        <Cmp x="-7.47204" y="-15.779" sx="1.26948" sy="1.06105" rr="1.81971"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="22"/>
+        <Cmp x="-4.05015" y="2.57616" sx="1.75547" sy="0.623725" rr="6.09688"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="75"/>
+        <Cmp x="20.5989" y="4.54616" sx="1.17289" sy="0.584765" rr="2.12128"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="92"/>
+        <Cmp x="-3.61069" y="2.47411" sx="1.33123" sy="1.75886" rr="1.81409"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="95"/>
+        <Cmp x="8.36422" y="8.73618" sx="0.988241" sy="1.64604" rr="6.83024"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="6"/>
+        <Cmp x="11.4253" y="-12.1521" sx="1.73953" sy="2.41558" rr="2.41244"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="60"/>
+        <Cmp x="22.1415" y="-9.93103" sx="0.591148" sy="1.09484" rr="7.81266"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="6"/>
+        <Cmp x="-6.52933" y="5.9741" sx="2.48697" sy="1.44446" rr="3.31888"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="39"/>
+        <Cmp x="5.87562" y="15.5173" sx="2.38106" sy="1.58618" rr="-0.477997"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="67"/>
+        <Cmp x="-29.8312" y="-8.36109" sx="0.669007" sy="0.749499" rr="0.976914"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="4"/>
+        <Cmp x="-1.28042" y="-7.01764" sx="2.33594" sy="1.72566" rr="3.46153"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="28"/>
+        <Cmp x="10.2796" y="10.694" sx="0.80601" sy="2.45531" rr="2.77164"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="65"/>
+        <Cmp x="19.8823" y="8.1667" sx="1.35786" sy="2.32276" rr="3.78925"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="56"/>
+        <Cmp x="18.5547" y="10.2478" sx="2.09366" sy="0.78091" rr="7.59363"/>
+        <Cmp path="res/textures/apple.png"/>
+    </Ent>
+    <Ent>
+        <Cmp name="spawner"/>
+        <Cmp x="0" y="0" sx="1" sy="1" rr="0"/>
+        <Cmp/>
+        <Cmp scripts="scripts/spawn_script.lua "/>
+    </Ent>
+</Scene>

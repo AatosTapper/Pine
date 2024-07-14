@@ -43,6 +43,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/core/src/scene/Scene.cpp.o.d"
   "CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o"
   "CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o.d"
+  "CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o"
+  "CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o.d"
   "CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o"
   "CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o.d"
   "main"

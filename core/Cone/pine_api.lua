@@ -316,8 +316,8 @@ function pine_comp_Transform:set_scale(x, y) end
 ---@class pine_comp_CustomBehaviour
 local pine_comp_CustomBehaviour = {}
 
---- Sets the function that gets called every fixed update
----@param func function
+--- Sets the function that gets called on every fixed update
+---@param func function()
 function pine_comp_CustomBehaviour:set_on_update(func) end
 
 --- Sets the function that gets called when the component dies

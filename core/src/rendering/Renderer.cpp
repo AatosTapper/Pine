@@ -48,7 +48,7 @@ void Renderer::m_draw_sprites(Scene *scene) {
     auto &mesh = QuadMesh::instance();
     float z_offset = 0.0f; // remove z_fighting
 
-    for (auto &ent : scene->view<component::Sprite>()) {
+    for (auto &ent : scene->get_view<component::Sprite>()) {
         auto [sprite, transform] = Entity(ent, scene).get<component::Sprite, component::Transform>();
         
         if (sprite.m_img == nullptr) continue;
@@ -68,7 +68,7 @@ void Renderer::m_draw_sprites(Scene *scene) {
         mesh.get_vao()->unbind();
         mesh.get_ebo()->unbind();
 
-        z_offset += 0.0001f;
+        z_offset += 0.0002f;
     }
 }
 

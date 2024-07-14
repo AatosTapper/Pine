@@ -16,5 +16,5 @@ transform:set_scale((math.random() + 0.25) * 2, (math.random() + 0.25) * 2)
 transform.rr = math.random() * 8
 
 local table = ent:add_component_Table({
-    rotation_coeff = math.random() * 0.01
+    rotation_coeff = (math.random() - 0.5) * 0.04
 })

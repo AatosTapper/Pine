@@ -22,8 +22,7 @@ static NodeType name_to_type(const char* name) {
 }
 
 static std::string type_to_name(NodeType name) {
-    switch (name)
-    {
+    switch (name) {
     case NodeType::Undefined:
         return "Undefined";
     case NodeType::Scene:
@@ -57,6 +56,28 @@ void Node::print_tree(uint32_t depth) {
     }
 }
 
+static XMLElement *create_element(std::unique_ptr<Node> &node, XMLDocument &doc) {
+    std::string name = type_to_name(node->data.type);
+    XMLElement *element = doc.NewElement(name.c_str());
+    for (const auto &var : node->data.variables) {
+        element->SetAttribute(var.name.c_str(), var.value.c_str());
+    }
+    for (auto &child : node->children) {
+        element->InsertEndChild(create_element(child, doc));
+    }
+    return element;
+}
+
+void write_scene(std::unique_ptr<Node> &scene, const char *filepath) {
+    XMLDocument xml_doc;
+    xml_doc.InsertFirstChild(create_element(scene, xml_doc));
+    auto result = xml_doc.SaveFile(filepath);
+    if (result != XML_SUCCESS) {
+        std::cerr << "Error saving file: " << result << std::endl;
+        assert(false);
+    }
+}
+
 static std::unique_ptr<Node> parse_xml(const XMLElement* element, Node *parent, int depth = 0) {
     if (element == nullptr) return nullptr;
 
@@ -70,14 +91,12 @@ static std::unique_ptr<Node> parse_xml(const XMLElement* element, Node *parent, 
             std::cout << "Error: undefined type on line " << element->GetLineNum() << " for a child node of: " << std::endl;
             parent->print_node(1);
         }
-
         assert(false);
     }
 
     for (const XMLAttribute* attribute = element->FirstAttribute(); attribute != nullptr; attribute = attribute->Next()) {
         node->data.variables.push_back({ attribute->Name(), attribute->Value() });
     }
-
     for (const XMLElement* child = element->FirstChildElement(); child != nullptr; child = child->NextSiblingElement()) {
         node->children.push_back(parse_xml(child, node.get(), depth + 1));
     }
@@ -98,6 +117,5 @@ std::unique_ptr<Node> read_scene(const char* file) {
         std::cerr << "Error finding root element." << std::endl;
         assert(false);
     }
-
     return parse_xml(root, nullptr);
 }

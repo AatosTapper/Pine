@@ -10,6 +10,7 @@
 #include "events/LuaEvents.h"
 #include "scene/System.h"
 #include "LuaUtils.h"
+#include "scene/SceneSerializer.h"
 
 // @Lua API
 Application::Application(sol::state &lua) noexcept :
@@ -64,12 +65,10 @@ Application::Application(sol::state &lua) noexcept :
         }
         return HandlerPersistence::Continuous;
     });
-
-    std::cout << "Scene size: " << sizeof(Scene) << "\n";
 }
 
 Application::~Application() {
-
+    SceneSerializer::instance().serialize(m_scene_manager.get_scene(), app_relative_path("scenes/testibro.xml"));
 }
 
 void Application::on_event(Event *e) {
@@ -100,7 +99,6 @@ void Application::m_run() {
         const double dt = now - frame_start;
         frame_start = now;
         m_per_frame_dt = dt;
-        std::cout << "FPS: " << 1.0 / dt << "\n";
 
         accumulator += dt;
 

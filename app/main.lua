@@ -9,23 +9,18 @@ local mouse_button_callback = function(key, x, y)
 end
 
 local custom_event_callback = function(data)
-    data.update_func()
+    print(data.msg)
 end
 
 local function setup()
     Cone.Event.listener("MouseButtonPressed", mouse_button_callback)
     Cone.Event.listener("SomeGameplayEvent", custom_event_callback)
-
-    Cone.Event.create("SomeGameplayEvent", {
-        update_func = function()
-            print("The event listener calls this function in the callback!")
-        end
-    })
+    Cone.Event.create("SomeGameplayEvent", { msg = "hello" })
 
     local scene = pine_set_scene(pine_Scene:new())
     local spawner_ent = scene:add_entity("spawner")
     local script = spawner_ent:add_component_Script("scripts/spawn_script.lua")
-    for i = 1, 100 do
+    for i = 1, 50 do
         script:run()
     end
     local table_comp = spawner_ent:add_component_Table({

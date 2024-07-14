@@ -1,0 +1,146 @@
+[
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xclang -emit-pch -Xclang -include -Xclang /Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -x c++-header -o CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx",
+  "output": "CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/Application.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Application.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Application.cpp",
+  "output": "CMakeFiles/main.dir/core/src/Application.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/Input.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Input.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Input.cpp",
+  "output": "CMakeFiles/main.dir/core/src/Input.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/LuaUtils.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/LuaUtils.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/LuaUtils.cpp",
+  "output": "CMakeFiles/main.dir/core/src/LuaUtils.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/SceneParser.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/SceneParser.cpp",
+  "output": "CMakeFiles/main.dir/core/src/SceneParser.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp",
+  "output": "CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/Window.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp",
+  "output": "CMakeFiles/main.dir/core/src/Window.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp",
+  "output": "CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/main.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/main.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/main.cpp",
+  "output": "CMakeFiles/main.dir/core/src/main.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Camera.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Camera.cpp",
+  "output": "CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/IndexBuffer.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/IndexBuffer.cpp",
+  "output": "CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/QuadMesh.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/QuadMesh.cpp",
+  "output": "CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Renderer.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Renderer.cpp",
+  "output": "CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Shader.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Shader.cpp",
+  "output": "CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/Texture.cpp",
+  "output": "CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/TexturePool.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/TexturePool.cpp",
+  "output": "CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexArray.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexArray.cpp",
+  "output": "CMakeFiles/main.dir/core/src/rendering/VertexArray.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/rendering/VertexBuffer.cpp",
+  "output": "CMakeFiles/main.dir/core/src/rendering/VertexBuffer.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/scene/Components.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Components.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Components.cpp",
+  "output": "CMakeFiles/main.dir/core/src/scene/Components.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/LuaScene.cpp",
+  "output": "CMakeFiles/main.dir/core/src/scene/LuaScene.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/scene/Scene.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp",
+  "output": "CMakeFiles/main.dir/core/src/scene/Scene.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneManager.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneManager.cpp",
+  "output": "CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "clang++ -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer -Winvalid-pch -Xarch_arm64 -include/Users/aatostapper/Documents/Dev/OpenGL/Pine/build/CMakeFiles/main.dir/cmake_pch_arm64.hxx -o CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/tinyxml2/tinyxml2.cpp",
+  "output": "CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o"
+},
+{
+  "directory": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -I/opt/homebrew/include/lua -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/glad.dir/dep/glad/glad.c.o -c /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glad/glad.c",
+  "file": "/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glad/glad.c",
+  "output": "CMakeFiles/glad.dir/dep/glad/glad.c.o"
+}
+]

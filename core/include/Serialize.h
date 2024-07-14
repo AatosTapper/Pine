@@ -1,16 +1,17 @@
 #pragma once
 
 #include <sstream>
-#include <variant>
 
+#include "pch.h"
 #include "SceneParser.h"
 #include "profiling.h"
+#include "FromString.h"
 
 /// @todo OPTIMIZE!
 
 namespace serialize_internals {
-    template <typename T> inline std::string to_string(const T& var);
-    template <typename T> inline void var_from_node(T *var, const char *name, NodeData &data);
+    template <typename T> inline constexpr std::string to_string(const T& var);
+    template <typename T> inline constexpr void var_from_node(T *var, const char *name, NodeData &data);
 }
 
 #define CHECK_SERDE(checks) assert(checks);
@@ -37,53 +38,50 @@ struct Serializable {
 namespace serialize_internals {
 
 template <typename T>
-inline std::string to_string(const T &var) {
+inline constexpr std::string to_string(const T &var) {
     std::ostringstream oss;
     oss << var;
     return oss.str();
 }
 
 template <>
-inline std::string to_string<std::string>(const std::string &var) {
+inline constexpr std::string to_string<std::string>(const std::string &var) {
     return var;
 }
 
 template <>
-inline std::string to_string<const char*>(const char *const &var) {
+inline constexpr std::string to_string<std::string_view>(const std::string_view &var) {
+    return std::string(var);
+}
+
+template <>
+inline constexpr std::string to_string<const char*>(const char *const &var) {
     return std::string(var);
 }
 
 template <typename T>
-inline std::string to_string(const std::vector<T> &vec) {
+inline constexpr std::string to_string(const std::vector<T> &vec) {
     std::ostringstream oss;
-    for (size_t i = 0; i < vec.size(); ++i) {
-        oss << to_string(vec[i]);
+    for (const auto &item : vec) {
+        oss << to_string(item);
         oss << " ";
     }
     return oss.str();
 }
 
 template <typename T> 
-inline std::vector<T> vec_from_string(const std::string &str) {
+inline constexpr std::vector<T> vec_from_string(const std::string &str) {
     std::istringstream ss(str);
     std::vector<T> output;
     T element;
-    while (ss >> element) { 
+    while (ss >> element) {
         output.push_back(element);
     }
     return output;
 }
 
-template <typename T> 
-inline T from_string(const std::string &str) {
-    std::istringstream ss(str);
-    T element;
-    ss >> element;
-    return element;
-}
-
 template <typename T>
-inline auto find_var(const char *name, NodeData &data) {
+inline constexpr auto find_var(const char *name, NodeData &data) {
     auto it = std::find_if(data.variables.begin(), data.variables.end(), [&name](NodeVariable &variable) {
         return variable.name == name;
     });
@@ -94,12 +92,12 @@ inline auto find_var(const char *name, NodeData &data) {
 }
 
 template <typename T>
-inline void var_from_node(T *var, const char *name, NodeData &data) {
+inline constexpr void var_from_node(T *var, const char *name, NodeData &data) {
     *var = from_string<T>(find_var<T>(name, data)->value);
 }
 
 template <typename T>
-inline void var_from_node(std::vector<T> *var, const char *name, NodeData &data) {
+inline constexpr void var_from_node(std::vector<T> *var, const char *name, NodeData &data) {
     *var = vec_from_string<T>(find_var<T>(name, data)->value);
 }
 

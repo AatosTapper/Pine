@@ -1,0 +1,15 @@
+# ninja log v6
+2	60	1720972176742231072	CMakeFiles/glad.dir/dep/glad/glad.c.o	5343cafaf295cd09
+60	132	1720972176799945040	libglad.a	a141df29700dc620
+2	1058	1720972176741904078	CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch	659e53155ab48137
+1064	2122	1720972177803890145	CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o	29f7d9334ba3ba4c
+1063	2176	1720972177803247699	CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o	c75b0d5b31a03764
+1062	2336	1720972177801844475	CMakeFiles/main.dir/core/src/Window.cpp.o	bec017490bd97e2
+1062	2403	1720972177801626854	CMakeFiles/main.dir/core/src/SceneParser.cpp.o	ea1c348256f2ae3b
+1062	2492	1720972177801737477	CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o	2d9a36b9e8553bf9
+2123	3118	1720972178862792020	CMakeFiles/main.dir/core/src/rendering/QuadMesh.cpp.o	749e9b0b6a071389
+2492	3277	1720972179231776111	CMakeFiles/main.dir/core/src/rendering/TexturePool.cpp.o	28487d441ae8a206
+1062	3360	1720972177801402525	CMakeFiles/main.dir/core/src/Input.cpp.o	8086ca3f2f9db805
+2336	3396	1720972179075595517	CMakeFiles/main.dir/core/src/rendering/Shader.cpp.o	2bea1a148567ffa2
+2403	4344	1720972179143000221	CMakeFiles/main.dir/core/src/rendering/Texture.cpp.o	80952b759cd836
+1063	4940	1720972177802335091	CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o	d1a30d3891cd1151

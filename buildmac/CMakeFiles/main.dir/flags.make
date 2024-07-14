@@ -6,9 +6,9 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/opt/homebrew/include/lua -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering -I/Users/aatostapper/Documents/Dev/OpenGL/Pine/dep -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks
 
-CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer
+CXX_FLAGSarm64 = -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer
 
-CXX_FLAGS = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer
+CXX_FLAGS = -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Ofast -flto -Wall -Wextra -Wpedantic -march=native -mtune=native -funroll-loops -ffast-math -fomit-frame-pointer
 
 # PCH options: CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch_OPTIONS = -Winvalid-pch;-Xclang;-emit-pch;-Xclang;-include;-Xclang;/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx;-x;c++-header
 
@@ -53,6 +53,8 @@ CXX_FLAGS = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineToo
 # PCH options: CMakeFiles/main.dir/core/src/scene/Scene.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 

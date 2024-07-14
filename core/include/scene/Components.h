@@ -8,6 +8,7 @@
 #include "rendering/Texture.h"
 
 class Renderer;
+class Entity;
 namespace component {
 
 ///
@@ -68,15 +69,18 @@ private:
 ///
 /// @brief Define custom update and destroy functions
 //
-struct CustomBehaviour {
+struct CustomBehaviour : public Serializable {
     CustomBehaviour() noexcept = default;
     CustomBehaviour(sol::function f) noexcept;
-    ~CustomBehaviour();
+    virtual ~CustomBehaviour() override;
 
     void set_on_update(sol::function func);
     void set_on_remove(sol::function func);
 
     void call_on_update() const;
+
+    virtual void deserialize(NodeData &data) override;
+    virtual NodeData serialize() const override;
 
 private:
     sol::function m_on_update;

@@ -2,6 +2,10 @@
 
 #include "pch.h"
 
+struct Node;
+void write_scene(std::unique_ptr<Node> &scene, const char *filepath);
+std::unique_ptr<Node> read_scene(const char* file);
+
 struct NodeVariable {
     std::string name;
     std::string value;
@@ -28,5 +32,3 @@ struct Node {
     void print_node(uint32_t indentation = 0);
     void print_tree(uint32_t depth = 0);
 };
-
-std::unique_ptr<Node> read_scene(const char* file);

@@ -1,6 +1,7 @@
 #include "scene/Components.h"
 #include "TexturePool.h"
 #include "Serialize.h"
+#include "scene/Entity.h"
 
 namespace component {
 
@@ -22,6 +23,7 @@ NodeData Tag::serialize() const {
 
 glm::mat4 Transform::get_matrix() const
 {
+    /// @todo clamp rr and check that scales aren't 0
     glm::mat4 output(1.0f);
     output = glm::translate(output, glm::vec3(x, y, 0.0f));
     output = glm::rotate(output, rr, glm::vec3(0.0f, 0.0f, -1.0f));
@@ -31,6 +33,7 @@ glm::mat4 Transform::get_matrix() const
 
 void Transform::deserialize(NodeData &data) {
     CHECK_SERDE(data.variables.size() == 5);
+
     VAR_FROM_NODE(x, data);
     VAR_FROM_NODE(y, data);
     VAR_FROM_NODE(sx, data);
@@ -61,7 +64,8 @@ Script::id_t Script::push_script(std::string str) {
 }
 void Script::run(sol::state &lua, Script::id_t id) const { 
     auto &script = m_scripts.at(id);
-    assert(!script.empty()); 
+    assert(!script.empty());
+
     ScriptEngine::run_script(lua, app_relative_path(script)); 
 }
 
@@ -73,6 +77,7 @@ void Script::run_all(sol::state &lua) const {
 
 void Script::deserialize(NodeData &data) {
     CHECK_SERDE(data.variables.size() == 1);
+
     auto &scripts = m_scripts; // Remove the m_
     VAR_FROM_NODE(scripts, data);
 }
@@ -95,11 +100,17 @@ CustomBehaviour::~CustomBehaviour() {
 
 void CustomBehaviour::set_on_update(sol::function func) {
     assert(func && "not a valid callback");
+    assert(!m_on_update && R"(Can't call CustomBehaviour::set_on_update twice for a single entity.
+    CustomBehaviour is immutable due to not being serializable.)");
+
     m_on_update = std::move(func);
 }
 
 void CustomBehaviour::set_on_remove(sol::function func) {
     assert(func && "not a valid callback");
+    assert(!m_on_remove && R"(Can't call CustomBehaviour::set_on_remove twice for a single entity.
+    CustomBehaviour is immutable due to not being serializable.)");
+
     m_on_remove = std::move(func);
 }
 
@@ -111,6 +122,16 @@ void CustomBehaviour::call_on_update() const {
             std::cerr << "Error in CustomBehaviour::on_update lua function: " << e.what() << std::endl;
         }
     }
+}
+
+void CustomBehaviour::deserialize(NodeData &data) {
+    (void)data;
+}
+
+NodeData CustomBehaviour::serialize() const {
+    return NodeData { 
+        .type=NodeType::Component
+    };
 }
 
 Sprite::Sprite(std::string path) noexcept : m_img(TexturePool::instance().push(app_relative_path(path))) {
@@ -126,6 +147,7 @@ void Sprite::set_texture(std::string path) {
 
 void Sprite::deserialize(NodeData &data) {
     CHECK_SERDE(data.variables.size() == 1);
+
     std::string path;
     VAR_FROM_NODE(path, data);
     *this = Sprite(path);
@@ -135,6 +157,7 @@ NodeData Sprite::serialize() const {
     assert(m_save_string && 
     R"(Can't save a sprite that doesn't have a texture. 
     Make sure all sprites are holding a texture.)");
+
     auto &path = *m_save_string;
     return NodeData { 
         .type=NodeType::Component,
@@ -148,8 +171,8 @@ Table::Table(sol::table _data) noexcept : table(_data) {}
 
 void Table::deserialize(NodeData &data) {
     CHECK_SERDE(data.variables.size() == 1);
-    std::string table_string = data.variables[0].value;
 
+    std::string table_string = data.variables[0].value;
     auto &lua = LuaStateDispatcher::instance().get_lua();
     lua.set_function("_pine_internals_get_table_string", [&] { return table_string; });
 
@@ -163,14 +186,14 @@ void Table::deserialize(NodeData &data) {
 
 NodeData Table::serialize() const {
     auto &lua = LuaStateDispatcher::instance().get_lua();
-    lua.set_function("_pine_internals_get_table", [this] { return this->table; });
 
+    lua.set_function("_pine_internals_get_table", [this] { return this->table; });
     auto result = lua.script(R"(
         Cone = require("core.Cone.cone")
         return Cone.to_string(_pine_internals_get_table())
     )");
     assert(result.valid());
-    std::string table_string = result.get<std::string>();
+    std::string_view table_string = result.get<std::string_view>();
 
     return NodeData { 
         .type=NodeType::Component,
