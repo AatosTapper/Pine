@@ -69,14 +69,14 @@ void Script::run(Script::id_t id) const {
     auto &script = m_scripts.at(id);
     assert(!script.empty());
 
-    sol::state &lua = LuaStateDispatcher::instance().get_lua();
+    auto &lua = LuaStateDispatcher::instance().get_lua();
     lua.set_function("pine_get_script_parent_entity", [this] { 
         assert(this->m_parent); return *this->m_parent; });
     ScriptEngine::run_script(lua, app_relative_path(script)); 
 }
 // @Lua API
 void Script::run_all() const {
-    sol::state &lua = LuaStateDispatcher::instance().get_lua();
+    auto &lua = LuaStateDispatcher::instance().get_lua();
     lua.set_function("pine_get_script_parent_entity", [this] { 
         assert(this->m_parent); return *this->m_parent; });
 
@@ -136,17 +136,15 @@ void CustomBehaviour::call_on_update() const {
 void CustomBehaviour::deserialize(NodeData &data) {
     CHECK_SERDE(data.variables.size() == 1);
 
-    std::string on_update;
-    std::string on_remove;
+    auto &on_update = m_on_update;
+    auto &on_remove = m_on_remove;
     VAR_FROM_NODE(on_update, data);
     VAR_FROM_NODE(on_remove, data);
-    m_on_update = on_update;
-    m_on_remove = on_remove;
 }
 
 NodeData CustomBehaviour::serialize() const {
-    std::string on_update = m_on_update;
-    std::string on_remove = m_on_remove;
+    auto on_update = m_on_update;
+    auto on_remove = m_on_remove;
     return NodeData {
         .type=NodeType::Component,
         .variables = {
@@ -213,7 +211,7 @@ NodeData Table::serialize() const {
         return Cone.to_string(_pine_internals_get_table())
     )");
     assert(result.valid());
-    std::string_view table_string = result.get<std::string_view>();
+    auto table_string = result.get<std::string_view>();
 
     return NodeData { 
         .type=NodeType::Component,
