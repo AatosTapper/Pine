@@ -64,16 +64,22 @@ Script::id_t Script::push_script(std::string str) {
     m_scripts.push_back(str) ;
     return m_scripts.size() - 1;
 }
+// @Lua API
 void Script::run(Script::id_t id) const { 
     auto &script = m_scripts.at(id);
     assert(!script.empty());
 
     sol::state &lua = LuaStateDispatcher::instance().get_lua();
+    lua.set_function("pine_get_script_parent_entity", [this] { 
+        assert(this->m_parent); return *this->m_parent; });
     ScriptEngine::run_script(lua, app_relative_path(script)); 
 }
-
+// @Lua API
 void Script::run_all() const {
     sol::state &lua = LuaStateDispatcher::instance().get_lua();
+    lua.set_function("pine_get_script_parent_entity", [this] { 
+        assert(this->m_parent); return *this->m_parent; });
+
     for (auto &script : m_scripts) {
         ScriptEngine::run_script(lua, app_relative_path(script));
     }
@@ -98,10 +104,14 @@ NodeData Script::serialize() const {
 }
 
 CustomBehaviour::CustomBehaviour(std::string path) noexcept : m_on_update(path) {}
-
+// @Lua API
 CustomBehaviour::~CustomBehaviour() { 
     if (!m_on_remove.empty()) {
-        ScriptEngine::run_script(LuaStateDispatcher::instance().get_lua(), app_relative_path(m_on_remove));
+        auto &lua = LuaStateDispatcher::instance().get_lua();
+        lua.set_function("pine_get_script_parent_entity", [this] { 
+            assert(this->m_parent); return *this->m_parent; });
+
+        ScriptEngine::run_script(lua, app_relative_path(m_on_remove));
     }
 }
 
@@ -112,10 +122,14 @@ void CustomBehaviour::set_on_update(std::string path) {
 void CustomBehaviour::set_on_remove(std::string path) {
     m_on_remove = path;
 }
-
+// @Lua API
 void CustomBehaviour::call_on_update() const { 
     if (!m_on_update.empty()) [[likely]] {
-        ScriptEngine::run_script(LuaStateDispatcher::instance().get_lua(), app_relative_path(m_on_update));
+        auto &lua = LuaStateDispatcher::instance().get_lua();
+        lua.set_function("pine_get_script_parent_entity", [this] { 
+            assert(this->m_parent); return *this->m_parent; });
+
+        ScriptEngine::run_script(lua, app_relative_path(m_on_update));
     }
 }
 

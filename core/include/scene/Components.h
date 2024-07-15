@@ -15,6 +15,8 @@ namespace component {
 /// @brief User definable handle for an entity, name doesn't need to be unique
 /// @serializable
 struct Tag : public Serializable {
+    friend class ::Entity;
+
     Tag() noexcept = default;
     Tag(std::string _name) noexcept;
     virtual ~Tag() override = default;
@@ -23,12 +25,17 @@ struct Tag : public Serializable {
 
     virtual void deserialize(NodeData &data) override;
     virtual NodeData serialize() const override;
+
+private:
+    std::shared_ptr<Entity> m_parent; // behind pointer to no pollute the cache as much
 };
 
 ///
 /// @brief Entity transforms in world space
 /// @serializable
 struct Transform : public Serializable {
+    friend class ::Entity;
+
     double x = 0.0;
     double y = 0.0;
     float sx = 1.0; /// width (x scale)
@@ -44,12 +51,17 @@ struct Transform : public Serializable {
     virtual ~Transform() override = default;
     virtual void deserialize(NodeData &data) override;
     virtual NodeData serialize() const override;
+
+private:
+    std::shared_ptr<Entity> m_parent;
 };
 
 ///
 /// @brief Define any number of general script files that can be run whenever
 /// @serializable
 struct Script : public Serializable {
+    friend class ::Entity;
+
     using id_t = uint32_t;
     Script() noexcept = default;
     Script(std::string str) noexcept;
@@ -64,12 +76,16 @@ struct Script : public Serializable {
 
 private:
     std::vector<std::string> m_scripts;
+
+    std::shared_ptr<Entity> m_parent;
 };
 
 ///
 /// @brief Define custom update and destroy scripts
 /// @serializable
 struct CustomBehaviour : public Serializable {
+    friend class ::Entity;
+
     CustomBehaviour() noexcept = default;
     CustomBehaviour(std::string path) noexcept;
     virtual ~CustomBehaviour() override;
@@ -85,13 +101,17 @@ struct CustomBehaviour : public Serializable {
 private:
     std::string m_on_update;
     std::string m_on_remove;
+
+    std::shared_ptr<Entity> m_parent;
 };
 
 ///
 /// @brief General image component for drawing
 /// @serializable
 struct Sprite : public Serializable {
+    friend class ::Entity;
     friend class ::Renderer;
+
     Sprite() noexcept = default;
     Sprite(std::string path) noexcept;
     virtual ~Sprite() = default;
@@ -103,12 +123,16 @@ struct Sprite : public Serializable {
 private:
     Texture *m_img = nullptr;
     std::shared_ptr<std::string> m_save_string;
+
+    std::shared_ptr<Entity> m_parent;
 };
 
 ///
 /// @brief Store any data within a lua table
 /// serializable (but noticably slow, >50 microseconds)
 struct Table : public Serializable {
+    friend class ::Entity;
+
     Table() noexcept = default;
     Table(sol::table _data) noexcept;
     virtual ~Table() override = default;
@@ -117,12 +141,17 @@ struct Table : public Serializable {
     
     virtual void deserialize(NodeData &data) override;
     virtual NodeData serialize() const override;
+
+private:
+    std::shared_ptr<Entity> m_parent;
 };
 
 ///
 /// @brief Define custom flag strings to sort components
 /// @Serializable
 struct StateFlags : public Serializable {
+    friend class ::Entity;
+
     StateFlags() noexcept = default;
     StateFlags(std::vector<std::string> flags) noexcept;
     virtual ~StateFlags() override = default;
@@ -135,8 +164,10 @@ struct StateFlags : public Serializable {
 
 private:
     std::vector<std::string> m_flags;
-
+    
     bool m_has_flag(const std::string &flag);
+
+    std::shared_ptr<Entity> m_parent;
 };
 
 } // namespace component

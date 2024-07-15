@@ -56,16 +56,22 @@ function pine_Scene.new() end
 
 --- Adds an entity to the scene
 ---@param name string
----@return Entity
+---@return pine_Entity
 function pine_Scene:add_entity(name) end
 
 --- Gets all entities in the scene
----@return table<number, Entity>
+---@return table<number, pine_Entity>
 function pine_Scene:get_entities() end
 
 --- Gets the camera of the scene
 ---@return pine_Camera
 function pine_Scene:get_camera() end
+
+--- Gives access to component's parent entity in script file
+--- Script file = lua script attached to some component like Script or CustomBehaviour
+--- Calling this outside a script is undefined and probably crashes
+---@return pine_Entity
+function pine_get_script_parent_entity() end
 
 
 --- scene managing
@@ -127,7 +133,7 @@ function pine_Camera:down(amount) end
 --- #entity
 
 --- Entity
----@class Entity
+---@class pine_Entity
 local pine_Entity = {}
 
 --- Removes the entity and it's component from a scene
@@ -245,6 +251,7 @@ function pine_Entity:has_component_Sprite() end
 
 --- Removes the Sprite component
 function pine_Entity:remove_component_Sprite() end
+
 
 --- Adds a StateFlags component to entity
 --- Replaces the old component if exists
@@ -375,7 +382,7 @@ function pine_comp_Sprite:set_texture(path) end
 --- Use this in ECS like systems etc.
 --- Example: FireSpreadSystem needs to know which entities are flammable.
 ---          You can set a flag "FLAMMABLE" for entities, and in the system do this:
----          if comp:has_flags({ "FLAMMABLE" }) then comp:set_flags({ "ON_FIRE" }) end
+---          if comp:has_flags({ "FLAMMABLE" }) then comp:set_flags({ "ON_FIRE" }) etc.... end
 ---@class pine_comp_StateFlags
 local pine_comp_StateFlags = {}
 
@@ -388,6 +395,7 @@ function pine_comp_StateFlags:set_flags(flags) end
 ---@param flags table<number, string>
 ---@return boolean
 function pine_comp_StateFlags:has_flags(flags) end
+
 
 
 --- #vector

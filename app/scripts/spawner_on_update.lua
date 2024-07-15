@@ -1,3 +1,12 @@
+local parent = pine_get_script_parent_entity()
+if parent == nil then
+    print("parent was nil")
+    return
+end
+
+print(parent:get_component_Tag().name)
+
+
 local scene = pine_get_scene()
 if scene == nil then
     print("Scene was nil in script")

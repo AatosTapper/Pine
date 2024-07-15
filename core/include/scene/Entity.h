@@ -44,9 +44,13 @@ inline Entity::Entity(Scene *scene) noexcept { *this = scene->add_entity(); }
 template<typename T, typename ...Args>
 inline T& Entity::add_component(Args&&... args) {
     if (m_registry().all_of<T>(m_handle)) [[unlikely]] {
-        return m_registry().replace<T>(m_handle, std::forward<Args>(args)...);
+        auto &comp = m_registry().replace<T>(m_handle, std::forward<Args>(args)...);
+        comp.m_parent = std::make_shared<Entity>(*this);
+        return comp;
     } else {
-        return m_registry().emplace<T>(m_handle, std::forward<Args>(args)...);
+        auto &comp = m_registry().emplace<T>(m_handle, std::forward<Args>(args)...);
+        comp.m_parent = std::make_shared<Entity>(*this);
+        return comp;
     }
 }
 
