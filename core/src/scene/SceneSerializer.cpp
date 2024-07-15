@@ -21,6 +21,8 @@ void SceneSerializer::serialize(Scene *scene, std::string path) {
     
     auto *registry = scene->m_registry.get();
     for (auto ent : registry->view<entt::entity>()) {
+        if (registry->all_of<EntityDoNotSerialize>(ent)) continue;
+
         auto [tag, trans, cb, script, sprite, flags] = registry->try_get<
             component::Tag, 
             component::Transform, 

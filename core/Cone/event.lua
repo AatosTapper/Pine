@@ -39,7 +39,7 @@ Event.listener = function(event, callback)
     .process()
 end
 
---- Dispatch a custom event. This event can be listened to via it's title
+--- Dispatch a custom event. This event can be listened to with it's title
 ---@param title string
 ---@param data table
 Event.create = function(title, data)

@@ -37,6 +37,8 @@ struct Serializable {
         deserialize(data);
     }
 };
+/// @brief A tag used to mark entities as non serializable
+struct EntityDoNotSerialize {};
 
 namespace serialize_internals {
 

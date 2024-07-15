@@ -20,3 +20,5 @@ local table = ent:add_component_Table({
 })
 
 local flags = ent:add_component_StateFlags({ "brotha" })
+
+ent:disable_serialization()

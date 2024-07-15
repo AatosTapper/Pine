@@ -22,6 +22,10 @@ public:
     template<typename T> 
     void remove_component();
 
+
+    template<typename T>
+    void add_empty_component();
+
     /// @brief Get any number of components, only used on C++ side
     template<typename... T> auto get();
 
@@ -59,12 +63,6 @@ inline T &Entity::get_component() {
     return m_registry().get<T>(m_handle);
 }
 
-/// @brief Get any number of components, only used on C++ side
-template<typename... T>
-inline auto Entity::get() {
-    return m_registry().get<T...>(m_handle);
-}
-
 template<typename... T>
 inline bool Entity::has_component() {
     return m_registry().all_of<T...>(m_handle);
@@ -73,6 +71,21 @@ inline bool Entity::has_component() {
 template<typename T>
 inline void Entity::remove_component() {
     m_registry().remove<T>(m_handle);
+}
+
+template<typename T>
+inline void Entity::add_empty_component() {
+    if (m_registry().all_of<T>(m_handle)) [[unlikely]] {
+        m_registry().replace<T>(m_handle);
+    } else {
+        m_registry().emplace<T>(m_handle);
+    }
+}
+
+/// @brief Get any number of components, only used on C++ side
+template<typename... T>
+inline auto Entity::get() {
+    return m_registry().get<T...>(m_handle);
 }
 
 inline void Entity::remove() {

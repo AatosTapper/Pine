@@ -46,7 +46,7 @@ Application::Application(sol::state &lua) noexcept :
     m_scene_manager.set_camera(m_camera.get());
 
     m_event_bus.subscribe<WindowResizeEvent>([this](WindowResizeEvent *event) -> HandlerPersistence {
-        this->m_renderer->set_window_dimensions(glm::i32vec2(event->new_width, event->new_height));
+        this->m_renderer->set_window_dimensions(this->m_window->get_framebuffer_dimensions());
         this->m_renderer->regenerate_framebuffer();
         this->m_camera->set_aspect_ratio(static_cast<float>(event->new_width) / static_cast<float>(event->new_height));
         return HandlerPersistence::Continuous;

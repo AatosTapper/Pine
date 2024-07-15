@@ -36,12 +36,13 @@
 #define COMP_REGISTER_NA(TYPE) \
     sol::usertype<component::TYPE> TYPE##_type = lua.new_usertype<component::TYPE>("pine_comp_"#TYPE, \
         sol::constructors<component::TYPE()>());
+
 #define COMP_REGISTER(TYPE, ARGS) \
     sol::usertype<component::TYPE> TYPE##_type = lua.new_usertype<component::TYPE>("pine_comp_"#TYPE, \
         sol::constructors<component::TYPE(), component::TYPE(ARGS)>());
 
 #define COMP_MEM_REGISTER(TYPE, NAME) \
-    TYPE##_type[#NAME] = &component::TYPE::NAME; \
+    TYPE##_type[#NAME] = &component::TYPE::NAME;
 
 // @Lua API
 void set_lua_entity(sol::state &lua) {
@@ -49,7 +50,15 @@ void set_lua_entity(sol::state &lua) {
         sol::constructors<Entity(), Entity(Scene*)>());
 
     entity_type["remove"] = &Entity::remove;
-
+    entity_type["disable_serialization"] = [&](Entity &self) {
+        self.add_empty_component<EntityDoNotSerialize>();
+    };
+    entity_type["enable_serialization"] = [&](Entity &self) {
+        if (self.has_component<EntityDoNotSerialize>()) [[likely]] {
+            self.remove_component<EntityDoNotSerialize>();
+        }
+    };
+    
     FUNC_REGISTER(Tag, std::string)
     FUNC_REGISTER_NA(Transform)
     FUNC_REGISTER(Script, std::string)

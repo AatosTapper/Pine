@@ -21,6 +21,7 @@ public:
     void update();
 
     glm::i32vec2 get_dimensions() const;
+    glm::i32vec2 get_framebuffer_dimensions() const;
     int get_width() const { return m_data.width; }
     int get_height() const { return m_data.heigth; }
     float get_aspect_ratio() const { return (float)m_data.width / (float)m_data.heigth; }

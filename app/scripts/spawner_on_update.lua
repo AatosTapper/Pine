@@ -4,8 +4,6 @@ if parent == nil then
     return
 end
 
-print(parent:get_component_Tag().name)
-
 
 local scene = pine_get_scene()
 if scene == nil then

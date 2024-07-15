@@ -139,3 +139,9 @@ void Window::update() {
 glm::i32vec2 Window::get_dimensions() const {
     return glm::i32vec2(m_data.width, m_data.heigth);
 }
+
+glm::i32vec2 Window::get_framebuffer_dimensions() const {
+    int width, height;
+    glfwGetFramebufferSize(m_window, &width, &height);
+    return glm::i32vec2(width, height);
+}

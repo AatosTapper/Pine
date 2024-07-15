@@ -1,0 +1,8 @@
+<Scene>
+    <Ent>
+        <Cmp type="Tag" name="spawner"/>
+        <Cmp type="Transform" x="0" y="0" sx="1" sy="1" rr="0"/>
+        <Cmp type="CustomBehaviour" on_update="scripts/spawner_on_update.lua" on_remove=""/>
+        <Cmp type="Script" scripts="scripts/spawn_script.lua "/>
+    </Ent>
+</Scene>

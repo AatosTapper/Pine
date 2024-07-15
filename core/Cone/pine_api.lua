@@ -132,6 +132,7 @@ function pine_Camera:down(amount) end
 
 --- #entity
 
+
 --- Entity
 ---@class pine_Entity
 local pine_Entity = {}
@@ -270,9 +271,19 @@ function pine_Entity:has_component_StateFlags() end
 --- Removes the StateFlags component
 function pine_Entity:remove_component_StateFlags() end
 
+--- Sets the entity to be ignored during serialization, 
+--- any data will be lost on application close including the component's existance
+function pine_Entity:disable_serialization() end
+
+--- Sets the entity back to being serialized
+--- SERIALIZATION IS THE DEFAULT STATE so this function is for
+--- allowing it again after calling disable_serialization
+function pine_Entity:enable_serialization() end
+
 
 
 --- #components
+
 
 --- User definable handle for an entity, name doesn't need to be unique
 --- DEFAULT: EVERY ENTITY HAS THIS ALREADY, DO NOT ADD
