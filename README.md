@@ -7,4 +7,4 @@ while allowing the **maximum amount of flexibility, freedom and power** fully wi
 
 ### __The goal is to provide the smallest possible API that can build any game with an arbitary amount of complexity.__
 
-The engine core is built with C++23 following modern game engine architecture conventions, like data oriented design. The entity system is based on ENTT. *Pine does not rely on C++23 specific features, but benefits from the extended constexpr support.*
+The engine core is built with C++23 following modern game engine architecture conventions, like data oriented design. The entity system is based on ENTT. Pine does not rely on C++23 specific features, but benefits from the extended constexpr support.
