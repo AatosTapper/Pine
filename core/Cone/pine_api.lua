@@ -98,26 +98,13 @@ function pine_remove_temp_scene() end
 local pine_Camera = {}
 
 --- Gets the camera position
----@return vec3
+---@return vec2
 function pine_Camera:get_pos() end
 
---- Sets the camera 2D position
+--- Sets the camera position
 ---@param self pine_Camera
 ---@param pos vec2
 function pine_Camera:set_pos(pos) end
-
---- Sets the camera 3D position
----@param self pine_Camera
----@param pos vec3
-function pine_Camera:set_pos_3d(pos) end
-
---- Moves the camera forward
----@param amount number
-function pine_Camera:forward(amount) end
-
---- Moves the camera backward
----@param amount number
-function pine_Camera:back(amount) end
 
 --- Moves the camera left
 ---@param amount number
@@ -310,20 +297,19 @@ function pine_comp_Transform:set_pos(x, y) end
 function pine_comp_Transform:set_scale(x, y) end
 
 
---- Defines custom update and destroy functions
+--- Defines custom update and destroy scripts
 --- Use this to define per-update game logic
---- WARNING: not serializable (state isn't saved when closed)
 ---@class pine_comp_CustomBehaviour
 local pine_comp_CustomBehaviour = {}
 
 --- Sets the function that gets called on every fixed update
----@param func function()
-function pine_comp_CustomBehaviour:set_on_update(func) end
+---@param path string
+function pine_comp_CustomBehaviour:set_on_update(path) end
 
 --- Sets the function that gets called when the component dies
 --- (either by removal or scene unload)
----@param func function
-function pine_comp_CustomBehaviour:set_on_remove(func) end
+---@param path string
+function pine_comp_CustomBehaviour:set_on_remove(path) end
 
 
 --- Defines any number of general script files that can be run whenever

@@ -16,6 +16,9 @@ namespace serialize_internals {
 
 #define CHECK_SERDE(checks) assert(checks);
 
+/// @brief set component's type variable
+#define COMP_TYPE(type) NodeVariable{ .name="type", .value=#type }
+
 /// @brief create a NodeVariable struct from a C++ variable
 #define VAR_TO_NODE(var) NodeVariable{ .name=#var, .value=serialize_internals::to_string(var) }
 

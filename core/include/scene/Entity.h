@@ -12,13 +12,13 @@ public:
 
     template<typename T, typename ...Args> 
     T& add_component(Args&&... args);
-    
+
     template<typename T>
     T &get_component();
-    
+
     template<typename... T> 
     bool has_component();
-    
+
     template<typename T> 
     void remove_component();
 

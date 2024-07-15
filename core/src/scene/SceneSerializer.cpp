@@ -1,9 +1,9 @@
-#include "Scene/SceneSerializer.h"
+#include "scene/SceneSerializer.h"
 
 #include "Serialize.h"
 #include "SceneParser.h"
-#include "Scene/Components.h"
-#include "Scene/Entity.h"
+#include "scene/Components.h"
+#include "scene/Entity.h"
 
 static void serialize_comp(std::unique_ptr<Node> &parent, Serializable *component) {
     if (!component) return;
@@ -31,8 +31,6 @@ void SceneSerializer::serialize(Scene *scene, std::string path) {
         serialize_comp(entity, sprite);
         root->children.push_back(std::move(entity));
     }
-
-    root->print_tree();
     write_scene(root, path.c_str());
 }
 

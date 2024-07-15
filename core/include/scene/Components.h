@@ -56,8 +56,8 @@ struct Script : public Serializable {
     virtual ~Script() override = default;
 
     id_t push_script(std::string str);
-    void run(sol::state &lua, id_t id = 0) const;
-    void run_all(sol::state &lua) const;
+    void run(id_t id = 0) const;
+    void run_all() const;
     
     virtual void deserialize(NodeData &data) override;
     virtual NodeData serialize() const override;
@@ -67,15 +67,15 @@ private:
 };
 
 ///
-/// @brief Define custom update and destroy functions
-//
+/// @brief Define custom update and destroy scripts
+/// @serializable
 struct CustomBehaviour : public Serializable {
     CustomBehaviour() noexcept = default;
-    CustomBehaviour(sol::function f) noexcept;
+    CustomBehaviour(std::string path) noexcept;
     virtual ~CustomBehaviour() override;
 
-    void set_on_update(sol::function func);
-    void set_on_remove(sol::function func);
+    void set_on_update(std::string path);
+    void set_on_remove(std::string path);
 
     void call_on_update() const;
 
@@ -83,8 +83,8 @@ struct CustomBehaviour : public Serializable {
     virtual NodeData serialize() const override;
 
 private:
-    sol::function m_on_update;
-    sol::function m_on_remove;
+    std::string m_on_update;
+    std::string m_on_remove;
 };
 
 ///

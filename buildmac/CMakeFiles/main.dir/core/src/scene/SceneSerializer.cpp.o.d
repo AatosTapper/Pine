@@ -1012,8 +1012,8 @@ CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/variadic_results.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/sol/as_returns.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneSerializer.cpp \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/SceneSerializer.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/Scene.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneSerializer.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Scene.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/entt.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/config/config.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/entt/config/version.h \
@@ -1340,8 +1340,8 @@ CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iomanip \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/FromString.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/Components.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/QuadMesh.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/Entity.h
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h

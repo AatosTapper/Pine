@@ -16,6 +16,7 @@ NodeData Tag::serialize() const {
     return NodeData { 
         .type=NodeType::Component,
         .variables = { 
+            COMP_TYPE(Tag),
             VAR_TO_NODE(name) 
         }
     };
@@ -44,7 +45,8 @@ void Transform::deserialize(NodeData &data) {
 NodeData Transform::serialize() const {
     return NodeData { 
         .type=NodeType::Component,
-        .variables = { 
+        .variables = {
+            COMP_TYPE(Transform),
             VAR_TO_NODE(x),
             VAR_TO_NODE(y),
             VAR_TO_NODE(sx),
@@ -62,14 +64,16 @@ Script::id_t Script::push_script(std::string str) {
     m_scripts.push_back(str) ;
     return m_scripts.size() - 1;
 }
-void Script::run(sol::state &lua, Script::id_t id) const { 
+void Script::run(Script::id_t id) const { 
     auto &script = m_scripts.at(id);
     assert(!script.empty());
 
+    sol::state &lua = LuaStateDispatcher::instance().get_lua();
     ScriptEngine::run_script(lua, app_relative_path(script)); 
 }
 
-void Script::run_all(sol::state &lua) const {
+void Script::run_all() const {
+    sol::state &lua = LuaStateDispatcher::instance().get_lua();
     for (auto &script : m_scripts) {
         ScriptEngine::run_script(lua, app_relative_path(script));
     }
@@ -87,50 +91,55 @@ NodeData Script::serialize() const {
     return NodeData { 
         .type=NodeType::Component,
         .variables = { 
+            COMP_TYPE(Script),
             VAR_TO_NODE(scripts)
         }
     };
 }
 
-CustomBehaviour::CustomBehaviour(sol::function f) noexcept : m_on_update(f) {}
+CustomBehaviour::CustomBehaviour(std::string path) noexcept : m_on_update(path) {}
 
 CustomBehaviour::~CustomBehaviour() { 
-    if (m_on_remove) m_on_remove.call(); 
+    if (!m_on_remove.empty()) {
+        ScriptEngine::run_script(LuaStateDispatcher::instance().get_lua(), app_relative_path(m_on_remove));
+    }
 }
 
-void CustomBehaviour::set_on_update(sol::function func) {
-    assert(func && "not a valid callback");
-    assert(!m_on_update && R"(Can't call CustomBehaviour::set_on_update twice for a single entity.
-    CustomBehaviour is immutable due to not being serializable.)");
-
-    m_on_update = std::move(func);
+void CustomBehaviour::set_on_update(std::string path) {
+    m_on_update = path;
 }
 
-void CustomBehaviour::set_on_remove(sol::function func) {
-    assert(func && "not a valid callback");
-    assert(!m_on_remove && R"(Can't call CustomBehaviour::set_on_remove twice for a single entity.
-    CustomBehaviour is immutable due to not being serializable.)");
-
-    m_on_remove = std::move(func);
+void CustomBehaviour::set_on_remove(std::string path) {
+    m_on_remove = path;
 }
 
 void CustomBehaviour::call_on_update() const { 
-    if (m_on_update) {
-        try {
-            m_on_update.call();
-        } catch (const sol::error& e) {
-            std::cerr << "Error in CustomBehaviour::on_update lua function: " << e.what() << std::endl;
-        }
+    if (!m_on_update.empty()) [[likely]] {
+        ScriptEngine::run_script(LuaStateDispatcher::instance().get_lua(), app_relative_path(m_on_update));
     }
 }
 
 void CustomBehaviour::deserialize(NodeData &data) {
-    (void)data;
+    CHECK_SERDE(data.variables.size() == 1);
+
+    std::string on_update;
+    std::string on_remove;
+    VAR_FROM_NODE(on_update, data);
+    VAR_FROM_NODE(on_remove, data);
+    m_on_update = on_update;
+    m_on_remove = on_remove;
 }
 
 NodeData CustomBehaviour::serialize() const {
-    return NodeData { 
-        .type=NodeType::Component
+    std::string on_update = m_on_update;
+    std::string on_remove = m_on_remove;
+    return NodeData {
+        .type=NodeType::Component,
+        .variables = {
+            COMP_TYPE(CustomBehaviour),
+            VAR_TO_NODE(on_update),
+            VAR_TO_NODE(on_remove)
+        }
     };
 }
 
@@ -161,7 +170,8 @@ NodeData Sprite::serialize() const {
     auto &path = *m_save_string;
     return NodeData { 
         .type=NodeType::Component,
-        .variables = { 
+        .variables = {
+            COMP_TYPE(Sprite),
             VAR_TO_NODE(path)
         }
     };
@@ -198,6 +208,7 @@ NodeData Table::serialize() const {
     return NodeData { 
         .type=NodeType::Component,
         .variables = {
+            COMP_TYPE(Table),
             VAR_TO_NODE(table_string)
         }
     };

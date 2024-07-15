@@ -27213,10 +27213,6 @@ CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o: CMakeFiles/main.dir/cm
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h \
   CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/FromString.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/Components.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/Entity.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/Scene.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/SceneSerializer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Serialize.h \
@@ -27226,6 +27222,10 @@ CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o: CMakeFiles/main.dir/cm
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Camera.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/QuadMesh.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Entity.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Scene.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneSerializer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/singleton.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneSerializer.cpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/GLFW/glfw3.h \
@@ -28643,12 +28643,6 @@ CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o: CMakeFiles/main.dir/cmake_pch_a
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdarg:
 
-/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/SceneSerializer.h:
-
-/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/Scene.h:
-
-/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/Entity.h:
-
 /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/SceneManager.cpp:
 
 /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/scene/Scene.cpp:
@@ -29188,8 +29182,6 @@ CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx:
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_intptr_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_int8_t.h:
-
-/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Scene/Components.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_int64_t.h:
 

@@ -20,58 +20,14 @@ local function setup()
     local scene = pine_set_scene(pine_Scene:new())
     local spawner_ent = scene:add_entity("spawner")
     local script = spawner_ent:add_component_Script("scripts/spawn_script.lua")
-    for i = 1, 50 do
+    for i = 1, 1000 do
         script:run()
     end
-    local table_comp = spawner_ent:add_component_Table({
-        health = 10,
-        xp = 100,
-        name = "Kakkeli",
-        abilities = { "jou", "fdsla", "saö", "asdasö" }
-    })
 
     local camera = scene:get_camera()
     local behaviour = spawner_ent:add_component_CustomBehaviour()
 
-    behaviour:set_on_update(function()
-        -- simple controller using pine_get_input(keycode)
-        local dt = pine_fixed_update_dt()
-        local speed = 18 * dt
-        --print(dt)
-        if pine_get_input(Cone.Key._W) then
-            camera:up(speed)
-        end
-        if pine_get_input(Cone.Key._S) then
-            camera:down(speed)
-        end
-        if pine_get_input(Cone.Key._A) then
-            camera:left(speed)
-        end
-        if pine_get_input(Cone.Key._D) then
-            camera:right(speed)
-        end
-        if pine_get_input(Cone.Key._MOUSE_BUTTON_LEFT) then
-            camera:left(speed)
-        end
-        if pine_get_input(Cone.Key._MOUSE_BUTTON_RIGHT) then
-            camera:right(speed)
-        end
-
-        local entitites = scene:get_entities()
-        for k, v in ipairs(entitites) do
-            local transform = v:get_component_Transform()
-            local t = v:get_component_Table()
-            transform.rr = transform.rr + t.table.rotation_coeff
-        end
-
-        --local mouse_pos = pine_get_mouse_pos();
-        --local pos = vec2.from(camera:get_pos())
-        --camera:set_pos(vec2.from(pos.x + ((math.random() - 0.5) * 0.2), pos.y + ((math.random() - 0.5) * 0.2)))
-    end)
-
-    behaviour:set_on_remove(function()
-        print("Custom Behaviour deleted")
-    end)
+    behaviour:set_on_update("scripts/spawner_on_update.lua")
 end
 
 function main()

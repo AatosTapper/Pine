@@ -54,7 +54,7 @@ void set_lua_entity(sol::state &lua) {
     FUNC_REGISTER_NA(Transform)
     FUNC_REGISTER(Script, std::string)
     FUNC_REGISTER(Table, sol::table)
-    FUNC_REGISTER(CustomBehaviour, sol::function)
+    FUNC_REGISTER(CustomBehaviour, std::string)
     FUNC_REGISTER(Sprite, std::string)
 }
 
@@ -74,19 +74,19 @@ void set_lua_components(sol::state &lua) {
 
     COMP_REGISTER_ARGS(Script, std::string)
     COMP_MEM_REGISTER(Script, push_script)
-    Script_type["run"] = [&lua](component::Script &self, sol::variadic_args va) {
+    Script_type["run"] = [](component::Script &self, sol::variadic_args va) {
         component::Script::id_t id = 0;
         if (va.size() > 0) {
             id = va.get<component::Script::id_t>();
         }
-        self.run(lua, id);
+        self.run(id);
     };
-    Script_type["run_all"] = [&lua](component::Script &self) { self.run_all(lua); };
+    COMP_MEM_REGISTER(Script, run_all)
 
     COMP_REGISTER_ARGS(Table, sol::table)
     COMP_MEM_REGISTER(Table, table)
 
-    COMP_REGISTER_ARGS(CustomBehaviour, sol::function)
+    COMP_REGISTER_ARGS(CustomBehaviour, std::string)
     COMP_MEM_REGISTER(CustomBehaviour, set_on_update)
     COMP_MEM_REGISTER(CustomBehaviour, set_on_remove)
 
@@ -112,15 +112,15 @@ void set_lua_scene(sol::state &lua, SceneManager &manager) {
     };
 
     // Camera
-    camera_type["get_pos"] = &Camera::get_position; // -> glm::vec3
+    camera_type["get_pos"] = [&](Camera &self) {
+        auto &temp = self.get_position();
+        return glm::vec2{ temp.x, temp.y };
+    };
     camera_type["set_pos"] = [&](Camera &self, const glm::vec2 &pos) {
         const auto &curr_pos = self.get_position();
         self.set_position({ pos.x, pos.y, curr_pos.z });
     };
-    camera_type["set_pos_3d"] = &Camera::set_position;
 
-    camera_type["forward"] = &Camera::forward;
-    camera_type["back"] = &Camera::back;
     camera_type["left"] = &Camera::left;
     camera_type["right"] = &Camera::right;
     camera_type["up"] = &Camera::up;
