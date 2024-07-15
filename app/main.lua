@@ -20,7 +20,7 @@ local function setup()
     local scene = pine_set_scene(pine_Scene:new())
     local spawner_ent = scene:add_entity("spawner")
     local script = spawner_ent:add_component_Script("scripts/spawn_script.lua")
-    for i = 1, 1000 do
+    for i = 1, 300 do
         script:run()
     end
 

@@ -21,7 +21,13 @@ void SceneSerializer::serialize(Scene *scene, std::string path) {
     
     auto *registry = scene->m_registry.get();
     for (auto ent : registry->view<entt::entity>()) {
-        auto [tag, trans, cb, script, sprite] = registry->try_get<component::Tag, component::Transform, component::CustomBehaviour, component::Script, component::Sprite>(ent);
+        auto [tag, trans, cb, script, sprite, flags] = registry->try_get<
+            component::Tag, 
+            component::Transform, 
+            component::CustomBehaviour, 
+            component::Script, 
+            component::Sprite, 
+            component::StateFlags>(ent);
 
         auto entity = std::make_unique<Node>(Node { .data = { .type = NodeType::Entity }, .parent = root.get() });
         serialize_comp(entity, tag);
@@ -29,6 +35,7 @@ void SceneSerializer::serialize(Scene *scene, std::string path) {
         serialize_comp(entity, cb);
         serialize_comp(entity, script);
         serialize_comp(entity, sprite);
+        serialize_comp(entity, flags);
         root->children.push_back(std::move(entity));
     }
     write_scene(root, path.c_str());

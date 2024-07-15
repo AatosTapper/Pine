@@ -177,9 +177,9 @@ function pine_Entity:remove_component_Transform() end
 
 --- Adds a Script component to entity
 --- Replaces the old component if exists
----@param name string|nil @optional
+---@param path string|nil @optional
 ---@return pine_comp_Script
-function pine_Entity:add_component_Script(name) end
+function pine_Entity:add_component_Script(path) end
 
 --- Gets the Script component
 ---@return pine_comp_Script
@@ -231,9 +231,9 @@ function pine_Entity:remove_component_CustomBehaviour() end
 
 --- Adds a Sprite component to entity
 --- Replaces the old component if exists
----@param name string|nil @optional
+---@param path string|nil @optional
 ---@return pine_comp_Sprite
-function pine_Entity:add_component_Sprite(texture_path) end
+function pine_Entity:add_component_Sprite(path) end
 
 --- Gets the Sprite component
 ---@return pine_comp_Sprite
@@ -245,6 +245,23 @@ function pine_Entity:has_component_Sprite() end
 
 --- Removes the Sprite component
 function pine_Entity:remove_component_Sprite() end
+
+--- Adds a StateFlags component to entity
+--- Replaces the old component if exists
+---@param flags table<number, string>|nil @optional
+---@return pine_comp_StateFlags
+function pine_Entity:add_component_StateFlags(flags) end
+
+--- Gets the StateFlags component
+---@return pine_comp_StateFlags
+function pine_Entity:get_component_StateFlags() end
+
+--- Tells if entity has a StateFlags component
+---@return boolean
+function pine_Entity:has_component_StateFlags() end
+
+--- Removes the StateFlags component
+function pine_Entity:remove_component_StateFlags() end
 
 
 
@@ -353,6 +370,24 @@ local pine_comp_Sprite = {}
 ---@param path string
 function pine_comp_Sprite:set_texture(path) end
 
+
+--- Define custom flag strings to identify and sort components
+--- Use this in ECS like systems etc.
+--- Example: FireSpreadSystem needs to know which entities are flammable.
+---          You can set a flag "FLAMMABLE" for entities, and in the system do this:
+---          if comp:has_flags({ "FLAMMABLE" }) then comp:set_flags({ "ON_FIRE" }) end
+---@class pine_comp_StateFlags
+local pine_comp_StateFlags = {}
+
+--- Sets the flags
+--- If already has the flags, everything stays the same
+---@param flags table<number, string>
+function pine_comp_StateFlags:set_flags(flags) end
+
+--- Returns true if the entity has ALL of the flags specified
+---@param flags table<number, string>
+---@return boolean
+function pine_comp_StateFlags:has_flags(flags) end
 
 
 --- #vector

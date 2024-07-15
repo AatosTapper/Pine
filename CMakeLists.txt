@@ -28,17 +28,20 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
 
     set(CMAKE_CXX_COMPILER clang++)
 
+    set(EXTRA_OPT 
+        -march=native
+        -mtune=native
+        -funroll-loops
+        -ffast-math
+        -fomit-frame-pointer
+    )
     target_compile_options(main PRIVATE 
-        -Ofast               # Aggressive optimizations
-        -flto                # Link Time Optimization
-        -Wall                # Enable common warnings
-        -Wextra              # Enable extra warnings
-        -Wpedantic           # Enable pedantic warnings
-        -march=native        # Optimize for native architecture
-        -mtune=native        # Tune for native architecture
-        -funroll-loops       # Unroll loops
-        -ffast-math          # Fast math optimizations
-        -fomit-frame-pointer # Omit frame pointer
+        -Ofast
+        -flto
+        -Wall
+        -Wextra
+        -Wpedantic
+        ${EXTRA_OPT}
     )
     target_precompile_headers(main PRIVATE core/include/pch.h)
 

@@ -163,10 +163,6 @@ void Sprite::deserialize(NodeData &data) {
 }
 
 NodeData Sprite::serialize() const {
-    assert(m_save_string && 
-    R"(Can't save a sprite that doesn't have a texture. 
-    Make sure all sprites are holding a texture.)");
-
     auto &path = *m_save_string;
     return NodeData { 
         .type=NodeType::Component,
@@ -210,6 +206,47 @@ NodeData Table::serialize() const {
         .variables = {
             COMP_TYPE(Table),
             VAR_TO_NODE(table_string)
+        }
+    };
+}
+
+StateFlags::StateFlags(std::vector<std::string> flags) noexcept {
+    set_flags(std::move(flags));
+}
+
+void StateFlags::set_flags(std::vector<std::string> flags) {
+    for (auto &flag : flags) {
+        if (m_has_flag(flag)) [[unlikely]] continue;
+        m_flags.push_back(std::move(flag));
+    }
+}
+
+bool StateFlags::has_flags(std::vector<std::string> flags) {
+    for (const auto &flag : flags) {
+        if (!m_has_flag(flag)) return false;
+    }
+    return true;
+}
+
+bool StateFlags::m_has_flag(const std::string &flag) {
+    return std::any_of(m_flags.begin(), m_flags.end(), [&](const std::string &oth) {
+        return oth == flag;
+    });
+}
+
+void StateFlags::deserialize(NodeData &data) {
+    CHECK_SERDE(data.variables.size() == 1);
+    auto &flags = m_flags;
+    VAR_FROM_NODE(flags, data);
+}
+
+NodeData StateFlags::serialize() const {
+    auto &flags = m_flags;
+    return NodeData { 
+        .type=NodeType::Component,
+        .variables = { 
+            COMP_TYPE(StateFlags),
+            VAR_TO_NODE(flags)
         }
     };
 }

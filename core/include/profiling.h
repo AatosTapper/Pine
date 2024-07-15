@@ -4,6 +4,7 @@
 #include <iomanip>
 
 /// @brief Put at the top of a scope to time it
+/// @warning Optimizations might break the timer, use O0 in that case
 #define PINE_CORE_PROFILE(message) Profiler p(message)
 
 class Profiler {

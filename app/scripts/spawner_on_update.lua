@@ -36,7 +36,11 @@ for k, v in ipairs(entitites) do
 
     if v:has_component_Table() then
         local t = v:get_component_Table()
-        transform.rr = transform.rr + t.table.rotation_coeff
+        transform.rr = transform.rr + t.table.rotation_coeff * dt
+    end
+    if v:has_component_StateFlags() then
+        local comp = v:get_component_StateFlags()
+        -- do something with the flags maybe
     end
 end
 

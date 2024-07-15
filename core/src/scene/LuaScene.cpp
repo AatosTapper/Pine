@@ -33,10 +33,10 @@
     _REG(remove, TYPE) \
     _REG(has, TYPE)
 
-#define COMP_REGISTER(TYPE) \
+#define COMP_REGISTER_NA(TYPE) \
     sol::usertype<component::TYPE> TYPE##_type = lua.new_usertype<component::TYPE>("pine_comp_"#TYPE, \
         sol::constructors<component::TYPE()>());
-#define COMP_REGISTER_ARGS(TYPE, ARGS) \
+#define COMP_REGISTER(TYPE, ARGS) \
     sol::usertype<component::TYPE> TYPE##_type = lua.new_usertype<component::TYPE>("pine_comp_"#TYPE, \
         sol::constructors<component::TYPE(), component::TYPE(ARGS)>());
 
@@ -56,14 +56,15 @@ void set_lua_entity(sol::state &lua) {
     FUNC_REGISTER(Table, sol::table)
     FUNC_REGISTER(CustomBehaviour, std::string)
     FUNC_REGISTER(Sprite, std::string)
+    FUNC_REGISTER(StateFlags, std::vector<std::string>)
 }
 
 // @Lua API
 void set_lua_components(sol::state &lua) {
-    COMP_REGISTER_ARGS(Tag, std::string)
+    COMP_REGISTER(Tag, std::string)
     COMP_MEM_REGISTER(Tag, name)
 
-    COMP_REGISTER(Transform)
+    COMP_REGISTER_NA(Transform)
     COMP_MEM_REGISTER(Transform, x)
     COMP_MEM_REGISTER(Transform, y)
     COMP_MEM_REGISTER(Transform, sx)
@@ -72,7 +73,7 @@ void set_lua_components(sol::state &lua) {
     COMP_MEM_REGISTER(Transform, set_pos)
     COMP_MEM_REGISTER(Transform, set_scale)
 
-    COMP_REGISTER_ARGS(Script, std::string)
+    COMP_REGISTER(Script, std::string)
     COMP_MEM_REGISTER(Script, push_script)
     Script_type["run"] = [](component::Script &self, sol::variadic_args va) {
         component::Script::id_t id = 0;
@@ -83,15 +84,19 @@ void set_lua_components(sol::state &lua) {
     };
     COMP_MEM_REGISTER(Script, run_all)
 
-    COMP_REGISTER_ARGS(Table, sol::table)
+    COMP_REGISTER(Table, sol::table)
     COMP_MEM_REGISTER(Table, table)
 
-    COMP_REGISTER_ARGS(CustomBehaviour, std::string)
+    COMP_REGISTER(CustomBehaviour, std::string)
     COMP_MEM_REGISTER(CustomBehaviour, set_on_update)
     COMP_MEM_REGISTER(CustomBehaviour, set_on_remove)
 
-    COMP_REGISTER_ARGS(Sprite, std::string)
+    COMP_REGISTER(Sprite, std::string)
     COMP_MEM_REGISTER(Sprite, set_texture)
+
+    COMP_REGISTER(StateFlags, std::vector<std::string>)
+    COMP_MEM_REGISTER(StateFlags, set_flags)
+    COMP_MEM_REGISTER(StateFlags, has_flags)
 }
 
 // @Lua API
@@ -120,7 +125,6 @@ void set_lua_scene(sol::state &lua, SceneManager &manager) {
         const auto &curr_pos = self.get_position();
         self.set_position({ pos.x, pos.y, curr_pos.z });
     };
-
     camera_type["left"] = &Camera::left;
     camera_type["right"] = &Camera::right;
     camera_type["up"] = &Camera::up;

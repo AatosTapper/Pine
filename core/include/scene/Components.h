@@ -119,16 +119,24 @@ struct Table : public Serializable {
     virtual NodeData serialize() const override;
 };
 
-// Example on implementing serialization
-struct TestSerdeComp : public Serializable {
-    virtual void deserialize(NodeData &data) override {
-        // pack the node data into the C++ variables
-        (void)data;
-    }
-    virtual NodeData serialize() const override {
-        // pack the C++ variables into the node data
-        return NodeData{ .type=NodeType::Undefined };
-    }
+///
+/// @brief Define custom flag strings to sort components
+/// @Serializable
+struct StateFlags : public Serializable {
+    StateFlags() noexcept = default;
+    StateFlags(std::vector<std::string> flags) noexcept;
+    virtual ~StateFlags() override = default;
+
+    void set_flags(std::vector<std::string> flags);
+    bool has_flags(std::vector<std::string> flags);
+
+    virtual void deserialize(NodeData &data) override;
+    virtual NodeData serialize() const override;    
+
+private:
+    std::vector<std::string> m_flags;
+
+    bool m_has_flag(const std::string &flag);
 };
 
 } // namespace component
