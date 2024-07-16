@@ -17,7 +17,7 @@ function pine_run() end
 
 --- Gets the fixed update loop's delta time
 ---@return number
-function pine_fixed_update_dt() end
+function pine_tick_dt() end
 
 --- Gets the real frametime including non update frames
 --- WARNING: DO NOT USE IN GAMEPLAY LOGIC!!!

@@ -11,6 +11,7 @@
 #include "scene/System.h"
 #include "LuaUtils.h"
 #include "scene/SceneSerializer.h"
+#include "pch.h"
 
 // @Lua API
 Application::Application(sol::state &lua) noexcept :
@@ -86,13 +87,38 @@ void Application::entry() {
     m_lua["main"]();
 }
 
+static std::vector<double> dt_buffer;
+
+static void accumulate_dt_buffer(double dt) {
+    constexpr size_t buffer_window = 50;
+    if (dt_buffer.size() == buffer_window) [[likely]] {
+        dt_buffer.erase(dt_buffer.begin());
+    }
+    dt_buffer.push_back(dt);
+}
+
+static double manage_tick_rate(uint32_t &current_tick_rate, const uint32_t tick_rate_target, const uint32_t step) {
+    constexpr double bias = 8.0; // push the lowering threshold a bit higher
+
+    double average = std::reduce(dt_buffer.begin(), dt_buffer.end()) / dt_buffer.size();
+    uint32_t rate_minus = 0;
+    while (average >= (1.0 / (((double)tick_rate_target - (double)rate_minus - bias)))) {
+        rate_minus += step;
+        if (rate_minus >= tick_rate_target - step) break;
+    }
+    current_tick_rate = std::max(tick_rate_target - rate_minus, step);
+    std::cout << "Tick rate: " << current_tick_rate << "\n";
+    return 1.0 / current_tick_rate;
+}
+
 void Application::m_run() {
     assert(m_scene_manager.get_scene() && "Cannot start gameloop without a scene selected");
 
-    const double update_rate = ScriptEngine::get_config_var_double(m_lua, "fixed_update_rate");
-    const double time_step = 1.0 / update_rate;
-    
-    m_fixed_update_dt = time_step;
+    const uint32_t tick_rate_downscale_step = ScriptEngine::get_config_var_int(m_lua, "tick_rate_downscale_step");
+
+    const uint32_t tick_rate_target = ScriptEngine::get_config_var_int(m_lua, "tick_rate");
+    m_tick_dt = 1.0 / tick_rate_target;
+    uint32_t current_tick_rate = tick_rate_target;
 
     double accumulator = 0.0;
     double frame_start = glfwGetTime();
@@ -102,15 +128,20 @@ void Application::m_run() {
         frame_start = now;
         m_per_frame_dt = dt;
 
+        accumulate_dt_buffer(dt);
+        
         accumulator += dt;
-
-        while (accumulator >= time_step) {
-            m_fixed_update();
-            accumulator -= time_step;
+        while (accumulator >= m_tick_dt) {
+            accumulator -= m_tick_dt;
             m_frame_index++;
+
+            m_fixed_update();
+            if (tick_rate_downscale_step != 0) [[likely]] {
+                m_tick_dt = manage_tick_rate(current_tick_rate, tick_rate_target, tick_rate_downscale_step);
+            }
         }
 
-        const float alpha = accumulator / time_step;
+        const float alpha = accumulator / m_tick_dt;
 
         m_fluid_update(alpha);
         m_update_render();
@@ -121,7 +152,7 @@ void Application::m_run() {
 void Application::m_set_lua_functions() {
     m_lua.set_function("pine_run", &Application::m_run, this);
     m_lua.set_function("pine_frame_time", [this] { return this->m_per_frame_dt; });
-    m_lua.set_function("pine_fixed_update_dt", [this] { return this->m_fixed_update_dt; });
+    m_lua.set_function("pine_tick_dt", [this] { return this->m_tick_dt; });
     m_lua.set_function("pine_frame_index", [this] { return this->m_frame_index; });
 
     set_lua_utils(m_lua);

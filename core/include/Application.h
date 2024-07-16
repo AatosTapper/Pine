@@ -35,7 +35,7 @@ private:
     std::unique_ptr<Renderer> m_renderer = nullptr;
     std::unique_ptr<Camera> m_camera = nullptr;
     double m_per_frame_dt = 1.0 / 60.0;
-    double m_fixed_update_dt = 1.0 / 60.0;
+    double m_tick_dt = 1.0 / 60.0;
     uint64_t m_frame_index = 0;
     bool m_running = true;
 };

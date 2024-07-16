@@ -19,7 +19,7 @@ end
 local camera = scene:get_camera()
 
 -- simple controller using pine_get_input(keycode)
-local dt = pine_fixed_update_dt()
+local dt = pine_tick_dt()
 local speed = 18 * dt
 
 if pine_get_input(Cone.Key._W) then

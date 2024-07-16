@@ -4,11 +4,10 @@
 
 #include "singleton.h"
 
-inline constexpr char application_path[] = "../app/";
-inline constexpr std::string application_path_string() { return std::string(application_path); }
-inline constexpr std::string app_relative_path(const char *path) { return application_path_string() + std::string(path); }
-inline constexpr std::string app_relative_path(const std::string &path) { return application_path_string() + path; }
-
+inline static constexpr char application_path[] = "../app/";
+inline static constexpr std::string application_path_string() { return std::string(application_path); }
+inline static constexpr std::string app_relative_path(const char *path) { return application_path_string() + std::string(path); }
+inline static constexpr std::string app_relative_path(const std::string &path) { return application_path_string() + path; }
 
 class LuaStateDispatcher {
     friend class Application;

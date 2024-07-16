@@ -10,7 +10,13 @@ config = {
     cam_start_z = 1, -- how far back the camera starts
 
     -- engine
-    fixed_update_rate = 60, -- gameplay systems update on a fixed update time
-                            -- camera updates are fixed but they are interpolated to move smoothly
-                            -- some things like rendering update at vsync (or display fps)
+
+    -- gameplay systems update on a specified tick rate
+    -- camera updates are fixed but they are interpolated to move smoothly
+    -- some things like rendering update at vsync (or display fps)
+    tick_rate = 60,
+    -- if not 0, allows the engine to lower the tick_rate temporarily when updates can't keep up.
+    -- lowering is done in steps of specified size
+    -- causes frame pacing issues but keeps responsiveness when having very poor performance
+    tick_rate_downscale_step = 6,
 }
