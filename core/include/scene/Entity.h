@@ -82,7 +82,6 @@ inline void Entity::add_empty_component() {
     }
 }
 
-/// @brief Get any number of components, only used on C++ side
 template<typename... T>
 inline auto Entity::get() {
     return m_registry().get<T...>(m_handle);

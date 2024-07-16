@@ -116,48 +116,33 @@ NodeData Script::serialize() const {
     };
 }
 
-CustomBehaviour::CustomBehaviour(std::string path) noexcept : m_on_update(path) {}
+CustomBehaviour::CustomBehaviour(std::string path) noexcept : on_update(path) {}
 // @Lua API
 CustomBehaviour::~CustomBehaviour() { 
-    if (!m_on_remove.empty()) {
+    if (!on_remove.empty()) {
         auto &lua = LuaStateDispatcher::instance().get_lua();
         lua.set_function("pine_get_script_parent_entity", [this] { 
             assert(this->m_parent); return *this->m_parent; });
 
-        ScriptEngine::run_script(lua, app_relative_path(m_on_remove));
+        ScriptEngine::run_script(lua, app_relative_path(on_remove));
     }
 }
 
 void CustomBehaviour::set_on_update(std::string path) {
-    m_on_update = path;
+    on_update = path;
 }
 
 void CustomBehaviour::set_on_remove(std::string path) {
-    m_on_remove = path;
-}
-// @Lua API
-void CustomBehaviour::call_on_update() const { 
-    if (!m_on_update.empty()) [[likely]] {
-        auto &lua = LuaStateDispatcher::instance().get_lua();
-        lua.set_function("pine_get_script_parent_entity", [this] { 
-            assert(this->m_parent); return *this->m_parent; });
-
-        ScriptEngine::run_script(lua, app_relative_path(m_on_update));
-    }
+    on_remove = path;
 }
 
 void CustomBehaviour::deserialize(NodeData &data) {
     CHECK_SERDE(data.variables.size() == 1);
-
-    auto &on_update = m_on_update;
-    auto &on_remove = m_on_remove;
     VAR_FROM_NODE(on_update, data);
     VAR_FROM_NODE(on_remove, data);
 }
 
 NodeData CustomBehaviour::serialize() const {
-    auto on_update = m_on_update;
-    auto on_remove = m_on_remove;
     return NodeData {
         .type=NodeType::Component,
         .variables = {

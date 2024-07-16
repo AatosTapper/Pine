@@ -1,5 +1,20 @@
 #include "ScriptEngine.h"
 
+#include <fstream>
+#include <sstream>
+
+static std::unordered_map<std::string, std::string> script_cache;
+
+static std::string &get_script(const std::string &file_path) {
+    if (script_cache.find(file_path) == script_cache.end()) [[unlikely]] {
+        std::ifstream file(file_path);
+        std::stringstream buffer;
+        buffer << file.rdbuf();
+        script_cache[file_path] = buffer.str();
+    }
+    return script_cache[file_path];
+}
+
 static void lua_panic(sol::optional<std::string> maybe_msg) {
     std::cerr << "Lua error, application will abort" << std::endl;
     if (maybe_msg) [[likely]] {
@@ -12,14 +27,14 @@ static void lua_panic(sol::optional<std::string> maybe_msg) {
 sol::state ScriptEngine::create_lua_state() {
     sol::state state(sol::c_call<decltype(&lua_panic), &lua_panic>);
     state.open_libraries( // not ideal for safety
-        sol::lib::base, 
-        sol::lib::math, 
-        sol::lib::coroutine, 
+        sol::lib::base,
+        sol::lib::math,
+        sol::lib::coroutine,
         sol::lib::string,
         sol::lib::table,
         sol::lib::package,
         sol::lib::os,
-        sol::lib::ffi, 
+        sol::lib::ffi,
         sol::lib::jit
     );
     state.script(R"(
@@ -33,7 +48,7 @@ sol::state ScriptEngine::create_lua_state() {
 
 sol::protected_function_result ScriptEngine::run_script(sol::state &lua, const std::string &file_path) {
     try {
-        return lua.safe_script_file(file_path);
+        return lua.safe_script(get_script(file_path));
     }
     catch (const sol::error &e) {
         std::cerr << "Sol2 caught error: " << e.what() << std::endl;

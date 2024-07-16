@@ -17,7 +17,7 @@ public:
     std::vector<Entity> get_entities();
 
     template<typename... T> 
-    decltype(auto) get_view() { 
+    decltype(auto) get_view() const { 
         return m_registry->view<T...>(); 
     }
 

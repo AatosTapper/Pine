@@ -95,15 +95,13 @@ struct CustomBehaviour : public Serializable {
     void set_on_update(std::string path);
     void set_on_remove(std::string path);
 
-    void call_on_update() const;
+    std::string on_update;
+    std::string on_remove;
 
     virtual void deserialize(NodeData &data) override;
     virtual NodeData serialize() const override;
 
 private:
-    std::string m_on_update;
-    std::string m_on_remove;
-
     std::shared_ptr<Entity> m_parent;
 };
 
@@ -131,7 +129,7 @@ private:
 
 ///
 /// @brief Store any data within a lua table
-/// serializable (but noticably slow, >50 microseconds)
+/// @serializable
 struct Table : public Serializable {
     friend class ::Entity;
 
