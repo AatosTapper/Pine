@@ -65,6 +65,8 @@ Application::Application(sol::state &lua) noexcept :
         }
         return HandlerPersistence::Continuous;
     });
+
+    print_component_sizes();
 }
 
 Application::~Application() {

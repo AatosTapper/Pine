@@ -220,9 +220,9 @@ function pine_Entity:remove_component_Table() end
 
 --- Adds a CustomBehaviour component to entity
 --- Replaces the old component if exists
----@param func function|nil @optional
+---@param path string|nil @optional
 ---@return pine_comp_CustomBehaviour
-function pine_Entity:add_component_CustomBehaviour(func) end
+function pine_Entity:add_component_CustomBehaviour(path) end
 
 --- Gets the CustomBehaviour component
 ---@return pine_comp_CustomBehaviour

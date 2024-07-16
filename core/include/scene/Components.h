@@ -7,6 +7,8 @@
 #include "rendering/QuadMesh.h"
 #include "rendering/Texture.h"
 
+void print_component_sizes();
+
 class Renderer;
 class Entity;
 namespace component {

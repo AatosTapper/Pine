@@ -3,6 +3,19 @@
 #include "Serialize.h"
 #include "scene/Entity.h"
 
+#define PRINT_COMP_SIZE(COMP) \
+    std::cout << #COMP": " << sizeof(COMP) << "\n"
+
+void print_component_sizes() {
+    PRINT_COMP_SIZE(component::Tag);
+    PRINT_COMP_SIZE(component::Transform);
+    PRINT_COMP_SIZE(component::CustomBehaviour);
+    PRINT_COMP_SIZE(component::Script);
+    PRINT_COMP_SIZE(component::Table);
+    PRINT_COMP_SIZE(component::Sprite);
+    PRINT_COMP_SIZE(component::StateFlags);
+}
+
 namespace component {
 
 Tag::Tag(std::string _name) noexcept : name(_name) {}
