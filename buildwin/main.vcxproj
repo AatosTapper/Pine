@@ -94,7 +94,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -143,7 +143,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -192,7 +192,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -241,7 +241,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -360,6 +360,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\LuaScene.cpp" />
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\Scene.cpp" />
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\SceneManager.cpp" />
+    <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\SceneSerializer.cpp" />
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\dep\tinyxml2\tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup>

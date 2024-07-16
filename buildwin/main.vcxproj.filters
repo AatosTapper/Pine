@@ -64,6 +64,9 @@
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\SceneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\SceneSerializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\dep\tinyxml2\tinyxml2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
