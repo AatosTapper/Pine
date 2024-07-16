@@ -9,6 +9,7 @@
 #include <iostream>
 #include <optional>
 #include <chrono>
+#include <numeric>
 
 #ifndef _SOL_INCLUDED
 #define _SOL_INCLUDED

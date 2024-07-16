@@ -98,11 +98,12 @@ static void accumulate_dt_buffer(double dt) {
 }
 
 static double manage_tick_rate(uint32_t &current_tick_rate, const uint32_t tick_rate_target, const uint32_t step) {
-    constexpr double bias = 8.0; // push the lowering threshold a bit higher
+    double bias = 8.0; // push the lowering threshold a bit higher for the first time
 
     double average = std::reduce(dt_buffer.begin(), dt_buffer.end()) / dt_buffer.size();
     uint32_t rate_minus = 0;
     while (average >= (1.0 / (((double)tick_rate_target - (double)rate_minus - bias)))) {
+        bias = 0.0;
         rate_minus += step;
         if (rate_minus >= tick_rate_target - step) break;
     }

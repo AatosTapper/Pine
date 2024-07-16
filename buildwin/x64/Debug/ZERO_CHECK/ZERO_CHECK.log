@@ -1,9 +1,0 @@
-﻿  1>Checking Build System
-  CMake is re-running because C:/Users/gr277128/Documents/GitHub/Pine/buildwin/CMakeFiles/generate.stamp is out-of-date.
-    the file 'C:/Users/gr277128/Documents/GitHub/Pine/CMakeLists.txt'
-    is newer than 'C:/Users/gr277128/Documents/GitHub/Pine/buildwin/CMakeFiles/generate.stamp.depend'
-    result='-1'
-  -- Selecting Windows SDK version 10.0.19041.0 to target Windows 10.0.22631.
-  -- Configuring done (0.0s)
-  -- Generating done (0.2s)
-  -- Build files have been written to: C:/Users/gr277128/Documents/GitHub/Pine/buildwin

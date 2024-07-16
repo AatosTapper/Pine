@@ -1,2 +1,0 @@
-C:\Users\gr277128\Documents\GitHub\Pine\buildwin\Debug\glfw3.dll
-C:\Users\gr277128\Documents\GitHub\Pine\buildwin\main.dir\Debug\main.vcxproj.CopyComplete
