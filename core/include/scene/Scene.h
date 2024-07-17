@@ -10,8 +10,10 @@ class Scene {
     friend class SceneManager;
     friend class SceneSerializer;
 public:
-    Scene() noexcept;
+    Scene(std::string _name) noexcept;
     Scene(const Scene &oth) noexcept;
+
+    std::string name;
     
     Entity add_entity(std::string name = "");
     std::vector<Entity> get_entities();
@@ -21,12 +23,14 @@ public:
         return m_registry->view<T...>(); 
     }
 
-    Camera *get_camera() const { 
-        assert(m_camera); 
-        return m_camera; 
+    Camera *get_camera() const {
+        assert(m_camera);
+        return m_camera;
     }
 
 private:
     std::shared_ptr<entt::registry> m_registry;
     Camera *m_camera = nullptr;
+
+    Entity deserializer_add_entity();
 };

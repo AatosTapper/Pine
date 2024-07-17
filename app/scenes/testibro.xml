@@ -1,4 +1,4 @@
-<Scene>
+<Scene name="testibro">
     <Ent>
         <Cmp type="Tag" name="spawner"/>
         <Cmp type="Transform" x="0" y="0" sx="1" sy="1" rr="0"/>

@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/core/src/SceneParser.cpp.o.d"
   "CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o"
   "CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o.d"
+  "CMakeFiles/main.dir/core/src/TickRateScaling.cpp.o"
+  "CMakeFiles/main.dir/core/src/TickRateScaling.cpp.o.d"
   "CMakeFiles/main.dir/core/src/Window.cpp.o"
   "CMakeFiles/main.dir/core/src/Window.cpp.o.d"
   "CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o"

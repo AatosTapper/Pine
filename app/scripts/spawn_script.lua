@@ -23,4 +23,4 @@ local flags = ent:add_component_StateFlags({ "brotha" })
 
 local behaviour = ent:add_component_CustomBehaviour("scripts/other_on_update.lua")
 
-ent:disable_serialization()
+--ent:disable_serialization()

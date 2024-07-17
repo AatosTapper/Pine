@@ -8,7 +8,7 @@ end
 
 
 
-print("Ft: " .. Cone.Math.round_to_decimal(pine_frame_time() * 10^3, 2) .. "ms")
+--print("Ft: " .. Cone.Math.round_to_decimal(pine_frame_time() * 10^3, 2) .. "ms")
 
 local scene = pine_get_scene()
 if scene == nil then
@@ -39,6 +39,14 @@ if pine_get_input(Cone.Key._MOUSE_BUTTON_LEFT) then
 end
 if pine_get_input(Cone.Key._MOUSE_BUTTON_RIGHT) then
     camera:right(speed)
+end
+
+if pine_get_input(Cone.Key._SPACE) then
+    local loading_scene = pine_set_temp_scene(pine_Scene:new("loading_scene"))
+    local loading_ent = loading_scene:add_entity("loader")
+    local comp = loading_ent:add_component_CustomBehaviour()
+    comp:set_on_update("scripts/loading_on_update.lua")
+    loading_ent:add_component_Sprite("res/textures/rock.png")
 end
 
 --local mouse_pos = pine_get_mouse_pos();

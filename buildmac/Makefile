@@ -277,6 +277,30 @@ core/src/ScriptEngine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/ScriptEngine.cpp.s
 .PHONY : core/src/ScriptEngine.cpp.s
 
+core/src/TickRateScaling.o: core/src/TickRateScaling.cpp.o
+.PHONY : core/src/TickRateScaling.o
+
+# target to build an object file
+core/src/TickRateScaling.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/TickRateScaling.cpp.o
+.PHONY : core/src/TickRateScaling.cpp.o
+
+core/src/TickRateScaling.i: core/src/TickRateScaling.cpp.i
+.PHONY : core/src/TickRateScaling.i
+
+# target to preprocess a source file
+core/src/TickRateScaling.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/TickRateScaling.cpp.i
+.PHONY : core/src/TickRateScaling.cpp.i
+
+core/src/TickRateScaling.s: core/src/TickRateScaling.cpp.s
+.PHONY : core/src/TickRateScaling.s
+
+# target to generate assembly for a file
+core/src/TickRateScaling.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/TickRateScaling.cpp.s
+.PHONY : core/src/TickRateScaling.cpp.s
+
 core/src/Window.o: core/src/Window.cpp.o
 .PHONY : core/src/Window.o
 
@@ -761,6 +785,9 @@ help:
 	@echo "... core/src/ScriptEngine.o"
 	@echo "... core/src/ScriptEngine.i"
 	@echo "... core/src/ScriptEngine.s"
+	@echo "... core/src/TickRateScaling.o"
+	@echo "... core/src/TickRateScaling.i"
+	@echo "... core/src/TickRateScaling.s"
 	@echo "... core/src/Window.o"
 	@echo "... core/src/Window.i"
 	@echo "... core/src/Window.s"

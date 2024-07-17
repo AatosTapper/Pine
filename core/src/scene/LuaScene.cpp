@@ -5,6 +5,7 @@
 #include "scene/Entity.h"
 #include "scene/Components.h"
 #include "scene/SceneManager.h"
+#include "scene/SceneSerializer.h"
 
 #define _REG_ADD(FUNC, TYPE, ARG) \
     entity_type[#FUNC"_component_"#TYPE] = [&](Entity &self, sol::variadic_args va) { \
@@ -111,7 +112,7 @@ void set_lua_components(sol::state &lua) {
 // @Lua API
 void set_lua_scene(sol::state &lua, SceneManager &manager) {
     sol::usertype<Scene> scene_type = lua.new_usertype<Scene>("pine_Scene",
-        sol::constructors<Scene()>());
+        sol::constructors<Scene(std::string)>());
 
     sol::usertype<Camera> camera_type = lua.new_usertype<Camera>("pine_Camera");
 
@@ -125,7 +126,7 @@ void set_lua_scene(sol::state &lua, SceneManager &manager) {
         return sol::make_object(lua, self.get_camera());
     };
 
-    // Camera
+    /// Camera
     camera_type["get_pos"] = [&](Camera &self) {
         auto &temp = self.get_position();
         return glm::vec2{ temp.x, temp.y };
@@ -139,20 +140,35 @@ void set_lua_scene(sol::state &lua, SceneManager &manager) {
     camera_type["up"] = &Camera::up;
     camera_type["down"] = &Camera::down;
 
-    // manager related
+    /// Manager related
     lua.set_function("pine_get_scene", [&]() {
         return sol::make_object(lua, manager.get_scene());
     });
     /// @warning this also removes the current one from memory
     lua.set_function("pine_set_scene", [&](Scene *scene) {
         manager.pop();
-        manager.push(std::make_unique<Scene>(*scene));
-        return sol::make_object(lua, manager.get_scene());
+        auto storage_holder = std::make_unique<Scene>(*scene);
+        Scene *pointer = storage_holder.get();
+        manager.push(std::move(storage_holder));
+        manager.try_update();
+        return sol::make_object(lua, pointer);
     });
-    lua.set_function("pine_set_temp_scene", [&](Scene scene) {
-        manager.push(std::make_unique<Scene>(scene));
+    lua.set_function("pine_set_temp_scene", [&](Scene *scene) {
+        auto storage_holder = std::make_unique<Scene>(*scene);
+        Scene *pointer = storage_holder.get();
+        manager.push(std::move(storage_holder));
+        manager.try_update();
+        return sol::make_object(lua, pointer);
     });
     lua.set_function("pine_remove_temp_scene", [&]() {
         manager.pop();
+        manager.try_update();
+    });
+
+    lua.set_function("pine_save_current_scene", [&]() {
+       SceneSerializer::instance().save_current(manager);
+    });
+    lua.set_function("pine_load_scene", [&](std::string name) {
+        return sol::make_object(lua, SceneSerializer::instance().load_from_name(manager, name));
     });
 }

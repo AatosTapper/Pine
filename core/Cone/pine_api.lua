@@ -90,12 +90,21 @@ function pine_set_scene(scene) end
 --- Sets a temporary scene
 --- Main usecase is when the old scene needs to stay in memory
 ---@param scene pine_Scene
+---@return pine_Scene
 function pine_set_temp_scene(scene) end
 
 --- Removes the temporary scene
 function pine_remove_temp_scene() end
 
+--- Saves the currently active scene to the app/scenes directory
+--- the scene filename will be "scene name.xml"
+function pine_save_current_scene() end
 
+--- Loads, returns and selects the scene from disc
+--- If scene doesn't exist, doesn't do anything and returns nil
+---@param name string
+---@return pine_Scene|nil @optional, returns nil if scene doesn't exist
+function pine_load_scene(name) end
 
 --- #camera
 

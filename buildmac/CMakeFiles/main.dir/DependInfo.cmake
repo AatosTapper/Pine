@@ -20,6 +20,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx" "CMakeFiles/main.dir/core/src/SceneParser.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/SceneParser.cpp.o.d"
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/ScriptEngine.cpp" "CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o.d"
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx" "CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o.d"
+  "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/TickRateScaling.cpp" "CMakeFiles/main.dir/core/src/TickRateScaling.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/TickRateScaling.cpp.o.d"
+  "/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx" "CMakeFiles/main.dir/core/src/TickRateScaling.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/TickRateScaling.cpp.o.d"
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp" "CMakeFiles/main.dir/core/src/Window.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/Window.cpp.o.d"
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx" "CMakeFiles/main.dir/core/src/Window.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/Window.cpp.o.d"
   "/Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/events/LuaEvents.cpp" "CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o" "gcc" "CMakeFiles/main.dir/core/src/events/LuaEvents.cpp.o.d"

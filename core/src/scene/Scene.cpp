@@ -3,13 +3,15 @@
 #include "scene/Components.h"
 #include "scene/Entity.h"
 
-Scene::Scene() noexcept : 
-    m_registry(std::make_shared<entt::registry>()) 
+Scene::Scene(std::string _name) noexcept : 
+    name(_name),
+    m_registry(std::make_shared<entt::registry>())
 {
 }
 
 Scene::Scene(const Scene &oth) noexcept { 
     m_registry = oth.m_registry; 
+    name = oth.name;
 }
 
 Entity Scene::add_entity(std::string name) {
@@ -28,4 +30,9 @@ std::vector<Entity> Scene::get_entities() {
         output.push_back(Entity{ ent, this });
     }
     return output;
+}
+
+Entity Scene::deserializer_add_entity() {
+    auto ent = m_registry->create();
+    return Entity{ ent, this };
 }

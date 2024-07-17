@@ -21,7 +21,7 @@ namespace component {
 Tag::Tag(std::string _name) noexcept : name(_name) {}
 
 void Tag::deserialize(NodeData &data) {
-    CHECK_SERDE(data.variables.size() == 1 && data.variables.at(0).name == "name");
+    CHECK_SERDE(data.variables.size() == 2 && data.variables.at(1).name == "name");
     VAR_FROM_NODE(name, data);
 }
 
@@ -46,7 +46,7 @@ glm::mat4 Transform::get_matrix() const
 }
 
 void Transform::deserialize(NodeData &data) {
-    CHECK_SERDE(data.variables.size() == 5);
+    CHECK_SERDE(data.variables.size() == 6);
 
     VAR_FROM_NODE(x, data);
     VAR_FROM_NODE(y, data);
@@ -99,7 +99,7 @@ void Script::run_all() const {
 }
 
 void Script::deserialize(NodeData &data) {
-    CHECK_SERDE(data.variables.size() == 1);
+    CHECK_SERDE(data.variables.size() == 2);
 
     auto &scripts = m_scripts; // Remove the m_
     VAR_FROM_NODE(scripts, data);
@@ -137,7 +137,7 @@ void CustomBehaviour::set_on_remove(std::string path) {
 }
 
 void CustomBehaviour::deserialize(NodeData &data) {
-    CHECK_SERDE(data.variables.size() == 1);
+    CHECK_SERDE(data.variables.size() == 3);
     VAR_FROM_NODE(on_update, data);
     VAR_FROM_NODE(on_remove, data);
 }
@@ -165,7 +165,7 @@ void Sprite::set_texture(std::string path) {
 }
 
 void Sprite::deserialize(NodeData &data) {
-    CHECK_SERDE(data.variables.size() == 1);
+    CHECK_SERDE(data.variables.size() == 2);
 
     std::string path;
     VAR_FROM_NODE(path, data);
@@ -186,12 +186,11 @@ NodeData Sprite::serialize() const {
 Table::Table(sol::table _data) noexcept : table(_data) {}
 
 void Table::deserialize(NodeData &data) {
-    CHECK_SERDE(data.variables.size() == 1);
+    CHECK_SERDE(data.variables.size() == 2);
 
-    std::string table_string = data.variables[0].value;
+    std::string table_string = data.variables.at(1).value;
     auto &lua = LuaStateDispatcher::instance().get_lua();
     lua.set_function("_pine_internals_get_table_string", [&] { return table_string; });
-
     auto result = lua.script(R"(
         Cone = require("core.Cone.cone")
         return Cone.string_to_table(_pine_internals_get_table_string())
@@ -245,7 +244,7 @@ bool StateFlags::m_has_flag(const std::string &flag) {
 }
 
 void StateFlags::deserialize(NodeData &data) {
-    CHECK_SERDE(data.variables.size() == 1);
+    CHECK_SERDE(data.variables.size() == 2);
     auto &flags = m_flags;
     VAR_FROM_NODE(flags, data);
 }

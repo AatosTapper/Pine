@@ -11,7 +11,8 @@
 #include "scene/System.h"
 #include "LuaUtils.h"
 #include "scene/SceneSerializer.h"
-#include "pch.h"
+#include "TickRateScaling.h"
+
 
 // @Lua API
 Application::Application(sol::state &lua) noexcept :
@@ -66,12 +67,9 @@ Application::Application(sol::state &lua) noexcept :
         }
         return HandlerPersistence::Continuous;
     });
-
-    print_component_sizes();
 }
 
 Application::~Application() {
-    SceneSerializer::instance().serialize(m_scene_manager.get_scene(), app_relative_path("scenes/testibro.xml"));
 }
 
 void Application::on_event(Event *e) {
@@ -87,36 +85,13 @@ void Application::entry() {
     m_lua["main"]();
 }
 
-static std::vector<double> dt_buffer;
-
-static void accumulate_dt_buffer(double dt) {
-    constexpr size_t buffer_window = 50;
-    if (dt_buffer.size() == buffer_window) [[likely]] {
-        dt_buffer.erase(dt_buffer.begin());
-    }
-    dt_buffer.push_back(dt);
-}
-
-static double manage_tick_rate(uint32_t &current_tick_rate, const uint32_t tick_rate_target, const uint32_t step) {
-    double bias = 8.0; // push the lowering threshold a bit higher for the first time
-
-    double average = std::reduce(dt_buffer.begin(), dt_buffer.end()) / dt_buffer.size();
-    uint32_t rate_minus = 0;
-    while (average >= (1.0 / (((double)tick_rate_target - (double)rate_minus - bias)))) {
-        bias = 0.0;
-        rate_minus += step;
-        if (rate_minus >= tick_rate_target - step) break;
-    }
-    current_tick_rate = std::max(tick_rate_target - rate_minus, step);
-    std::cout << "Tick rate: " << current_tick_rate << "\n";
-    return 1.0 / current_tick_rate;
-}
-
 void Application::m_run() {
+    m_scene_manager.update();
+    m_scene_manager.m_update_whenever = false;
+
     assert(m_scene_manager.get_scene() && "Cannot start gameloop without a scene selected");
 
     const uint32_t tick_rate_downscale_step = ScriptEngine::get_config_var_int(m_lua, "tick_rate_downscale_step");
-
     const uint32_t tick_rate_target = ScriptEngine::get_config_var_int(m_lua, "tick_rate");
     m_tick_dt = 1.0 / tick_rate_target;
     uint32_t current_tick_rate = tick_rate_target;
@@ -165,6 +140,7 @@ void Application::m_set_lua_functions() {
 
 void Application::m_fixed_update() {
     m_camera->update_last_pos();
+    m_scene_manager.update();
 
     m_update_systems();
 }

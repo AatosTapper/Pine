@@ -6,18 +6,12 @@
 #include "Entity.h"
 #include "singleton.h"
 
-class System {
+class CustomBehaviourSystem {
 public:
-    virtual ~System() {};
-    virtual void update(Scene *scene) = 0;
-};
+    IMPL_SINGLETON_DISPATCHER(CustomBehaviourSystem)
+    IMPL_NO_COPY(CustomBehaviourSystem)
 
-class CustomBehaviourSystem : public System {
-public:
-    IMPL_VIRTUAL_SINGLETON_DISPATCHER(CustomBehaviourSystem, System)
-    virtual ~CustomBehaviourSystem() override {}
-
-    virtual void update(Scene *scene) override {
+    void update(Scene *scene) {
         auto &lua = LuaStateDispatcher::instance().get_lua();
         
         Entity current_entity;
@@ -32,4 +26,6 @@ public:
             ScriptEngine::run_script(lua, app_relative_path(customBehaviour.on_update));
         }
     }
+private:
+    CustomBehaviourSystem() = default;
 };
