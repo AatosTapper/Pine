@@ -58,5 +58,7 @@ CXX_FLAGS = -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineToo
 
 # PCH options: CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
+# PCH options: CMakeFiles/main.dir/core/src/scene/System.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
 # PCH options: CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 

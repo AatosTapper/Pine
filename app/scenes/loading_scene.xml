@@ -1,8 +1,0 @@
-<Scene name="loading_scene">
-    <Ent>
-        <Cmp type="Tag" name="loader"/>
-        <Cmp type="Transform" x="0" y="0" sx="1" sy="1" rr="8.33333"/>
-        <Cmp type="CustomBehaviour" on_update="scripts/loading_on_update.lua" on_remove=""/>
-        <Cmp type="Sprite" path="res/textures/rock.png"/>
-    </Ent>
-</Scene>

@@ -40,15 +40,33 @@ struct Transform : public Serializable {
 
     double x = 0.0;
     double y = 0.0;
+
+    double x_0 = 0.0; // last
+    double y_0 = 0.0; // last
+    double x_interpolated = 0.0;
+    double y_interpolated = 0.0;
+
     float sx = 1.0; /// width (x scale)
     float sy = 1.0; /// height (y scale)
+
+    float sx_0 = 1.0; /// width (x scale)
+    float sy_0 = 1.0; /// height (y scale)
+    float sx_interpolated = 1.0; /// width (x scale)
+    float sy_interpolated = 1.0; /// height (y scale)
+
     float rr = 0.0; /// rotation in radians
+    
+    float rr_0 = 0.0;
+    float rr_interpolated = 0.0;
 
     void set_pos(double _x, double _y) { x = _x; y = _y; }
     void set_scale(float _x, float _y) { sx = _x; sy = _y; }
 
     glm::mat4 get_matrix() const;
     operator glm::mat4() const { return get_matrix(); };
+
+    void save_last_position();
+    void interpolate(float alpha);
 
     virtual ~Transform() override = default;
     virtual void deserialize(NodeData &data) override;
@@ -171,5 +189,3 @@ private:
 };
 
 } // namespace component
-
-

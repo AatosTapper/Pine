@@ -38,19 +38,17 @@ Application::Application(sol::state &lua) noexcept :
     m_renderer->set_window_dimensions(m_window->get_dimensions());
     m_renderer->init();
 
-    m_camera = std::make_unique<Camera>(
-        m_window->get_aspect_ratio(),
-        ScriptEngine::get_config_var_double(m_lua, "cam_fov"),
-        static_cast<bool>(ScriptEngine::get_config_var_int(m_lua, "cam_projection"))
-    );
-    m_camera->back(ScriptEngine::get_config_var_double(m_lua, "cam_start_z"));
-
-    m_scene_manager.set_camera(m_camera.get());
+    m_scene_manager.set_camera_data(CameraData {
+        .aspect_ratio = m_window->get_aspect_ratio(),
+        .field_of_view = (float)ScriptEngine::get_config_var_double(m_lua, "cam_fov"),
+        .start_z = (float)ScriptEngine::get_config_var_double(m_lua, "cam_start_z"),
+        .ortho = (bool)ScriptEngine::get_config_var_int(m_lua, "cam_projection")
+    });
 
     m_event_bus.subscribe<WindowResizeEvent>([this](WindowResizeEvent *event) -> HandlerPersistence {
         this->m_renderer->set_window_dimensions(this->m_window->get_framebuffer_dimensions());
         this->m_renderer->regenerate_framebuffer();
-        this->m_camera->set_aspect_ratio(static_cast<float>(event->new_width) / static_cast<float>(event->new_height));
+        this->m_scene_manager.cam_aspect_ratio_callback((float)event->new_width / (float)event->new_height);
         return HandlerPersistence::Continuous;
     });
     m_event_bus.subscribe<WindowCloseEvent>([this](WindowCloseEvent *event) -> HandlerPersistence {
@@ -87,7 +85,7 @@ void Application::entry() {
 
 void Application::m_run() {
     m_scene_manager.update();
-    m_scene_manager.m_update_whenever = false;
+    m_scene_manager.m_restrict_updates = true;
 
     assert(m_scene_manager.get_scene() && "Cannot start gameloop without a scene selected");
 
@@ -139,8 +137,9 @@ void Application::m_set_lua_functions() {
 }
 
 void Application::m_fixed_update() {
-    m_camera->update_last_pos();
     m_scene_manager.update();
+    m_scene_manager.get_scene()->get_camera()->update_last_pos();
+    update_transform_component_last_states(m_scene_manager.get_scene());
 
     m_update_systems();
 }
@@ -148,8 +147,9 @@ void Application::m_fixed_update() {
 void Application::m_fluid_update(float alpha) {
     m_input_bus.update();
 
-    m_camera->update(alpha);
-    m_renderer->set_view_proj_matrix(m_camera->get_vp_matrix());
+    interpolate_transform_components(m_scene_manager.get_scene(), alpha);
+    m_scene_manager.get_scene()->get_camera()->update(alpha);
+    m_renderer->set_view_proj_matrix(m_scene_manager.get_scene()->get_camera()->get_vp_matrix());
 }
 
 
@@ -160,5 +160,5 @@ void Application::m_update_render() {
 }
 
 void Application::m_update_systems() {
-    CustomBehaviourSystem::instance().update(m_scene_manager.get_scene());
+    custom_behaviour_system_update(m_scene_manager.get_scene());
 }

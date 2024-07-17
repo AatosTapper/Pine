@@ -709,6 +709,30 @@ core/src/scene/SceneSerializer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.s
 .PHONY : core/src/scene/SceneSerializer.cpp.s
 
+core/src/scene/System.o: core/src/scene/System.cpp.o
+.PHONY : core/src/scene/System.o
+
+# target to build an object file
+core/src/scene/System.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/System.cpp.o
+.PHONY : core/src/scene/System.cpp.o
+
+core/src/scene/System.i: core/src/scene/System.cpp.i
+.PHONY : core/src/scene/System.i
+
+# target to preprocess a source file
+core/src/scene/System.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/System.cpp.i
+.PHONY : core/src/scene/System.cpp.i
+
+core/src/scene/System.s: core/src/scene/System.cpp.s
+.PHONY : core/src/scene/System.s
+
+# target to generate assembly for a file
+core/src/scene/System.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/System.cpp.s
+.PHONY : core/src/scene/System.cpp.s
+
 dep/glad/glad.o: dep/glad/glad.c.o
 .PHONY : dep/glad/glad.o
 
@@ -839,6 +863,9 @@ help:
 	@echo "... core/src/scene/SceneSerializer.o"
 	@echo "... core/src/scene/SceneSerializer.i"
 	@echo "... core/src/scene/SceneSerializer.s"
+	@echo "... core/src/scene/System.o"
+	@echo "... core/src/scene/System.i"
+	@echo "... core/src/scene/System.s"
 	@echo "... dep/glad/glad.o"
 	@echo "... dep/glad/glad.i"
 	@echo "... dep/glad/glad.s"

@@ -6,9 +6,16 @@
 #define PROJ_2D true
 #define PROJ_3D false
 
+struct CameraData {
+    float aspect_ratio = 0.0f;
+    float field_of_view = 0.0f;
+    float start_z = 0.0;
+    bool ortho = false;
+};
+
 class Camera {
 public:
-    Camera(const float aspect_ratio, const float field_of_view, bool ortho) noexcept;
+    Camera(const CameraData &data) noexcept;
 
     float pitch;
     float yaw;

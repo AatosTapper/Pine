@@ -4,17 +4,18 @@
 #include "Scene.h"
 #include "rendering/Camera.h"
 
-#include <stack>
+#include <deque>
 
 class SceneManager {
     friend class Application;
 public:
     void push(std::unique_ptr<Scene> scene);
     void pop();
-    uint32_t num_scenes();
+    uint32_t num_scenes() const;
     Scene *get_scene() const;
 
-    void set_camera(Camera *camera);
+    void set_camera_data(CameraData &&data);
+    void cam_aspect_ratio_callback(float aspect_ratio);
     
     void update();
     void try_update();
@@ -31,8 +32,8 @@ private:
     void m_push(std::unique_ptr<Scene> &&scene);
     void m_pop();
 
-    std::stack<std::unique_ptr<Scene>> m_scene_stack;
+    std::deque<std::unique_ptr<Scene>> m_scene_stack;
     std::vector<ManagerCommand> m_commands;
-    Camera *m_camera = nullptr;
-    bool m_update_whenever = true;
+    CameraData m_camera_data{};
+    bool m_restrict_updates = false;
 };

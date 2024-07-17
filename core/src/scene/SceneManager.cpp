@@ -1,42 +1,39 @@
 #include "scene/SceneManager.h"
 
 void SceneManager::push(std::unique_ptr<Scene> scene) { 
-    m_commands.push_back(ManagerCommand{ 
+    m_commands.emplace_back(ManagerCommand{ 
         .type = ManagerCommand::Type::Push,
         .scene = std::move(scene)
     });
 }
 
 void SceneManager::pop() {
-    m_commands.push_back(ManagerCommand{ 
+    m_commands.emplace_back(ManagerCommand{ 
         .type = ManagerCommand::Type::Pop,
         .scene = nullptr
     });
 }
 
-uint32_t SceneManager::num_scenes() { 
+uint32_t SceneManager::num_scenes() const { 
     return m_scene_stack.size(); 
 }
 
 Scene *SceneManager::get_scene() const { 
     if (m_scene_stack.empty()) [[unlikely]] return nullptr;
-    return m_scene_stack.top().get();
-}
-
-void SceneManager::set_camera(Camera *camera) {
-    m_camera = camera; 
+    return m_scene_stack.back().get();
 }
 
 void SceneManager::m_push(std::unique_ptr<Scene> &&scene) {
     std::cout << "Pushed scene " << scene->name << "\n";
-    scene->m_camera = m_camera;
-    m_scene_stack.push(std::move(scene));
+    scene->m_camera = std::make_shared<Camera>(m_camera_data);
+    scene->m_camera->back(m_camera_data.start_z);
+    m_scene_stack.push_back(std::move(scene));
 }
 
 void SceneManager::m_pop() {
     if (m_scene_stack.empty()) [[unlikely]] return;
     std::cout << "Popped scene\n";
-    m_scene_stack.pop();
+    m_scene_stack.pop_back();
 }
 
 void SceneManager::update() {
@@ -55,7 +52,17 @@ void SceneManager::update() {
 }
 
 void SceneManager::try_update() {
-    if (m_update_whenever) [[unlikely]] {
+    if (!m_restrict_updates) [[unlikely]] {
         update();
     }
+}
+
+void SceneManager::set_camera_data(CameraData &&data) {
+    m_camera_data = std::move(data);
+}
+
+void SceneManager::cam_aspect_ratio_callback(float aspect_ratio) {
+    for (auto &scene : m_scene_stack) { 
+        scene->get_camera()->set_aspect_ratio(aspect_ratio); 
+    };
 }

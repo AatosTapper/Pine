@@ -35,24 +35,44 @@ NodeData Tag::serialize() const {
     };
 }
 
-glm::mat4 Transform::get_matrix() const
-{
+glm::mat4 Transform::get_matrix() const {
     /// @todo clamp rr and check that scales aren't 0
     glm::mat4 output(1.0f);
-    output = glm::translate(output, glm::vec3(x, y, 0.0f));
-    output = glm::rotate(output, rr, glm::vec3(0.0f, 0.0f, -1.0f));
-    output = glm::scale(output, glm::vec3(sx, sy, 1.0f));
+    output = glm::translate(output, glm::vec3(x_interpolated, y_interpolated, 0.0f));
+    output = glm::rotate(output, rr_interpolated, glm::vec3(0.0f, 0.0f, -1.0f));
+    output = glm::scale(output, glm::vec3(sx_interpolated, sy_interpolated, 1.0f));
     return output;
 }
 
+void Transform::save_last_position() {
+    x_0 = x;
+    y_0 = y;
+    sx_0 = sx;
+    sy_0 = sy;
+    rr_0 = rr;
+}
+
+void Transform::interpolate(float alpha) {
+    x_interpolated = x * alpha + x_0 * (1.0f - alpha);
+    y_interpolated = y * alpha + y_0 * (1.0f - alpha);
+    sx_interpolated = sx * alpha + sx_0 * (1.0f - alpha);
+    sy_interpolated = sy * alpha + sy_0 * (1.0f - alpha);
+    rr_interpolated = rr * alpha + rr_0 * (1.0f - alpha);
+}
+
 void Transform::deserialize(NodeData &data) {
-    CHECK_SERDE(data.variables.size() == 6);
+    CHECK_SERDE(data.variables.size() == 11);
 
     VAR_FROM_NODE(x, data);
     VAR_FROM_NODE(y, data);
+    VAR_FROM_NODE(x_0, data);
+    VAR_FROM_NODE(y_0, data);
     VAR_FROM_NODE(sx, data);
     VAR_FROM_NODE(sy, data);
+    VAR_FROM_NODE(sx_0, data);
+    VAR_FROM_NODE(sy_0, data);
     VAR_FROM_NODE(rr, data);
+    VAR_FROM_NODE(rr_0, data);
 }
 
 NodeData Transform::serialize() const {
@@ -62,9 +82,14 @@ NodeData Transform::serialize() const {
             COMP_TYPE(Transform),
             VAR_TO_NODE(x),
             VAR_TO_NODE(y),
+            VAR_TO_NODE(x_0),
+            VAR_TO_NODE(y_0),
             VAR_TO_NODE(sx),
             VAR_TO_NODE(sy),
-            VAR_TO_NODE(rr)
+            VAR_TO_NODE(sx_0),
+            VAR_TO_NODE(sy_0),
+            VAR_TO_NODE(rr),
+            VAR_TO_NODE(rr_0)
         }
     };
 }

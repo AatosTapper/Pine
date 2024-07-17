@@ -25,12 +25,14 @@ public:
 
     Camera *get_camera() const {
         assert(m_camera);
-        return m_camera;
+        return m_camera.get();
     }
+
+    entt::registry *get_registry() const { return m_registry.get(); }
 
 private:
     std::shared_ptr<entt::registry> m_registry;
-    Camera *m_camera = nullptr;
+    std::shared_ptr<Camera> m_camera;
 
     Entity deserializer_add_entity();
 };
