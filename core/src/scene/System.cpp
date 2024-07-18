@@ -9,13 +9,13 @@ void custom_behaviour_system_update(Scene *scene) {
     Entity current_entity;
     lua.set_function("pine_get_script_parent_entity", [&current_entity] { return current_entity; });
 
-    for (auto ent : scene->get_view<component::CustomBehaviour>()) {
+    for (auto ent : scene->get_view<component::CustomBehavior>()) {
         Entity entity{ent, scene};
-        auto &customBehaviour = entity.get_component<component::CustomBehaviour>();
-        if (customBehaviour.on_update.empty()) [[unlikely]] continue;
+        auto &CustomBehavior = entity.get_component<component::CustomBehavior>();
+        if (CustomBehavior.on_update.empty()) [[unlikely]] continue;
 
         current_entity = entity;
-        ScriptEngine::run_script(lua, app_relative_path(customBehaviour.on_update));
+        ScriptEngine::run_script(lua, app_relative_path(CustomBehavior.on_update));
     }
 }
 

@@ -8,8 +8,7 @@ local function setup()
     local spawner_ent = scene:add_entity("spawner")
     local script = spawner_ent:add_component_Script("scripts/spawn_script.lua")
     for i = 1, 1500 do script:run() end
-    local camera = scene:get_camera()
-    local behaviour = spawner_ent:add_component_CustomBehaviour()
+    local behaviour = spawner_ent:add_component_CustomBehavior()
     behaviour:set_on_update("scripts/spawner_on_update.lua")
 end
 

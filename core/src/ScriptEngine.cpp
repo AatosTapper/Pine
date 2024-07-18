@@ -3,20 +3,26 @@
 #include <fstream>
 #include <sstream>
 
-static std::unordered_map<std::string, std::string> script_cache;
+static std::unordered_map<std::string, sol::bytecode> script_cache;
 
-static std::string &get_script(const std::string &file_path) {
+static sol::string_view get_script(sol::state &lua, const std::string &file_path) {
     if (script_cache.find(file_path) == script_cache.end()) [[unlikely]] {
         std::ifstream file(file_path);
         if (!file) {
-            std::cerr << "Couldn't find file \"" << file_path << "\" (check the part after ../app/)\n";
+            std::cerr << "File load error: can't load file \"" << file_path << "\" (check the part after ../app/)\n";
             std::abort();
         }
         std::stringstream buffer;
         buffer << file.rdbuf();
-        script_cache[file_path] = buffer.str();
+        sol::load_result lr = lua.load(buffer.str());
+        if (!lr.valid()) {
+            std::cerr << "Lua bytecode load error: for file \"" << file_path << "\"\n";
+            std::abort();
+        }
+        sol::protected_function target = lr.get<sol::protected_function>();
+        script_cache[file_path] = target.dump();
     }
-    return script_cache[file_path];
+    return script_cache[file_path].as_string_view();
 }
 
 static void lua_panic(sol::optional<std::string> maybe_msg) {
@@ -52,13 +58,16 @@ sol::state ScriptEngine::create_lua_state() {
 
 sol::protected_function_result ScriptEngine::run_script(sol::state &lua, const std::string &file_path) {
     try {
-        return lua.safe_script(get_script(file_path));
+        return lua.safe_script(get_script(lua, file_path));
     } catch (const sol::error &e) {
         std::cerr << "Sol2 caught error: " << e.what() << std::endl;
+        std::abort();
     } catch (const std::exception &e) {
         std::cerr << "Standard exception: " << e.what() << std::endl;
+        std::abort();
     } catch (...) {
         std::cerr << "Unknown error occurred." << std::endl;
+        std::abort();
     }
     assert(false && "wtf how tf did you get here dawg??");
 }

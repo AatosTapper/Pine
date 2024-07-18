@@ -64,7 +64,7 @@ void set_lua_entity(sol::state &lua) {
     FUNC_REGISTER_NA(Transform)
     FUNC_REGISTER(Script, std::string)
     FUNC_REGISTER(Table, sol::table)
-    FUNC_REGISTER(CustomBehaviour, std::string)
+    FUNC_REGISTER(CustomBehavior, std::string)
     FUNC_REGISTER(Sprite, std::string)
     FUNC_REGISTER(StateFlags, std::vector<std::string>)
 }
@@ -97,9 +97,9 @@ void set_lua_components(sol::state &lua) {
     COMP_REGISTER(Table, sol::table)
     COMP_MEM_REGISTER(Table, table)
 
-    COMP_REGISTER(CustomBehaviour, std::string)
-    COMP_MEM_REGISTER(CustomBehaviour, set_on_update)
-    COMP_MEM_REGISTER(CustomBehaviour, set_on_remove)
+    COMP_REGISTER(CustomBehavior, std::string)
+    COMP_MEM_REGISTER(CustomBehavior, set_on_update)
+    COMP_MEM_REGISTER(CustomBehavior, set_on_remove)
 
     COMP_REGISTER(Sprite, std::string)
     COMP_MEM_REGISTER(Sprite, set_texture)

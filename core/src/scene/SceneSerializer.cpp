@@ -50,7 +50,7 @@ void SceneSerializer::serialize(Scene *scene, std::string path) {
         auto [tag, trans, cb, script, table, sprite, flags] = registry->try_get<
             component::Tag, 
             component::Transform, 
-            component::CustomBehaviour, 
+            component::CustomBehavior, 
             component::Script, 
             component::Table,
             component::Sprite, 
@@ -79,8 +79,8 @@ static void deserialize_components(const std::unique_ptr<Node> &ent, Entity enti
             component = &entity.add_component<component::Tag>();
         } else if (comp_type == "Transform") {
             component = &entity.add_component<component::Transform>();
-        } else if (comp_type == "CustomBehaviour") {
-            component = &entity.add_component<component::CustomBehaviour>();
+        } else if (comp_type == "CustomBehavior") {
+            component = &entity.add_component<component::CustomBehavior>();
         } else if (comp_type == "Script") {
             component = &entity.add_component<component::Script>();
         } else if (comp_type == "Table") {

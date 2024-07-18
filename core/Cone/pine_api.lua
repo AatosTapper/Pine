@@ -1,13 +1,27 @@
---- This file contains the definitions for engine functions and types
+--- Pine Lua API definitions:
 
+--- NAMING CONVENTIONS
 --- These follow the naming convention:
 --- pine_"name_here"
 --- type members DO NOT have "pine_" in front of them
 
+--- AVOIDING BUGS
 --- When a function is called incorrectly or fails, 
 --- the application terminates with an error message.
 --- However, if the function is called with wrong arguments or name,
 --- there might NOT be any message so BE CAREFUL!
+
+--- PERFORMANCE
+--- For maximum performance, avoid recalling engine functions
+--- when you could store the result and use it again. For example:
+--- NO:
+---     ent:get_component_Transform().x = 10
+---     ent:get_component_Transform().y = 5
+--- YES:
+---     local transform = ent:get_component_Transform()
+---     transfom.x = 10
+---     transfom.y = 5
+
 
 
 --- #application and lifetime
@@ -31,10 +45,10 @@ function pine_frame_index() end
 
 
 --- #input
---- input can be checked with events aswell but when possible, use these
+--- input can be checked with events aswell, but use these when possible 
 
 --- Checks for keyboard and mousebutton input
----@param key integer "keycode as Cone.Key._the key you want"
+---@param key integer @ keycode as "Cone.Key._the key you want" example: Cone.Key._SPACE
 ---@return boolean
 function pine_get_input(key) end
 
@@ -68,13 +82,14 @@ function pine_Scene:get_entities() end
 function pine_Scene:get_camera() end
 
 --- Gives access to component's parent entity in script file
---- Script file = lua script attached to some component like Script or CustomBehaviour
+--- Script file = lua script attached to some component like Script or CustomBehavior
 --- Calling this outside a script is undefined and probably crashes
 ---@return pine_Entity
 function pine_get_script_parent_entity() end
 
 
---- scene managing
+
+--- #scene managing
 --- loading and getting scenes etc
 
 --- Gets the current scene
@@ -105,6 +120,8 @@ function pine_save_current_scene() end
 ---@param name string
 ---@return pine_Scene|nil @optional, returns nil if scene doesn't exist
 function pine_load_scene(name) end
+
+
 
 --- #camera
 
@@ -140,7 +157,6 @@ function pine_Camera:down(amount) end
 
 
 --- #entity
-
 
 --- Entity
 ---@class pine_Entity
@@ -227,22 +243,22 @@ function pine_Entity:has_component_Table() end
 function pine_Entity:remove_component_Table() end
 
 
---- Adds a CustomBehaviour component to entity
+--- Adds a CustomBehavior component to entity
 --- Replaces the old component if exists
 ---@param path string|nil @optional
----@return pine_comp_CustomBehaviour
-function pine_Entity:add_component_CustomBehaviour(path) end
+---@return pine_comp_CustomBehavior
+function pine_Entity:add_component_CustomBehavior(path) end
 
---- Gets the CustomBehaviour component
----@return pine_comp_CustomBehaviour
-function pine_Entity:get_component_CustomBehaviour() end
+--- Gets the CustomBehavior component
+---@return pine_comp_CustomBehavior
+function pine_Entity:get_component_CustomBehavior() end
 
---- Tells if entity has a CustomBehaviour component
+--- Tells if entity has a CustomBehavior component
 ---@return boolean
-function pine_Entity:has_component_CustomBehaviour() end
+function pine_Entity:has_component_CustomBehavior() end
 
---- Removes the CustomBehaviour component
-function pine_Entity:remove_component_CustomBehaviour() end
+--- Removes the CustomBehavior component
+function pine_Entity:remove_component_CustomBehavior() end
 
 
 --- Adds a Sprite component to entity
@@ -293,7 +309,6 @@ function pine_Entity:enable_serialization() end
 
 --- #components
 
-
 --- User definable handle for an entity, name doesn't need to be unique
 --- DEFAULT: EVERY ENTITY HAS THIS ALREADY, DO NOT ADD
 --- Use this for debugging, entity identification, etc...
@@ -343,22 +358,22 @@ function pine_comp_Transform:set_scale(x, y) end
 
 --- Defines custom update and destroy scripts
 --- Use this to define per-update game logic
----@class pine_comp_CustomBehaviour
-local pine_comp_CustomBehaviour = {}
+---@class pine_comp_CustomBehavior
+local pine_comp_CustomBehavior = {}
 
 --- Sets the function that gets called on every fixed update
 ---@param path string
-function pine_comp_CustomBehaviour:set_on_update(path) end
+function pine_comp_CustomBehavior:set_on_update(path) end
 
 --- Sets the function that gets called when the component dies
 --- (either by removal or scene unload)
 ---@param path string
-function pine_comp_CustomBehaviour:set_on_remove(path) end
+function pine_comp_CustomBehavior:set_on_remove(path) end
 
 
 --- Defines any number of general script files that can be run whenever
 --- Use this to define more specialised one-time game logic (like entity spawning etc.)
---- (scripts can be run many times too but CustomBehaviour is more for that)
+--- (scripts can be run many times too but CustomBehavior is more for that)
 ---@class pine_comp_Script
 local pine_comp_Script = {}
 

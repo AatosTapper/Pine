@@ -9,7 +9,7 @@
 void print_component_sizes() {
     PRINT_COMP_SIZE(component::Tag);
     PRINT_COMP_SIZE(component::Transform);
-    PRINT_COMP_SIZE(component::CustomBehaviour);
+    PRINT_COMP_SIZE(component::CustomBehavior);
     PRINT_COMP_SIZE(component::Script);
     PRINT_COMP_SIZE(component::Table);
     PRINT_COMP_SIZE(component::Sprite);
@@ -141,9 +141,9 @@ NodeData Script::serialize() const {
     };
 }
 
-CustomBehaviour::CustomBehaviour(std::string path) noexcept : on_update(path) {}
+CustomBehavior::CustomBehavior(std::string path) noexcept : on_update(path) {}
 // @Lua API
-CustomBehaviour::~CustomBehaviour() { 
+CustomBehavior::~CustomBehavior() { 
     if (!on_remove.empty()) {
         auto &lua = LuaStateDispatcher::instance().get_lua();
         lua.set_function("pine_get_script_parent_entity", [this] { 
@@ -153,25 +153,25 @@ CustomBehaviour::~CustomBehaviour() {
     }
 }
 
-void CustomBehaviour::set_on_update(std::string path) {
+void CustomBehavior::set_on_update(std::string path) {
     on_update = path;
 }
 
-void CustomBehaviour::set_on_remove(std::string path) {
+void CustomBehavior::set_on_remove(std::string path) {
     on_remove = path;
 }
 
-void CustomBehaviour::deserialize(NodeData &data) {
+void CustomBehavior::deserialize(NodeData &data) {
     CHECK_SERDE(data.variables.size() == 3);
     VAR_FROM_NODE(on_update, data);
     VAR_FROM_NODE(on_remove, data);
 }
 
-NodeData CustomBehaviour::serialize() const {
+NodeData CustomBehavior::serialize() const {
     return NodeData {
         .type=NodeType::Component,
         .variables = {
-            COMP_TYPE(CustomBehaviour),
+            COMP_TYPE(CustomBehavior),
             VAR_TO_NODE(on_update),
             VAR_TO_NODE(on_remove)
         }
@@ -215,11 +215,7 @@ void Table::deserialize(NodeData &data) {
 
     std::string table_string = data.variables.at(1).value;
     auto &lua = LuaStateDispatcher::instance().get_lua();
-    lua.set_function("_pine_internals_get_table_string", [&] { return table_string; });
-    auto result = lua.script(R"(
-        Cone = require("core.Cone.cone")
-        return Cone.string_to_table(_pine_internals_get_table_string())
-    )");
+    auto result = lua.script("return " + table_string);
     assert(result.valid());
     table = result.get<sol::table>();
 }
@@ -228,10 +224,7 @@ NodeData Table::serialize() const {
     auto &lua = LuaStateDispatcher::instance().get_lua();
 
     lua.set_function("_pine_internals_get_table", [this] { return this->table; });
-    auto result = lua.script(R"(
-        Cone = require("core.Cone.cone")
-        return Cone.to_string(_pine_internals_get_table())
-    )");
+    auto result = ScriptEngine::run_script(lua, "../core/engine_lua/internal_table_serialize.lua");
     assert(result.valid());
     auto table_string = result.get<std::string_view>();
 

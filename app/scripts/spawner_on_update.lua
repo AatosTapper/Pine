@@ -44,7 +44,7 @@ end
 if pine_get_input(Cone.Key._SPACE) then
     local loading_scene = pine_set_temp_scene(pine_Scene:new("loading_scene"))
     local loading_ent = loading_scene:add_entity("loader")
-    local comp = loading_ent:add_component_CustomBehaviour()
+    local comp = loading_ent:add_component_CustomBehavior()
     comp:set_on_update("scripts/loading_on_update.lua")
     loading_ent:add_component_Sprite("res/textures/rock.png")
 end

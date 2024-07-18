@@ -103,12 +103,12 @@ private:
 ///
 /// @brief Define custom update and destroy scripts
 /// @serializable
-struct CustomBehaviour : public Serializable {
+struct CustomBehavior : public Serializable {
     friend class ::Entity;
 
-    CustomBehaviour() noexcept = default;
-    CustomBehaviour(std::string path) noexcept;
-    virtual ~CustomBehaviour() override;
+    CustomBehavior() noexcept = default;
+    CustomBehavior(std::string path) noexcept;
+    virtual ~CustomBehavior() override;
 
     void set_on_update(std::string path);
     void set_on_remove(std::string path);
