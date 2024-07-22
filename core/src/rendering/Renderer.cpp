@@ -60,7 +60,7 @@ void Renderer::m_draw_sprites(Scene *scene) {
 
         m_selected_shader->set_mat4f("u_view_proj", m_selected_vpm);
         m_selected_shader->set_mat4f("u_transform", transform);
-        m_selected_shader->set_float("u_z_fight_factor", z_offset);
+        m_selected_shader->set_float("u_z_fight_factor", (z_offset + sprite.render_layer));
 
         mesh.get_vao()->bind();
         mesh.get_ebo()->bind();

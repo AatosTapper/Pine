@@ -7,7 +7,6 @@
 static std::deque<double> dt_buffer;
 constexpr size_t buffer_window = 50;
 
-
 void accumulate_dt_buffer(double dt) {
     if (dt_buffer.size() >= buffer_window) [[likely]] {
         dt_buffer.pop_front();

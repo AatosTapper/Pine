@@ -6,8 +6,6 @@ if parent == nil then
     return
 end
 
-
-
 --print("Ft: " .. Cone.Math.round_to_decimal(pine_frame_time() * 10^3, 2) .. "ms")
 
 local scene = pine_get_scene()
@@ -41,6 +39,7 @@ if pine_get_input(Cone.Key._MOUSE_BUTTON_RIGHT) then
     camera:right(speed)
 end
 
+-- Just testing scene switching
 if pine_get_input(Cone.Key._SPACE) then
     local loading_scene = pine_set_temp_scene(pine_Scene:new("loading_scene"))
     local loading_ent = loading_scene:add_entity("loader")

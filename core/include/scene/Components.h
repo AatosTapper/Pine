@@ -29,7 +29,7 @@ struct Tag : public Serializable {
     virtual NodeData serialize() const override;
 
 private:
-    std::shared_ptr<Entity> m_parent; // behind pointer to no pollute the cache as much
+    std::shared_ptr<Entity> m_parent; // behind pointer to not pollute the cache as much
 };
 
 ///
@@ -40,7 +40,6 @@ struct Transform : public Serializable {
 
     double x = 0.0;
     double y = 0.0;
-
     double x_0 = 0.0; // last
     double y_0 = 0.0; // last
     double x_interpolated = 0.0;
@@ -48,14 +47,12 @@ struct Transform : public Serializable {
 
     float sx = 1.0; /// width (x scale)
     float sy = 1.0; /// height (y scale)
-
-    float sx_0 = 1.0; /// width (x scale)
-    float sy_0 = 1.0; /// height (y scale)
-    float sx_interpolated = 1.0; /// width (x scale)
-    float sy_interpolated = 1.0; /// height (y scale)
+    float sx_0 = 1.0;
+    float sy_0 = 1.0;
+    float sx_interpolated = 1.0;
+    float sy_interpolated = 1.0;
 
     float rr = 0.0; /// rotation in radians
-    
     float rr_0 = 0.0;
     float rr_interpolated = 0.0;
 
@@ -96,7 +93,6 @@ struct Script : public Serializable {
 
 private:
     std::vector<std::string> m_scripts;
-
     std::shared_ptr<Entity> m_parent;
 };
 
@@ -134,6 +130,9 @@ struct Sprite : public Serializable {
     Sprite(std::string path) noexcept;
     virtual ~Sprite() = default;
 
+    /// @brief z offset to help with ordering the sprites
+    float render_layer = 0.0f;
+
     void set_texture(std::string path);
 
     virtual void deserialize(NodeData &data) override;
@@ -141,7 +140,6 @@ struct Sprite : public Serializable {
 private:
     Texture *m_img = nullptr;
     std::shared_ptr<std::string> m_save_string;
-
     std::shared_ptr<Entity> m_parent;
 };
 

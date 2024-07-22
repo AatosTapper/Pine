@@ -17,18 +17,11 @@ public:
     
     Entity add_entity(std::string name = "");
     std::vector<Entity> get_entities();
+    std::vector<Entity> get_close_entities(Entity ent, float distance);
 
-    template<typename... T> 
-    decltype(auto) get_view() const { 
-        return m_registry->view<T...>(); 
-    }
-
-    Camera *get_camera() const {
-        assert(m_camera);
-        return m_camera.get();
-    }
-
-    entt::registry *get_registry() const { return m_registry.get(); }
+    template<typename... T> decltype(auto) get_view() const;
+    Camera *get_camera() const;
+    entt::registry *get_registry() const;
 
 private:
     std::shared_ptr<entt::registry> m_registry;
@@ -36,3 +29,8 @@ private:
 
     Entity deserializer_add_entity();
 };
+
+template<typename... T> 
+decltype(auto) Scene::get_view() const { 
+    return m_registry->view<T...>(); 
+}

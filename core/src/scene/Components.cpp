@@ -194,6 +194,7 @@ void Sprite::deserialize(NodeData &data) {
 
     std::string path;
     VAR_FROM_NODE(path, data);
+    VAR_FROM_NODE(render_layer, data);
     *this = Sprite(path);
 }
 
@@ -203,7 +204,8 @@ NodeData Sprite::serialize() const {
         .type=NodeType::Component,
         .variables = {
             COMP_TYPE(Sprite),
-            VAR_TO_NODE(path)
+            VAR_TO_NODE(path),
+            VAR_TO_NODE(render_layer)
         }
     };
 }

@@ -32,7 +32,33 @@ std::vector<Entity> Scene::get_entities() {
     return output;
 }
 
+std::vector<Entity> Scene::get_close_entities(Entity ent, float distance) {
+    PINE_CORE_PROFILE("Get closeby entities");
+    auto &pos = ent.get_component<component::Transform>();
+    std::vector<Entity> output;
+    for (auto id : m_registry->view<component::Transform>()) {
+        if (id == ent.m_handle) [[unlikely]] continue;
+
+        auto &oth = m_registry->get<component::Transform>(id);
+        float dx = oth.x - pos.x;
+        float dy = oth.y - pos.y;
+        float dist = std::sqrt(dx * dx + dy * dy);
+        if ((dist - distance) < 0.0f) [[unlikely]] {
+            output.push_back(Entity{ id, this });
+        }
+    }
+    return output;
+}
+
 Entity Scene::deserializer_add_entity() {
     auto ent = m_registry->create();
     return Entity{ ent, this };
+}
+
+Camera *Scene::get_camera() const {
+    return m_camera.get();
+}
+
+entt::registry *Scene::get_registry() const { 
+    return m_registry.get(); 
 }

@@ -2,6 +2,7 @@
 
 #include "Scene.h"
 #include "profiling.h"
+#include "Components.h"
 
 class Entity {
     friend class Scene;
@@ -21,7 +22,6 @@ public:
 
     template<typename T> 
     void remove_component();
-
 
     template<typename T>
     void add_empty_component();
@@ -71,6 +71,18 @@ inline bool Entity::has_component() {
 template<typename T>
 inline void Entity::remove_component() {
     m_registry().remove<T>(m_handle);
+}
+
+template<>
+inline void Entity::remove_component<component::Transform>() {
+    std::cout << "Error invalid component: can't delete Transform from entity\n";
+    std::abort();
+}
+
+template<>
+inline void Entity::remove_component<component::Tag>() {
+    std::cout << "Error invalid component: can't delete Tag from entity\n";
+    std::abort();
 }
 
 template<typename T>

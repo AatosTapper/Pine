@@ -103,6 +103,7 @@ void set_lua_components(sol::state &lua) {
 
     COMP_REGISTER(Sprite, std::string)
     COMP_MEM_REGISTER(Sprite, set_texture)
+    Sprite_type["set_render_layer"] = [](component::Sprite &self, float val) { self.render_layer = val; };
 
     COMP_REGISTER(StateFlags, std::vector<std::string>)
     COMP_MEM_REGISTER(StateFlags, set_flags)
@@ -119,9 +120,9 @@ void set_lua_scene(sol::state &lua, SceneManager &manager) {
     scene_type["add_entity"] = [&](Scene &self, sol::variadic_args name) { 
         return sol::make_object(lua, self.add_entity(name.size() == 0 ? "" : name.get<std::string>()));
     };
-    scene_type["get_entities"] = [&](Scene &self) {
-        return self.get_entities();
-    };
+    scene_type["get_entities"] = &Scene::get_entities;
+    scene_type["get_close_entities"] = &Scene::get_close_entities;
+
     scene_type["get_camera"] = [&](Scene &self) {
         return sol::make_object(lua, self.get_camera());
     };

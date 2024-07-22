@@ -77,6 +77,12 @@ function pine_Scene:add_entity(name) end
 ---@return table<number, pine_Entity>
 function pine_Scene:get_entities() end
 
+--- Gets all entities within a radius
+---@param ent pine_Entity
+---@param radius number
+---@return table<number, pine_Entity>
+function pine_Scene:get_close_entities(ent, radius) end
+
 --- Gets the camera of the scene
 ---@return pine_Camera
 function pine_Scene:get_camera() end
@@ -163,6 +169,9 @@ function pine_Camera:down(amount) end
 local pine_Entity = {}
 
 --- Removes the entity and it's component from a scene
+--- WARNING: If used for the parent entity in a script (like CustomBehavior),
+---          you can't reference the parent entity anymore within the script.
+---          This is because the entity is removed immediately and not deferred.
 function pine_Entity:remove() end
 
 --- Each component type has these corresponing functions: (arrow means return value)
@@ -172,11 +181,7 @@ function pine_Entity:remove() end
 --- entity:remove_component_type()
 
 
---- Adds a Tag component to entity
---- Replaces the old component if exists
----@param name string|nil @optional, defaults to "Entity"
----@return pine_comp_Tag
-function pine_Entity:add_component_Tag(name) end
+--- Tag is a default component, it can't be added or removed
 
 --- Gets the Tag component
 ---@return pine_comp_Tag
@@ -186,14 +191,8 @@ function pine_Entity:get_component_Tag() end
 ---@return boolean
 function pine_Entity:has_component_Tag() end
 
---- Removes the Tag component
-function pine_Entity:remove_component_Tag() end
 
-
---- Adds a Transform component to entity
---- Replaces the old component if exists
----@return pine_comp_Transform
-function pine_Entity:add_component_Transform() end
+--- Transform is a default component, it can't be added or removed
 
 --- Gets the Transform component
 ---@return pine_comp_Transform
@@ -202,9 +201,6 @@ function pine_Entity:get_component_Transform() end
 --- Tells if entity has a Transform component
 ---@return boolean
 function pine_Entity:has_component_Transform() end
-
---- Removes the Transform component
-function pine_Entity:remove_component_Transform() end
 
 
 --- Adds a Script component to entity
@@ -411,6 +407,11 @@ local pine_comp_Sprite = {}
 --- If already has a texture, the old one is removed
 ---@param path string
 function pine_comp_Sprite:set_texture(path) end
+
+--- Sets the "render layer" aka z offset of the sprite
+--- This is useful for setting the back to front order of sprites
+---@param val number @default = 0.0 (negative = further away)
+function pine_comp_Sprite:set_render_layer(val) end
 
 
 --- Define custom flag strings to identify and sort components
