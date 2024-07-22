@@ -179,6 +179,7 @@ function pine_Entity:remove() end
 --- entity:has_component_type() -> bool
 --- entity:remove_component_type()
 
+--- Exact component definitions come later
 
 --- Tag is a default component, it can't be added or removed
 
@@ -186,20 +187,12 @@ function pine_Entity:remove() end
 ---@return pine_comp_Tag
 function pine_Entity:get_component_Tag() end
 
---- Tells if entity has a Tag component
----@return boolean
-function pine_Entity:has_component_Tag() end
-
 
 --- Transform is a default component, it can't be added or removed
 
 --- Gets the Transform component
 ---@return pine_comp_Transform
 function pine_Entity:get_component_Transform() end
-
---- Tells if entity has a Transform component
----@return boolean
-function pine_Entity:has_component_Transform() end
 
 
 --- Adds a Script component to entity
@@ -305,40 +298,25 @@ function pine_Entity:enable_serialization() end
 --- #components
 
 --- User definable handle for an entity, name doesn't need to be unique
---- DEFAULT: EVERY ENTITY HAS THIS ALREADY, DO NOT ADD
+--- DEFAULT: EVERY ENTITY HAS THIS ALREADY
 --- Use this for debugging, entity identification, etc...
 ---@class pine_comp_Tag
+---@field name string
 local pine_comp_Tag = {}
-
---- Tag name
----@type string
-pine_comp_Tag.name = ""
 
 
 --- Entity transforms in world space
---- DEFAULT: EVERY ENTITY HAS THIS ALREADY, DO NOT ADD
+--- DEFAULT: EVERY ENTITY HAS THIS ALREADY
 ---@class pine_comp_Transform
-local pine_comp_Transform = {}
-
---- x position
----@type number
-pine_comp_Transform.x = 0
-
---- y position
----@type number
-pine_comp_Transform.y = 0
-
---- width (x scale)
----@type number
-pine_comp_Transform.sx = 0
-
---- height (y scale)
----@type number
-pine_comp_Transform.sy = 0
-
+--- position
+---@field x number
+---@field y number
+--- scale
+---@field sx number
+---@field sy number
 --- rotation in radians
----@type number
-pine_comp_Transform.rr = 0
+---@field rr number
+local pine_comp_Transform = {}
 
 --- Sets transfom x and y
 ---@param x number
@@ -356,11 +334,11 @@ function pine_comp_Transform:set_scale(x, y) end
 ---@class pine_comp_CustomBehavior
 local pine_comp_CustomBehavior = {}
 
---- Sets the function that gets called on every fixed update
+--- Sets the script that gets called on every fixed update
 ---@param path string
 function pine_comp_CustomBehavior:set_on_update(path) end
 
---- Sets the function that gets called when the component dies
+--- Sets the script that gets called when the component dies
 --- (either by removal or scene unload)
 ---@param path string
 function pine_comp_CustomBehavior:set_on_remove(path) end
@@ -390,11 +368,8 @@ function pine_comp_Script:run_all() end
 --- Store any data within a lua table
 --- Use this for general entity data, like player health or level
 ---@class pine_comp_Table
+---@field table table
 local pine_comp_Table = {}
-
---- Access the component table
----@type table
-pine_comp_Table.table = {}
 
 
 --- General image component for drawing
@@ -430,6 +405,10 @@ function pine_comp_StateFlags:set_flags(flags) end
 ---@param flags table<number, string>
 ---@return boolean
 function pine_comp_StateFlags:has_flags(flags) end
+
+--- Removes all flags that appear in the input list
+---@param flags table<number, string>
+function pine_comp_StateFlags:remove_flags(flags) end
 
 
 

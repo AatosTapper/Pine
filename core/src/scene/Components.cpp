@@ -3,6 +3,8 @@
 #include "Serialize.h"
 #include "scene/Entity.h"
 
+#include <unordered_set>
+
 #define PRINT_COMP_SIZE(COMP) \
     std::cout << #COMP": " << sizeof(COMP) << "\n"
 
@@ -256,6 +258,16 @@ bool StateFlags::has_flags(std::vector<std::string> flags) {
     }
     return true;
 }
+
+void StateFlags::remove_flags(std::vector<std::string> flags) {
+    std::unordered_set<std::string> flags_set(flags.begin(), flags.end());
+    m_flags.erase(std::remove_if(m_flags.begin(), m_flags.end(), 
+        [&flags_set](const std::string& f) {
+            return flags_set.find(f) != flags_set.end();
+        }), 
+    m_flags.end());
+}
+
 
 bool StateFlags::m_has_flag(const std::string &flag) {
     return std::any_of(m_flags.begin(), m_flags.end(), [&](const std::string &oth) {

@@ -174,16 +174,16 @@ struct StateFlags : public Serializable {
 
     void set_flags(std::vector<std::string> flags);
     bool has_flags(std::vector<std::string> flags);
+    void remove_flags(std::vector<std::string> flags);
 
     virtual void deserialize(NodeData &data) override;
     virtual NodeData serialize() const override;    
 
 private:
     std::vector<std::string> m_flags;
+    std::shared_ptr<Entity> m_parent;
     
     bool m_has_flag(const std::string &flag);
-
-    std::shared_ptr<Entity> m_parent;
 };
 
 } // namespace component

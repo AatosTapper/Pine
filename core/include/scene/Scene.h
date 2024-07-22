@@ -17,6 +17,7 @@ public:
     
     Entity add_entity(std::string name = "");
     std::vector<Entity> get_entities();
+    /// @todo OPTIMIZE (should not take 35 micro secs :DDD)
     std::vector<Entity> get_close_entities(Entity ent, float distance);
 
     template<typename... T> decltype(auto) get_view() const;

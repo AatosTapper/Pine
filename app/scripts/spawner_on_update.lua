@@ -1,24 +1,19 @@
 local Cone = require("core.Cone.cone")
 
-local parent = pine_get_script_parent_entity()
-if parent == nil then
-    print("parent was nil")
-    return
-end
+-- It's a bit weird that the spawner entity's on_update
+-- handles the camera controls but here's just a small example.
 
---print("Ft: " .. Cone.Math.round_to_decimal(pine_frame_time() * 10^3, 2) .. "ms")
+-- In real world, you would want to have another entity like: camera_controller
+-- with a CustomBehavior on_update script that handles it
 
+
+-- Getting the relevant variables
 local scene = pine_get_scene()
-if scene == nil then
-    print("Scene was nil in script")
-    return
-end
-
+local parent = pine_get_script_parent_entity()
 local camera = scene:get_camera()
 
 -- simple controller using pine_get_input(keycode)
-local dt = pine_tick_dt()
-local speed = 18 * dt
+local speed = 18 * pine_tick_dt()
 
 if pine_get_input(Cone.Key._W) then
     camera:up(speed)
@@ -38,16 +33,3 @@ end
 if pine_get_input(Cone.Key._MOUSE_BUTTON_RIGHT) then
     camera:right(speed)
 end
-
--- Just testing scene switching
-if pine_get_input(Cone.Key._SPACE) then
-    local loading_scene = pine_set_temp_scene(pine_Scene:new("loading_scene"))
-    local loading_ent = loading_scene:add_entity("loader")
-    local comp = loading_ent:add_component_CustomBehavior()
-    comp:set_on_update("scripts/loading_on_update.lua")
-    loading_ent:add_component_Sprite("res/textures/rock.png")
-end
-
---local mouse_pos = pine_get_mouse_pos();
---local pos = vec2.from(camera:get_pos())
---camera:set_pos(vec2.from(pos.x + ((math.random() - 0.5) * 0.2), pos.y + ((math.random() - 0.5) * 0.2)))

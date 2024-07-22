@@ -108,6 +108,7 @@ void set_lua_components(sol::state &lua) {
     COMP_REGISTER(StateFlags, std::vector<std::string>)
     COMP_MEM_REGISTER(StateFlags, set_flags)
     COMP_MEM_REGISTER(StateFlags, has_flags)
+    COMP_MEM_REGISTER(StateFlags, remove_flags)
 }
 
 // @Lua API
