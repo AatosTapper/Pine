@@ -140,7 +140,6 @@ local pine_Camera = {}
 function pine_Camera:get_pos() end
 
 --- Sets the camera position
----@param self pine_Camera
 ---@param pos vec2
 function pine_Camera:set_pos(pos) end
 
