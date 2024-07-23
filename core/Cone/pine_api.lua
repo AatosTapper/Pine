@@ -62,11 +62,15 @@ function pine_get_mouse_pos() end
 
 --- Scene
 ---@class pine_Scene
-local pine_Scene = {}
+pine_Scene = {}
 
 --- Creates a new scene
+---@param name string @WARNING: must be unique
 ---@return pine_Scene
-function pine_Scene.new() end
+function pine_new_scene(name)
+    assert(name ~= nil, "cannot create a scene without a name")
+    return pine_Scene.new(name) -- wrapper for type specificity
+end
 
 --- Adds an entity to the scene
 ---@param name string

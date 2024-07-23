@@ -58,7 +58,12 @@ sol::state ScriptEngine::create_lua_state() {
 
 sol::protected_function_result ScriptEngine::run_script(sol::state &lua, const std::string &file_path) {
     try {
-        return lua.safe_script(get_script(lua, file_path));
+        auto result = lua.safe_script(get_script(lua, file_path), sol::script_pass_on_error);
+        if (!result.valid()) {
+            sol::error err = result;
+            std::cerr << "Lua script error: " << err.what() << std::endl;
+        }
+        return result;
     } catch (const sol::error &e) {
         std::cerr << "Sol2 caught error: " << e.what() << std::endl;
         std::abort();

@@ -79,8 +79,26 @@ void Application::m_on_window_close() {
 }
 
 void Application::entry() {
-    sol::protected_function_result res = ScriptEngine::run_script(m_lua, app_relative_path("main.lua"));
-    m_lua["main"]();
+    ScriptEngine::run_script(m_lua, app_relative_path("main.lua"));
+    try {
+        // Check if the script defines a "main" function
+        sol::protected_function main_func = m_lua["main"];
+        if (!main_func.valid()) {
+            std::cerr << "Error: 'main' function not defined in script" << std::endl;
+            return;
+        }
+        sol::protected_function_result result = main_func();
+        if (!result.valid()) {
+            sol::error err = result;
+            std::cerr << "Lua Error in 'main' function: " << err.what() << std::endl;
+        }
+    } catch (const sol::error &e) {
+        std::cerr << "Sol2 caught error: " << e.what() << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << "Standard exception: " << e.what() << std::endl;
+    } catch (...) {
+        std::cerr << "Unknown error occurred." << std::endl;
+    }
 }
 
 void Application::m_run() {
