@@ -16,6 +16,9 @@
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\ScriptEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\TickRateScaling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -65,6 +68,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\SceneSerializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\System.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\dep\tinyxml2\tinyxml2.cpp">
