@@ -23,8 +23,8 @@ local function setup()
     -- Attaching a script to the script component, this returns an ID that we can use to call it
     local spawn_script_id = script_component:push_script("scripts/spawn_script.lua")
 
-    -- Running that script many times to spawn 2000 apples, HAA!!!
-    for i = 1, 2000 do
+    -- Running that script many times to spawn 1000 apples, HAA!!!
+    for i = 1, 1000 do
         script_component:run(spawn_script_id)
     end
     

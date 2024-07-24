@@ -11,6 +11,7 @@
 static constexpr bool is_png(const std::string &path);
 
 Texture::Texture(const std::string &file) noexcept {
+    std::cout << file << "\n";
     glGenTextures(1, &m_id);
     glBindTexture(GL_TEXTURE_2D, m_id);
 
