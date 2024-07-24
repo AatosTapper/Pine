@@ -49,19 +49,22 @@ void set_lua_event_handlers(sol::state &lua, EventBus &bus, InputBus &input) {
             return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });
-    lua.set_function("pine_set_event_handler_Custom", [&](const char *title, sol::function callback) {
+    lua.set_function("pine_set_event_handler_Custom", [&](std::string title, sol::function callback) {
         auto stored_callback = std::make_shared<sol::function>(callback);
         bus.subscribe<CustomLuaEvent>([title, stored_callback](CustomLuaEvent *event) -> HandlerPersistence {
-            if (strcmp(event->title.c_str(), title) == 0) {
-                bool result = (*stored_callback)(*event->data);
-                return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
+            if (title == event->title) {
+                sol::protected_function_result result = stored_callback->call(*event->data);
+                if (!result.valid()) {
+                    sol::error err = result;
+                    std::cerr << "Lua Error in custom event handler: " << err.what() << std::endl;
+                }
+                return result.get<bool>() ? HandlerPersistence::Single : HandlerPersistence::Continuous;
             }
             return HandlerPersistence::Continuous;
         });
     });
-
-    lua.set_function("pine_create_event_Custom", [&](const char *title, sol::object data) {
-        auto data_ptr = std::make_shared<sol::object>(data);
+    lua.set_function("pine_create_event_Custom", [&](std::string title, sol::table data) {
+        auto data_ptr = std::make_shared<sol::table>(data);
         CustomLuaEvent event(title, data_ptr);
         bus.publish(&event);
     });

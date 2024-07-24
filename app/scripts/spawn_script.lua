@@ -1,3 +1,4 @@
+local Cone = require("core.Cone.cone")
 -- This script spawns an apple with some stuff
 
 local scene = pine_get_scene()
@@ -36,3 +37,7 @@ local flags = ent:add_component_StateFlags({ "flag1", "whatever_flag2" })
 -- Adding a CustomBehavior component to define the frame by frame logic
 -- Here it just rotates the apple based on the rotation_speed
 local cb = ent:add_component_CustomBehavior("scripts/apple_on_update.lua")
+
+Cone.Event.listener("SomeEvent", function(data)
+    print("bruh")
+end)

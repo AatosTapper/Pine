@@ -1,3 +1,5 @@
+local Cone = require("core.Cone.cone")
+
 local entity = pine_get_script_parent_entity()
 
 local tbl = entity:get_component_Table().table

@@ -7,6 +7,12 @@ local Cone = require("core.Cone.cone")
 -- with a CustomBehavior on_update script that handles it
 
 
+if pine_get_input(Cone.Key._W)  then
+    Cone.Event.create("SomeEvent", {
+        test = 2
+    })
+end
+
 -- Getting the relevant variables
 local scene = pine_get_scene()
 local parent = pine_get_script_parent_entity()
