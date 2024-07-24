@@ -43,32 +43,41 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
         -Wpedantic
         ${EXTRA_OPT}
     )
-    target_precompile_headers(main PRIVATE core/include/pch.h)
 
 else () # windows
     set(GLFW_LIBRARY_DIR "C:/Program Files/glfw-3.4/lib-vc2022")  # Adjust the path as necessary
 
-    find_package(Lua REQUIRED)
-    include_directories("C:/Program Files/lua/lib/include")
+    include_directories("dep/lua")
 
     set(CMAKE_CXX_COMPILER "cl")
 
     target_compile_options(main PRIVATE 
         "/W3"
         "/O2"
-        "/GL"
+        #"/GL"
         "/DNDEBUG"
         "/Zi"
         "/arch:AVX2"
         "/fp:fast"
     )
 
-    target_link_options(main PRIVATE
-        "/LTCG"
-        "/OPT:REF"
-        "/OPT:ICF"
+    #target_link_options(main PRIVATE
+    #    "/LTCG"
+    #    "/OPT:REF"
+    #    "/OPT:ICF"
+    #)
+
+    target_link_libraries(main PUBLIC "C:/Program Files/lua/lib/lua54.lib")
+
+    set(COPYABLE_DLLS ../dep/lua/lib/lua54.dll ../dep/GLFW/lib/glfw3.dll)
+
+    add_custom_command(TARGET main POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "../dep/lua/lib/lua54.dll" $<TARGET_FILE_DIR:main>
     )
 endif()
+
+target_precompile_headers(main PRIVATE core/include/pch.h)
 
 set_target_properties(main PROPERTIES LINK_SEARCH_START_STATIC 1)
 set_target_properties(main PROPERTIES LINK_SEARCH_END_STATIC 1)
@@ -78,4 +87,4 @@ target_link_directories(main PUBLIC ${GLFW_LIBRARY_DIR})
 
 find_package(OpenGL REQUIRED)
 
-target_link_libraries(main ${GLFW_LIB} ${LUA_LIBRARIES} OpenGL::GL glad)
+target_link_libraries(main PUBLIC ${GLFW_LIB} OpenGL::GL glad)

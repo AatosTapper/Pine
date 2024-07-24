@@ -39,5 +39,6 @@ local flags = ent:add_component_StateFlags({ "flag1", "whatever_flag2" })
 local cb = ent:add_component_CustomBehavior("scripts/apple_on_update.lua")
 
 Cone.Event.listener("SomeEvent", function(data)
-    print("bruh")
+    --print("bruh")
+    --
 end)
