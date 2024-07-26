@@ -38,7 +38,7 @@ private:
     uint32_t m_framebuffer = 0;
     uint32_t m_texture_color_buffer = 0;
     uint32_t m_texture_depth_buffer = 0;
-    uint32_t m_rbo = 0;
+    uint32_t m_texture_depth_stencil_buffer = 0;
     
     void m_draw_sprites(Scene *scene);
 

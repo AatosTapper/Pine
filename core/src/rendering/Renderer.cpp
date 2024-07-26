@@ -88,7 +88,7 @@ void Renderer::m_render_framebuffer() {
     glUniform1i(glGetUniformLocation(m_post_process_shader.get_id(), "tex_col"), 0);
 
     glActiveTexture(GL_TEXTURE0 + 1);
-    glBindTexture(GL_TEXTURE_2D, m_texture_depth_buffer);
+    glBindTexture(GL_TEXTURE_2D, m_texture_depth_stencil_buffer);
     glUniform1i(glGetUniformLocation(m_post_process_shader.get_id(), "tex_dep"), 1);
 
     mesh.get_vao()->bind();
@@ -170,8 +170,7 @@ void Renderer::m_create_framebuffers() {
 }
 
 void Renderer::m_delete_framebuffers() {
-    glDeleteRenderbuffers(1, &m_rbo);
-    glDeleteTextures(1, &m_texture_depth_buffer);
+    glDeleteTextures(1, &m_texture_depth_stencil_buffer);
     glDeleteTextures(1, &m_texture_color_buffer);
     glDeleteFramebuffers(1, &m_framebuffer);
 }
