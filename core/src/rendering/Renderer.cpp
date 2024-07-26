@@ -110,7 +110,7 @@ void Renderer::m_create_framebuffers() {
     glBindTexture(GL_TEXTURE_2D, m_texture_color_buffer);
     glTexImage2D(GL_TEXTURE_2D, 0, tex_format, 
         m_window_dimensions.x, m_window_dimensions.y, 0,
-        GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+        GL_RGBA, GL_FLOAT, NULL);
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -144,10 +144,40 @@ void Renderer::m_create_framebuffers() {
 
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_STENCIL_ATTACHMENT, GL_RENDERBUFFER, m_rbo);
     
-    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
-        std::runtime_error("ERROR::FRAMEBUFFER:: Framebuffer is not complete");
+    GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
+    if (status != GL_FRAMEBUFFER_COMPLETE) {
+        switch (status) {
+            case GL_FRAMEBUFFER_UNDEFINED:
+                std::cerr << "GL_FRAMEBUFFER_UNDEFINED" << std::endl;
+                break;
+            case GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT:
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT" << std::endl;
+                break;
+            case GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT:
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT" << std::endl;
+                break;
+            case GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER:
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER" << std::endl;
+                break;
+            case GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER:
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER" << std::endl;
+                break;
+            case GL_FRAMEBUFFER_UNSUPPORTED:
+                std::cerr << "GL_FRAMEBUFFER_UNSUPPORTED" << std::endl;
+                break;
+            case GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE:
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE" << std::endl;
+                break;
+            case GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS:
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS" << std::endl;
+                break;
+            default:
+                std::cerr << "Unknown framebuffer error" << std::endl;
+                break;
+        }
+        std::cerr << "Framebuffer is not complete\n";
+        std::abort();
     }
-
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
