@@ -103,7 +103,6 @@ void Renderer::m_create_framebuffers() {
     glBindFramebuffer(GL_FRAMEBUFFER, m_framebuffer);
 
     // color buffer
-
     auto tex_format = GL_RGBA16F;
 
     glGenTextures(1, &m_texture_color_buffer);
@@ -118,13 +117,12 @@ void Renderer::m_create_framebuffers() {
     glBindTexture(GL_TEXTURE_2D, 0);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, m_texture_color_buffer, 0);
 
-    // depth buffer
-
-    glGenTextures(1, &m_texture_depth_buffer);
-    glBindTexture(GL_TEXTURE_2D, m_texture_depth_buffer);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32,
+    // combined depth-stencil buffer
+    glGenTextures(1, &m_texture_depth_stencil_buffer);
+    glBindTexture(GL_TEXTURE_2D, m_texture_depth_stencil_buffer);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH24_STENCIL8,
         m_window_dimensions.x, m_window_dimensions.y, 0,
-        GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+        GL_DEPTH_STENCIL, GL_UNSIGNED_INT_24_8, NULL);
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -132,18 +130,8 @@ void Renderer::m_create_framebuffers() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
     glBindTexture(GL_TEXTURE_2D, 0);
-    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, m_texture_depth_buffer, 0);
-    
-    // stencil renderbuffer
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D, m_texture_depth_stencil_buffer, 0);
 
-    glGenRenderbuffers(1, &m_rbo);
-    glBindRenderbuffer(GL_RENDERBUFFER, m_rbo);
-    glRenderbufferStorage(GL_RENDERBUFFER, GL_STENCIL_INDEX8, 
-        m_window_dimensions.x, m_window_dimensions.y);
-    glBindRenderbuffer(GL_RENDERBUFFER, 0);
-
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_STENCIL_ATTACHMENT, GL_RENDERBUFFER, m_rbo);
-    
     GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
     if (status != GL_FRAMEBUFFER_COMPLETE) {
         switch (status) {
