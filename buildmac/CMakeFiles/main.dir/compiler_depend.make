@@ -11127,9 +11127,7 @@ CMakeFiles/main.dir/core/src/main.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.hxx
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h \
   CMakeFiles/main.dir/cmake_pch_arm64.hxx.cxx \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Application.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/FromString.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Input.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/ScriptEngine.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Window.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/config.h \

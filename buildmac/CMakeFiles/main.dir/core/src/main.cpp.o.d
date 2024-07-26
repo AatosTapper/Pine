@@ -1357,6 +1357,4 @@ CMakeFiles/main.dir/core/src/main.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Camera.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneManager.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Input.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/FromString.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h

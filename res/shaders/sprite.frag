@@ -6,8 +6,7 @@ in vec2 tex_coord;
 
 uniform sampler2D u_texture_sampler;
 
-void main()
-{
+void main() {
     vec4 tex_color = texture(u_texture_sampler, tex_coord);
 
     if (tex_color.a < 0.1)

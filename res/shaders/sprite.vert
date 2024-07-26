@@ -9,8 +9,7 @@ uniform float u_z_fight_factor;
 
 out vec2 tex_coord;
 
-void main()
-{
+void main() {
     vec4 pos = vec4(vec3(vec2(a_pos.x, a_pos.y), u_z_fight_factor), 1.0);
     gl_Position = u_view_proj * u_transform * pos;
     tex_coord = a_tex_coord;

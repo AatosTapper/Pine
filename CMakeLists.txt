@@ -43,9 +43,9 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
         -Wpedantic
         ${EXTRA_OPT}
     )
-
+    target_link_libraries(main PUBLIC ${LUA_LIBRARIES})
 else () # windows
-    set(GLFW_LIBRARY_DIR "C:/Program Files/glfw-3.4/lib-vc2022")  # Adjust the path as necessary
+    set(GLFW_LIBRARY_DIR "C:/Program Files/glfw-3.4/lib-vc2022")
 
     include_directories("dep/lua")
 

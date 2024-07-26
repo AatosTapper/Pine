@@ -8,11 +8,11 @@ class Shader {
 public:
     Shader(const std::string &vertex_path, const std::string &fragment_path) noexcept;
     ~Shader();
+    
     IMPL_NO_COPY(Shader)
 
     void use() const;
     unsigned int get_id() const { return m_id; }
-    void free();
 
     // uniform setting
     int get_location(const std::string &name) const;
@@ -28,9 +28,4 @@ public:
 
 private:
     unsigned int m_id = 0;
-    bool m_freed;
-
-    std::string m_read_shader(const std::string &filename) const;
-    unsigned int m_compile_shader(const std::string &source, GLenum type) const;
-    void m_create_shader_program(unsigned int vertex_shader, unsigned int fragment_shader);
 };

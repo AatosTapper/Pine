@@ -542,8 +542,8 @@ main: CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o
 main: CMakeFiles/main.dir/core/src/scene/System.cpp.o
 main: CMakeFiles/main.dir/dep/tinyxml2/tinyxml2.cpp.o
 main: CMakeFiles/main.dir/build.make
-main: /opt/homebrew/lib/libglfw.3.4.dylib
 main: /opt/homebrew/lib/liblua5.4.dylib
+main: /opt/homebrew/lib/libglfw.3.4.dylib
 main: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework
 main: libglad.a
 main: CMakeFiles/main.dir/link.txt
