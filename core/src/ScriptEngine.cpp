@@ -26,10 +26,10 @@ static sol::string_view get_script(sol::state &lua, const std::string &file_path
 }
 
 static void lua_panic(sol::optional<std::string> maybe_msg) {
-    std::cerr << "Lua error, application will abort" << std::endl;
+    std::cerr << "Lua error:" << std::endl;
     if (maybe_msg) [[likely]] {
         const std::string& msg = maybe_msg.value();
-        std::cerr << "\terror message: " << msg << std::endl;
+        std::cerr << "\n" << msg << std::endl;
     }
     std::abort();
 }

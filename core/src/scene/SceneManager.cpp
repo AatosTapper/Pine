@@ -25,9 +25,8 @@ Scene *SceneManager::get_scene() const {
 
 void SceneManager::m_push(std::unique_ptr<Scene> &&scene) {
     std::cout << "Pushed scene " << scene->name << "\n";
-    scene->m_camera = std::make_shared<Camera>(m_camera_data);
-    scene->m_camera->back(m_camera_data.start_z);
     m_scene_stack.push_back(std::move(scene));
+    m_scene_stack.back()->m_camera->init(m_camera_data);
 }
 
 void SceneManager::m_pop() {
@@ -54,6 +53,7 @@ void SceneManager::update() {
 void SceneManager::try_update() {
     if (!m_restrict_updates) [[unlikely]] {
         update();
+        m_scene_stack.back()->update();
     }
 }
 
@@ -62,7 +62,7 @@ void SceneManager::set_camera_data(CameraData &&data) {
 }
 
 void SceneManager::cam_aspect_ratio_callback(float aspect_ratio) {
-    for (auto &scene : m_scene_stack) { 
-        scene->get_camera()->set_aspect_ratio(aspect_ratio); 
+    for (auto &scene : m_scene_stack) {
+        scene->get_camera()->set_aspect_ratio(aspect_ratio);
     };
 }

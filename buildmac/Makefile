@@ -709,6 +709,30 @@ core/src/scene/SceneSerializer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.s
 .PHONY : core/src/scene/SceneSerializer.cpp.s
 
+core/src/scene/SpatialGrid.o: core/src/scene/SpatialGrid.cpp.o
+.PHONY : core/src/scene/SpatialGrid.o
+
+# target to build an object file
+core/src/scene/SpatialGrid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SpatialGrid.cpp.o
+.PHONY : core/src/scene/SpatialGrid.cpp.o
+
+core/src/scene/SpatialGrid.i: core/src/scene/SpatialGrid.cpp.i
+.PHONY : core/src/scene/SpatialGrid.i
+
+# target to preprocess a source file
+core/src/scene/SpatialGrid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SpatialGrid.cpp.i
+.PHONY : core/src/scene/SpatialGrid.cpp.i
+
+core/src/scene/SpatialGrid.s: core/src/scene/SpatialGrid.cpp.s
+.PHONY : core/src/scene/SpatialGrid.s
+
+# target to generate assembly for a file
+core/src/scene/SpatialGrid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SpatialGrid.cpp.s
+.PHONY : core/src/scene/SpatialGrid.cpp.s
+
 core/src/scene/System.o: core/src/scene/System.cpp.o
 .PHONY : core/src/scene/System.o
 
@@ -732,6 +756,30 @@ core/src/scene/System.s: core/src/scene/System.cpp.s
 core/src/scene/System.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/System.cpp.s
 .PHONY : core/src/scene/System.cpp.s
+
+core/src/systems/Collision.o: core/src/systems/Collision.cpp.o
+.PHONY : core/src/systems/Collision.o
+
+# target to build an object file
+core/src/systems/Collision.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/systems/Collision.cpp.o
+.PHONY : core/src/systems/Collision.cpp.o
+
+core/src/systems/Collision.i: core/src/systems/Collision.cpp.i
+.PHONY : core/src/systems/Collision.i
+
+# target to preprocess a source file
+core/src/systems/Collision.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/systems/Collision.cpp.i
+.PHONY : core/src/systems/Collision.cpp.i
+
+core/src/systems/Collision.s: core/src/systems/Collision.cpp.s
+.PHONY : core/src/systems/Collision.s
+
+# target to generate assembly for a file
+core/src/systems/Collision.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/systems/Collision.cpp.s
+.PHONY : core/src/systems/Collision.cpp.s
 
 dep/glad/glad.o: dep/glad/glad.c.o
 .PHONY : dep/glad/glad.o
@@ -863,9 +911,15 @@ help:
 	@echo "... core/src/scene/SceneSerializer.o"
 	@echo "... core/src/scene/SceneSerializer.i"
 	@echo "... core/src/scene/SceneSerializer.s"
+	@echo "... core/src/scene/SpatialGrid.o"
+	@echo "... core/src/scene/SpatialGrid.i"
+	@echo "... core/src/scene/SpatialGrid.s"
 	@echo "... core/src/scene/System.o"
 	@echo "... core/src/scene/System.i"
 	@echo "... core/src/scene/System.s"
+	@echo "... core/src/systems/Collision.o"
+	@echo "... core/src/systems/Collision.i"
+	@echo "... core/src/systems/Collision.s"
 	@echo "... dep/glad/glad.o"
 	@echo "... dep/glad/glad.i"
 	@echo "... dep/glad/glad.s"

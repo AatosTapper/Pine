@@ -16,8 +16,8 @@ sprite:set_texture("res/textures/apple.png")
 -- Giving the entity a random position, scale and rotation
 local transform = ent:get_component_Transform()
 -- position
-transform.x = math.random() * 64 - 32
-transform.y = math.random() * 32 - 16
+transform.x = math.random() * 128 - 64
+transform.y = math.random() * 64 - 32
 -- scale (width and height)
 transform.sx = (math.random() + 0.25) * 2
 transform.sy = (math.random() + 0.25) * 2
@@ -37,6 +37,9 @@ local flags = ent:add_component_StateFlags({ "flag1", "whatever_flag2" })
 -- Adding a CustomBehavior component to define the frame by frame logic
 -- Here it just rotates the apple based on the rotation_speed
 local cb = ent:add_component_CustomBehavior("scripts/apple_on_update.lua")
+
+local coll_comp = ent:add_component_Collider()
+coll_comp.resolve_collisions = true
 
 Cone.Event.listener("SomeEvent", function(data)
     --print("bruh")

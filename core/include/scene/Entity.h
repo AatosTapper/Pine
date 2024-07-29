@@ -11,6 +11,13 @@ public:
     Entity() noexcept = default;
     Entity(Scene *scene) noexcept;
 
+    bool operator<(const Entity& other) const {
+        return m_handle < other.m_handle;
+    }
+    bool operator==(const Entity& other) const {
+        return m_handle == other.m_handle;
+    }
+
     template<typename T, typename ...Args> 
     T& add_component(Args&&... args);
 
@@ -31,6 +38,9 @@ public:
 
     void remove();
 
+    entt::entity get_entt() const;
+    Scene *get_scene() const;
+
 private:
     entt::entity m_handle{};
     Scene *m_scene = nullptr;
@@ -38,6 +48,14 @@ private:
     entt::registry &m_registry() {
         assert(m_scene && "cannot use a removed entity");
         return *m_scene->m_registry;
+    }
+
+    bool m_invalid() {
+        if (!m_registry().valid(m_handle)) {
+            std::cout << "attempt to use a null entity\n";
+            return true;
+        }
+        return false;
     }
 };
 
@@ -47,6 +65,8 @@ inline Entity::Entity(Scene *scene) noexcept { *this = scene->add_entity(); }
 
 template<typename T, typename ...Args>
 inline T& Entity::add_component(Args&&... args) {
+    if (m_invalid()) std::abort();
+
     if (m_registry().all_of<T>(m_handle)) [[unlikely]] {
         auto &comp = m_registry().replace<T>(m_handle, std::forward<Args>(args)...);
         comp.m_parent = std::make_shared<Entity>(*this);
@@ -60,27 +80,32 @@ inline T& Entity::add_component(Args&&... args) {
 
 template<typename T>
 inline T &Entity::get_component() {
+    if (m_invalid()) std::abort();
     return m_registry().get<T>(m_handle);
 }
 
 template<typename... T>
 inline bool Entity::has_component() {
+    if (m_invalid()) return false;
     return m_registry().all_of<T...>(m_handle);
 }
 
 template<typename T>
 inline void Entity::remove_component() {
+    if (m_invalid()) return;
     m_registry().remove<T>(m_handle);
 }
 
 template<>
 inline void Entity::remove_component<component::Transform>() {
+    if (m_invalid()) return;
     std::cout << "Error invalid component: can't delete Transform from entity\n";
     std::abort();
 }
 
 template<>
 inline void Entity::remove_component<component::Tag>() {
+    if (m_invalid()) return;
     std::cout << "Error invalid component: can't delete Tag from entity\n";
     std::abort();
 }
@@ -100,7 +125,23 @@ inline auto Entity::get() {
 }
 
 inline void Entity::remove() {
-    m_registry().destroy(m_handle);
-    m_handle = entt::null;
-    m_scene = nullptr;
+    if (m_invalid()) return;
+    assert(m_scene);
+    m_scene->remove_entity(*this);
 }
+
+inline entt::entity Entity::get_entt() const {
+    return m_handle;
+}
+
+inline Scene *Entity::get_scene() const {
+    assert(m_scene);
+    return m_scene;
+}
+
+
+// Needs to be here to avoid circular references
+struct CollisionData {
+    Entity ent;
+    glm::vec2 normal;
+};

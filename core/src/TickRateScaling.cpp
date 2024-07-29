@@ -5,7 +5,8 @@
 #include <deque>
 
 static std::deque<double> dt_buffer;
-constexpr size_t buffer_window = 50;
+constexpr static size_t buffer_window = 50;
+constexpr static size_t start_wait = 40;
 
 void accumulate_dt_buffer(double dt) {
     if (dt_buffer.size() >= buffer_window) [[likely]] {
@@ -15,7 +16,7 @@ void accumulate_dt_buffer(double dt) {
 }
 
 double manage_tick_rate(uint32_t &current_tick_rate, const uint32_t tick_rate_target, const uint32_t step) {
-    if (dt_buffer.size() < 5) [[unlikely]] { // stabilize the first frames
+    if (dt_buffer.size() < start_wait) [[unlikely]] { // stabilize the first frames
         return 1.0 / tick_rate_target; 
     }
 

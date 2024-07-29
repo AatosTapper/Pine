@@ -54,26 +54,24 @@ else () # windows
     target_compile_options(main PRIVATE 
         "/W3"
         "/O2"
-        #"/GL"
+        "/GL"
         "/DNDEBUG"
         "/Zi"
         "/arch:AVX2"
         "/fp:fast"
     )
-
-    #target_link_options(main PRIVATE
-    #    "/LTCG"
-    #    "/OPT:REF"
-    #    "/OPT:ICF"
-    #)
+    target_link_options(main PRIVATE
+        "/LTCG"
+        "/OPT:REF"
+        "/OPT:ICF"
+    )
 
     target_link_libraries(main PUBLIC "C:/Program Files/lua/lib/lua54.lib")
 
     set(COPYABLE_DLLS ../dep/lua/lib/lua54.dll ../dep/GLFW/lib/glfw3.dll)
-
     add_custom_command(TARGET main POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "../dep/lua/lib/lua54.dll" $<TARGET_FILE_DIR:main>
+        ${COPYABLE_DLLS} $<TARGET_FILE_DIR:main>
     )
 endif()
 

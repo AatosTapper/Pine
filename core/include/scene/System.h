@@ -3,7 +3,9 @@
 #include "pch.h"
 #include "Scene.h"
 
-void custom_behaviour_system_update(Scene *scene);
+void custom_behavior_system_update(Scene *const scene);
 
-void update_transform_component_last_states(Scene *scene);
-void interpolate_transform_components(Scene *scene, float alpha);
+void update_transform_component_last_states(const Scene *const scene);
+void interpolate_transform_components(const Scene *const scene, float alpha);
+
+void collision_system_update(Scene *scene);

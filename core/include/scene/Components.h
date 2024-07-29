@@ -11,6 +11,7 @@ void print_component_sizes();
 
 class Renderer;
 class Entity;
+struct CollisionData;
 namespace component {
 
 ///
@@ -184,6 +185,27 @@ private:
     std::shared_ptr<Entity> m_parent;
     
     bool m_has_flag(const std::string &flag);
+};
+
+struct Collider : public Serializable {
+    friend class ::Entity;
+
+    Collider() noexcept = default;
+    virtual ~Collider() override = default;
+
+    void type_box();
+    void type_circle();
+    const std::vector<CollisionData> &get_colliding_entities() const;
+
+    std::vector<CollisionData> colliding_entities; // not saved because of frame by frame recalculation
+    bool resolve_collisions = false; // accessible from lua
+    enum Type : uint8_t { AABB=0, Circle } type = Type::AABB;
+
+    virtual void deserialize(NodeData &data) override;
+    virtual NodeData serialize() const override;
+
+private:
+    std::shared_ptr<Entity> m_parent;
 };
 
 } // namespace component

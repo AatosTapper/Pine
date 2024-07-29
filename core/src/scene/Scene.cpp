@@ -2,57 +2,79 @@
 
 #include "scene/Components.h"
 #include "scene/Entity.h"
+#include "ScriptEngine.h"
+
+template <typename T>
+std::vector<Entity> entt_to_entity(T vec, Scene *scene) {
+    std::vector<Entity> output;
+    output.reserve(vec.size_hint());
+    for (auto &ent : vec) {
+        output.emplace_back(ent, scene);
+    }
+    return output;
+}
+
+template <>
+std::vector<Entity> entt_to_entity<std::vector<entt::entity>>(std::vector<entt::entity> vec, Scene *scene) {
+    std::vector<Entity> output;
+    output.reserve(vec.size());
+    for (auto &ent : vec) {
+        output.emplace_back(ent, scene);
+    }
+    return output;
+}
 
 Scene::Scene(std::string _name) noexcept : 
     name(_name),
-    m_registry(std::make_shared<entt::registry>())
+    m_registry(std::make_shared<entt::registry>()),
+    m_camera(std::make_shared<Camera>()),
+    m_remove_queue(std::make_shared<std::vector<Entity>>())
 {
+    m_camera->back(
+        ScriptEngine::get_config_var_double(
+            LuaStateDispatcher::instance().get_lua(), "cam_start_z"
+        )
+    );
+    spatial_grid.populate(this);
 }
 
-Scene::Scene(const Scene &oth) noexcept { 
-    m_registry = oth.m_registry; 
-    name = oth.name;
+void Scene::update() {
+    m_remove_entities();
+    spatial_grid.populate(this);
 }
 
 Entity Scene::add_entity(std::string name) {
     auto ent = m_registry->create();
     m_registry->emplace<component::Tag>(ent, name.empty() ? "Entity" : name);
     m_registry->emplace<component::Transform>(ent);
+    Entity entity{ ent, this };
+    spatial_grid.push_entity(entity);
+    return entity;
+}
 
-    return Entity{ ent, this };
+void Scene::remove_entity(Entity entity) {
+    m_remove_queue->push_back(entity);
 }
 
 std::vector<Entity> Scene::get_entities() {
     auto entities = m_registry->view<entt::entity>();
-    std::vector<Entity> output;
-    output.reserve(entities.size_hint());
-    for (auto &ent : entities) {
-        output.push_back(Entity{ ent, this });
-    }
-    return output;
+    return entt_to_entity(entities, this);
 }
 
 std::vector<Entity> Scene::get_close_entities(Entity ent, float distance) {
-    PINE_CORE_PROFILE("Get closeby entities");
-    auto &pos = ent.get_component<component::Transform>();
-    std::vector<Entity> output;
-    for (auto id : m_registry->view<component::Transform>()) {
-        if (id == ent.m_handle) [[unlikely]] continue;
-
-        auto &oth = m_registry->get<component::Transform>(id);
-        float dx = oth.x - pos.x;
-        float dy = oth.y - pos.y;
-        float dist = std::sqrt(dx * dx + dy * dy);
-        if ((dist - distance) < 0.0f) [[unlikely]] {
-            output.push_back(Entity{ id, this });
-        }
-    }
+    auto &&pos = ent.get<component::Transform>();
+    auto output = spatial_lookup(pos.x, pos.y, distance);
+    output.erase(std::remove_if(output.begin(), output.end(), [ent](const Entity &oth) {
+        return oth.m_handle == ent.m_handle;
+    }), output.end());
     return output;
 }
 
 Entity Scene::deserializer_add_entity() {
     auto ent = m_registry->create();
-    return Entity{ ent, this };
+    Entity entity{ ent, this };
+    spatial_grid.push_entity(entity);
+    return entity;
 }
 
 Camera *Scene::get_camera() const {
@@ -61,4 +83,46 @@ Camera *Scene::get_camera() const {
 
 entt::registry *Scene::get_registry() const { 
     return m_registry.get(); 
+}
+
+std::vector<Entity> Scene::spatial_lookup(double x, double y, float radius) {
+    return entt_to_entity(spatial_grid.spatial_lookup(x, y, radius, this), this);
+}
+
+void Scene::m_remove_entities() {
+    for (auto ent : *m_remove_queue) {
+        if (ent.m_handle == entt::null) continue;
+        m_registry->destroy(ent.m_handle);
+        ent.m_handle = entt::null;
+    }
+    m_remove_queue->clear();
+}
+
+void Scene::deserialize(NodeData &data) {
+    VAR_FROM_NODE(name, data);
+
+    float cam_x = 0.0f;
+    float cam_y = 0.0f;
+    float cam_z = 0.0f;
+    VAR_FROM_NODE(cam_x, data);
+    VAR_FROM_NODE(cam_y, data);
+    VAR_FROM_NODE(cam_z, data);
+    m_camera->set_position(glm::vec3{ cam_x, cam_y, cam_z });
+}
+
+NodeData Scene::serialize() const {
+    auto &pos = m_camera->get_position();
+    auto cam_x = pos.x;
+    auto cam_y = pos.y;
+    auto cam_z = pos.z;
+
+    return NodeData {
+        .type = NodeType::Scene,
+        .variables = {
+            VAR_TO_NODE(name),
+            VAR_TO_NODE(cam_x),
+            VAR_TO_NODE(cam_y),
+            VAR_TO_NODE(cam_z)
+        }
+    };
 }

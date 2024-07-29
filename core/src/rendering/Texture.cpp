@@ -8,7 +8,15 @@
     #include <STB/stb_image.h>
 #endif
 
-static constexpr bool is_png(const std::string &path);
+constexpr bool is_png(const std::string &path) {
+    size_t dot_pos = path.find_last_of('.');
+    if (dot_pos != std::string::npos) {
+        std::string extension = path.substr(dot_pos + 1);
+        std::transform(extension.begin(), extension.end(), extension.begin(), ::tolower);
+        return extension == "png";
+    }
+    return false;
+}
 
 Texture::Texture(const std::string &file) noexcept {
     std::cout << file << "\n";
@@ -59,14 +67,4 @@ void Texture::filter_linear() {
     glBindTexture(GL_TEXTURE_2D, m_id);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-}
-
-constexpr bool is_png(const std::string &path) {
-    size_t dot_pos = path.find_last_of('.');
-    if (dot_pos != std::string::npos) {
-        std::string extension = path.substr(dot_pos + 1);
-        std::transform(extension.begin(), extension.end(), extension.begin(), ::tolower);
-        return extension == "png";
-    }
-    return false;
 }

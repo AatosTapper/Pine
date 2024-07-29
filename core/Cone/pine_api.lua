@@ -24,6 +24,9 @@
 
 
 
+
+
+
 --- #application and lifetime
 
 --- Starts the application gameloop
@@ -44,6 +47,9 @@ function pine_frame_index() end
 
 
 
+
+
+
 --- #input
 --- input can be checked with events aswell, but use these when possible 
 
@@ -55,6 +61,9 @@ function pine_get_input(key) end
 --- Gets current mouse cursor position
 ---@return vec2
 function pine_get_mouse_pos() end
+
+
+
 
 
 
@@ -78,13 +87,15 @@ end
 function pine_Scene:add_entity(name) end
 
 --- Gets all entities in the scene
----@return table<number, pine_Entity>
+---@return table<integer, pine_Entity>
 function pine_Scene:get_entities() end
 
---- Gets all entities within a radius
+--- Gets all other entities within a radius
+--- Doesn't get the passed in entity
+--- Uses a spatial hash so overhead is very low
 ---@param ent pine_Entity
 ---@param radius number
----@return table<number, pine_Entity>
+---@return table<integer, pine_Entity>
 function pine_Scene:get_close_entities(ent, radius) end
 
 --- Gets the camera of the scene
@@ -96,6 +107,9 @@ function pine_Scene:get_camera() end
 --- Calling this outside a script is undefined and probably crashes
 ---@return pine_Entity
 function pine_get_script_parent_entity() end
+
+
+
 
 
 
@@ -133,6 +147,9 @@ function pine_load_scene(name) end
 
 
 
+
+
+
 --- #camera
 
 --- Camera
@@ -165,6 +182,9 @@ function pine_Camera:down(amount) end
 
 
 
+
+
+
 --- #entity
 
 --- Entity
@@ -172,9 +192,7 @@ function pine_Camera:down(amount) end
 local pine_Entity = {}
 
 --- Removes the entity and it's component from a scene
---- WARNING: If used for the parent entity in a script (like CustomBehavior),
----          you can't reference the parent entity anymore within the script.
----          This is because the entity is removed immediately and not deferred.
+--- Removal is deferred to the end of the frame
 function pine_Entity:remove() end
 
 --- Each component type has these corresponing functions: (arrow means return value)
@@ -185,18 +203,23 @@ function pine_Entity:remove() end
 
 --- Exact component definitions come later
 
---- Tag is a default component, it can't be added or removed
+
+
 
 --- Gets the Tag component
+--- A default component, it can't be added or removed
 ---@return pine_comp_Tag
 function pine_Entity:get_component_Tag() end
 
 
---- Transform is a default component, it can't be added or removed
+
 
 --- Gets the Transform component
+--- A default component, it can't be added or removed
 ---@return pine_comp_Transform
 function pine_Entity:get_component_Transform() end
+
+
 
 
 --- Adds a Script component to entity
@@ -217,6 +240,8 @@ function pine_Entity:has_component_Script() end
 function pine_Entity:remove_component_Script() end
 
 
+
+
 --- Adds a Table component to entity
 --- Replaces the old component if exists
 ---@param tbl table|nil @optional
@@ -233,6 +258,8 @@ function pine_Entity:has_component_Table() end
 
 --- Removes the Table component
 function pine_Entity:remove_component_Table() end
+
+
 
 
 --- Adds a CustomBehavior component to entity
@@ -253,6 +280,8 @@ function pine_Entity:has_component_CustomBehavior() end
 function pine_Entity:remove_component_CustomBehavior() end
 
 
+
+
 --- Adds a Sprite component to entity
 --- Replaces the old component if exists
 ---@param path string|nil @optional
@@ -271,9 +300,11 @@ function pine_Entity:has_component_Sprite() end
 function pine_Entity:remove_component_Sprite() end
 
 
+
+
 --- Adds a StateFlags component to entity
 --- Replaces the old component if exists
----@param flags table<number, string>|nil @optional
+---@param flags table<integer, string>|nil @optional
 ---@return pine_comp_StateFlags
 function pine_Entity:add_component_StateFlags(flags) end
 
@@ -288,6 +319,28 @@ function pine_Entity:has_component_StateFlags() end
 --- Removes the StateFlags component
 function pine_Entity:remove_component_StateFlags() end
 
+
+
+
+--- Adds a Collider component to entity
+--- Replaces the old component if exists
+---@return pine_comp_Collider
+function pine_Entity:add_component_Collider() end
+
+--- Gets the Collider component
+---@return pine_comp_Collider
+function pine_Entity:get_component_Collider() end
+
+--- Tells if entity has a Collider component
+---@return boolean
+function pine_Entity:has_component_Collider() end
+
+--- Removes the Collider component
+function pine_Entity:remove_component_Collider() end
+
+
+
+
 --- Sets the entity to be ignored during serialization, 
 --- any data will be lost on application close including the component's existance
 function pine_Entity:disable_serialization() end
@@ -299,6 +352,9 @@ function pine_Entity:enable_serialization() end
 
 
 
+
+
+
 --- #components
 
 --- User definable handle for an entity, name doesn't need to be unique
@@ -307,6 +363,8 @@ function pine_Entity:enable_serialization() end
 ---@class pine_comp_Tag
 ---@field name string
 local pine_comp_Tag = {}
+
+
 
 
 --- Entity transforms in world space
@@ -333,6 +391,8 @@ function pine_comp_Transform:set_pos(x, y) end
 function pine_comp_Transform:set_scale(x, y) end
 
 
+
+
 --- Defines custom update and destroy scripts
 --- Use this to define per-update game logic
 ---@class pine_comp_CustomBehavior
@@ -346,6 +406,8 @@ function pine_comp_CustomBehavior:set_on_update(path) end
 --- (either by removal or scene unload)
 ---@param path string
 function pine_comp_CustomBehavior:set_on_remove(path) end
+
+
 
 
 --- Defines any number of general script files that can be run whenever
@@ -369,11 +431,15 @@ function pine_comp_Script:run(id) end
 function pine_comp_Script:run_all() end
 
 
+
+
 --- Store any data within a lua table
 --- Use this for general entity data, like player health or level
 ---@class pine_comp_Table
 ---@field table table
 local pine_comp_Table = {}
+
+
 
 
 --- General image component for drawing
@@ -392,6 +458,8 @@ function pine_comp_Sprite:set_texture(path) end
 function pine_comp_Sprite:set_render_layer(val) end
 
 
+
+
 --- Define custom flag strings to identify and sort components
 --- Use this in ECS like systems etc.
 --- Example: FireSpreadSystem needs to know which entities are flammable.
@@ -402,17 +470,50 @@ local pine_comp_StateFlags = {}
 
 --- Sets the flags
 --- If already has the flags, everything stays the same
----@param flags table<number, string>
+---@param flags table<integer, string>
 function pine_comp_StateFlags:set_flags(flags) end
 
 --- Returns true if the entity has ALL of the flags specified
----@param flags table<number, string>
+---@param flags table<integer, string>
 ---@return boolean
 function pine_comp_StateFlags:has_flags(flags) end
 
 --- Removes all flags that appear in the input list
----@param flags table<number, string>
+---@param flags table<integer, string>
 function pine_comp_StateFlags:remove_flags(flags) end
+
+
+
+
+--- Detect entity collisions
+--- Collider dimensions and position are inferred from entity's Transform
+--- Supports box collider (AABB) and circle collider types (box by default)
+---@class pine_comp_Collider
+--- Prevents the entities from intersecting
+---@field resolve_collisions boolean @default = false
+local pine_comp_Collider = {}
+
+--- Container for per-collision info,
+--- returned from some functions
+---@class Collider_CollisionData
+---@field ent pine_Entity
+---@field normal vec2
+local Collider_CollisionData = {}
+
+--- Sets the collider type to Box (AABB)
+function pine_comp_Collider:type_box() end
+
+--- Sets the collider type to Circle
+--- Circle radius is defined by the Transform width (sx)
+function pine_comp_Collider:type_circle() end
+
+--- Gets the entities in contact and the collision normals
+--- from current entity's midpoint to the point of intersection
+---@return table<integer, Collider_CollisionData>
+function pine_comp_Collider:get_colliding_entities() end
+
+
+
 
 
 
@@ -453,6 +554,9 @@ function vec2:normalize() end
 ---@param other vec2
 ---@return number
 function vec2:dot(other) end
+
+
+
 
 --- 3D Vector
 ---@class vec3

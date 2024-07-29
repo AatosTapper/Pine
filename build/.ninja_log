@@ -1,0 +1,9 @@
+# ninja log v6
+1	76	1722197349476095749	CMakeFiles/glad.dir/dep/glad/glad.c.o	5343cafaf295cd09
+77	160	1722197349551965562	libglad.a	a141df29700dc620
+1	1293	1722197349475821091	CMakeFiles/main.dir/cmake_pch_arm64.hxx.pch	659e53155ab48137
+1303	2624	1722197350778014553	CMakeFiles/main.dir/core/src/rendering/Camera.cpp.o	c75b0d5b31a03764
+1298	2689	1722197350772379009	CMakeFiles/main.dir/core/src/TickRateScaling.cpp.o	77f7a69dbbae90be
+1298	2955	1722197350772573295	CMakeFiles/main.dir/core/src/Window.cpp.o	bec017490bd97e2
+1297	3041	1722197350771368581	CMakeFiles/main.dir/core/src/SceneParser.cpp.o	ea1c348256f2ae3b
+2625	3740	1722197352099766439	CMakeFiles/main.dir/core/src/rendering/IndexBuffer.cpp.o	29f7d9334ba3ba4c

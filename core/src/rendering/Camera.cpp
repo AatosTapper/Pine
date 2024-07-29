@@ -2,15 +2,15 @@
 
 #define WORLD_UP glm::vec3(0.0f, 1.0f, 0.0f)
 
-Camera::Camera(const CameraData &data) noexcept : 
-    pitch(0.0f), yaw(-90.0f),
-    fov(data.field_of_view),
-    m_position(glm::vec3(0.0f)),
-    m_last_position(glm::vec3(0.0f)),
-    m_front(glm::vec3(0.0f, 0.0f, -1.0f)), 
-    m_vp_mat(std::make_unique<glm::mat4>(1.0f)),
-    m_ortho(data.ortho)
-{
+void Camera::init(const CameraData &data) {
+    pitch = 0.0f;
+    yaw = -90.0f;
+    fov = data.field_of_view;
+
+    m_front = glm::vec3(0.0f, 0.0f, -1.0f);
+    m_vp_mat = std::make_unique<glm::mat4>(1.0f);
+    m_ortho = data.ortho;
+    
     set_aspect_ratio(data.aspect_ratio);
     update();
 }

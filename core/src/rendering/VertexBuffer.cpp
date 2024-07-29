@@ -3,7 +3,7 @@
 #include "config.h"
 
 VertexBuffer::VertexBuffer() noexcept {
-    
+    glGenBuffers(1, &m_id);
 }
 
 VertexBuffer::~VertexBuffer() {
@@ -11,8 +11,7 @@ VertexBuffer::~VertexBuffer() {
 }
 
 void VertexBuffer::set_data(const void *data, unsigned int size) {
-    glGenBuffers(1, &m_id);
-    glBindBuffer(GL_ARRAY_BUFFER, m_id);
+    bind();
     glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
 }
 

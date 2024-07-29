@@ -67,6 +67,7 @@ void set_lua_entity(sol::state &lua) {
     FUNC_REGISTER(CustomBehavior, std::string)
     FUNC_REGISTER(Sprite, std::string)
     FUNC_REGISTER(StateFlags, std::vector<std::string>)
+    FUNC_REGISTER_NA(Collider)
 }
 
 // @Lua API
@@ -109,6 +110,12 @@ void set_lua_components(sol::state &lua) {
     COMP_MEM_REGISTER(StateFlags, set_flags)
     COMP_MEM_REGISTER(StateFlags, has_flags)
     COMP_MEM_REGISTER(StateFlags, remove_flags)
+
+    COMP_REGISTER_NA(Collider)
+    COMP_MEM_REGISTER(Collider, type_box)
+    COMP_MEM_REGISTER(Collider, type_circle)
+    COMP_MEM_REGISTER(Collider, get_colliding_entities)
+    COMP_MEM_REGISTER(Collider, resolve_collisions)
 }
 
 // @Lua API

@@ -24,8 +24,6 @@ Window::Window(int width, int height, const char *name) noexcept {
 #ifdef __APPLE__
     std::cout << "Apple compatability on\n";
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-    
-    //glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 #endif
 
     m_window = glfwCreateWindow(width, height, name, NULL, NULL);

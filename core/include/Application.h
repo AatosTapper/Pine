@@ -16,7 +16,7 @@ public:
     ~Application();
 
     void entry();
-    void on_event(Event *e);
+    void register_event(Event *e);
 
 private:
     void m_run();
@@ -31,8 +31,10 @@ private:
     InputBus m_input_bus;
     SceneManager m_scene_manager;
     sol::state &m_lua;
+
     std::unique_ptr<Window> m_window = nullptr;
     std::unique_ptr<Renderer> m_renderer = nullptr;
+
     double m_per_frame_dt = 1.0 / 60.0;
     double m_tick_dt = 1.0 / 60.0;
     uint64_t m_frame_index = 0;

@@ -22,10 +22,7 @@ public:
 
 private:
     struct ManagerCommand {
-        enum class Type {
-            Push = 0,
-            Pop
-        } type;
+        enum class Type { Push = 0, Pop } type;
         std::unique_ptr<Scene> scene;
     };
 
@@ -34,6 +31,6 @@ private:
 
     std::deque<std::unique_ptr<Scene>> m_scene_stack;
     std::vector<ManagerCommand> m_commands;
-    CameraData m_camera_data{};
+    CameraData m_camera_data {};
     bool m_restrict_updates = false;
 };

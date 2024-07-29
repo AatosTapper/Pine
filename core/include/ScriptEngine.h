@@ -15,7 +15,7 @@ public:
     IMPL_NO_COPY(LuaStateDispatcher)
     IMPL_SINGLETON_DISPATCHER(LuaStateDispatcher)
 
-    sol::state &get_lua()  { assert(m_lua); return *m_lua; }
+    sol::state &get_lua() const { assert(m_lua); return *m_lua; }
 
 private:
     LuaStateDispatcher() = default;

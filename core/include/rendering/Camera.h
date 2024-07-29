@@ -9,17 +9,16 @@
 struct CameraData {
     float aspect_ratio = 0.0f;
     float field_of_view = 0.0f;
-    float start_z = 0.0;
     bool ortho = false;
 };
 
 class Camera {
 public:
-    Camera(const CameraData &data) noexcept;
+    void init(const CameraData &data);
 
-    float pitch;
-    float yaw;
-    float fov;
+    float pitch = 0.0f;
+    float yaw = 0.0f;
+    float fov = 0.0f;
 
     void update_last_pos();
     void update(float interp_factor = 0.0f);
@@ -38,18 +37,18 @@ public:
     void down(const float amount);
 
 private:
-    glm::mat4 m_view;
-    glm::vec3 m_position;
-    glm::vec3 m_last_position; // used for smooth frame interpolation
-    glm::vec3 m_direction; // points in the reverse direction
+    glm::mat4 m_view {};
+    glm::vec3 m_position {};
+    glm::vec3 m_last_position {}; // used for smooth frame interpolation
+    glm::vec3 m_direction {}; // points in the reverse direction
 
-    glm::vec3 m_front;
-    glm::vec3 m_right;
-    glm::vec3 m_up;
-    std::unique_ptr<glm::mat4> m_vp_mat;
+    glm::vec3 m_front {};
+    glm::vec3 m_right {};
+    glm::vec3 m_up {};
+    std::unique_ptr<glm::mat4> m_vp_mat = nullptr;
     float m_aspect_ratio = 1.0f;
 
-    const bool m_ortho;
+    bool m_ortho = PROJ_2D;
 
     void m_update_direction();
 };

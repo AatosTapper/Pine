@@ -39,3 +39,9 @@ end
 if pine_get_input(Cone.Key._MOUSE_BUTTON_RIGHT) then
     camera:right(speed)
 end
+
+--local closeby_ents = scene:get_close_entities(parent, 10)
+--for i, v in ipairs(closeby_ents) do
+--    --print(v:get_component_Transform().x .. "x " .. v:get_component_Transform().y .. "y ")
+--    --v:remove()
+--end

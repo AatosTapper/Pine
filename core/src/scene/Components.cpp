@@ -38,7 +38,6 @@ NodeData Tag::serialize() const {
 }
 
 glm::mat4 Transform::get_matrix() const {
-    /// @todo clamp rr and check that scales aren't 0
     glm::mat4 output(1.0f);
     output = glm::translate(output, glm::vec3(x_interpolated, y_interpolated, 0.0f));
     output = glm::rotate(output, rr_interpolated, glm::vec3(0.0f, 0.0f, -1.0f));
@@ -192,7 +191,7 @@ void Sprite::set_texture(std::string path) {
 }
 
 void Sprite::deserialize(NodeData &data) {
-    CHECK_SERDE(data.variables.size() == 2);
+    CHECK_SERDE(data.variables.size() == 3);
 
     std::string path;
     VAR_FROM_NODE(path, data);
@@ -288,6 +287,37 @@ NodeData StateFlags::serialize() const {
         .variables = { 
             COMP_TYPE(StateFlags),
             VAR_TO_NODE(flags)
+        }
+    };
+}
+
+void Collider::type_box() {
+    type = Type::AABB;
+}
+
+void Collider::type_circle() {
+    type = Type::Circle;
+}
+
+const std::vector<CollisionData> &Collider::get_colliding_entities() const {
+    return colliding_entities;
+}
+
+void Collider::deserialize(NodeData &data) {
+    uint8_t coll_type;
+    VAR_FROM_NODE(coll_type, data);
+    VAR_FROM_NODE(resolve_collisions, data);
+    type = static_cast<Type>(coll_type);
+}
+
+NodeData Collider::serialize() const {
+    uint8_t coll_type = static_cast<uint8_t>(type);
+    return NodeData { 
+        .type=NodeType::Component,
+        .variables = {
+            COMP_TYPE(Collider),
+            VAR_TO_NODE(coll_type),
+            VAR_TO_NODE(resolve_collisions)
         }
     };
 }
