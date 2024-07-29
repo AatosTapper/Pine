@@ -11,7 +11,7 @@ local function setup()
     local script_component = spawner_ent:add_component_Script()
     local spawn_script_id = script_component:push_script("scripts/spawn_script.lua")
 
-    for i = 1, 3000 do
+    for i = 1, 2000 do
         script_component:run(spawn_script_id)
     end
 

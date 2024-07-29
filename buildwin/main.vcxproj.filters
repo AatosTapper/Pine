@@ -73,7 +73,13 @@
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\SceneSerializer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\SpatialGrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\System.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\systems\Collision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\dep\tinyxml2\tinyxml2.cpp">
