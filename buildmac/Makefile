@@ -229,30 +229,6 @@ core/src/LuaUtils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/LuaUtils.cpp.s
 .PHONY : core/src/LuaUtils.cpp.s
 
-core/src/SceneParser.o: core/src/SceneParser.cpp.o
-.PHONY : core/src/SceneParser.o
-
-# target to build an object file
-core/src/SceneParser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/SceneParser.cpp.o
-.PHONY : core/src/SceneParser.cpp.o
-
-core/src/SceneParser.i: core/src/SceneParser.cpp.i
-.PHONY : core/src/SceneParser.i
-
-# target to preprocess a source file
-core/src/SceneParser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/SceneParser.cpp.i
-.PHONY : core/src/SceneParser.cpp.i
-
-core/src/SceneParser.s: core/src/SceneParser.cpp.s
-.PHONY : core/src/SceneParser.s
-
-# target to generate assembly for a file
-core/src/SceneParser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/SceneParser.cpp.s
-.PHONY : core/src/SceneParser.cpp.s
-
 core/src/ScriptEngine.o: core/src/ScriptEngine.cpp.o
 .PHONY : core/src/ScriptEngine.o
 
@@ -685,6 +661,30 @@ core/src/scene/SceneManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.s
 .PHONY : core/src/scene/SceneManager.cpp.s
 
+core/src/scene/SceneParser.o: core/src/scene/SceneParser.cpp.o
+.PHONY : core/src/scene/SceneParser.o
+
+# target to build an object file
+core/src/scene/SceneParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SceneParser.cpp.o
+.PHONY : core/src/scene/SceneParser.cpp.o
+
+core/src/scene/SceneParser.i: core/src/scene/SceneParser.cpp.i
+.PHONY : core/src/scene/SceneParser.i
+
+# target to preprocess a source file
+core/src/scene/SceneParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SceneParser.cpp.i
+.PHONY : core/src/scene/SceneParser.cpp.i
+
+core/src/scene/SceneParser.s: core/src/scene/SceneParser.cpp.s
+.PHONY : core/src/scene/SceneParser.s
+
+# target to generate assembly for a file
+core/src/scene/SceneParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/core/src/scene/SceneParser.cpp.s
+.PHONY : core/src/scene/SceneParser.cpp.s
+
 core/src/scene/SceneSerializer.o: core/src/scene/SceneSerializer.cpp.o
 .PHONY : core/src/scene/SceneSerializer.o
 
@@ -851,9 +851,6 @@ help:
 	@echo "... core/src/LuaUtils.o"
 	@echo "... core/src/LuaUtils.i"
 	@echo "... core/src/LuaUtils.s"
-	@echo "... core/src/SceneParser.o"
-	@echo "... core/src/SceneParser.i"
-	@echo "... core/src/SceneParser.s"
 	@echo "... core/src/ScriptEngine.o"
 	@echo "... core/src/ScriptEngine.i"
 	@echo "... core/src/ScriptEngine.s"
@@ -908,6 +905,9 @@ help:
 	@echo "... core/src/scene/SceneManager.o"
 	@echo "... core/src/scene/SceneManager.i"
 	@echo "... core/src/scene/SceneManager.s"
+	@echo "... core/src/scene/SceneParser.o"
+	@echo "... core/src/scene/SceneParser.i"
+	@echo "... core/src/scene/SceneParser.s"
 	@echo "... core/src/scene/SceneSerializer.o"
 	@echo "... core/src/scene/SceneSerializer.i"
 	@echo "... core/src/scene/SceneSerializer.s"

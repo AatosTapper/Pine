@@ -5,6 +5,8 @@
 #include "Serialize.h"
 #include "SpatialGrid.h"
 
+#include <optional>
+
 class Entity;
 class SceneManager;
 class Scene : public Serializable {
@@ -20,6 +22,7 @@ public:
     void update();
     
     Entity add_entity(std::string name = "");
+    std::optional<Entity> get_entity(const std::string &name);
     void remove_entity(Entity entity);
     std::vector<Entity> get_entities();
     std::vector<Entity> get_close_entities(Entity ent, float distance);
@@ -29,8 +32,11 @@ public:
 
     std::vector<Entity> spatial_lookup(double x, double y, float radius);
 
-    virtual void deserialize(NodeData &data) override;
-    virtual NodeData serialize() const override;
+    virtual void deserialize(SceneNodeData &data) override;
+    virtual SceneNodeData serialize() const override;
+
+    std::unique_ptr<SceneNode> export_entity(Entity ent);
+    Entity import_entity(const std::unique_ptr<SceneNode> &ent);
 
     SpatialGrid spatial_grid;
 

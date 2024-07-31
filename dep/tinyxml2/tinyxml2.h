@@ -1981,16 +1981,16 @@ private:
 	void PushDepth();
 	void PopDepth();
 
-    template<class NodeType, int PoolElementSize>
-    NodeType* CreateUnlinkedNode( MemPoolT<PoolElementSize>& pool );
+    template<class SceneNodeType, int PoolElementSize>
+    SceneNodeType* CreateUnlinkedNode( MemPoolT<PoolElementSize>& pool );
 };
 
-template<class NodeType, int PoolElementSize>
-inline NodeType* XMLDocument::CreateUnlinkedNode( MemPoolT<PoolElementSize>& pool )
+template<class SceneNodeType, int PoolElementSize>
+inline SceneNodeType* XMLDocument::CreateUnlinkedNode( MemPoolT<PoolElementSize>& pool )
 {
-    TIXMLASSERT( sizeof( NodeType ) == PoolElementSize );
-    TIXMLASSERT( sizeof( NodeType ) == pool.ItemSize() );
-    NodeType* returnNode = new (pool.Alloc()) NodeType( this );
+    TIXMLASSERT( sizeof( SceneNodeType ) == PoolElementSize );
+    TIXMLASSERT( sizeof( SceneNodeType ) == pool.ItemSize() );
+    SceneNodeType* returnNode = new (pool.Alloc()) SceneNodeType( this );
     TIXMLASSERT( returnNode );
     returnNode->_memPool = &pool;
 

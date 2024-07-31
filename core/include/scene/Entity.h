@@ -35,6 +35,7 @@ public:
 
     /// @brief Get any number of components, only used on C++ side
     template<typename... T> auto get();
+    template<typename... T> decltype(auto) try_get();
 
     void remove();
 
@@ -122,6 +123,11 @@ inline void Entity::add_empty_component() {
 template<typename... T>
 inline auto Entity::get() {
     return m_registry().get<T...>(m_handle);
+}
+
+template<typename... T>
+inline decltype(auto) Entity::try_get() {
+    return m_registry().try_get<T...>(m_handle);
 }
 
 inline void Entity::remove() {

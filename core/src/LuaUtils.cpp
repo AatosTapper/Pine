@@ -33,7 +33,10 @@ static void set_glm(sol::state &lua) {
         "set", [](glm::vec2 &self, float a, float b) { self.x = a; self.y = b; },
         "from", vec_2_from,
         "length", [](const glm::vec2 &v) { return glm::length(v); },
-        "normalize", [](const glm::vec2 &v) { return glm::normalize(v); },
+        "normalize", [](const glm::vec2 &v) {
+            if (glm::length(v) <= 0.00001f) return v;
+            return glm::normalize(v); 
+        },
         "dot", [](const glm::vec2 &a, const glm::vec2 &b) { return glm::dot(a, b); },
         // Meta functions
         sol::meta_function::addition, vec2_add,
@@ -70,7 +73,10 @@ static void set_glm(sol::state &lua) {
         "set", [](glm::vec3 &self, float a, float b, float c) { self.x = a; self.y = b, self.z = c; },
         "from", vec_3_from,
         "length", [](const glm::vec3 &v) { return glm::length(v); },
-        "normalize", [](const glm::vec3 &v) { return glm::normalize(v); },
+        "normalize", [](const glm::vec3 &v) {
+            if (glm::length(v) <= 0.00001f) return v;
+            return glm::normalize(v); 
+        },
         "dot", [](const glm::vec3 &a, const glm::vec3 &b) { return glm::dot(a, b); },
         "cross", [](const glm::vec3 &a, const glm::vec3 &b) { return glm::cross(a, b); },
         // Meta functions

@@ -4,7 +4,8 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/opt/homebrew/Cellar/lua/5.4.6/include/lua"
+                "/opt/homebrew/Cellar/lua/5.4.6/include/lua",
+                "${workspaceFolder}/core/include"
             ],
             "defines": [],
             "macFrameworkPath": [

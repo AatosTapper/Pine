@@ -4,6 +4,33 @@
 #include "scene/Components.h"
 #include "scene/Entity.h"
 
+static float get_closest_distance(const component::Transform &oth, float x, float y) {
+    const float half_width = oth.sx / 2.0f;
+    const float half_height = oth.sy / 2.0f;
+
+    const float left = oth.x - half_width;
+    const float right = oth.x + half_width;
+    const float top = oth.y + half_height;
+    const float bottom = oth.y - half_height;
+
+    float dx = 0.0f;
+    float dy = 0.0f;
+    
+    if (x < left) {
+        dx = left - x;
+    } else if (x > right) {
+        dx = x - right;
+    }
+
+    if (y < bottom) {
+        dy = bottom - y;
+    } else if (y > top) {
+        dy = y - top;
+    }
+
+    return std::sqrt(dx * dx + dy * dy);
+}
+
 std::vector<entt::entity> SpatialGrid::spatial_lookup(double x, double y, float radius, Scene *scene) {
     std::vector<entt::entity> results;
 
@@ -18,9 +45,7 @@ std::vector<entt::entity> SpatialGrid::spatial_lookup(double x, double y, float 
 
             for (auto ent : m_grid[index]) {
                 auto &oth = scene->get_registry()->get<component::Transform>(ent);
-                const float dx = oth.x - x;
-                const float dy = oth.y - y;
-                const float dist = std::sqrt(dx * dx + dy * dy);
+                const float dist = get_closest_distance(oth, x, y);
                 if ((dist - radius) < 0.0f) [[likely]] {
                     results.push_back(ent);
                 }

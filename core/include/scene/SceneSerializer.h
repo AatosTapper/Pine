@@ -16,6 +16,9 @@ public:
     void serialize(Scene *scene, std::string path);
     std::unique_ptr<Scene> deserialize(std::string path);
 
+    std::unique_ptr<SceneNode> serialize_entity(Entity entity);
+    Entity deserialize_entity(Scene *scene, const std::unique_ptr<SceneNode> &node);
+
 private:
     SceneSerializer() = default;
 };

@@ -3,6 +3,7 @@
 #include "scene/Components.h"
 #include "scene/Entity.h"
 #include "ScriptEngine.h"
+#include "scene/SceneSerializer.h"
 
 template <typename T>
 std::vector<Entity> entt_to_entity(T vec, Scene *scene) {
@@ -52,6 +53,17 @@ Entity Scene::add_entity(std::string name) {
     return entity;
 }
 
+std::optional<Entity> Scene::get_entity(const std::string &name) {
+    auto entities = m_registry->view<component::Tag>();
+    for (auto ent : entities) {
+        const auto &tag = this->m_registry->get<component::Tag>(ent);
+        if (tag.name == name) {
+            return Entity{ ent, this };
+        }
+    }
+    return std::nullopt;
+}
+
 void Scene::remove_entity(Entity entity) {
     m_remove_queue->push_back(entity);
 }
@@ -73,7 +85,6 @@ std::vector<Entity> Scene::get_close_entities(Entity ent, float distance) {
 Entity Scene::deserializer_add_entity() {
     auto ent = m_registry->create();
     Entity entity{ ent, this };
-    spatial_grid.push_entity(entity);
     return entity;
 }
 
@@ -98,7 +109,7 @@ void Scene::m_remove_entities() {
     m_remove_queue->clear();
 }
 
-void Scene::deserialize(NodeData &data) {
+void Scene::deserialize(SceneNodeData &data) {
     VAR_FROM_NODE(name, data);
 
     float cam_x = 0.0f;
@@ -110,14 +121,14 @@ void Scene::deserialize(NodeData &data) {
     m_camera->set_position(glm::vec3{ cam_x, cam_y, cam_z });
 }
 
-NodeData Scene::serialize() const {
+SceneNodeData Scene::serialize() const {
     auto &pos = m_camera->get_position();
     auto cam_x = pos.x;
     auto cam_y = pos.y;
     auto cam_z = pos.z;
 
-    return NodeData {
-        .type = NodeType::Scene,
+    return SceneNodeData {
+        .type = SceneNodeType::Scene,
         .variables = {
             VAR_TO_NODE(name),
             VAR_TO_NODE(cam_x),
@@ -125,4 +136,12 @@ NodeData Scene::serialize() const {
             VAR_TO_NODE(cam_z)
         }
     };
+}
+
+std::unique_ptr<SceneNode> Scene::export_entity(Entity ent) {
+    return SceneSerializer::instance().serialize_entity(ent);
+}
+
+Entity Scene::import_entity(const std::unique_ptr<SceneNode> &ent) {
+    return SceneSerializer::instance().deserialize_entity(this, ent);
 }

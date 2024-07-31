@@ -1,41 +1,48 @@
 Cone = require("core.Cone.cone")
 
--- Here this function just creates a scene with entities and stuff
--- It is called before the game begins
-local function setup()
-    --if pine_load_scene("main_scene") ~= nil then return end
+---@param scene pine_Scene
+local function create_player(scene)
+    local player = scene:add_entity("player")
+    player:add_component_CustomBehavior("on_update/player.lua")
+    player:add_component_Sprite("res/textures/test.png")
+    player:add_component_Table({
+        velocity = { x = 0, y = 0 }
+    })
+end
 
-    local my_scene = pine_set_scene(pine_new_scene("main_scene"))
-    local spawner_ent = my_scene:add_entity("spawner") -- optional name for the entity
-
-    local script_component = spawner_ent:add_component_Script()
-    local spawn_script_id = script_component:push_script("scripts/spawn_script.lua")
-
-    for i = 1, 2000 do
-        script_component:run(spawn_script_id)
-    end
-
-    spawner_ent:add_component_CustomBehavior("scripts/spawner_on_update.lua")
-
-    local coll_comp = spawner_ent:add_component_Collider()
-    coll_comp:type_box()
-    coll_comp.resolve_collisions = true
-
-    local closeby_ents = my_scene:get_close_entities(spawner_ent, 10)
-    for i, v in ipairs(closeby_ents) do
-        v:remove()
+---@param scene pine_Scene
+local function create_apples(scene)
+    for i = 1, 50 do
+        local ent = scene:add_entity("comp")
+        local sprite_comp = ent:add_component_Sprite("res/textures/apple.png")
+        sprite_comp:set_render_layer(-10.0)
+        local transform = ent:get_component_Transform()
+        transform:set_pos(math.random() * 60 - 30, math.random() * 60 - 30)
+        transform:set_scale(1.3, 1.3)
     end
 end
 
-local function close()
-    --pine_save_current_scene()
-    -- Define closing logic here if needed
+---@param scene pine_Scene
+local function create_camera_controller(scene, player)
+    local camera_controller = scene:add_entity("camera_controller")
+    camera_controller:add_component_CustomBehavior("on_update/camera_controller.lua")
+    camera_controller:add_component_Table({
+        velocity = { x = 0.0, y = 0.0 }
+    })
+end
 
-    -- Game saving will be here: pine_save_current_scene()
+local function create_main_scene()
+    local main_scene = pine_set_scene(pine_new_scene("main_scene"))
+    create_camera_controller(main_scene)
+    create_player(main_scene)
+    create_apples(main_scene)
+end
+
+local function setup()
+    create_main_scene()
 end
 
 function main()
     setup()
     pine_run() -- this blocks the execution until the game loop has finished
-    close()
 end

@@ -5,7 +5,7 @@
 #include "systems/Collision.h"
 
 void custom_behavior_system_update(Scene *const scene) {
-    PINE_CORE_PROFILE("CustomBehavior update");
+    //PINE_CORE_PROFILE("CustomBehavior update");
     auto &lua = LuaStateDispatcher::instance().get_lua();
     
     Entity current_entity;
@@ -38,7 +38,7 @@ void interpolate_transform_components(const Scene *const scene, float alpha) {
 
 static bool is_first_round = true;
 void collision_system_update(Scene *scene) {
-    PINE_CORE_PROFILE("Collision update");
+    //PINE_CORE_PROFILE("Collision update");
     if (is_first_round) [[unlikely]] {
         is_first_round = false;
         return;

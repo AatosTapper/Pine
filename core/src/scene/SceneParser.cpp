@@ -1,4 +1,4 @@
-#include "SceneParser.h"
+#include "scene/SceneParser.h"
 
 #include <fstream>
 #include <sstream>
@@ -7,36 +7,36 @@
 
 using namespace tinyxml2;
 
-static NodeType name_to_type(const char* name) {
+static SceneNodeType name_to_type(const char* name) {
     if (strcmp(name, "Scene") == 0) {
-        return NodeType::Scene;
+        return SceneNodeType::Scene;
     } if (strcmp(name, "Ent") == 0) {
-        return NodeType::Entity;
+        return SceneNodeType::Entity;
     } if (strcmp(name, "Cmp") == 0) {
-        return NodeType::Component;
+        return SceneNodeType::Component;
     } if (strcmp(name, "Sys") == 0) {
-        return NodeType::System;
+        return SceneNodeType::System;
     } else {
-        return NodeType::Undefined;
+        return SceneNodeType::Undefined;
     }
 }
 
-static std::string type_to_name(NodeType name) {
+static std::string type_to_name(SceneNodeType name) {
     switch (name) {
-    case NodeType::Undefined:
+    case SceneNodeType::Undefined:
         return "Undefined";
-    case NodeType::Scene:
+    case SceneNodeType::Scene:
         return "Scene";
-    case NodeType::Entity:
+    case SceneNodeType::Entity:
         return "Ent";
-    case NodeType::Component:
+    case SceneNodeType::Component:
         return "Cmp";
-    case NodeType::System:
+    case SceneNodeType::System:
         return "Sys";
     }
 }
 
-void Node::print_node(uint32_t indentation) {
+void SceneNode::print_node(uint32_t indentation) {
     std::string indent(indentation * 2, ' ');
     std::cout << indent << type_to_name(data.type) << std::endl;
     std::cout << indent << "variables [" << std::endl;
@@ -46,7 +46,7 @@ void Node::print_node(uint32_t indentation) {
     std::cout << indent << "]" << std::endl;
 }
 
-void Node::print_tree(uint32_t depth) {
+void SceneNode::print_tree(uint32_t depth) {
     print_node(depth);
     if (parent != nullptr) {
         parent->print_node(4);
@@ -56,7 +56,7 @@ void Node::print_tree(uint32_t depth) {
     }
 }
 
-static XMLElement *create_element(std::unique_ptr<Node> &node, XMLDocument &doc) {
+static XMLElement *create_element(std::unique_ptr<SceneNode> &node, XMLDocument &doc) {
     std::string name = type_to_name(node->data.type);
     XMLElement *element = doc.NewElement(name.c_str());
     for (const auto &var : node->data.variables) {
@@ -68,7 +68,7 @@ static XMLElement *create_element(std::unique_ptr<Node> &node, XMLDocument &doc)
     return element;
 }
 
-void write_scene(std::unique_ptr<Node> &scene, const char *filepath) {
+void write_scene(std::unique_ptr<SceneNode> &scene, const char *filepath) {
     XMLDocument xml_doc;
     xml_doc.InsertFirstChild(create_element(scene, xml_doc));
     auto result = xml_doc.SaveFile(filepath);
@@ -78,13 +78,13 @@ void write_scene(std::unique_ptr<Node> &scene, const char *filepath) {
     }
 }
 
-static std::unique_ptr<Node> parse_xml(const XMLElement* element, Node *parent, int depth = 0) {
+static std::unique_ptr<SceneNode> parse_xml(const XMLElement* element, SceneNode *parent, int depth = 0) {
     if (element == nullptr) return nullptr;
 
-    auto node = std::make_unique<Node>();
+    auto node = std::make_unique<SceneNode>();
     node->data.type = name_to_type(element->Name());
 
-    if (node->data.type == NodeType::Undefined) {
+    if (node->data.type == SceneNodeType::Undefined) {
         if (parent == nullptr) {
             std::cout << "Error: undefined type for root node." << std::endl;
         } else {
@@ -104,7 +104,7 @@ static std::unique_ptr<Node> parse_xml(const XMLElement* element, Node *parent, 
     return node;
 }
 
-std::unique_ptr<Node> read_scene(const char* file) {
+std::unique_ptr<SceneNode> read_scene(const char* file) {
     XMLDocument doc;
     XMLError result = doc.LoadFile(file);
     if (result != XML_SUCCESS) {

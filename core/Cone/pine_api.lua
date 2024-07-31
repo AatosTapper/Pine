@@ -22,6 +22,8 @@
 ---     transfom.x = 10
 ---     transfom.y = 5
 
+--- IF A FUNCTION IS PARTICULARLY SLOW, IT IS MARKED AS SUCH
+
 
 
 
@@ -86,6 +88,12 @@ end
 ---@return pine_Entity
 function pine_Scene:add_entity(name) end
 
+--- Gets an entity from the scene with the name
+--- WARNING: check the return value for nil
+---@param name string
+---@return pine_Entity|nil @if not found, returns nil
+function pine_Scene:get_entity(name) end
+
 --- Gets all entities in the scene
 ---@return table<integer, pine_Entity>
 function pine_Scene:get_entities() end
@@ -98,6 +106,13 @@ function pine_Scene:get_entities() end
 ---@return table<integer, pine_Entity>
 function pine_Scene:get_close_entities(ent, radius) end
 
+--- Gets all entities in an area
+---@param x number
+---@param y number
+---@param radius number
+---@return table<integer, pine_Entity>
+function pine_Scene:spatial_lookup(x, y, radius) end
+
 --- Gets the camera of the scene
 ---@return pine_Camera
 function pine_Scene:get_camera() end
@@ -107,6 +122,18 @@ function pine_Scene:get_camera() end
 --- Calling this outside a script is undefined and probably crashes
 ---@return pine_Entity
 function pine_get_script_parent_entity() end
+
+--- Get a copy of the entity and it's state for passing into another scene
+--- WARNING: Return type can't be used for anything else other than passing into the
+--- corresponding inport function
+---@param entity pine_Entity
+---@return userdata std::unique_ptr<SceneNode>
+function pine_Scene:export_entity(entity) end
+
+--- Transfer an exported entity into this scene
+---@param node userdata std::unique_ptr<SceneNode>&
+---@return pine_Entity
+function pine_Scene:import_entity(node) end
 
 
 
@@ -139,7 +166,7 @@ function pine_remove_temp_scene() end
 --- the scene filename will be "scene name.xml"
 function pine_save_current_scene() end
 
---- Loads, returns and selects the scene from disc
+--- Loads, selects and returns the scene from disc
 --- If scene doesn't exist, doesn't do anything and returns nil
 ---@param name string
 ---@return pine_Scene|nil @optional, returns nil if scene doesn't exist
@@ -154,7 +181,7 @@ function pine_load_scene(name) end
 
 --- Camera
 ---@class pine_Camera
-local pine_Camera = {}
+pine_Camera = {}
 
 --- Gets the camera position
 ---@return vec2
@@ -189,7 +216,7 @@ function pine_Camera:down(amount) end
 
 --- Entity
 ---@class pine_Entity
-local pine_Entity = {}
+pine_Entity = {}
 
 --- Removes the entity and it's component from a scene
 --- Removal is deferred to the end of the frame
@@ -362,7 +389,7 @@ function pine_Entity:enable_serialization() end
 --- Use this for debugging, entity identification, etc...
 ---@class pine_comp_Tag
 ---@field name string
-local pine_comp_Tag = {}
+pine_comp_Tag = {}
 
 
 
@@ -378,7 +405,7 @@ local pine_comp_Tag = {}
 ---@field sy number
 --- rotation in radians
 ---@field rr number
-local pine_comp_Transform = {}
+pine_comp_Transform = {}
 
 --- Sets transfom x and y
 ---@param x number
@@ -396,7 +423,7 @@ function pine_comp_Transform:set_scale(x, y) end
 --- Defines custom update and destroy scripts
 --- Use this to define per-update game logic
 ---@class pine_comp_CustomBehavior
-local pine_comp_CustomBehavior = {}
+pine_comp_CustomBehavior = {}
 
 --- Sets the script that gets called on every fixed update
 ---@param path string
@@ -414,7 +441,7 @@ function pine_comp_CustomBehavior:set_on_remove(path) end
 --- Use this to define more specialised one-time game logic (like entity spawning etc.)
 --- (scripts can be run many times too but CustomBehavior is more for that)
 ---@class pine_comp_Script
-local pine_comp_Script = {}
+pine_comp_Script = {}
 
 --- Attaches a new script to the script component
 --- The script can be ran with the returned id
@@ -437,7 +464,7 @@ function pine_comp_Script:run_all() end
 --- Use this for general entity data, like player health or level
 ---@class pine_comp_Table
 ---@field table table
-local pine_comp_Table = {}
+pine_comp_Table = {}
 
 
 
@@ -445,7 +472,7 @@ local pine_comp_Table = {}
 --- General image component for drawing
 --- Use this when if entity needs to be drawn
 ---@class pine_comp_Sprite
-local pine_comp_Sprite = {}
+pine_comp_Sprite = {}
 
 --- Sets the sprite texture
 --- If already has a texture, the old one is removed
@@ -466,7 +493,7 @@ function pine_comp_Sprite:set_render_layer(val) end
 ---          You can set a flag "FLAMMABLE" for entities, and in the system do this:
 ---          if comp:has_flags({ "FLAMMABLE" }) then comp:set_flags({ "ON_FIRE" }) etc.... end
 ---@class pine_comp_StateFlags
-local pine_comp_StateFlags = {}
+pine_comp_StateFlags = {}
 
 --- Sets the flags
 --- If already has the flags, everything stays the same
@@ -491,14 +518,14 @@ function pine_comp_StateFlags:remove_flags(flags) end
 ---@class pine_comp_Collider
 --- Prevents the entities from intersecting
 ---@field resolve_collisions boolean @default = false
-local pine_comp_Collider = {}
+pine_comp_Collider = {}
 
 --- Container for per-collision info,
 --- returned from some functions
 ---@class Collider_CollisionData
----@field ent pine_Entity
----@field normal vec2
-local Collider_CollisionData = {}
+---@field ent pine_Entity @the entity collided with
+---@field normal vec2 @collision normal from current entity's point of view
+Collider_CollisionData = {}
 
 --- Sets the collider type to Box (AABB)
 function pine_comp_Collider:type_box() end
@@ -524,7 +551,7 @@ function pine_comp_Collider:get_colliding_entities() end
 ---@class vec2
 ---@field x number
 ---@field y number
-local vec2 = {}
+vec2 = {}
 
 --- Creates a new vec2 instance
 ---@param x number
@@ -546,7 +573,8 @@ function vec2.from(other) end
 ---@return number
 function vec2:length() end
 
---- Normalizes the vector
+--- Returns the vector as normalized
+--- Doesn't affect the original vector
 ---@return vec2
 function vec2:normalize() end
 
@@ -563,7 +591,7 @@ function vec2:dot(other) end
 ---@field x number
 ---@field y number
 ---@field z number
-local vec3 = {}
+vec3 = {}
 
 --- Creates a new vec3 instance
 ---@param x number
@@ -587,7 +615,8 @@ function vec3.from(other) end
 ---@return number
 function vec3:length() end
 
---- Normalizes the vector
+--- Returns the vector as normalized
+--- Doesn't affect the original vector
 ---@return vec3
 function vec3:normalize() end
 

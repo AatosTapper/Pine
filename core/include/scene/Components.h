@@ -26,8 +26,8 @@ struct Tag : public Serializable {
 
     std::string name;
 
-    virtual void deserialize(NodeData &data) override;
-    virtual NodeData serialize() const override;
+    virtual void deserialize(SceneNodeData &data) override;
+    virtual SceneNodeData serialize() const override;
 
 private:
     std::shared_ptr<Entity> m_parent; // behind pointer to not pollute the cache as much
@@ -67,8 +67,8 @@ struct Transform : public Serializable {
     void interpolate(float alpha);
 
     virtual ~Transform() override = default;
-    virtual void deserialize(NodeData &data) override;
-    virtual NodeData serialize() const override;
+    virtual void deserialize(SceneNodeData &data) override;
+    virtual SceneNodeData serialize() const override;
 
 private:
     std::shared_ptr<Entity> m_parent;
@@ -89,8 +89,8 @@ struct Script : public Serializable {
     void run(id_t id = 0) const;
     void run_all() const;
     
-    virtual void deserialize(NodeData &data) override;
-    virtual NodeData serialize() const override;
+    virtual void deserialize(SceneNodeData &data) override;
+    virtual SceneNodeData serialize() const override;
 
 private:
     std::vector<std::string> m_scripts;
@@ -113,8 +113,8 @@ struct CustomBehavior : public Serializable {
     std::string on_update;
     std::string on_remove;
 
-    virtual void deserialize(NodeData &data) override;
-    virtual NodeData serialize() const override;
+    virtual void deserialize(SceneNodeData &data) override;
+    virtual SceneNodeData serialize() const override;
 
 private:
     std::shared_ptr<Entity> m_parent;
@@ -136,8 +136,8 @@ struct Sprite : public Serializable {
 
     void set_texture(std::string path);
 
-    virtual void deserialize(NodeData &data) override;
-    virtual NodeData serialize() const override;
+    virtual void deserialize(SceneNodeData &data) override;
+    virtual SceneNodeData serialize() const override;
 private:
     Texture *m_img = nullptr;
     std::shared_ptr<std::string> m_save_string;
@@ -156,8 +156,8 @@ struct Table : public Serializable {
 
     sol::table table{};
     
-    virtual void deserialize(NodeData &data) override;
-    virtual NodeData serialize() const override;
+    virtual void deserialize(SceneNodeData &data) override;
+    virtual SceneNodeData serialize() const override;
 
 private:
     std::shared_ptr<Entity> m_parent;
@@ -177,8 +177,8 @@ struct StateFlags : public Serializable {
     bool has_flags(std::vector<std::string> flags);
     void remove_flags(std::vector<std::string> flags);
 
-    virtual void deserialize(NodeData &data) override;
-    virtual NodeData serialize() const override;    
+    virtual void deserialize(SceneNodeData &data) override;
+    virtual SceneNodeData serialize() const override;    
 
 private:
     std::vector<std::string> m_flags;
@@ -201,8 +201,8 @@ struct Collider : public Serializable {
     bool resolve_collisions = false; // accessible from lua
     enum Type : uint8_t { AABB=0, Circle } type = Type::AABB;
 
-    virtual void deserialize(NodeData &data) override;
-    virtual NodeData serialize() const override;
+    virtual void deserialize(SceneNodeData &data) override;
+    virtual SceneNodeData serialize() const override;
 
 private:
     std::shared_ptr<Entity> m_parent;

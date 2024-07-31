@@ -128,11 +128,18 @@ void set_lua_scene(sol::state &lua, SceneManager &manager) {
     scene_type["add_entity"] = [&](Scene &self, sol::variadic_args name) { 
         return sol::make_object(lua, self.add_entity(name.size() == 0 ? "" : name.get<std::string>()));
     };
+    scene_type["get_entity"] = &Scene::get_entity;
     scene_type["get_entities"] = &Scene::get_entities;
     scene_type["get_close_entities"] = &Scene::get_close_entities;
+    scene_type["spatial_lookup"] = &Scene::spatial_lookup;
 
     scene_type["get_camera"] = [&](Scene &self) {
         return sol::make_object(lua, self.get_camera());
+    };
+
+    scene_type["export_entity"] = &Scene::export_entity;
+    scene_type["import_entity"] = [](Scene &self, std::unique_ptr<SceneNode> &node) {
+        return self.import_entity(node);
     };
 
     /// Camera
@@ -153,7 +160,6 @@ void set_lua_scene(sol::state &lua, SceneManager &manager) {
     lua.set_function("pine_get_scene", [&]() {
         return sol::make_object(lua, manager.get_scene());
     });
-    /// @warning this also removes the current one from memory
     lua.set_function("pine_set_scene", [&](Scene *scene) {
         manager.pop();
         auto storage_holder = std::make_unique<Scene>(*scene);

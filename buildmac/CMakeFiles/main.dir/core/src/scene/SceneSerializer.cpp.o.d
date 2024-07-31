@@ -1348,7 +1348,7 @@ CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o: \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/../mat4x3.hpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/glm/gtc/type_ptr.inl \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/Serialize.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/SceneParser.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/SceneParser.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iomanip \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/FromString.h \

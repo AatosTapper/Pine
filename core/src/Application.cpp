@@ -179,7 +179,7 @@ void Application::m_fluid_update(float alpha) {
 
 
 void Application::m_update_render() {
-    PINE_CORE_PROFILE("Render update");
+    //PINE_CORE_PROFILE("Render update");
     m_renderer->start_frame();
     m_renderer->draw_frame(m_scene_manager.get_scene());
     m_window->update();

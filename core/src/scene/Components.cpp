@@ -22,14 +22,14 @@ namespace component {
 
 Tag::Tag(std::string _name) noexcept : name(_name) {}
 
-void Tag::deserialize(NodeData &data) {
+void Tag::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 2 && data.variables.at(1).name == "name");
     VAR_FROM_NODE(name, data);
 }
 
-NodeData Tag::serialize() const {
-    return NodeData { 
-        .type=NodeType::Component,
+SceneNodeData Tag::serialize() const {
+    return SceneNodeData { 
+        .type=SceneNodeType::Component,
         .variables = { 
             COMP_TYPE(Tag),
             VAR_TO_NODE(name) 
@@ -61,7 +61,7 @@ void Transform::interpolate(float alpha) {
     rr_interpolated = rr * alpha + rr_0 * (1.0f - alpha);
 }
 
-void Transform::deserialize(NodeData &data) {
+void Transform::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 11);
 
     VAR_FROM_NODE(x, data);
@@ -76,9 +76,9 @@ void Transform::deserialize(NodeData &data) {
     VAR_FROM_NODE(rr_0, data);
 }
 
-NodeData Transform::serialize() const {
-    return NodeData { 
-        .type=NodeType::Component,
+SceneNodeData Transform::serialize() const {
+    return SceneNodeData { 
+        .type=SceneNodeType::Component,
         .variables = {
             COMP_TYPE(Transform),
             VAR_TO_NODE(x),
@@ -124,17 +124,17 @@ void Script::run_all() const {
     }
 }
 
-void Script::deserialize(NodeData &data) {
+void Script::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 2);
 
     auto &scripts = m_scripts; // Remove the m_
     VAR_FROM_NODE(scripts, data);
 }
 
-NodeData Script::serialize() const {
+SceneNodeData Script::serialize() const {
     auto &scripts = m_scripts; // Remove the m_
-    return NodeData { 
-        .type=NodeType::Component,
+    return SceneNodeData { 
+        .type=SceneNodeType::Component,
         .variables = { 
             COMP_TYPE(Script),
             VAR_TO_NODE(scripts)
@@ -162,15 +162,15 @@ void CustomBehavior::set_on_remove(std::string path) {
     on_remove = path;
 }
 
-void CustomBehavior::deserialize(NodeData &data) {
+void CustomBehavior::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 3);
     VAR_FROM_NODE(on_update, data);
     VAR_FROM_NODE(on_remove, data);
 }
 
-NodeData CustomBehavior::serialize() const {
-    return NodeData {
-        .type=NodeType::Component,
+SceneNodeData CustomBehavior::serialize() const {
+    return SceneNodeData {
+        .type=SceneNodeType::Component,
         .variables = {
             COMP_TYPE(CustomBehavior),
             VAR_TO_NODE(on_update),
@@ -190,19 +190,19 @@ void Sprite::set_texture(std::string path) {
     m_save_string = std::make_shared<std::string>(path);
 }
 
-void Sprite::deserialize(NodeData &data) {
+void Sprite::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 3);
 
     std::string path;
     VAR_FROM_NODE(path, data);
-    VAR_FROM_NODE(render_layer, data);
     *this = Sprite(path);
+    VAR_FROM_NODE(render_layer, data);
 }
 
-NodeData Sprite::serialize() const {
+SceneNodeData Sprite::serialize() const {
     auto &path = *m_save_string;
-    return NodeData { 
-        .type=NodeType::Component,
+    return SceneNodeData { 
+        .type=SceneNodeType::Component,
         .variables = {
             COMP_TYPE(Sprite),
             VAR_TO_NODE(path),
@@ -213,7 +213,7 @@ NodeData Sprite::serialize() const {
 
 Table::Table(sol::table _data) noexcept : table(_data) {}
 
-void Table::deserialize(NodeData &data) {
+void Table::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 2);
 
     std::string table_string = data.variables.at(1).value;
@@ -223,7 +223,7 @@ void Table::deserialize(NodeData &data) {
     table = result.get<sol::table>();
 }
 
-NodeData Table::serialize() const {
+SceneNodeData Table::serialize() const {
     auto &lua = LuaStateDispatcher::instance().get_lua();
 
     lua.set_function("_pine_internals_get_table", [this] { return this->table; });
@@ -231,8 +231,8 @@ NodeData Table::serialize() const {
     assert(result.valid());
     auto table_string = result.get<std::string_view>();
 
-    return NodeData { 
-        .type=NodeType::Component,
+    return SceneNodeData { 
+        .type=SceneNodeType::Component,
         .variables = {
             COMP_TYPE(Table),
             VAR_TO_NODE(table_string)
@@ -274,16 +274,16 @@ bool StateFlags::m_has_flag(const std::string &flag) {
     });
 }
 
-void StateFlags::deserialize(NodeData &data) {
+void StateFlags::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 2);
     auto &flags = m_flags;
     VAR_FROM_NODE(flags, data);
 }
 
-NodeData StateFlags::serialize() const {
+SceneNodeData StateFlags::serialize() const {
     auto &flags = m_flags;
-    return NodeData { 
-        .type=NodeType::Component,
+    return SceneNodeData { 
+        .type=SceneNodeType::Component,
         .variables = { 
             COMP_TYPE(StateFlags),
             VAR_TO_NODE(flags)
@@ -303,17 +303,17 @@ const std::vector<CollisionData> &Collider::get_colliding_entities() const {
     return colliding_entities;
 }
 
-void Collider::deserialize(NodeData &data) {
+void Collider::deserialize(SceneNodeData &data) {
     uint8_t coll_type;
     VAR_FROM_NODE(coll_type, data);
     VAR_FROM_NODE(resolve_collisions, data);
     type = static_cast<Type>(coll_type);
 }
 
-NodeData Collider::serialize() const {
+SceneNodeData Collider::serialize() const {
     uint8_t coll_type = static_cast<uint8_t>(type);
-    return NodeData { 
-        .type=NodeType::Component,
+    return SceneNodeData { 
+        .type=SceneNodeType::Component,
         .variables = {
             COMP_TYPE(Collider),
             VAR_TO_NODE(coll_type),

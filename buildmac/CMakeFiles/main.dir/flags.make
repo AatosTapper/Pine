@@ -18,8 +18,6 @@ CXX_FLAGS = -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineToo
 
 # PCH options: CMakeFiles/main.dir/core/src/LuaUtils.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
-# PCH options: CMakeFiles/main.dir/core/src/SceneParser.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
-
 # PCH options: CMakeFiles/main.dir/core/src/ScriptEngine.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/main.dir/core/src/TickRateScaling.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
@@ -55,6 +53,8 @@ CXX_FLAGS = -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineToo
 # PCH options: CMakeFiles/main.dir/core/src/scene/Scene.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/main.dir/core/src/scene/SceneManager.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/main.dir/core/src/scene/SceneParser.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/main.dir/core/src/scene/SceneSerializer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/aatostapper/Documents/Dev/OpenGL/Pine/buildmac/CMakeFiles/main.dir/cmake_pch_arm64.hxx
 
