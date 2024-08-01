@@ -9,7 +9,7 @@ public:
     IMPL_SINGLETON_DISPATCHER(TexturePool)
     IMPL_NO_COPY(TexturePool)
 
-    [[nodiscard]] Texture *push(const std::string &path);
+    [[nodiscard]] Texture *get(const std::string &path);
     
 private:
     TexturePool() = default;

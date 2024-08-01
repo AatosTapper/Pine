@@ -21,7 +21,7 @@ namespace serialize_internals {
 #define VAR_TO_NODE(var) SceneNodeVariable{ .name=#var, .value=serialize_internals::to_string(var) }
 
 /// @brief find and get C++ variable from a SceneNodeData struct
-#define VAR_FROM_NODE(var, data) serialize_internals::var_from_node(&var, #var, data)
+#define NODE_TO_VAR(var, data) serialize_internals::var_from_node(&var, #var, data)
 
 struct Serializable {
     virtual ~Serializable() = default;

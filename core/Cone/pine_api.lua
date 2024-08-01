@@ -38,6 +38,11 @@ function pine_run() end
 ---@return number
 function pine_tick_dt() end
 
+--- Gets the ratio of current tick rate compared to the tick rate target
+--- Used in force calculations etc.
+---@return number
+function pine_normalized_dt() end
+
 --- Gets the real frametime including non update frames
 --- WARNING: DO NOT USE IN GAMEPLAY LOGIC!!!
 ---@return number

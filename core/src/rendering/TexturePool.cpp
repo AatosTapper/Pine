@@ -1,6 +1,6 @@
 #include "rendering/TexturePool.h"
 
-Texture *TexturePool::push(const std::string &path) {
+Texture *TexturePool::get(const std::string &path) {
     auto it = std::find_if(m_pool.begin(), m_pool.end(), [&path](TextureWrapper &item) {
         return item.name == path;
     });

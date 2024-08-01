@@ -24,7 +24,7 @@ Tag::Tag(std::string _name) noexcept : name(_name) {}
 
 void Tag::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 2 && data.variables.at(1).name == "name");
-    VAR_FROM_NODE(name, data);
+    NODE_TO_VAR(name, data);
 }
 
 SceneNodeData Tag::serialize() const {
@@ -64,16 +64,16 @@ void Transform::interpolate(float alpha) {
 void Transform::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 11);
 
-    VAR_FROM_NODE(x, data);
-    VAR_FROM_NODE(y, data);
-    VAR_FROM_NODE(x_0, data);
-    VAR_FROM_NODE(y_0, data);
-    VAR_FROM_NODE(sx, data);
-    VAR_FROM_NODE(sy, data);
-    VAR_FROM_NODE(sx_0, data);
-    VAR_FROM_NODE(sy_0, data);
-    VAR_FROM_NODE(rr, data);
-    VAR_FROM_NODE(rr_0, data);
+    NODE_TO_VAR(x, data);
+    NODE_TO_VAR(y, data);
+    NODE_TO_VAR(x_0, data);
+    NODE_TO_VAR(y_0, data);
+    NODE_TO_VAR(sx, data);
+    NODE_TO_VAR(sy, data);
+    NODE_TO_VAR(sx_0, data);
+    NODE_TO_VAR(sy_0, data);
+    NODE_TO_VAR(rr, data);
+    NODE_TO_VAR(rr_0, data);
 }
 
 SceneNodeData Transform::serialize() const {
@@ -128,7 +128,7 @@ void Script::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 2);
 
     auto &scripts = m_scripts; // Remove the m_
-    VAR_FROM_NODE(scripts, data);
+    NODE_TO_VAR(scripts, data);
 }
 
 SceneNodeData Script::serialize() const {
@@ -164,8 +164,8 @@ void CustomBehavior::set_on_remove(std::string path) {
 
 void CustomBehavior::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 3);
-    VAR_FROM_NODE(on_update, data);
-    VAR_FROM_NODE(on_remove, data);
+    NODE_TO_VAR(on_update, data);
+    NODE_TO_VAR(on_remove, data);
 }
 
 SceneNodeData CustomBehavior::serialize() const {
@@ -179,13 +179,13 @@ SceneNodeData CustomBehavior::serialize() const {
     };
 }
 
-Sprite::Sprite(std::string path) noexcept : m_img(TexturePool::instance().push(app_relative_path(path))) {
+Sprite::Sprite(std::string path) noexcept : m_img(TexturePool::instance().get(app_relative_path(path))) {
     m_img->filter_nearest();
     m_save_string = std::make_shared<std::string>(path);
 }
 
 void Sprite::set_texture(std::string path) { 
-    m_img = TexturePool::instance().push(app_relative_path(path));
+    m_img = TexturePool::instance().get(app_relative_path(path));
     m_img->filter_nearest();
     m_save_string = std::make_shared<std::string>(path);
 }
@@ -194,9 +194,9 @@ void Sprite::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 3);
 
     std::string path;
-    VAR_FROM_NODE(path, data);
+    NODE_TO_VAR(path, data);
     *this = Sprite(path);
-    VAR_FROM_NODE(render_layer, data);
+    NODE_TO_VAR(render_layer, data);
 }
 
 SceneNodeData Sprite::serialize() const {
@@ -277,7 +277,7 @@ bool StateFlags::m_has_flag(const std::string &flag) {
 void StateFlags::deserialize(SceneNodeData &data) {
     CHECK_SERDE(data.variables.size() == 2);
     auto &flags = m_flags;
-    VAR_FROM_NODE(flags, data);
+    NODE_TO_VAR(flags, data);
 }
 
 SceneNodeData StateFlags::serialize() const {
@@ -305,8 +305,8 @@ const std::vector<CollisionData> &Collider::get_colliding_entities() const {
 
 void Collider::deserialize(SceneNodeData &data) {
     uint8_t coll_type;
-    VAR_FROM_NODE(coll_type, data);
-    VAR_FROM_NODE(resolve_collisions, data);
+    NODE_TO_VAR(coll_type, data);
+    NODE_TO_VAR(resolve_collisions, data);
     type = static_cast<Type>(coll_type);
 }
 

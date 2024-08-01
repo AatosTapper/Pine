@@ -50,6 +50,10 @@ Texture::~Texture() {
 }
 
 void Texture::bind() const {
+    if (m_id == 0) {
+        std::cerr << "Cannot use a null texture for rendering\n";
+        std::abort();
+    }
     glBindTexture(GL_TEXTURE_2D, m_id);
 }
 

@@ -21,8 +21,6 @@ Application::Application(sol::state &lua) noexcept :
     m_set_lua_functions();
     ScriptEngine::run_script(m_lua, app_relative_path("config.lua"));
 
-    LuaStateDispatcher::instance().m_lua = &m_lua;
-
     m_window = std::make_unique<Window>(
         ScriptEngine::get_config_var_int(m_lua, "window_width"),
         ScriptEngine::get_config_var_int(m_lua, "window_height"),
@@ -110,6 +108,7 @@ void Application::m_run() {
 
     const uint32_t tick_rate_downscale_step = ScriptEngine::get_config_var_int(m_lua, "tick_rate_downscale_step");
     const uint32_t tick_rate_target = ScriptEngine::get_config_var_int(m_lua, "tick_rate");
+    m_tick_reference = (uint32_t)ScriptEngine::get_config_var_int(m_lua, "tick_rate_reference");
     m_tick_dt = 1.0 / tick_rate_target;
     uint32_t current_tick_rate = tick_rate_target;
 
@@ -150,6 +149,7 @@ void Application::m_set_lua_functions() {
     m_lua.set_function("pine_frame_time", [this] { return this->m_per_frame_dt; });
     m_lua.set_function("pine_tick_dt", [this] { return this->m_tick_dt; });
     m_lua.set_function("pine_frame_index", [this] { return this->m_frame_index; });
+    m_lua.set_function("pine_normalized_dt", [this] { return (1.0 / this->m_tick_dt) / (double)this->m_tick_reference; });
 
     set_lua_utils(m_lua);
     set_lua_event_handlers(m_lua, m_event_bus, m_input_bus);

@@ -10,7 +10,7 @@ inline static constexpr std::string app_relative_path(const char *path) { return
 inline static constexpr std::string app_relative_path(const std::string &path) { return application_path_string() + path; }
 
 class LuaStateDispatcher {
-    friend class Application;
+    friend int main();
 public:
     IMPL_NO_COPY(LuaStateDispatcher)
     IMPL_SINGLETON_DISPATCHER(LuaStateDispatcher)

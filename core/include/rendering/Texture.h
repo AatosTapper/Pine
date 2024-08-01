@@ -7,9 +7,9 @@ class Renderer;
 class Texture {
     friend class Renderer;
 public:
+    Texture() noexcept = default;
     explicit Texture(const std::string &file) noexcept;
     ~Texture();
-    IMPL_NO_COPY(Texture)
 
     void filter_nearest();
     void filter_linear();

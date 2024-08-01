@@ -14,7 +14,7 @@ local camera = scene:get_camera()
 local player_transform =  player:get_component_Transform()
 local table_comp = parent:get_component_Table()
 
-local spring_speed = 0.1
+local spring_speed = 0.07
 local damp = 0.35
 
 -- Calculating the spring acceleration and velocity

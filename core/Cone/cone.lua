@@ -1,10 +1,3 @@
--- Cone is the Lua standard library of Pine engine
--- It consists of:
-
---     Cone -> language utils like enum
---     Cone.Key   -> keyboard keys
---     Cone.Math    -> math utils
---     Cone.Event   -> interfaces for using core events
 Cone = {}
 Cone.Math = require("core.Cone.math")
 Cone.Event = require("core.Cone.event")
@@ -36,36 +29,6 @@ Cone.enum = function(keys)
         Enum[value] = {}
     end
     return Enum
-end
-
--- DON'T USE TOO EASY TO BREAK
-Cone.switch = function(element)
-    local Table = {
-        ["Value"] = element,
-        ["DefaultFunction"] = nil,
-        ["Functions"] = {}
-    }
-    
-    Table.case = function(testElement, callback)
-        Table.Functions[testElement] = callback
-        return Table
-    end
-    
-    Table.default = function(callback)
-        Table.DefaultFunction = callback
-        return Table
-    end
-    
-    Table.process = function()
-        local Case = Table.Functions[Table.Value]
-        if Case then
-            Case()
-        elseif Table.DefaultFunction then
-            Table.DefaultFunction()
-        end
-    end
-    
-    return Table
 end
 
 function table_print(tt, indent, done, is_first)

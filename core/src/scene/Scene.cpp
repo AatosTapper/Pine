@@ -110,14 +110,14 @@ void Scene::m_remove_entities() {
 }
 
 void Scene::deserialize(SceneNodeData &data) {
-    VAR_FROM_NODE(name, data);
+    NODE_TO_VAR(name, data);
 
     float cam_x = 0.0f;
     float cam_y = 0.0f;
     float cam_z = 0.0f;
-    VAR_FROM_NODE(cam_x, data);
-    VAR_FROM_NODE(cam_y, data);
-    VAR_FROM_NODE(cam_z, data);
+    NODE_TO_VAR(cam_x, data);
+    NODE_TO_VAR(cam_y, data);
+    NODE_TO_VAR(cam_z, data);
     m_camera->set_position(glm::vec3{ cam_x, cam_y, cam_z });
 }
 
