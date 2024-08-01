@@ -13,9 +13,6 @@
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\LuaUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\SceneParser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\ScriptEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -68,6 +65,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\SceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\SceneParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\gr277128\Documents\GitHub\Pine\core\src\scene\SceneSerializer.cpp">
