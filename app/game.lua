@@ -74,7 +74,7 @@ function game.create_main_scene()
     local main_scene = pine_set_scene(pine_new_scene("main_scene"))
     game.create_camera_controller(main_scene)
     game.create_player(main_scene)
-    game.create_grass(main_scene, 0.8, 40, 40)
+    game.create_grass(main_scene, 0.7, 40, 40)
     game.create_grass_bg(main_scene, 20, 20)
 
     Cone.Event.listener("MouseButtonPressed", function(key)
