@@ -79,10 +79,10 @@ void SpatialGrid::push_entity(Entity entity) {
     const double top = t.y + t.sy / 2.0;
     const double bottom = t.y - t.sy / 2.0;
 
-    limits.push_back(m_calc_index(left, top));
-    limits.push_back(m_calc_index(left, bottom));
-    limits.push_back(m_calc_index(right, bottom));
-    limits.push_back(m_calc_index(right, top));
+    limits.emplace_back(m_calc_index(left, top));
+    limits.emplace_back(m_calc_index(left, bottom));
+    limits.emplace_back(m_calc_index(right, bottom));
+    limits.emplace_back(m_calc_index(right, top));
 
     std::sort(limits.begin(), limits.end());
     auto unique_end = std::unique(limits.begin(), limits.end());
@@ -105,10 +105,10 @@ void SpatialGrid::populate(Scene *scene) {
         const double top = t.y + t.sy / 2.0;
         const double bottom = t.y - t.sy / 2.0;
 
-        limits.push_back(m_calc_index(left, top));
-        limits.push_back(m_calc_index(left, bottom));
-        limits.push_back(m_calc_index(right, bottom));
-        limits.push_back(m_calc_index(right, top));
+        limits.emplace_back(m_calc_index(left, top));
+        limits.emplace_back(m_calc_index(left, bottom));
+        limits.emplace_back(m_calc_index(right, bottom));
+        limits.emplace_back(m_calc_index(right, top));
 
         std::sort(limits.begin(), limits.end());
         auto unique_end = std::unique(limits.begin(), limits.end());

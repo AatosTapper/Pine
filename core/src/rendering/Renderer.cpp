@@ -125,7 +125,6 @@ void Renderer::m_draw_sprites_instanced(Scene *scene) {
         glVertexAttribPointer(2 + i, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (const void*)(sizeof(glm::vec4) * i));
         glVertexAttribDivisor(2 + i, 1);
     }
-
     for (const auto &batch : batches) {
         auto &matrices = batch.transforms;
 
@@ -171,12 +170,9 @@ void Renderer::m_create_framebuffers() {
     glGenFramebuffers(1, &m_framebuffer);
     glBindFramebuffer(GL_FRAMEBUFFER, m_framebuffer);
 
-    // color buffer
-    auto tex_format = GL_RGBA16F;
-
     glGenTextures(1, &m_texture_color_buffer);
     glBindTexture(GL_TEXTURE_2D, m_texture_color_buffer);
-    glTexImage2D(GL_TEXTURE_2D, 0, tex_format, 
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA16F, 
         m_window_dimensions.x, m_window_dimensions.y, 0,
         GL_RGBA, GL_FLOAT, NULL);
 
@@ -203,36 +199,36 @@ void Renderer::m_create_framebuffers() {
 
     GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
     if (status != GL_FRAMEBUFFER_COMPLETE) {
+        std::cerr << "Error creating framebuffer: ";
         switch (status) {
             case GL_FRAMEBUFFER_UNDEFINED:
-                std::cerr << "GL_FRAMEBUFFER_UNDEFINED" << std::endl;
+                std::cerr << "GL_FRAMEBUFFER_UNDEFINED\n";
                 break;
             case GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT:
-                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT" << std::endl;
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT\n";
                 break;
             case GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT:
-                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT" << std::endl;
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT\n";
                 break;
             case GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER:
-                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER" << std::endl;
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER\n";
                 break;
             case GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER:
-                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER" << std::endl;
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER\n";
                 break;
             case GL_FRAMEBUFFER_UNSUPPORTED:
-                std::cerr << "GL_FRAMEBUFFER_UNSUPPORTED" << std::endl;
+                std::cerr << "GL_FRAMEBUFFER_UNSUPPORTED\n";
                 break;
             case GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE:
-                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE" << std::endl;
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE\n";
                 break;
             case GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS:
-                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS" << std::endl;
+                std::cerr << "GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS\n";
                 break;
             default:
-                std::cerr << "Unknown framebuffer error" << std::endl;
+                std::cerr << "Unknown framebuffer error\n";
                 break;
         }
-        std::cerr << "Framebuffer is not complete\n";
         std::abort();
     }
     glBindFramebuffer(GL_FRAMEBUFFER, 0);

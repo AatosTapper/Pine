@@ -22,7 +22,7 @@ public:
     T& add_component(Args&&... args);
 
     template<typename T>
-    T &get_component();
+    T *get_component();
 
     template<typename... T> 
     bool has_component();
@@ -80,9 +80,10 @@ inline T& Entity::add_component(Args&&... args) {
 }
 
 template<typename T>
-inline T &Entity::get_component() {
+inline T *Entity::get_component() {
     if (m_invalid()) std::abort();
-    return m_registry().get<T>(m_handle);
+    
+    return m_registry().try_get<T>(m_handle);
 }
 
 template<typename... T>

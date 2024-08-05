@@ -20,7 +20,7 @@
     };
 #define _REG_OBJ(FUNC, TYPE) \
     entity_type[#FUNC"_component_"#TYPE] = [&](Entity &self) { \
-        return sol::make_object(lua, &self.FUNC##_component<component::TYPE>()); \
+        return sol::make_object(lua, self.FUNC##_component<component::TYPE>()); \
     };
 
 #define FUNC_REGISTER(TYPE, CONSTRUCT_ARG) \

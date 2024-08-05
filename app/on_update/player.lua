@@ -36,7 +36,7 @@ transform.rr = transform.rr + acceleration.x * 3
 
 data.table.velocity = velocity
 
-parent:get_component_Sprite():set_render_layer(-59.5 - transform.y)
+parent:get_component_Sprite():set_render_layer(-39.5 - transform.y)
 
 
 local max_radius = 2
@@ -53,7 +53,6 @@ for i, other in ipairs(nearby_ents) do
         end
     end
 end
-
 
 --- Shooting the apple
 function spawn_projectile_from_player()
