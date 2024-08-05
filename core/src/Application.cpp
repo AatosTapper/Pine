@@ -32,7 +32,7 @@ Application::Application(sol::state &lua) noexcept :
     });
 
     m_renderer = std::make_unique<Renderer>();
-    m_renderer->set_window_dimensions(m_window->get_dimensions());
+    m_renderer->set_window_dimensions(m_window->get_framebuffer_dimensions());
     m_renderer->init();
 
     m_scene_manager.set_camera_data(CameraData{
@@ -119,6 +119,7 @@ void Application::m_run() {
     
     while (m_running) {
         const double now = glfwGetTime();
+        m_current_time = now;
         const double dt = now - frame_start;
         frame_start = now;
         m_per_frame_dt = dt;
@@ -150,6 +151,9 @@ void Application::m_set_lua_functions() {
     m_lua.set_function("pine_tick_dt", [this] { return this->m_tick_dt; });
     m_lua.set_function("pine_frame_index", [this] { return this->m_frame_index; });
     m_lua.set_function("pine_normalized_dt", [this] { return (1.0 / this->m_tick_dt) / (double)this->m_tick_reference; });
+    m_lua.set_function("pine_window_width", [this] { return this->m_window->get_width(); });
+    m_lua.set_function("pine_window_height", [this] { return this->m_window->get_height(); });
+    m_lua.set_function("pine_current_time", [this] { return this->m_current_time; });
 
     set_lua_utils(m_lua);
     set_lua_event_handlers(m_lua, m_event_bus, m_input_bus);
@@ -163,7 +167,7 @@ void Application::m_fixed_update() {
     m_scene_manager.get_scene()->get_camera()->update_last_pos();
 
     update_transform_component_last_states(m_scene_manager.get_scene());
-
+    
     m_update_systems();
 
     m_scene_manager.get_scene()->update();
@@ -177,9 +181,7 @@ void Application::m_fluid_update(float alpha) {
     m_renderer->set_view_proj_matrix(m_scene_manager.get_scene()->get_camera()->get_vp_matrix());
 }
 
-
 void Application::m_update_render() {
-    //PINE_CORE_PROFILE("Render update");
     m_renderer->start_frame();
     m_renderer->draw_frame(m_scene_manager.get_scene());
     m_window->update();

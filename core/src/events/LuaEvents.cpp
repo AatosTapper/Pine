@@ -5,6 +5,8 @@
 #include "events/KeyEvent.h"
 #include "events/CustomEvent.h"
 
+#include "Input.h"
+
 // @Lua API
 void set_lua_event_handlers(sol::state &lua, EventBus &bus, InputBus &input) {
     lua.set_function("pine_set_event_handler_KeyPressed", [&](sol::function callback) {
@@ -31,14 +33,14 @@ void set_lua_event_handlers(sol::state &lua, EventBus &bus, InputBus &input) {
     lua.set_function("pine_set_event_handler_MouseButtonPressed", [&](sol::function callback) {
         auto stored_callback = std::make_shared<sol::function>(callback);
         bus.subscribe<MouseButtonPressedEvent>([stored_callback](MouseButtonPressedEvent *event) -> HandlerPersistence {
-            bool result = (*stored_callback)(event->button, event->x_pos, event->y_pos);
+            bool result = (*stored_callback)(mousebutton_to_keycode(event->button), event->x_pos, event->y_pos);
             return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });
     lua.set_function("pine_set_event_handler_MouseButtonReleased", [&](sol::function callback) {
         auto stored_callback = std::make_shared<sol::function>(callback);
         bus.subscribe<MouseButtonReleasedEvent>([stored_callback](MouseButtonReleasedEvent *event) -> HandlerPersistence {
-            bool result = (*stored_callback)(event->button);
+            bool result = (*stored_callback)(mousebutton_to_keycode(event->button));
             return result ? HandlerPersistence::Single : HandlerPersistence::Continuous;
         });
     });

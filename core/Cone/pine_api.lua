@@ -43,6 +43,10 @@ function pine_tick_dt() end
 ---@return number
 function pine_normalized_dt() end
 
+--- Gets the current time from application start
+---@return number
+function pine_current_time() end
+
 --- Gets the real frametime including non update frames
 --- WARNING: DO NOT USE IN GAMEPLAY LOGIC!!!
 ---@return number
@@ -51,6 +55,14 @@ function pine_frame_time() end
 --- Gets the index of the current frame from application start (can be used for rng seeding etc.)
 ---@return integer
 function pine_frame_index() end
+
+--- Gets the window width
+---@return integer
+function pine_window_width() end
+
+--- Gets the window height
+---@return integer
+function pine_window_height() end
 
 
 
@@ -438,6 +450,8 @@ function pine_comp_CustomBehavior:set_on_update(path) end
 --- (either by removal or scene unload)
 ---@param path string
 function pine_comp_CustomBehavior:set_on_remove(path) end
+
+
 
 
 

@@ -6,7 +6,7 @@
 
 static std::deque<double> dt_buffer;
 constexpr static size_t buffer_window = 50;
-constexpr static size_t start_wait = 40;
+constexpr static size_t start_wait = 5;
 
 void accumulate_dt_buffer(double dt) {
     if (dt_buffer.size() >= buffer_window) [[likely]] {

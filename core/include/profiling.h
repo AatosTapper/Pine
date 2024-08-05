@@ -30,7 +30,6 @@ public:
         } else {
             std::cout << m_message << " - Duration: " << duration << " nanoseconds\n";
         }
-
         std::cout.flags(original_flags);
         std::cout.precision(original_precision);
     }

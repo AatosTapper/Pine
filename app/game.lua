@@ -16,7 +16,6 @@ end
 ---@param width number
 ---@param height number
 function game.create_grass(scene, spacing, width, height)
-    -- Calculate the number of items that fit in the width and height based on spacing
     local num_x = math.floor(width / spacing)
     local num_y = math.floor(height / spacing)
     
@@ -34,20 +33,21 @@ function game.create_grass(scene, spacing, width, height)
             local jitter = spacing * 0.7
             
             transform:set_pos(x_pos + (math.random() * 2 - 1) * jitter, y_pos + (math.random() * 2 - 1) * jitter)
-            transform:set_scale(1.4, 1.4)
+            transform:set_scale(1.4 + (math.random() - 0.5) * 0.2, 1.4 + (math.random() - 0.5) * 0.5)
 
             sprite_comp:set_render_layer(-height - transform.y)
 
-            ent:add_component_CustomBehavior("on_update/grass.lua")
             ent:add_component_StateFlags({ "grass_interactable" })
 
             total = total + 1
         end
     end
-    print(total)
+    print("Number of grass entities: " .. total)
+
+    -- This handles updating all grass blades
+    local updater = scene:add_entity("grass_updater")
+    updater:add_component_CustomBehavior("on_update/grass.lua")
 end
-
-
 
 ---@param scene pine_Scene
 ---@param width number
@@ -64,6 +64,7 @@ end
 function game.create_camera_controller(scene, player)
     local camera_controller = scene:add_entity("camera_controller")
     camera_controller:add_component_CustomBehavior("on_update/camera_controller.lua")
+    camera_controller:get_component_Transform():set_pos(1000, 1000)
     camera_controller:add_component_Table({
         velocity = { x = 0.0, y = 0.0 }
     })
@@ -73,8 +74,16 @@ function game.create_main_scene()
     local main_scene = pine_set_scene(pine_new_scene("main_scene"))
     game.create_camera_controller(main_scene)
     game.create_player(main_scene)
-    game.create_grass(main_scene, 0.9, 60, 60)
+    game.create_grass(main_scene, 0.75, 60, 60)
     game.create_grass_bg(main_scene, 30, 30)
+
+    Cone.Event.listener("MouseButtonPressed", function(key)
+        if key ~= Cone.Key._MOUSE_BUTTON_LEFT then
+            return false
+        end
+        spawn_projectile_from_player()
+        return false
+    end)
 end
 
 return game

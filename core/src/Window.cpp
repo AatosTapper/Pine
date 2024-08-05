@@ -30,12 +30,12 @@ Window::Window(int width, int height, const char *name) noexcept {
     if (m_window == NULL) {
         std::cout << "Failed to create GLFW window\n";
         glfwTerminate();
-        assert(false);
+        std::abort();
     }
     glfwMakeContextCurrent(m_window);
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cout << "Failed to initialize GLAD\n";
-        assert(false);
+        std::abort();
     }
     
     glfwSetWindowUserPointer(m_window, &m_data);
@@ -49,7 +49,6 @@ Window::Window(int width, int height, const char *name) noexcept {
         data->callback(&event);
     };
     glfwSetWindowSizeCallback(m_window, resize_callback);
-    m_resize_callback = resize_callback;
 
     auto framebuffer_size_callback = [](GLFWwindow *window, int fb_width, int fb_height) {
         (void)window;
@@ -65,10 +64,8 @@ Window::Window(int width, int height, const char *name) noexcept {
 
     glfwSetKeyCallback(m_window, [](GLFWwindow *window, int key, int scancode, int action, int mods) {
         Data *data = static_cast<Data*>(glfwGetWindowUserPointer(window));
-
         (void)scancode; 
         (void)mods;
-
         switch (action) {
             case GLFW_PRESS: {
                 KeyPressedEvent event(key);
@@ -90,16 +87,12 @@ Window::Window(int width, int height, const char *name) noexcept {
 
     glfwSetMouseButtonCallback(m_window, [](GLFWwindow *window, int button, int action, int mods) {
         Data *data = static_cast<Data*>(glfwGetWindowUserPointer(window));
-
         (void)mods;
-
         switch (action) {
             case GLFW_PRESS: {
                 double x, y;
                 glfwGetCursorPos(window, &x, &y);
-
                 MouseButtonPressedEvent event(button, x, y);
-                
                 data->callback(&event);
                 break;
             }
@@ -113,7 +106,6 @@ Window::Window(int width, int height, const char *name) noexcept {
 
     glfwSetCursorPosCallback(m_window, [](GLFWwindow *window, double x, double y) {
         Data *data = static_cast<Data*>(glfwGetWindowUserPointer(window));
-
         MouseMovedEvent event(x, y);
         data->callback(&event);
     });

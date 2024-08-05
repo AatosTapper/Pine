@@ -16,7 +16,7 @@ enum class SceneNodeType {
     Scene,
     Entity,
     Component,
-    System
+    Data
 };
 
 struct SceneNodeData {
@@ -26,7 +26,6 @@ struct SceneNodeData {
 
 struct SceneNode {
     SceneNodeData data;
-    SceneNode *parent = nullptr;
     std::vector<std::unique_ptr<SceneNode>> children;
 
     void print_node(uint32_t indentation = 0);

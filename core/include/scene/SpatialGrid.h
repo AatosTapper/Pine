@@ -18,7 +18,7 @@ public:
 private:
     uint32_t m_half_width = 1000; // how many cells in one x directions (note: total is double this)
     uint32_t m_half_height = 1000; // how many cells in one y directions (note: total is double this)
-    float m_cell_size = 3.0; // single rectangle cell width and height
+    float m_cell_size = 4.0; // single rectangle cell width and height
 
     std::unordered_map<uint32_t, std::vector<entt::entity>> m_grid;
 

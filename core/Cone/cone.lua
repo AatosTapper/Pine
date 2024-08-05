@@ -35,33 +35,47 @@ function table_print(tt, indent, done, is_first)
     return table_serialize(tt, index, done, is_first):sub(1, -2)
 end
 
+
+local table_insert = table.insert
+local type = type
+local pairs = pairs
+local tostring = tostring
+local string_format = string.format
+local string_rep = string.rep
+local table_concat = table.concat
+
 --- slow as fuck
 function table_serialize(tt, indent, done, is_first)
     is_first = is_first or true
     done = done or {}
     indent = indent or 0
+    
     if type(tt) == "table" then
         local sb = {}
-        table.insert(sb, "{\n");
+        table_insert(sb, "{\n")
         for key, value in pairs(tt) do
-        table.insert(sb, string.rep(" ", indent)) -- indent it
-        if type(value) == "table" and not done[value] then
-            done[value] = true
-            table.insert(sb, key .. " = ");
-            table.insert(sb, table_serialize(value, indent + 2, done))
-            table.insert(sb, string.rep(" ", indent)) -- indent it
-            table.insert(sb, "\n");
-        elseif "number" == type(key) then
-            table.insert(sb, string.format("\"%s\",\n", tostring(value)))
-        else
-            table.insert(sb, string.format(
-                "%s = \"%s\",\n", tostring(key), tostring(value)))
+            table_insert(sb, string_rep(" ", indent + 2)) -- indent it
+            if type(value) == "table" and not done[value] then
+                done[value] = true
+                if type(key) == "number" then
+                    table_insert(sb, string_format("[%d] = ", key))
+                else
+                    table_insert(sb, string_format("%s = ", tostring(key)))
+                end
+                table_insert(sb, table_serialize(value, indent + 2, done, false))
+                table_insert(sb, ",\n")
+            elseif type(key) == "number" then
+                table_insert(sb, string_format("\"%s\",\n", tostring(value)))
+            else
+                table_insert(sb, string_format(
+                    "%s = \"%s\",\n", tostring(key), tostring(value)))
             end
         end
-        table.insert(sb, string.format("%s%s", string.rep(" ", indent - 2), "},"));
-        return table.concat(sb)
+        table_insert(sb, string_rep(" ", indent))
+        table_insert(sb, "}")
+        return table_concat(sb)
     else
-        return tt .. "\n"
+        return tostring(tt) .. "\n"
     end
 end
 

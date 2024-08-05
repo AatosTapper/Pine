@@ -12,13 +12,18 @@
 
 Renderer::Renderer() noexcept
   : m_sprite_shader(Shader("../res/shaders/sprite.vert", "../res/shaders/sprite.frag")), 
+    m_instanced_sprite_shader(Shader("../res/shaders/sprite_instanced.vert", "../res/shaders/sprite_instanced.frag")),
     m_post_process_shader(Shader("../res/shaders/post_process.vert", "../res/shaders/post_process.frag")),
     m_selected_shader(nullptr)
 {
+    glGenBuffers(1, &m_batch_buffer);
 }
 
 Renderer::~Renderer() {
     m_delete_framebuffers();
+    if (m_batch_buffer != 0) {
+        glDeleteBuffers(1, &m_batch_buffer);
+    }
 }
 
 void Renderer::init() {
@@ -36,7 +41,7 @@ void Renderer::start_frame() {
 }
 
 void Renderer::draw_frame(Scene *scene) {
-    m_draw_sprites(scene);
+    m_draw_sprites_instanced(scene);
     m_render_framebuffer();
 }
 
@@ -51,12 +56,12 @@ void Renderer::m_draw_sprites(Scene *scene) {
     for (auto &ent : scene->get_view<component::Sprite>()) {
         auto [sprite, transform] = Entity(ent, scene).get<component::Sprite, component::Transform>();
         
-        if (sprite.m_img == nullptr) continue;
+        if (sprite.img == nullptr) continue;
 
         m_selected_shader->use();
 
         glActiveTexture(GL_TEXTURE0);
-        sprite.m_img->bind();
+        sprite.img->bind();
 
         m_selected_shader->set_mat4f("u_view_proj", m_selected_vpm);
         m_selected_shader->set_mat4f("u_transform", transform);
@@ -70,6 +75,70 @@ void Renderer::m_draw_sprites(Scene *scene) {
 
         z_offset += 0.0002f;
     }
+}
+
+struct Batch {
+    std::vector<glm::mat4> transforms;
+    Texture *texture;
+};
+
+static std::vector<Batch> create_render_batches(Scene *scene) {
+    std::vector<Batch> batches;
+    float z_offset = 0.0f;
+
+    for (auto &ent : scene->get_view<component::Sprite>()) {
+        auto [sprite, transform] = Entity(ent, scene).get<component::Sprite, component::Transform>();
+        if (sprite.img == nullptr) [[unlikely]] continue;
+
+        z_offset += 0.0002f;
+        glm::vec3 offset = glm::vec3(0, 0, z_offset + sprite.render_layer);
+
+        const auto it = std::find_if(batches.begin(), batches.end(), [&sprite](const Batch &oth) {
+            return oth.texture == sprite.img;
+        });
+        if (it != batches.end()) {
+            it->transforms.emplace_back(glm::translate(transform.get_matrix(), offset));
+        } else {
+            batches.emplace_back(Batch{ .texture = sprite.img });
+            batches.back().transforms.emplace_back(glm::translate(transform.get_matrix(), offset));
+        }
+    }
+    return batches;
+}
+
+void Renderer::m_draw_sprites_instanced(Scene *scene) {
+    if (m_selected_shader == nullptr) {
+        m_selected_shader = &m_instanced_sprite_shader;
+    }
+
+    auto batches = create_render_batches(scene);
+    auto &mesh = QuadMesh::instance();
+
+    m_selected_shader->use();
+    m_selected_shader->set_mat4f("u_view_proj", m_selected_vpm);
+
+    mesh.get_vao()->bind();
+    mesh.get_ebo()->bind();
+    // Set up the vertex attribute pointers for the matrix buffer
+    for (uint32_t i = 0; i < 4; i++) {
+        glEnableVertexAttribArray(2 + i);
+        glVertexAttribPointer(2 + i, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (const void*)(sizeof(glm::vec4) * i));
+        glVertexAttribDivisor(2 + i, 1);
+    }
+
+    for (const auto &batch : batches) {
+        auto &matrices = batch.transforms;
+
+        glActiveTexture(GL_TEXTURE0);
+        batch.texture->bind();
+
+        glBindBuffer(GL_ARRAY_BUFFER, m_batch_buffer);
+        glBufferData(GL_ARRAY_BUFFER, matrices.size() * sizeof(glm::mat4), &matrices[0], GL_STATIC_DRAW);
+
+        glDrawElementsInstanced(GL_TRIANGLES, static_cast<GLsizei>(mesh.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0, matrices.size());
+    }
+    mesh.get_ebo()->unbind();
+    mesh.get_vao()->unbind();
 }
 
 void Renderer::m_render_framebuffer() {

@@ -29,6 +29,7 @@ public:
 
 private:
     Shader m_sprite_shader;
+    Shader m_instanced_sprite_shader;
     Shader m_post_process_shader;
     
     Shader *m_selected_shader = nullptr;
@@ -38,8 +39,10 @@ private:
     uint32_t m_framebuffer = 0;
     uint32_t m_texture_color_buffer = 0;
     uint32_t m_texture_depth_stencil_buffer = 0;
+    uint32_t m_batch_buffer = 0;
     
     void m_draw_sprites(Scene *scene);
+    void m_draw_sprites_instanced(Scene *scene);
 
     void m_create_framebuffers();
     void m_delete_framebuffers();

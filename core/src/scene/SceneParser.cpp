@@ -14,8 +14,8 @@ static SceneNodeType name_to_type(const char* name) {
         return SceneNodeType::Entity;
     } if (strcmp(name, "Cmp") == 0) {
         return SceneNodeType::Component;
-    } if (strcmp(name, "Sys") == 0) {
-        return SceneNodeType::System;
+    } if (strcmp(name, "Data") == 0) {
+        return SceneNodeType::Data;
     } else {
         return SceneNodeType::Undefined;
     }
@@ -31,8 +31,8 @@ static std::string type_to_name(SceneNodeType name) {
         return "Ent";
     case SceneNodeType::Component:
         return "Cmp";
-    case SceneNodeType::System:
-        return "Sys";
+    case SceneNodeType::Data:
+        return "Data";
     }
 }
 
@@ -48,9 +48,6 @@ void SceneNode::print_node(uint32_t indentation) {
 
 void SceneNode::print_tree(uint32_t depth) {
     print_node(depth);
-    if (parent != nullptr) {
-        parent->print_node(4);
-    }
     for (auto &child : children) {
         child->print_tree(depth + 1);
     }
@@ -88,10 +85,9 @@ static std::unique_ptr<SceneNode> parse_xml(const XMLElement* element, SceneNode
         if (parent == nullptr) {
             std::cout << "Error: undefined type for root node." << std::endl;
         } else {
-            std::cout << "Error: undefined type on line " << element->GetLineNum() << " for a child node of: " << std::endl;
-            parent->print_node(1);
+            std::cout << "Error: undefined type on line " << element->GetLineNum() << std::endl;
         }
-        assert(false);
+        std::abort();
     }
 
     for (const XMLAttribute* attribute = element->FirstAttribute(); attribute != nullptr; attribute = attribute->Next()) {

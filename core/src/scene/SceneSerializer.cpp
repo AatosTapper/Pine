@@ -31,8 +31,7 @@ static void serialize_comp(std::unique_ptr<SceneNode> &parent, Serializable *com
     if (!component) return;
     parent->children.push_back(std::make_unique<SceneNode>(
         SceneNode {
-            .data = component->serialize(),
-            .parent = parent.get()
+            .data = component->serialize()
         }
     ));
 }
@@ -74,7 +73,7 @@ std::unique_ptr<SceneNode> SceneSerializer::serialize_entity(Entity entity) {
         component::StateFlags,
         component::Collider>();
 
-    auto node = std::make_unique<SceneNode>(SceneNode { .data = { .type = SceneNodeType::Entity }, .parent = nullptr });
+    auto node = std::make_unique<SceneNode>(SceneNode { .data = { .type = SceneNodeType::Entity } });
     serialize_comp(node, tag);
     serialize_comp(node, trans);
     serialize_comp(node, cb);
@@ -93,19 +92,27 @@ Entity SceneSerializer::deserialize_entity(Scene *scene, const std::unique_ptr<S
     return entity;
 }
 
+void serialize_scene_data(Scene *scene, auto &root) {
+    
+}
+
+void deserialize_scene_data(auto &scene, auto &scene_graph) {
+    
+}
 
 void SceneSerializer::serialize(Scene *scene, std::string path) {
     PINE_CORE_PROFILE("Full scene serialize");
 
     std::unique_ptr<SceneNode> root = std::make_unique<SceneNode>();
     root->data = scene->serialize();
+
+    serialize_scene_data(scene, root);
     
     auto *registry = scene->m_registry.get();
     for (auto ent : registry->view<entt::entity>()) {
         if (registry->all_of<EntityDoNotSerialize>(ent)) continue;
 
         auto entity = serialize_entity(Entity{ ent, scene });
-        entity->parent = root.get();
         root->children.push_back(std::move(entity));
     }
     write_scene(root, path.c_str());
@@ -119,6 +126,8 @@ std::unique_ptr<Scene> SceneSerializer::deserialize(std::string path) {
     
     std::unique_ptr<Scene> scene = std::make_unique<Scene>("");
     scene->deserialize(scene_graph->data);
+
+    deserialize_scene_data(scene, scene_graph);
 
     for (const auto &ent_node : scene_graph->children) {
         assert(ent_node->data.type == SceneNodeType::Entity && "Deserialize error: scene_graph incorrect structure at entity level");

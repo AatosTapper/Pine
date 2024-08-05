@@ -125,12 +125,12 @@ private:
 /// @serializable
 struct Sprite : public Serializable {
     friend class ::Entity;
-    friend class ::Renderer;
 
     Sprite() noexcept = default;
     Sprite(std::string path) noexcept;
     virtual ~Sprite() = default;
 
+    Texture *img = nullptr;
     /// @brief z offset to help with ordering the sprites
     float render_layer = 0.0f;
 
@@ -139,7 +139,6 @@ struct Sprite : public Serializable {
     virtual void deserialize(SceneNodeData &data) override;
     virtual SceneNodeData serialize() const override;
 private:
-    Texture *m_img = nullptr;
     std::shared_ptr<std::string> m_save_string;
     std::shared_ptr<Entity> m_parent;
 };

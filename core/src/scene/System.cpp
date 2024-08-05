@@ -4,6 +4,7 @@
 #include "scene/Entity.h"
 #include "systems/Collision.h"
 
+/// @Lua API
 void custom_behavior_system_update(Scene *const scene) {
     //PINE_CORE_PROFILE("CustomBehavior update");
     auto &lua = LuaStateDispatcher::instance().get_lua();
@@ -20,6 +21,11 @@ void custom_behavior_system_update(Scene *const scene) {
         current_entity = entity;
         ScriptEngine::run_script(lua, app_relative_path(comp.on_update));
     }
+
+    lua.set_function("pine_get_script_parent_entity", [] { 
+        std::cerr << "Script Error: Cannot call pine_get_script_parent_entity outside the correct on_update context\n";
+        std::abort();
+    });
 }
 
 void update_transform_component_last_states(const Scene *const scene) {

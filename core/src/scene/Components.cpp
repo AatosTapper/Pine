@@ -179,14 +179,14 @@ SceneNodeData CustomBehavior::serialize() const {
     };
 }
 
-Sprite::Sprite(std::string path) noexcept : m_img(TexturePool::instance().get(app_relative_path(path))) {
-    m_img->filter_nearest();
+Sprite::Sprite(std::string path) noexcept : img(TexturePool::instance().get(app_relative_path(path))) {
+    img->filter_nearest();
     m_save_string = std::make_shared<std::string>(path);
 }
 
 void Sprite::set_texture(std::string path) { 
-    m_img = TexturePool::instance().get(app_relative_path(path));
-    m_img->filter_nearest();
+    img = TexturePool::instance().get(app_relative_path(path));
+    img->filter_nearest();
     m_save_string = std::make_shared<std::string>(path);
 }
 

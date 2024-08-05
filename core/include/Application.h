@@ -37,6 +37,7 @@ private:
 
     double m_per_frame_dt = 1.0 / 60.0;
     double m_tick_dt = 1.0 / 60.0;
+    double m_current_time = 0.0;
     uint32_t m_tick_reference = 60;
     uint64_t m_frame_index = 0;
     bool m_running = true;

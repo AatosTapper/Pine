@@ -65,6 +65,7 @@ std::optional<Entity> Scene::get_entity(const std::string &name) {
 }
 
 void Scene::remove_entity(Entity entity) {
+    if (std::find(m_remove_queue->begin(), m_remove_queue->end(), entity) != m_remove_queue->end()) [[unlikely]] { return; }
     m_remove_queue->push_back(entity);
 }
 
