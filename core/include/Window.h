@@ -32,9 +32,9 @@ public:
         glViewport(0, 0, width, height);
         glfwGetWindowSize(m_window, &width, &height);
         m_data = Data {
-            .callback = fn,
             .width = width,
-            .heigth = height
+            .heigth = height,
+            .callback = fn
         };
     }
 
