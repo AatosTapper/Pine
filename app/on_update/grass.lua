@@ -1,5 +1,7 @@
 local scene = pine_get_scene()
 
+local growning_speed = 0.3
+
 -- local gives about 30% performance boost
 
 -- taking references of the global functions into local variables
@@ -24,5 +26,37 @@ for i, ent in ipairs(entities) do
         sway = sway * normalized_dt
 
         transform.rr = transform.rr + transform.rr * (-acc) / normalized_dt + sway
+        
+        if ent:get_component_Table().table.cut == true then
+            
+           
+            
+            ent:get_component_Table().table.timer = ent:get_component_Table().table.timer + growning_speed * math.random() / pine_normalized_dt()
+            
+            
+
+--checking the current "life" of the grass
+
+            if ent:get_component_Table().table.timer <= 0 then
+                ent:get_component_Sprite():set_texture("res/textures/GrassTextures/Grass1.png")
+            elseif ent:get_component_Table().table.timer <= 20 then
+                ent:get_component_Sprite():set_texture("res/textures/GrassTextures/Grass2.png")
+            elseif ent:get_component_Table().table.timer <= 60 then
+                ent:get_component_Sprite():set_texture("res/textures/GrassTextures/Grass3.png")
+            elseif ent:get_component_Table().table.timer <= 80 then
+                ent:get_component_Sprite():set_texture("res/textures/GrassTextures/Grass4.png")
+            elseif ent:get_component_Table().table.timer <= 100 then
+                ent:get_component_Sprite():set_texture("res/textures/GrassTextures/Grass5.png")
+                ent:get_component_Table().table.cut = false
+                ent:get_component_Table().table.timer = 0
+            end
+
+           
+                
+
+           
+
+            
+        end
     end
 end

@@ -23,8 +23,13 @@ function game.create_grass(scene, spacing, width, height)
     for y = 1, num_y - 1 do
         for x = 1, num_x - 1 do
             local ent = scene:add_entity("comp")
-            local sprite_comp = ent:add_component_Sprite("res/textures/grass.png")
+            local sprite_comp = ent:add_component_Sprite("res/textures/GrassTextures/Grass5.png")
             local transform = ent:get_component_Transform()
+
+            ent:add_component_Table ({
+                cut = false,
+                timer = 0
+            })
             
             -- Calculate positions with the specified spacing
             local x_pos = x * spacing - width / 2

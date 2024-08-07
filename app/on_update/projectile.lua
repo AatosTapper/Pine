@@ -19,7 +19,8 @@ local nearby_ents = scene:get_close_entities(parent, 1)
 for i, v in ipairs(nearby_ents) do
     if v:has_component_StateFlags() then
         if v:get_component_StateFlags():has_flags({ "grass_interactable" }) then
-            v:remove()
+            local sprite_component = v:get_component_Sprite()
+            v:get_component_Table().table.cut = true
         end
     end
 end
