@@ -4,6 +4,7 @@
 #include "events/WindowEvent.h"
 #include "events/KeyEvent.h"
 #include "events/MouseEvent.h"
+#include "profiling.h"
 
 static void glfw_error_callback(int error, const char *description) {
     std::cout << "GLFW Error: [" << error << "]: " << description << std::endl;
@@ -19,6 +20,7 @@ Window::Window(int width, int height, const char *name) noexcept {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_SCALE_TO_MONITOR, GLFW_TRUE);
     glfwWindowHint(GLFW_SAMPLES, 4); // anti-aliasing (MSAA)
+    glfwSwapInterval(0); 
 
     // some apple shit
 #ifdef __APPLE__
@@ -121,7 +123,7 @@ Window::~Window() {
     glfwTerminate();
 }
 
-void Window::update() { 
+void Window::update() {
     glfwSwapBuffers(m_window);
     glfwPollEvents();
 }

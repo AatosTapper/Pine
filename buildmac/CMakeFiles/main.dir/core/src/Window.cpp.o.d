@@ -1170,4 +1170,6 @@ CMakeFiles/main.dir/core/src/Window.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/typeindex \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/WindowEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/KeyEvent.h \
-  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/MouseEvent.h
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/MouseEvent.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iomanip

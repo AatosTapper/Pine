@@ -7546,6 +7546,7 @@ CMakeFiles/main.dir/core/src/Window.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.h
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/forward_list \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/initializer_list \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iomanip \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iosfwd \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iostream \
@@ -7725,6 +7726,7 @@ CMakeFiles/main.dir/core/src/Window.cpp.o: CMakeFiles/main.dir/cmake_pch_arm64.h
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/MouseEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/events/WindowEvent.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/pch.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/profiling.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/src/Window.cpp \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/GLFW/glfw3.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/dep/KHR/khrplatform.h \
@@ -14981,6 +14983,7 @@ CMakeFiles/main.dir/core/src/rendering/Renderer.cpp.o: CMakeFiles/main.dir/cmake
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Renderer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Shader.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/Texture.h \
+  /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/TexturePool.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexArray.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/rendering/VertexBuffer.h \
   /Users/aatostapper/Documents/Dev/OpenGL/Pine/core/include/scene/Components.h \

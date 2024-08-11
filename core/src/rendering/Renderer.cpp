@@ -5,6 +5,7 @@
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "scene/Entity.h"
+#include "rendering/TexturePool.h"
 
 #include "scene/Components.h"
 
@@ -17,13 +18,12 @@ Renderer::Renderer() noexcept
     m_selected_shader(nullptr)
 {
     glGenBuffers(1, &m_batch_buffer);
+    
 }
 
 Renderer::~Renderer() {
     m_delete_framebuffers();
-    if (m_batch_buffer != 0) {
-        glDeleteBuffers(1, &m_batch_buffer);
-    }
+    glDeleteBuffers(1, &m_batch_buffer);
 }
 
 void Renderer::init() {
@@ -35,7 +35,7 @@ void Renderer::init() {
 
 void Renderer::start_frame() {
     glBindFramebuffer(GL_FRAMEBUFFER, m_framebuffer);
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(m_bg_color.r, m_bg_color.g, m_bg_color.b, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
 }
@@ -43,8 +43,10 @@ void Renderer::start_frame() {
 void Renderer::draw_frame(Scene *scene) {
     m_draw_sprites_instanced(scene);
     m_render_framebuffer();
+    m_selected_shader = nullptr;
 }
 
+/// @deprecated
 void Renderer::m_draw_sprites(Scene *scene) {
     if (m_selected_shader == nullptr) {
         m_selected_shader = &m_sprite_shader;
@@ -53,6 +55,8 @@ void Renderer::m_draw_sprites(Scene *scene) {
     auto &mesh = QuadMesh::instance();
     float z_offset = 0.0f; // remove z_fighting
 
+    mesh.get_vao()->bind();
+    mesh.get_ebo()->bind();
     for (auto &ent : scene->get_view<component::Sprite>()) {
         auto [sprite, transform] = Entity(ent, scene).get<component::Sprite, component::Transform>();
         
@@ -67,14 +71,12 @@ void Renderer::m_draw_sprites(Scene *scene) {
         m_selected_shader->set_mat4f("u_transform", transform);
         m_selected_shader->set_float("u_z_fight_factor", (z_offset + sprite.render_layer));
 
-        mesh.get_vao()->bind();
-        mesh.get_ebo()->bind();
         glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(mesh.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0);
-        mesh.get_vao()->unbind();
-        mesh.get_ebo()->unbind();
-
+        
         z_offset += 0.0002f;
     }
+    mesh.get_vao()->unbind();
+    mesh.get_ebo()->unbind();
 }
 
 struct Batch {
@@ -84,6 +86,7 @@ struct Batch {
 
 static std::vector<Batch> create_render_batches(Scene *scene) {
     std::vector<Batch> batches;
+    batches.reserve(TexturePool::instance().num_textures());
     float z_offset = 0.0f;
 
     for (auto &ent : scene->get_view<component::Sprite>()) {
@@ -91,7 +94,7 @@ static std::vector<Batch> create_render_batches(Scene *scene) {
         if (sprite.img == nullptr) [[unlikely]] continue;
 
         z_offset += 0.0002f;
-        glm::vec3 offset = glm::vec3(0, 0, z_offset + sprite.render_layer);
+        const glm::vec3 offset = glm::vec3(0, 0, z_offset + sprite.render_layer);
 
         const auto it = std::find_if(batches.begin(), batches.end(), [&sprite](const Batch &oth) {
             return oth.texture == sprite.img;
@@ -110,31 +113,32 @@ void Renderer::m_draw_sprites_instanced(Scene *scene) {
     if (m_selected_shader == nullptr) {
         m_selected_shader = &m_instanced_sprite_shader;
     }
-
-    auto batches = create_render_batches(scene);
-    auto &mesh = QuadMesh::instance();
+    const auto batches = create_render_batches(scene);
+    const auto &mesh = QuadMesh::instance();
 
     m_selected_shader->use();
     m_selected_shader->set_mat4f("u_view_proj", m_selected_vpm);
 
-    mesh.get_vao()->bind();
     mesh.get_ebo()->bind();
-    // Set up the vertex attribute pointers for the matrix buffer
+    const GLsizei elements = static_cast<GLsizei>(mesh.get_ebo()->get_elements());
+    
+    mesh.get_vao()->bind();
     for (uint32_t i = 0; i < 4; i++) {
         glEnableVertexAttribArray(2 + i);
         glVertexAttribPointer(2 + i, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (const void*)(sizeof(glm::vec4) * i));
         glVertexAttribDivisor(2 + i, 1);
     }
+
     for (const auto &batch : batches) {
-        auto &matrices = batch.transforms;
+        const auto &matrices = batch.transforms;
+        const GLsizeiptr num_matrices = matrices.size();
 
         glActiveTexture(GL_TEXTURE0);
         batch.texture->bind();
 
         glBindBuffer(GL_ARRAY_BUFFER, m_batch_buffer);
-        glBufferData(GL_ARRAY_BUFFER, matrices.size() * sizeof(glm::mat4), &matrices[0], GL_STATIC_DRAW);
-
-        glDrawElementsInstanced(GL_TRIANGLES, static_cast<GLsizei>(mesh.get_ebo()->get_elements()), GL_UNSIGNED_INT, 0, matrices.size());
+        glBufferData(GL_ARRAY_BUFFER, num_matrices * sizeof(glm::mat4), &matrices[0], GL_STATIC_DRAW);
+        glDrawElementsInstanced(GL_TRIANGLES, elements, GL_UNSIGNED_INT, 0, num_matrices);
     }
     mesh.get_ebo()->unbind();
     mesh.get_vao()->unbind();

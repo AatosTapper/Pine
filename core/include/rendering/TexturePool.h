@@ -10,6 +10,8 @@ public:
     IMPL_NO_COPY(TexturePool)
 
     [[nodiscard]] Texture *get(const std::string &path);
+
+    size_t num_textures() const { return m_pool.size(); }
     
 private:
     TexturePool() = default;

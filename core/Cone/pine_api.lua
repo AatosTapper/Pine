@@ -39,6 +39,8 @@ function pine_run() end
 function pine_tick_dt() end
 
 --- Gets the ratio of current tick rate compared to the tick rate target
+--- F = 1.0 / (FPS / FPS_target)
+--- Functionally similar to tick_dt but centers around 1.0
 --- Used in force calculations etc.
 ---@return number
 function pine_normalized_dt() end
@@ -535,8 +537,8 @@ function pine_comp_StateFlags:remove_flags(flags) end
 --- Collider dimensions and position are inferred from entity's Transform
 --- Supports box collider (AABB) and circle collider types (box by default)
 ---@class pine_comp_Collider
---- Prevents the entities from intersecting
----@field resolve_collisions boolean @default = false
+---@field resolve_collisions boolean @default = false. Prevents the entity from intersecting with other entities with this bool = ture
+---@field fixed boolean @default = false. Makes the collider immovable by other colliders
 pine_comp_Collider = {}
 
 --- Container for per-collision info,
@@ -550,7 +552,7 @@ Collider_CollisionData = {}
 function pine_comp_Collider:type_box() end
 
 --- Sets the collider type to Circle
---- Circle radius is defined by the Transform width (sx)
+--- Circle radius is defined by the max of width and height max(transform.sx, transform.sy)
 function pine_comp_Collider:type_circle() end
 
 --- Gets the entities in contact and the collision normals

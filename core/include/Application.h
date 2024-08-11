@@ -21,11 +21,13 @@ public:
 private:
     void m_run();
     void m_on_window_close();
+    void m_init_window();
+    void m_init_renderer();
+    void m_set_default_handlers();
     void m_set_lua_functions();
     void m_fixed_update();
     void m_fluid_update(float alpha);
     void m_update_render();
-    void m_update_systems();
     
     EventBus m_event_bus;
     InputBus m_input_bus;

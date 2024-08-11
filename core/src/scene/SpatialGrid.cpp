@@ -5,13 +5,10 @@
 #include "scene/Entity.h"
 
 static float get_closest_distance(const component::Transform &oth, float x, float y) {
-    const float half_width = oth.sx / 2.0f;
-    const float half_height = oth.sy / 2.0f;
-
-    const float left = oth.x - half_width;
-    const float right = oth.x + half_width;
-    const float top = oth.y + half_height;
-    const float bottom = oth.y - half_height;
+    const float left = oth.x - oth.sx;
+    const float right = oth.x + oth.sx;
+    const float top = oth.y + oth.sy;
+    const float bottom = oth.y - oth.sy;
 
     float dx = 0.0f;
     float dy = 0.0f;
@@ -37,6 +34,8 @@ std::vector<entt::entity> SpatialGrid::spatial_lookup(double x, double y, float 
     const uint32_t center_index = m_calc_index(x, y);
     const int32_t radius_cells = static_cast<int32_t>(std::ceil(radius / m_cell_size));
 
+    const auto registry = scene->get_registry();
+
     for (int32_t dx = -radius_cells; dx <= radius_cells; dx++) {
         for (int32_t dy = -radius_cells; dy <= radius_cells; dy++) {
             const uint32_t index = center_index + dx + dy * (m_half_width * 2);
@@ -44,7 +43,7 @@ std::vector<entt::entity> SpatialGrid::spatial_lookup(double x, double y, float 
             if (m_grid.find(index) == m_grid.end()) continue;
 
             for (auto ent : m_grid[index]) {
-                auto &oth = scene->get_registry()->get<component::Transform>(ent);
+                auto &oth = registry->get<component::Transform>(ent);
                 const float dist = get_closest_distance(oth, x, y);
                 if ((dist - radius) < 0.0f) [[likely]] {
                     results.push_back(ent);
@@ -74,10 +73,10 @@ void SpatialGrid::push_entity(Entity entity) {
 
     const auto &t = scene->get_registry()->get<component::Transform>(ent);
 
-    const double left = t.x - t.sx / 2.0;
-    const double right = t.x + t.sx / 2.0;
-    const double top = t.y + t.sy / 2.0;
-    const double bottom = t.y - t.sy / 2.0;
+    const double left = t.x - t.sx;
+    const double right = t.x + t.sx;
+    const double top = t.y + t.sy;
+    const double bottom = t.y - t.sy;
 
     limits.emplace_back(m_calc_index(left, top));
     limits.emplace_back(m_calc_index(left, bottom));
@@ -100,10 +99,10 @@ void SpatialGrid::populate(Scene *scene) {
     for (const auto ent : view) {
         const auto &t = scene->get_registry()->get<component::Transform>(ent);
 
-        const double left = t.x - t.sx / 2.0;
-        const double right = t.x + t.sx / 2.0;
-        const double top = t.y + t.sy / 2.0;
-        const double bottom = t.y - t.sy / 2.0;
+        const double left = t.x - t.sx;
+        const double right = t.x + t.sx;
+        const double top = t.y + t.sy;
+        const double bottom = t.y - t.sy;
 
         limits.emplace_back(m_calc_index(left, top));
         limits.emplace_back(m_calc_index(left, bottom));
@@ -129,7 +128,7 @@ uint32_t SpatialGrid::m_calc_index(double x, double y) {
     const double grid_y = y + max_y;
 
     if (grid_x < 0.0 || grid_y < 0.0 || grid_x >= max_x * 2.0 || grid_y >= max_y * 2.0) {
-        std::cout << "Warning: Entity passed the spatial grid border\n(entity is too far from origin)\nThis may cause undefined behavior\n";
+        std::cerr << "Warning: Entity passed the spatial grid border\n(entity is too far from origin)\nThis may cause undefined behavior\n";
         return 0;
     }
 

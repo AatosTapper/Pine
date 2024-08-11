@@ -19,7 +19,7 @@ constexpr bool is_png(const std::string &path) {
 }
 
 Texture::Texture(const std::string &file) noexcept {
-    std::cout << file << "\n";
+    std::cout << "Creating texture: " << file << "\n";
     glGenTextures(1, &m_id);
     glBindTexture(GL_TEXTURE_2D, m_id);
 
@@ -39,7 +39,7 @@ Texture::Texture(const std::string &file) noexcept {
         glGenerateMipmap(GL_TEXTURE_2D);
     } else {
         std::cerr << "Failed to load texture " << file << std::endl;
-        assert(false);
+        std::abort();
     }
 
     stbi_image_free(image);

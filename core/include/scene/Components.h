@@ -197,7 +197,8 @@ struct Collider : public Serializable {
     const std::vector<CollisionData> &get_colliding_entities() const;
 
     std::vector<CollisionData> colliding_entities; // not saved because of frame by frame recalculation
-    bool resolve_collisions = false; // accessible from lua
+    bool resolve_collisions = true; // accessible from lua
+    bool fixed = false; // accessible from lua
     enum Type : uint8_t { AABB=0, Circle } type = Type::AABB;
 
     virtual void deserialize(SceneNodeData &data) override;

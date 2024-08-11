@@ -10,7 +10,6 @@
 #include "pch.h"
 
 class Shader;
-
 class Renderer {
 public:
     Renderer() noexcept;
@@ -27,6 +26,8 @@ public:
     void set_view_proj_matrix(const glm::mat4 &vp_mat) { m_selected_vpm = vp_mat; }
     void set_window_dimensions(glm::i32vec2 data) { m_window_dimensions = data; }
 
+    void set_bg_color(const glm::vec3 &color) { m_bg_color = color; }
+
 private:
     Shader m_sprite_shader;
     Shader m_instanced_sprite_shader;
@@ -35,13 +36,17 @@ private:
     Shader *m_selected_shader = nullptr;
     glm::mat4 m_selected_vpm {};
     glm::i32vec2 m_window_dimensions {};
+    glm::vec3 m_bg_color {};
 
     uint32_t m_framebuffer = 0;
     uint32_t m_texture_color_buffer = 0;
     uint32_t m_texture_depth_stencil_buffer = 0;
+
     uint32_t m_batch_buffer = 0;
-    
+
+    /// @deprecated
     void m_draw_sprites(Scene *scene);
+
     void m_draw_sprites_instanced(Scene *scene);
 
     void m_create_framebuffers();

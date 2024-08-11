@@ -22,6 +22,10 @@
     entity_type[#FUNC"_component_"#TYPE] = [&](Entity &self) { \
         return sol::make_object(lua, self.FUNC##_component<component::TYPE>()); \
     };
+#define _REG_OBJ_PTR(FUNC, TYPE) \
+    entity_type[#FUNC"_component_"#TYPE] = [&](Entity &self) { \
+        return sol::make_object(lua, &self.FUNC##_component<component::TYPE>()); \
+    };
 
 #define FUNC_REGISTER(TYPE, CONSTRUCT_ARG) \
     _REG_ADD(add, TYPE, CONSTRUCT_ARG) \
@@ -29,7 +33,7 @@
     _REG(remove, TYPE) \
     _REG(has, TYPE)
 #define FUNC_REGISTER_NA(TYPE) \
-    _REG(add, TYPE) \
+    _REG_OBJ_PTR(add, TYPE) \
     _REG_OBJ(get, TYPE) \
     _REG(remove, TYPE) \
     _REG(has, TYPE)
@@ -116,6 +120,10 @@ void set_lua_components(sol::state &lua) {
     COMP_MEM_REGISTER(Collider, type_circle)
     COMP_MEM_REGISTER(Collider, get_colliding_entities)
     COMP_MEM_REGISTER(Collider, resolve_collisions)
+    COMP_MEM_REGISTER(Collider, fixed)
+    sol::usertype<CollisionData> coll_data_type = lua.new_usertype<CollisionData>("Collider_CollisionData");
+    coll_data_type["ent"] = &CollisionData::ent;
+    coll_data_type["normal"] = &CollisionData::normal;
 }
 
 // @Lua API

@@ -38,9 +38,10 @@ SceneNodeData Tag::serialize() const {
 }
 
 glm::mat4 Transform::get_matrix() const {
+    static constexpr glm::vec3 rotation_dir = { 0.0f, 0.0f, -1.0f };
     glm::mat4 output(1.0f);
     output = glm::translate(output, glm::vec3(x_interpolated, y_interpolated, 0.0f));
-    output = glm::rotate(output, rr_interpolated, glm::vec3(0.0f, 0.0f, -1.0f));
+    output = glm::rotate(output, rr_interpolated, rotation_dir);
     output = glm::scale(output, glm::vec3(sx_interpolated, sy_interpolated, 1.0f));
     return output;
 }
@@ -105,8 +106,11 @@ Script::id_t Script::push_script(std::string str) {
 }
 // @Lua API
 void Script::run(Script::id_t id) const { 
-    auto &script = m_scripts.at(id);
-    assert(!script.empty());
+    if (m_scripts.size() <= id) {
+        std::cerr << "Error: Tried to run a null script in Script component\n";
+        std::abort();
+    }
+    auto &script = m_scripts[id];
 
     auto &lua = LuaStateDispatcher::instance().get_lua();
     lua.set_function("pine_get_script_parent_entity", [this] { 
@@ -307,6 +311,7 @@ void Collider::deserialize(SceneNodeData &data) {
     uint8_t coll_type;
     NODE_TO_VAR(coll_type, data);
     NODE_TO_VAR(resolve_collisions, data);
+    NODE_TO_VAR(fixed, data);
     type = static_cast<Type>(coll_type);
 }
 
@@ -317,7 +322,8 @@ SceneNodeData Collider::serialize() const {
         .variables = {
             COMP_TYPE(Collider),
             VAR_TO_NODE(coll_type),
-            VAR_TO_NODE(resolve_collisions)
+            VAR_TO_NODE(resolve_collisions),
+            VAR_TO_NODE(fixed)
         }
     };
 }
