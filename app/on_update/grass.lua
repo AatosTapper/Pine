@@ -17,19 +17,21 @@ local acc = pow(0.2, normalized_dt)
 
 local entities = scene:get_entities()
 
+local rand = math.random
+
 for i, ent in ipairs(entities) do
     local state_flags = ent:get_component_StateFlags()
     if state_flags and state_flags:has_flags({ "grass_interactable" }) then
         local transform = ent:get_component_Transform()
         local sway = (sin(seed * 0.017 + transform.y) * 0.024)
                    + (sin(seed * 0.2 + transform.x) * 0.0014)
-        sway = sway * normalized_dt
+        sway = sway / normalized_dt
 
-        transform.rr = transform.rr + transform.rr * (-acc) + sway
+        transform.rr = transform.rr + transform.rr * (-acc) * normalized_dt + sway
         
         local table_comp = ent:get_component_Table()
         if table_comp.table.cut == true then
-            table_comp.table.timer = table_comp.table.timer + growning_speed * math.random() * normalized_dt
+            table_comp.table.timer = table_comp.table.timer + growning_speed * rand() * normalized_dt
             --checking the current "life" of the grass
             if table_comp.table.timer <= 0 then
                 ent:get_component_Sprite():set_texture("res/textures/GrassTextures/Grass1.png")

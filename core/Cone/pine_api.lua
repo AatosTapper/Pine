@@ -39,7 +39,7 @@ function pine_run() end
 function pine_tick_dt() end
 
 --- Gets the ratio of current tick rate compared to the tick rate target
---- F = 1.0 / (FPS / FPS_target)
+--- F = dt * FPS_target
 --- Functionally similar to tick_dt but centers around 1.0
 --- Used in force calculations etc.
 ---@return number

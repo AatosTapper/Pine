@@ -18,7 +18,7 @@ config = {
     -- if not 0, allows the engine to lower the tick_rate temporarily when updates can't keep up.
     -- lowering is done in steps of specified size
     -- causes frame pacing issues but keeps responsiveness when having very poor performance
-    tick_rate_downscale_step = 0,
+    tick_rate_downscale_step = 10,
 
     -- used for balancing physics calculations etc,
     -- DOES NOT DOWNSCALE

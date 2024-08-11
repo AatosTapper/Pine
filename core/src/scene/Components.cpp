@@ -38,7 +38,7 @@ SceneNodeData Tag::serialize() const {
 }
 
 glm::mat4 Transform::get_matrix() const {
-    static constexpr glm::vec3 rotation_dir = { 0.0f, 0.0f, -1.0f };
+    static const glm::vec3 rotation_dir = { 0.0f, 0.0f, -1.0f };
     glm::mat4 output(1.0f);
     output = glm::translate(output, glm::vec3(x_interpolated, y_interpolated, 0.0f));
     output = glm::rotate(output, rr_interpolated, rotation_dir);

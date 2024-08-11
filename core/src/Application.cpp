@@ -158,7 +158,7 @@ void Application::m_set_lua_functions() {
     m_lua.set_function("pine_frame_time", [this] { return this->m_per_frame_dt; });
     m_lua.set_function("pine_tick_dt", [this] { return this->m_tick_dt; });
     m_lua.set_function("pine_frame_index", [this] { return this->m_frame_index; });
-    m_lua.set_function("pine_normalized_dt", [this] { return 1.0 / ((1.0 / this->m_tick_dt) / (double)this->m_tick_reference); });
+    m_lua.set_function("pine_normalized_dt", [this] { return this->m_tick_dt * (double)this->m_tick_reference; });
     m_lua.set_function("pine_window_width", [this] { return this->m_window->get_width(); });
     m_lua.set_function("pine_window_height", [this] { return this->m_window->get_height(); });
     m_lua.set_function("pine_current_time", [this] { return this->m_current_time; });
