@@ -1,5 +1,12 @@
+attack_system = require("app.scripts.attack_system")
+
 --- Game specific GLOBAL stuff here
 local game = {}
+
+
+
+
+
 
 ---@param scene pine_Scene
 function game.create_player(scene)
@@ -7,7 +14,8 @@ function game.create_player(scene)
     player:add_component_CustomBehavior("on_update/player.lua")
     player:add_component_Sprite("res/textures/test.png")
     player:add_component_Table({
-        velocity = { x = 0, y = 0 }
+        velocity = { x = 0, y = 0 },
+        current_attack = attack_system.create_attack_apple()
     })
     local collider = player:add_component_Collider()
     collider.resolve_collisions = true

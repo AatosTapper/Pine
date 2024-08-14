@@ -3,6 +3,7 @@ local parent = pine_get_script_parent_entity()
 
 local transform = parent:get_component_Transform()
 local data = parent:get_component_Table()
+
 local velocity = data.table.velocity
 
 local speed = 0.016
@@ -75,3 +76,16 @@ function spawn_projectile_from_player()
     })
     ent:add_component_CustomBehavior("on_update/projectile.lua")
 end
+
+
+
+
+
+
+if pine_get_input(Cone.Key._O) then
+    local player_transform = parent:get_component_Transform()
+    local origin = vec2.new(player_transform.x, player_transform.y)
+    local dir = vec2.normalize(pine_get_mouse_pos() - vec2.new(pine_window_width() / 2, pine_window_height() / 2))
+    data.table.current_attack.execute(origin,dir,{})
+end
+
