@@ -120,14 +120,6 @@ function game.create_main_scene()
     game.create_grass(main_scene, 0.8, 40, 40)
     game.create_grass_bg(main_scene, 20, 20)
     game.spawn_collider_tests(main_scene)
-
-    Cone.Event.listener("MouseButtonPressed", function(key)
-        if key ~= Cone.Key._MOUSE_BUTTON_LEFT then
-            return false
-        end
-        spawn_projectile_from_player()
-        return false
-    end)
 end
 
 return game

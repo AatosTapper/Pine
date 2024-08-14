@@ -62,30 +62,11 @@ for i, other in ipairs(nearby_ents) do
     end
 end
 
---- Shooting the apple
-function spawn_projectile_from_player()
-    local dir = vec2.normalize(pine_get_mouse_pos() - vec2.new(pine_window_width() / 2, pine_window_height() / 2))
-    local ent = scene:add_entity("projectile")
-    ent:get_component_Transform().x = transform.x
-    ent:get_component_Transform().y = transform.y
-
-    ent:add_component_Sprite("res/textures/apple.png")
-    ent:add_component_Table({
-        direction = { x = dir.x, y = -dir.y },
-        lifetime = 20
-    })
-    ent:add_component_CustomBehavior("on_update/projectile.lua")
-end
-
-
-
-
-
+data.table.current_attack.cooldown_timer = data.table.current_attack.cooldown_timer + 1 * pine_normalized_dt()
 
 if pine_get_input(Cone.Key._O) then
     local player_transform = parent:get_component_Transform()
     local origin = vec2.new(player_transform.x, player_transform.y)
     local dir = vec2.normalize(pine_get_mouse_pos() - vec2.new(pine_window_width() / 2, pine_window_height() / 2))
-    data.table.current_attack.execute(origin,dir,{})
+    data.table.current_attack:execute(origin,dir,{})
 end
-

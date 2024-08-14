@@ -1,40 +1,38 @@
 local attack_system = {}
 
 function create_attack_base()
-    
-    return{
-        dir = vec2.normalize(pine_get_mouse_pos() - vec2.new(pine_window_width() / 2, pine_window_height() / 2)),
-        lifetime = 0,
-        cooldown = 0,
-        
-        execute = function(origin, direction, flags)
-        print("this function doesn't exist")
-        end 
+    return {
+        cooldown_timer = 0,
+        cooldown_threshold = 10,
+        execute = function(self, origin, direction, flags)
+            self.cooldown_timer = math.min(self.cooldown_timer, self.cooldown_threshold)
+            if self.cooldown_timer >= self.cooldown_threshold then
+                self.implementation(origin, direction, flags)
+                self.cooldown_timer = self.cooldown_timer - self.cooldown_threshold
+            end
+        end,
+        implementation = function(origin, direction, flags)
+            assert("Bruh implement the implementation")
+        end
     }
-    
 end
 
 function attack_system.create_attack_sword()
- local attack = create_attack_base()
- attack.cooldown = 1
- attack.lifetime = 0.5
- attack.execute = function (origin, direction, flags) 
-     local scene = pine_get_scene()
-     local ent = scene:add_entity("slash")
- end
-    return 
-    {
-
-    }
+    local attack = create_attack_base()
+    attack.cooldown_timer = 0
+    attack.cooldown_threshold = 20
+    attack.implementation = function (origin, direction, flags) 
+        local scene = pine_get_scene()
+        local ent = scene:add_entity("slash")
+    end
+    return attack
 end
 
 function attack_system.create_attack_apple()
-    
     local attack = create_attack_base()
-    attack.cooldown = 1
-    attack.lifetime = 0.5
-    attack.execute = function (origin, dir, flags) 
-        
+    attack.cooldown_timer = 0
+    attack.cooldown_threshold = 20
+    attack.implementation = function (origin, dir, flags) 
         local scene = pine_get_scene()
         local ent = scene:add_entity("projectile")
         ent:get_component_Transform().x = origin.x
@@ -46,12 +44,10 @@ function attack_system.create_attack_apple()
             lifetime = 20
         })
         ent:add_component_CustomBehavior("on_update/projectile.lua")
-
-
     end
-       return attack
-   end
+    return attack
+end
 
-   return attack_system
+return attack_system
 
    

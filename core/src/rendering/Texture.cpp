@@ -8,7 +8,7 @@
     #include <STB/stb_image.h>
 #endif
 
-constexpr bool is_png(const std::string &path) {
+static constexpr bool is_png(const std::string &path) {
     size_t dot_pos = path.find_last_of('.');
     if (dot_pos != std::string::npos) {
         std::string extension = path.substr(dot_pos + 1);
