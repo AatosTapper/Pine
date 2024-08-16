@@ -15,7 +15,8 @@ function game.create_player(scene)
     player:add_component_Sprite("res/textures/test.png")
     player:add_component_Table({
         velocity = { x = 0, y = 0 },
-        current_attack = attack_system.create_attack_apple()
+        current_attack = attack_system.create_attack_apple(),
+        player_damage_scale = 1
     })
     local collider = player:add_component_Collider()
     collider.resolve_collisions = true
