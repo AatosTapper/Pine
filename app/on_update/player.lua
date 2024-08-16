@@ -68,5 +68,5 @@ if pine_get_input(Cone.Key._O) then
     local player_transform = parent:get_component_Transform()
     local origin = vec2.new(player_transform.x, player_transform.y)
     local dir = vec2.normalize(pine_get_mouse_pos() - vec2.new(pine_window_width() / 2, pine_window_height() / 2))
-    data.table.current_attack:execute(origin,dir,{})
+    data.table.current_attack:execute(origin, dir, {}, {})
 end
